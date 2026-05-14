@@ -23,7 +23,7 @@ export function HeroStage({ children }: HeroStageProps) {
     <section className={styles.heroStage} aria-label="Introduction">
       <video
         className={styles.heroVideo}
-        src="/videos/Open_WIP_R%26F_HBCUGO_071822.mp4"
+        src="/videos/Open_WIP_RandF_HBCUGO_071822.mp4"
         autoPlay
         loop
         muted
