@@ -1,0 +1,425 @@
+.workSection {
+  --work-accent: #f9e04c;
+  padding: 0 0 clamp(72px, 10vw, 120px);
+  color: #fafaf8;
+}
+
+.workInner {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.workHeader {
+  max-width: 52rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.workHeader :global(.section-eyebrow) {
+  color: rgba(249, 224, 76, 0.72);
+}
+
+.workHeader :global(.section-title) {
+  margin-top: 0.25rem;
+  color: #f9e04c;
+}
+
+.workSubcopy {
+  margin: clamp(1rem, 2vw, 1.35rem) 0 0;
+  max-width: 42ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.featuredStack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 8vw, 6.5rem);
+}
+
+.featuredProject {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.projectIntro {
+  display: block;
+  max-width: 44rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.projectIntro:focus-visible {
+  outline: 2px solid rgba(249, 224, 76, 0.65);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.projectKicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(249, 224, 76, 0.88);
+}
+
+.projectTitle {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fafaf8;
+}
+
+.projectHeadline {
+  margin: 0 0 1rem;
+  font-size: clamp(1.125rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 248, 0.94);
+}
+
+.projectDescription {
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  line-height: 1.65;
+  color: rgba(250, 250, 248, 0.68);
+}
+
+.projectMetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  margin: clamp(1.25rem, 2.5vw, 1.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projectMetric {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.88);
+}
+
+.projectMediaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide,
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit {
+  min-height: unset;
+}
+
+button.projectMediaCard {
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+.projectMediaCard {
+  position: relative;
+  display: block;
+  justify-self: stretch;
+  min-width: 0;
+  width: 100%;
+  min-height: clamp(200px, 28vw, 280px);
+  border-radius: clamp(14px, 2vw, 22px);
+  overflow: hidden;
+  border: none;
+  background: #e8eaef;
+  text-decoration: none;
+  color: inherit;
+}
+
+.projectMediaCardWide {
+  grid-column: 1 / -1;
+  min-height: clamp(220px, 36vw, 380px);
+}
+
+.projectMediaCardFit {
+  min-height: unset;
+  height: auto;
+  background: #12161f;
+}
+
+.projectMediaCardFit .projectMediaImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* HBCUgo: 16:9 cinematic frames; cover + zoom fills card edge-to-edge. */
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit {
+  background: #12161f;
+}
+
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectMediaImage,
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectVideo,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectMediaImage,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectVideo {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+}
+
+/* HBCUgo CTV keeps full collage visible (contain overrides cover above). */
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(3) .projectMediaImage {
+  object-fit: contain;
+}
+
+/* Desktop hover zoom — HBCUgo & Focus Flame image/media cards only. */
+@media (hover: hover) and (min-width: 769px) {
+  .projectMediaGrid[data-project="hbcugo"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectMediaImage,
+  .projectMediaGrid[data-project="hbcugo"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectVideo,
+  .projectMediaGrid[data-project="hbcugo"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectMediaImage,
+  .projectMediaGrid[data-project="hbcugo"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectVideo,
+  .projectMediaGrid[data-project="caidens-courage"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectVideo,
+  .projectMediaGrid[data-project="caidens-courage"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectVideo {
+    transform: scale(1.06);
+  }
+
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide:hover .projectMediaImage,
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide:focus-visible .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide:hover .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide:focus-visible .projectMediaImage {
+    transform: scale(1.05);
+  }
+}
+
+/* Motion demo: same height as CTV (853/878), video centered at 97% — no scale transform. */
+.projectMediaCardCenteredMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b1f27;
+  overflow: hidden;
+}
+
+.projectMediaCardCenteredMedia .projectVideo {
+  position: relative;
+  width: 97%;
+  height: auto;
+  max-height: 97%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardCenteredMedia:hover .projectVideo,
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCardCenteredMedia:focus-visible .projectVideo,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardCenteredMedia:hover .projectVideo,
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardCenteredMedia:focus-visible .projectVideo {
+  transform: none;
+}
+
+.projectMediaCardFit .projectVideo {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Motion demo: match CTV row height, show full video width (no horizontal crop). */
+.projectMediaCardRowFill {
+  min-height: unset;
+  height: 100%;
+  align-self: stretch;
+  background: #12161f;
+}
+
+.projectMediaCardRowFill .projectVideo {
+  object-fit: contain;
+  object-position: center;
+}
+
+.projectMediaCard:focus-visible {
+  outline: 2px solid rgba(249, 224, 76, 0.65);
+  outline-offset: 4px;
+}
+
+.projectMediaImage,
+.projectVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projectMediaCard:hover .projectMediaImage,
+.projectMediaCard:hover .projectVideo,
+.projectMediaCard:focus-visible .projectMediaImage,
+.projectMediaCard:focus-visible .projectVideo {
+  transform: scale(1.02);
+}
+
+.projectMediaLabel {
+  position: absolute;
+  top: clamp(0.75rem, 1.5vw, 1rem);
+  left: clamp(0.75rem, 1.5vw, 1rem);
+  z-index: 1;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(11, 15, 27, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.95);
+  pointer-events: none;
+}
+
+.moreWorkBlock {
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.moreWorkHeading {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.8125rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(249, 224, 76, 0.72);
+}
+
+.moreWorkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.moreWorkCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  border-radius: clamp(14px, 2vw, 20px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.moreWorkCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.moreWorkCard:focus-visible {
+  outline: 2px solid rgba(249, 224, 76, 0.65);
+  outline-offset: 4px;
+}
+
+.moreWorkCardMedia {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: #e8eaef;
+}
+
+.moreWorkCardBody {
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.moreWorkCardTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fafaf8;
+}
+
+.moreWorkCardDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.65);
+}
+
+@media (max-width: 900px) {
+  .moreWorkGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectMediaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectMediaCard,
+  .projectMediaCardWide {
+    grid-column: auto;
+    min-height: clamp(200px, 52vw, 260px);
+  }
+
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:hover .projectMediaImage,
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:hover .projectVideo,
+  .projectMediaGrid[data-project="caidens-courage"] .projectMediaCard:hover .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"] .projectMediaCard:hover .projectVideo {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectMediaImage,
+  .projectVideo {
+    transition: none;
+  }
+
+  .projectMediaCard:hover .projectMediaImage,
+  .projectMediaCard:hover .projectVideo {
+    transform: none;
+  }
+}

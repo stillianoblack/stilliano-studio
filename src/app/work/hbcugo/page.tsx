@@ -16,18 +16,18 @@ export const metadata: Metadata = {
 const challengeCards = [
   {
     title: "Event Discovery",
-    image: "/images/Assets/HBCUgo/EventDiscovery.webp",
+    image: "/images/Selected%20Works/HBCUgo/EventDiscovery.webp",
     body:
       "Helping audiences quickly understand what’s live, what’s upcoming, and what matters most.",
   },
   {
     title: "CTV Navigation",
-    image: "/images/Assets/HBCUgo/CTVNavigation.webp",
+    image: "/images/Selected%20Works/HBCUgo/CTVNavigation.webp",
     body: "Designing for lean-back environments where clarity and speed matter.",
   },
   {
     title: "Cultural Relevance",
-    image: "/images/Assets/HBCUgo/CulturalRelevance.webp",
+    image: "/images/Selected%20Works/HBCUgo/CulturalRelevance.webp",
     body:
       "Balancing sports utility with the energy, pride, and storytelling of HBCU culture.",
   },
@@ -78,12 +78,12 @@ const journeySteps = [
 
 const journeySupportStills = [
   {
-    src: "/images/Assets/HBCUgo/HBCUGO_fanengagement_journey.webp",
+    src: "/images/Selected%20Works/HBCUgo/HBCUGO_fanengagement_journey.webp",
     width: 1920,
     height: 1080,
   },
   {
-    src: "/images/Assets/HBCUgo/HBCU_fanengagement.webp",
+    src: "/images/Selected%20Works/HBCUgo/HBCU_fanengagement.webp",
     width: 1920,
     height: 1080,
   },
@@ -92,25 +92,25 @@ const journeySupportStills = [
 const visualLanguageStills = [
   {
     title: "Live Game Experience",
-    image: "/images/Assets/HBCUgo/LiveGameExperience%20.webp",
+    image: "/images/Selected%20Works/HBCUgo/LiveGameExperience%20.webp",
     width: 1920,
     height: 1080,
   },
   {
     title: "CTV Interface System",
-    image: "/images/Assets/HBCUgo/CTVInterfaceSystem.webp",
+    image: "/images/Selected%20Works/HBCUgo/CTVInterfaceSystem.webp",
     width: 1920,
     height: 1080,
   },
   {
     title: "Event Landing Page",
-    image: "/images/Assets/HBCUgo/EventLandingPage.webp",
+    image: "/images/Selected%20Works/HBCUgo/EventLandingPage.webp",
     width: 1920,
     height: 1080,
   },
   {
     title: "Fan Engagement Moments",
-    image: "/images/Assets/HBCUgo/FanEngagementMoments.webp",
+    image: "/images/Selected%20Works/HBCUgo/FanEngagementMoments.webp",
     width: 1920,
     height: 1080,
   },
@@ -369,7 +369,7 @@ export default function HBCUGoCaseStudyPage() {
               </div>
               <figure className="case-journey-still case-journey-still--full">
                 <img
-                  src="/images/Assets/HBCUgo/HBCUGO_matchup.webp"
+                  src="/images/Selected%20Works/HBCUgo/HBCUGO_matchup.webp"
                   alt=""
                   loading="lazy"
                   decoding="async"

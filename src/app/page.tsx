@@ -1,7 +1,6 @@
 import { HeroStage } from "./HeroStage";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
-import { portfolioWorkItems } from "@/data/portfolio-work";
 import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
 import { WorkShowcase } from "./WorkShowcase";
 
@@ -190,15 +189,19 @@ export default function Home() {
         </section>
 
         <section id="work" className={styles.workShowcase} aria-labelledby="work-heading">
-          <div className={styles.inner}>
+          <div className={styles.workShowcaseInner}>
             <header className={styles.workShowcaseHead}>
               <span className="section-eyebrow">Work</span>
               <h2 id="work-heading" className="section-title">
                 Selected Work
               </h2>
+              <p className={styles.workShowcaseSubcopy}>
+                A collection of product systems, streaming experiences, brand moments, and
+                story-driven platforms shaped for engagement and growth.
+              </p>
             </header>
 
-            <WorkShowcase items={portfolioWorkItems} />
+            <WorkShowcase />
           </div>
         </section>
 
