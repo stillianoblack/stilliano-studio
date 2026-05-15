@@ -7,8 +7,10 @@ export function SiteFooter() {
       <a href="/" className={styles.footerLogo} aria-label="Stilliano Studio home">
         <StillianoLogo className="stilliano-logo" />
       </a>
-      <span>© {new Date().getFullYear()} Stilliano Black</span>
-      <span>Strategy · Identity · Digital product</span>
+      <span className={styles.footerCopyright}>
+        © {new Date().getFullYear()} Stilliano Black
+      </span>
+      <span className={styles.footerTagline}>Strategy · Identity · Digital product</span>
     </footer>
   );
 }

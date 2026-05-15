@@ -33,7 +33,7 @@ export function SiteHeader() {
           <a href="/#services">Services</a>
           <a href="/#about">About</a>
           <a className={styles.navCta} href="/#contact">
-            Book a call
+            Contact me
           </a>
         </nav>
       </div>

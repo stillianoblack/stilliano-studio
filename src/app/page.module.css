@@ -899,8 +899,13 @@
   display: block;
 }
 
-.footerCtaTitleLineFirst {
+.footerCtaTitleLineDesktop {
+  display: block;
   white-space: nowrap;
+}
+
+.footerCtaTitleLineMobile {
+  display: none;
 }
 
 .footerCtaRule {
@@ -951,6 +956,23 @@
 }
 
 @media (max-width: 768px) {
+  .footerCta {
+    overflow-x: clip;
+  }
+
+  .footerCtaTitle {
+    max-width: 100%;
+  }
+
+  .footerCtaTitleLineDesktop {
+    display: none;
+  }
+
+  .footerCtaTitleLineMobile {
+    display: block;
+    white-space: normal;
+  }
+
   .footerCtaRow {
     grid-template-columns: 1fr;
     align-items: start;
@@ -985,4 +1007,23 @@
   filter: none;
   height: clamp(17.3px, 2.43vw, 23.8px);
   aspect-ratio: 480 / 79;
+}
+
+@media (max-width: 768px) {
+  .siteFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .footerCopyright,
+  .footerTagline {
+    display: block;
+    text-align: left;
+  }
+
+  .footerLogo :global(.stilliano-logo) {
+    height: clamp(19.9px, 2.79vw, 27.4px);
+  }
 }

@@ -316,9 +316,15 @@ export default function Home() {
           <div className={styles.inner}>
             <h2 className={`section-title ${styles.footerCtaTitle}`}>
               <span
-                className={`${styles.footerCtaTitleLine} ${styles.footerCtaTitleLineFirst}`}
+                className={`${styles.footerCtaTitleLine} ${styles.footerCtaTitleLineDesktop}`}
               >
                 Building something{"\u00a0"}that
+              </span>
+              <span className={`${styles.footerCtaTitleLine} ${styles.footerCtaTitleLineMobile}`}>
+                Building something
+              </span>
+              <span className={`${styles.footerCtaTitleLine} ${styles.footerCtaTitleLineMobile}`}>
+                that
               </span>
               <span className={styles.footerCtaTitleLine}>needs to scale?</span>
             </h2>
