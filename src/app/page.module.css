@@ -149,24 +149,17 @@
   transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
-.logo :global(.stilliano-logo--wordmark) {
-  filter: brightness(0) invert(0.97);
-}
-
+/* TDS mark: light on hero (transparent bar), natural black when nav is elevated */
 .logo :global(.stilliano-logo--mark) {
-  display: none;
+  display: block;
+  filter: brightness(0) invert(0.97);
 }
 
 .siteHeaderElevated .logo {
   color: #070b14;
 }
 
-.siteHeaderElevated .logo :global(.stilliano-logo--wordmark) {
-  display: none;
-}
-
 .siteHeaderElevated .logo :global(.stilliano-logo--mark) {
-  display: block;
   filter: none;
 }
 
