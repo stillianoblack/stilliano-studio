@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://stillianoblack.com"),
   title: "Stilliano Studio | Strategic Product & Experience Consultancy",
   description:
-    "Stilliano Studio partners with startups, streaming platforms, and digital brands to shape product experiences, UX systems, and go-to-market ecosystems built for engagement and scale.",
+    "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
   openGraph: {
     title: "Stilliano Studio | Strategic Product & Experience Consultancy",
     description:
-      "Stilliano Studio partners with startups, streaming platforms, and digital brands to shape product experiences, UX systems, and go-to-market ecosystems built for engagement and scale.",
+      "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
     url: "https://stillianoblack.com",
     siteName: "Stilliano Studio",
     locale: "en_US",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stilliano Studio | Strategic Product & Experience Consultancy",
     description:
-      "Stilliano Studio partners with startups, streaming platforms, and digital brands to shape product experiences, UX systems, and go-to-market ecosystems built for engagement and scale.",
+      "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
   },
 };
 

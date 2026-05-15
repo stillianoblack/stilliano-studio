@@ -6,6 +6,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { portfolioWorkItems, type PortfolioWorkItem } from "@/data/portfolio-work";
 import { WorkModal } from "./WorkModal";
 
+function isExternalHref(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
+
 function MoreWorkCard({
   item,
   onOpenModal,
@@ -37,6 +41,20 @@ function MoreWorkCard({
   );
 
   if (item.href) {
+    if (isExternalHref(item.href)) {
+      return (
+        <a
+          href={item.href}
+          className="more-work-card"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${item.title}. ${item.desc}`}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link href={item.href} className="more-work-card">
         {content}

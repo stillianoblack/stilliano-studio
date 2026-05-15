@@ -15,6 +15,13 @@ function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
 }
 
+function projectMediaAriaDetail(item: ProjectMediaItem): string {
+  if (item.caption) {
+    return `${item.caption.category}, ${item.caption.detail}, ${item.caption.year}`;
+  }
+  return item.label;
+}
+
 function ProjectMediaCard({
   item,
   href,
@@ -79,10 +86,20 @@ function ProjectMediaCard({
     />
   );
 
+  const meta = item.caption ? (
+    <div className={styles.projectMediaCaption}>
+      <span className={styles.projectMediaCaptionCategory}>{item.caption.category}</span>
+      <span className={styles.projectMediaCaptionDetail}>{item.caption.detail}</span>
+      <span className={styles.projectMediaCaptionYear}>{item.caption.year}</span>
+    </div>
+  ) : (
+    <span className={styles.projectMediaLabel}>{item.label}</span>
+  );
+
   const content = (
     <>
       {media}
-      <span className={styles.projectMediaLabel}>{item.label}</span>
+      {meta}
     </>
   );
 
@@ -196,7 +213,7 @@ function FeaturedProjectBlock({
             item={item}
             href={project.href}
             onOpenModal={project.href ? undefined : onOpenModal}
-            ariaLabel={`${project.campaignTitle}: ${item.label}`}
+            ariaLabel={`${project.campaignTitle}: ${projectMediaAriaDetail(item)}`}
           />
         ))}
       </div>

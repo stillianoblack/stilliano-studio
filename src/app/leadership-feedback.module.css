@@ -129,11 +129,11 @@
   width: clamp(340px, 34vw, 460px);
   min-height: 430px;
   flex: 0 0 auto;
-  border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   box-shadow: none;
   transition:
     background-color 220ms ease,
@@ -149,8 +149,8 @@
 .cardInner {
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
-  padding: 34px;
+  gap: 1.15rem;
+  padding: 28px;
   min-height: 100%;
   width: 100%;
 }
@@ -159,7 +159,7 @@
   width: 48px;
   height: 48px;
   flex-shrink: 0;
-  border-radius: 999px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.08);
@@ -191,9 +191,9 @@
 .cardQuote p {
   margin: 0;
   font-size: clamp(1rem, 1.25vw, 1.125rem);
-  line-height: 1.55;
+  line-height: 1.58;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   color: rgba(255, 255, 255, 0.94);
 }
 
@@ -205,16 +205,17 @@
 .cardName {
   margin: 0;
   font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: #ffffff;
 }
 
 .cardRole {
-  margin: 0.35rem 0 0;
+  margin: 0.3rem 0 0;
   font-size: 0.8125rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.52);
 }
 
 @media (max-width: 1024px) {

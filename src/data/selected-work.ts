@@ -1,5 +1,13 @@
+/** Optional three-line gallery caption (category / detail / year). Replaces chip-style `label` on-card when set. */
+export type ProjectMediaCaption = {
+  category: string;
+  detail: string;
+  year: string;
+};
+
 export type ProjectMediaItem = {
   label: string;
+  caption?: ProjectMediaCaption;
   image?: string;
   video?: string;
   poster?: string;
@@ -50,13 +58,25 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
     href: "/work/hbcugo",
     media: [
       {
-        label: "Platform Design",
+        label: "Platform design — HBCUgo OTT experience, 2023",
+        caption: {
+          category: "Platform design",
+          detail: "HBCUGO / OTT EXPERIENCE",
+          year: "2023",
+        },
         image: "/images/Portfolio%20Cards/HBCUgo/HBCUgo_grid_stilliano.webp",
         wide: true,
         aspectRatio: "1850 / 806",
+        /** Slight zoom reads as a tighter editorial crop on the hero still. */
+        mediaScale: 1.04,
       },
       {
-        label: "Motion Demo",
+        label: "Motion system — streaming interface demo, 2023",
+        caption: {
+          category: "Motion system",
+          detail: "STREAMING INTERFACE DEMO",
+          year: "2023",
+        },
         video: "/videos/HBCUgomaster.mp4",
         aspectRatio: "853 / 878",
         cardBackground: "#1B1F27",
@@ -65,7 +85,12 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
         objectPosition: "center",
       },
       {
-        label: "CTV Experience",
+        label: "CTV experience — connected TV and live sports, 2023",
+        caption: {
+          category: "CTV experience",
+          detail: "CONNECTED TV + LIVE SPORTS",
+          year: "2023",
+        },
         image: "/images/Portfolio%20Cards/HBCUgo/HBCUgo_Panel_smallgrid.webp",
         aspectRatio: "853 / 878",
         objectFit: "contain",

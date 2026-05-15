@@ -120,9 +120,8 @@ export default function Home() {
                 Real-world <em>growth</em>.
               </h1>
               <p className={styles.heroLead}>
-                Stilliano Studio partners with startups, streaming platforms, and
-                digital brands to shape product experiences, UX systems, and
-                go-to-market ecosystems built for engagement and scale.
+                Shaping streaming, storytelling, and cultural audience experiences
+                across product and brand ecosystems.
               </p>
               <div className={styles.heroActions}>
                 <a className={styles.btnPrimary} href="#work">
@@ -216,31 +215,89 @@ export default function Home() {
           </div>
         </div>
 
-        <section id="about" className={styles.about}>
-          <div className={styles.inner}>
-            <div className={styles.sectionHead}>
-              <span className={styles.sectionKicker}>About us</span>
-            </div>
-            <div className={styles.aboutGrid}>
-              <h2 className={styles.aboutTitle}>
-                Built for teams navigating growth.
-              </h2>
-              <div className={styles.aboutBody}>
-                <p>
-                  Most startups don&apos;t fail because of bad ideas. They fail
-                  because their product experience, positioning, and systems
-                  become disconnected as they scale.
+        <section id="about" className={styles.about} aria-labelledby="about-heading">
+          <p className={styles.aboutBgWord} aria-hidden="true">
+            SYSTEMS
+          </p>
+          <p className={styles.aboutVerticalLabel} aria-hidden="true">
+            About
+          </p>
+          <div className={`${styles.inner} ${styles.aboutInner}`}>
+            <header className={styles.aboutMasthead}>
+              <span className={styles.aboutSectionNo}>01</span>
+              <div className={styles.aboutMeta}>
+                <span className={styles.aboutMetaLine}>About</span>
+                <span className={styles.aboutMetaLine}>Streaming / Story / Culture</span>
+                <span className={styles.aboutMetaLine}>Los Angeles, CA</span>
+              </div>
+              <span className={styles.aboutMastheadRule} aria-hidden="true" />
+            </header>
+
+            <div className={styles.aboutSpread}>
+              <div className={styles.aboutVisualCol}>
+                <figure className={styles.aboutPortrait}>
+                  <img
+                    className={styles.aboutPhoto}
+                    src="/images/headshots-profiles/TD_Headshot%20copy.webp"
+                    alt="Tarus D. Stills"
+                    width={340}
+                    height={420}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className={styles.aboutPortraitShade} aria-hidden="true" />
+                  <span className={styles.aboutPortraitGrain} aria-hidden="true" />
+                </figure>
+                <p className={styles.aboutRole}>
+                  Associate Creative Director, Product &amp; Experience
                 </p>
-                <p>
-                  Stilliano Studio helps teams align product, UX, brand, and
-                  go-to-market strategy into one cohesive experience — creating
-                  digital ecosystems that are easier to understand, easier to
-                  use, and easier to grow.
-                </p>
-                <p>
-                  We operate at the intersection of product thinking,
-                  storytelling, streaming strategy, and digital execution.
-                </p>
+                <div className={styles.aboutStatBlock}>
+                  <span className={styles.aboutStatLabel}>Focus</span>
+                  <p className={styles.aboutStatValue}>
+                    Streaming platforms · Interactive media · Audience systems
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.aboutEditorialCol}>
+                <h2 id="about-heading" className={styles.aboutTitle}>
+                  <span className={styles.aboutTitleLine}>Designing</span>
+                  <span className={styles.aboutTitleLine}>the systems</span>
+                  <span className={styles.aboutTitleLine}>behind audience</span>
+                  <span className={styles.aboutTitleLine}>experiences.</span>
+                </h2>
+
+                <span className={styles.aboutColRule} aria-hidden="true" />
+
+                <div className={styles.aboutBody}>
+                  <p className={styles.aboutBodyLead}>
+                    Most startups and media platforms don&apos;t struggle because of bad
+                    ideas. They struggle when product, brand, audience experience, and
+                    execution stop working together.
+                  </p>
+                  <p>
+                    Tarus D. Stills helps teams align product strategy, UX systems,
+                    storytelling, and go-to-market thinking into cohesive digital
+                    ecosystems built for engagement, clarity, and scale.
+                  </p>
+                  <blockquote className={styles.aboutPullQuote}>
+                    <p>
+                      &ldquo;The best audience experiences happen when product, story,
+                      and systems work together.&rdquo;
+                    </p>
+                  </blockquote>
+                  <p>
+                    His work spans streaming platforms, interactive media, audience
+                    engagement systems, and culturally-driven digital experiences —
+                    operating at the intersection of product thinking, brand storytelling,
+                    and scalable execution.
+                  </p>
+                  <p>
+                    From UX architecture and platform strategy to creative direction and
+                    audience growth, he builds connected experiences designed to move
+                    products, brands, and people forward.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

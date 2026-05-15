@@ -468,9 +468,8 @@ export default function HBCUGoCaseStudyPage() {
             <div className="case-cta-editorial-rule" aria-hidden />
             <div className="case-cta-editorial-row">
               <p className="case-cta-editorial-body">
-                Stilliano Studio partners with startups, streaming platforms, and digital
-                brands to shape product experiences, UX systems, and go-to-market ecosystems
-                built for engagement and scale.
+                Shaping streaming, storytelling, and cultural audience experiences across
+                product and brand ecosystems.
               </p>
               <Link href="/#contact" className="case-cta-editorial-button">
                 Book Strategy Call
