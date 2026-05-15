@@ -1,7 +1,8 @@
 import { HeroStage } from "./HeroStage";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
-import { WorkShowcase, type WorkShowcaseItem } from "./WorkShowcase";
+import { portfolioWorkItems } from "@/data/portfolio-work";
+import { WorkShowcase } from "./WorkShowcase";
 
 const trustedClients = [
   "Sprite",
@@ -12,34 +13,6 @@ const trustedClients = [
   "Amira Learning",
 ];
 
-const selectedWork: WorkShowcaseItem[] = [
-  {
-    title: "Caiden’s Courage",
-    desc: "Story-driven IP blending narrative, interactive experiences, and emotional product design for neurodivergent youth.",
-    image:
-      "/images/Portfolio%20Cards/caidenscourage_card_stilliano.webp",
-  },
-  {
-    title: "Cutclass.io",
-    desc: "Product systems and digital platform strategy for creator-driven learning experiences.",
-    image: "/images/Portfolio%20Cards/cutclass_card_stilliano.webp",
-  },
-  {
-    title: "HBCUgo.tv",
-    desc: "Streaming strategy, CTV experience design, and fan engagement systems for HBCU sports and culture.",
-    image: "/images/Portfolio%20Cards/HBCUgoCOmputer_stilliano.webp",
-  },
-  {
-    title: "DC Comics",
-    desc: "Led every aspect of the creative process — from concept development and UX design to animation and sound design — transforming iconic IP into interactive, story-driven digital experiences.",
-    image: "/images/Portfolio%20Cards/dccomics_card_stilliano.png",
-  },
-  {
-    title: "Amira Learning",
-    desc: "Game UX and educational product experiences designed to support literacy and engagement.",
-    image: "/images/Portfolio%20Cards/amiramock-up_stilliano.webp",
-  },
-];
 
 const enginePillars = [
   {
@@ -222,7 +195,7 @@ export default function Home() {
               </h2>
             </header>
 
-            <WorkShowcase items={selectedWork} />
+            <WorkShowcase items={portfolioWorkItems} />
           </div>
         </section>
 
@@ -362,13 +335,6 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className={styles.siteFooter}>
-        <a href="/" className={styles.footerLogo} aria-label="Stilliano Studio home">
-          <span className="stilliano-logo" aria-hidden />
-        </a>
-        <span>© {new Date().getFullYear()} Stilliano Black</span>
-        <span>Strategy · Identity · Digital product</span>
-      </footer>
     </div>
   );
 }
