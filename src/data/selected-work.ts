@@ -143,8 +143,8 @@ export const compactWorkProjects: CompactWorkProject[] = [
     image: "/images/Portfolio%20Cards/cutclass_card_stilliano.webp",
   },
   {
-    slug: "sprite",
-    title: "Sprite",
+    slug: "dc-comics-fandom",
+    title: "DC Comics Fandom",
     description:
       "Creative direction and visual storytelling concepts for culture-driven brand experiences.",
     image: "/images/Portfolio%20Cards/Kids-Fandome.webp",
