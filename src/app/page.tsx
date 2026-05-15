@@ -238,7 +238,7 @@ export default function Home() {
                 <figure className={styles.aboutPortrait}>
                   <img
                     className={styles.aboutPhoto}
-                    src="/images/headshots-profiles/TD_Headshot%20copy.webp"
+                    src="/images/headshots-profiles/TD_Headshot_copy.webp"
                     alt="Tarus D. Stills"
                     width={340}
                     height={420}
