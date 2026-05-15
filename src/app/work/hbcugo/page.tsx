@@ -189,10 +189,12 @@ export default function HBCUGoCaseStudyPage() {
               <div className="case-overview-col">
                 <p className="case-overview-kicker">Services</p>
                 <ul className="case-overview-list">
-                  <li>Product Design</li>
-                  <li>CTV Strategy</li>
-                  <li>Live Streaming UX</li>
-                  <li>Brand Experience</li>
+                  <li>Creative Systems Strategy</li>
+                  <li>Streaming & CTV Experience</li>
+                  <li>Product & Platform Design</li>
+                  <li>Brand & Audience Experience</li>
+                  <li>Interactive Storytelling</li>
+                  <li>Campaign & Content Ecosystems</li>
                 </ul>
               </div>
               <div className="case-overview-col">

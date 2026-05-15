@@ -2,6 +2,7 @@ import { HeroStage } from "./HeroStage";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
 import { portfolioWorkItems } from "@/data/portfolio-work";
+import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
 import { WorkShowcase } from "./WorkShowcase";
 
 const trustedClients = [
@@ -166,20 +167,22 @@ export default function Home() {
               <div className={styles.quoteLayout}>
                 <img
                   className={styles.quoteAvatar}
-                  src="/images/headshots-profiles/brian-rogers.jpeg"
-                  alt="Brian Rogers"
+                  src="/images/headshots-profiles/katpat.webp"
+                  alt="Katherine Piedade"
                   loading="lazy"
                   decoding="async"
                 />
                 <blockquote className={styles.quoteBody}>
                   <p className={styles.quoteText}>
-                    &ldquo;If you&apos;re looking for a studio that understands
-                    both product thinking and brand storytelling, Stilliano
-                    Studio delivers at a high level. Their creative direction, UX
-                    instincts, and ability to shape cohesive digital experiences
-                    consistently pushed the work forward.&rdquo;
+                    &ldquo;Tarus combines product strategy, creative leadership, and
+                    operational thinking in a way that consistently elevates both the
+                    work and the teams around him.&rdquo;
                   </p>
-                  <footer className={styles.quoteMeta}>— Brian Rogers</footer>
+                  <footer className={styles.quoteMeta}>
+                    — <strong>Katherine Piedade</strong>
+                    <br />
+                    Transformation & Operations Leader
+                  </footer>
                 </blockquote>
               </div>
             </div>
@@ -306,6 +309,8 @@ export default function Home() {
             </blockquote>
           </div>
         </section>
+
+        <LeadershipFeedbackSection />
 
         <section id="contact" className={styles.footerCta}>
           <div className={styles.inner}>

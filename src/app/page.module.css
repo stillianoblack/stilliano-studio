@@ -145,8 +145,29 @@
   transition: color 0.2s ease;
 }
 
+.logo :global(.stilliano-logo) {
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.logo :global(.stilliano-logo--wordmark) {
+  filter: brightness(0) invert(0.97);
+}
+
+.logo :global(.stilliano-logo--mark) {
+  display: none;
+}
+
 .siteHeaderElevated .logo {
   color: #070b14;
+}
+
+.siteHeaderElevated .logo :global(.stilliano-logo--wordmark) {
+  display: none;
+}
+
+.siteHeaderElevated .logo :global(.stilliano-logo--mark) {
+  display: block;
+  filter: none;
 }
 
 .nav {
@@ -854,7 +875,7 @@
 
 /* Footer CTA */
 .footerCta {
-  padding: clamp(72px, 10vw, 120px) 0;
+  padding: clamp(108px, 15vw, 180px) 0;
   background: #f9e04c;
   color: #141413;
 }
@@ -958,4 +979,10 @@
   display: inline-flex;
   align-items: center;
   color: var(--text);
+}
+
+.footerLogo :global(.stilliano-logo) {
+  filter: none;
+  height: clamp(17.3px, 2.43vw, 23.8px);
+  aspect-ratio: 480 / 79;
 }

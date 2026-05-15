@@ -129,18 +129,17 @@ video {
 
 .stilliano-logo {
   display: block;
-  height: clamp(28px, 4vw, 36px);
   width: auto;
-  aspect-ratio: 407 / 92;
-  background-color: currentColor;
-  mask-image: url("/images/SVGS/STILLIANOLOGO.svg");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  -webkit-mask-image: url("/images/SVGS/STILLIANOLOGO.svg");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
+}
+
+.stilliano-logo--wordmark {
+  height: clamp(28.8px, 4.05vw, 39.6px);
+  aspect-ratio: 480 / 79;
+}
+
+.stilliano-logo--mark {
+  height: clamp(36px, 4.5vw, 42px);
+  aspect-ratio: 1 / 1;
 }
 
 /* Case study template (reusable) */

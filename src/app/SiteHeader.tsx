@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import { StillianoLogo } from "./StillianoLogo";
 
 export function SiteHeader() {
   const [navElevated, setNavElevated] = useState(false);
@@ -21,7 +22,11 @@ export function SiteHeader() {
     >
       <div className={styles.headerRow}>
         <a href="/" className={styles.logo} aria-label="Stilliano Studio home">
-          <span className="stilliano-logo" aria-hidden />
+          <StillianoLogo
+            variant="wordmark"
+            className="stilliano-logo stilliano-logo--wordmark"
+          />
+          <StillianoLogo variant="mark" className="stilliano-logo stilliano-logo--mark" />
         </a>
         <nav className={styles.nav} aria-label="Primary">
           <a href="/#work">Work</a>
