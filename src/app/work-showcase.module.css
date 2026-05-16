@@ -128,20 +128,24 @@
 
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide,
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardWide,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardFit,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit {
   min-height: unset;
 }
 
-/* HBCUgo media grid — editorial framing: tighter radius, lighter chrome, caption-led hierarchy */
-.projectMediaGrid[data-project="hbcugo"] .projectMediaCard {
+/* HBCUgo + Amira media grid — editorial framing: tighter radius, lighter chrome, caption-led hierarchy */
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCard,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCard {
   border-radius: clamp(10px, 1.25vw, 12px);
   border-color: rgba(255, 255, 255, 0.055);
   box-shadow: none;
 }
 
 @media (min-width: 769px) {
-  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(2) {
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(2),
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(2) {
     position: relative;
     top: 0.4rem;
   }
@@ -188,12 +192,15 @@ button.projectMediaCard {
 
 /* HBCUgo: 16:9 cinematic frames; cover + zoom fills card edge-to-edge. */
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardFit,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit {
   background: #12161f;
 }
 
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectMediaImage,
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectVideo,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectMediaImage,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectVideo,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectMediaImage,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit:not(.projectMediaCardCenteredMedia) .projectVideo {
   object-fit: cover;
@@ -204,12 +211,16 @@ button.projectMediaCard {
 /* Hero still: slight upward bias for a more editorial crop (after base Fit rules). */
 .projectMediaGrid[data-project="hbcugo"]
   .projectMediaCard:nth-child(1).projectMediaCardFit:not(.projectMediaCardCenteredMedia)
+  .projectMediaImage,
+.projectMediaGrid[data-project="amira-learning"]
+  .projectMediaCard:nth-child(1).projectMediaCardFit:not(.projectMediaCardCenteredMedia)
   .projectMediaImage {
   object-position: 48% 44%;
 }
 
-/* HBCUgo CTV keeps full collage visible (contain overrides cover above). */
-.projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(3) .projectMediaImage {
+/* HBCUgo CTV + Amira gameplay still — full collage visible (contain overrides cover above). */
+.projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(3) .projectMediaImage,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(3) .projectMediaImage {
   object-fit: contain;
 }
 
@@ -225,6 +236,18 @@ button.projectMediaCard {
     .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
     .projectMediaImage,
   .projectMediaGrid[data-project="hbcugo"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectVideo,
+  .projectMediaGrid[data-project="amira-learning"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):hover
+    .projectVideo,
+  .projectMediaGrid[data-project="amira-learning"]
+    .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
+    .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"]
     .projectMediaCard:not(.projectMediaCardCenteredMedia):focus-visible
     .projectVideo,
   .projectMediaGrid[data-project="caidens-courage"]
@@ -244,6 +267,8 @@ button.projectMediaCard {
 
   .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide:hover .projectMediaImage,
   .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide:focus-visible .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCardWide:hover .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCardWide:focus-visible .projectMediaImage,
   .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide:hover .projectMediaImage,
   .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide:focus-visible .projectMediaImage {
     transform: scale(1.05);
@@ -271,6 +296,19 @@ button.projectMediaCard {
 
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardCenteredMedia:hover .projectVideo,
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardCenteredMedia:focus-visible .projectVideo,
+/* Amira motion: match gameplay card height; trim letterbox without scaling video up */
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia {
+  background: #12161f;
+}
+
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia .projectVideo {
+  width: 97%;
+  height: auto;
+  max-height: 100%;
+}
+
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia:hover .projectVideo,
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia:focus-visible .projectVideo,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardCenteredMedia:hover .projectVideo,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardCenteredMedia:focus-visible .projectVideo {
   transform: none;
@@ -486,6 +524,8 @@ button.projectMediaCard {
 
   .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:hover .projectMediaImage,
   .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:hover .projectVideo,
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:hover .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:hover .projectVideo,
   .projectMediaGrid[data-project="caidens-courage"] .projectMediaCard:hover .projectMediaImage,
   .projectMediaGrid[data-project="caidens-courage"] .projectMediaCard:hover .projectVideo {
     transform: scale(1);

@@ -98,6 +98,59 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
     ],
   },
   {
+    slug: "amira-learning",
+    kicker: "AI Learning / Gamified Education",
+    campaignTitle: "Amira AI Learning",
+    headline: "Designing learning systems students actually wanted to return to.",
+    description:
+      "Led end-to-end product and experience design for an adaptive learning ecosystem — combining AI, storytelling, gameplay systems, and behavioral engagement to improve literacy participation, retention, and student confidence.",
+    metrics: [
+      "4M+ Students Reached",
+      "Gamified Learning Ecosystem",
+      "Mobile + Classroom Platform",
+    ],
+    href: "/work/amira-learning",
+    media: [
+      {
+        label: "Platform design — Amira literacy gameplay experience",
+        caption: {
+          category: "Platform design",
+          detail: "AI LITERACY EXPERIENCE",
+          year: "2024",
+        },
+        image: "/images/Selected%20Works/Amira/AmiraLearning_DarkPanel.webp",
+        wide: true,
+        aspectRatio: "2014 / 878",
+        mediaScale: 1.04,
+      },
+      {
+        label: "Motion system — Amira learning platform demo",
+        caption: {
+          category: "Motion system",
+          detail: "GAMEPLAY ENGAGEMENT LOOP",
+          year: "2024",
+        },
+        video: "/videos/AmiraLearning.mp4",
+        aspectRatio: "853 / 878",
+        cardBackground: "#12161f",
+        centerMedia: true,
+        objectFit: "contain",
+        objectPosition: "center",
+      },
+      {
+        label: "Gameplay atmosphere — emotional participation",
+        caption: {
+          category: "Gameplay atmosphere",
+          detail: "STUDENT ENGAGEMENT SYSTEMS",
+          year: "2024",
+        },
+        image: "/images/Selected%20Works/Amira/Ipad_Amira_smallcard.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "contain",
+      },
+    ],
+  },
+  {
     slug: "caidens-courage",
     kicker: "Story IP / Interactive / Youth",
     campaignTitle: "The Focus Flame™",
@@ -148,12 +201,5 @@ export const compactWorkProjects: CompactWorkProject[] = [
     description:
       "Creative direction and visual storytelling concepts for culture-driven brand experiences.",
     image: "/images/Portfolio%20Cards/Kids-Fandome.webp",
-  },
-  {
-    slug: "amira-learning",
-    title: "Amira Learning",
-    description:
-      "Game UX and educational product experiences designed to support literacy and engagement.",
-    image: "/images/Portfolio%20Cards/amiramock-up_stilliano.webp",
   },
 ];

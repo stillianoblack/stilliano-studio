@@ -141,6 +141,7 @@ export default function HBCUGoCaseStudyPage() {
             <source src="/videos/Open_WIP_RandF_HBCUGO_071822.mov" type="video/quicktime" />
           </video>
           <div className="case-hero-overlay" aria-hidden />
+          <div className="case-hero-pattern" aria-hidden />
           <div className={`${styles.inner} case-hero-content`}>
             <p className="case-hero-eyebrow">
               HBCUGO.TV / STREAMING CASE STUDY

@@ -16,6 +16,13 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
     href: "/work/hbcugo",
   },
   {
+    slug: "amira-learning",
+    title: "Amira Learning",
+    desc: "Game UX and educational product experiences designed to support literacy and engagement.",
+    image: "/images/Portfolio%20Cards/amiramock-up_stilliano.webp",
+    href: "/work/amira-learning",
+  },
+  {
     slug: "caidens-courage",
     title: "Caiden's Courage",
     desc: "Story-driven IP blending narrative, interactive experiences, and emotional product design for neurodivergent youth.",
@@ -33,11 +40,5 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
     title: "DC Comics",
     desc: "Led every aspect of the creative process — from concept development and UX design to animation and sound design — transforming iconic IP into interactive, story-driven digital experiences.",
     image: "/images/Portfolio%20Cards/dccomics_card_stilliano.png",
-  },
-  {
-    slug: "amira-learning",
-    title: "Amira Learning",
-    desc: "Game UX and educational product experiences designed to support literacy and engagement.",
-    image: "/images/Portfolio%20Cards/amiramock-up_stilliano.webp",
   },
 ];
