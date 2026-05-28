@@ -20,18 +20,29 @@ export function SiteHeader() {
     <header
       className={`${styles.siteHeader} ${navElevated ? styles.siteHeaderElevated : ""}`}
     >
-      <div className={styles.headerRow}>
-        <a href="/" className={styles.logo} aria-label="Stilliano Studio home">
-          <StillianoLogo variant="mark" className="stilliano-logo stilliano-logo--mark" />
-        </a>
-        <nav className={styles.nav} aria-label="Primary">
-          <a href="/#work">Work</a>
-          <a href="/#services">Services</a>
-          <a href="/#about">About</a>
-          <a className={styles.navCta} href="/#contact">
-            Contact me
-          </a>
-        </nav>
+      <div className={styles.siteHeaderShell}>
+        <div className={styles.siteHeaderBar}>
+          <div className={styles.headerRow}>
+            <a href="/" className={styles.logo} aria-label="Stilliano Studios home">
+              <StillianoLogo
+                variant="mark"
+                className={`stilliano-logo stilliano-logo--mark ${styles.logoMark}`}
+              />
+              <span className={styles.logoWordmark} aria-hidden>
+                <span className={styles.logoPrimary}>STILLIANO</span>
+                <span className={styles.logoSecondary}>STUDIOS</span>
+              </span>
+            </a>
+            <nav className={styles.nav} aria-label="Primary">
+              <a href="/#work">Work</a>
+              <a href="/#services">Services</a>
+              <a href="/#about">About</a>
+              <a className={styles.navCta} href="/#contact">
+                Contact me
+              </a>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
   );

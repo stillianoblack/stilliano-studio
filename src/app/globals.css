@@ -501,8 +501,17 @@ video {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 0;
+}
+
+/* Support <picture class="case-hero-media"><img/></picture> */
+.case-hero-media > img,
+.case-hero-media > video,
+img.case-hero-media,
+video.case-hero-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .case-hero-overlay {
@@ -3029,4 +3038,2101 @@ a.work-card {
   line-height: 0.95;
   color: rgba(250, 250, 248, 0.22);
   text-transform: uppercase;
+}
+
+/* —— Caiden's Courage editorial campaign (.case-page--caiden) —— */
+
+.case-page--caiden {
+  --caiden-ember: #f9e04c;
+  --caiden-glow: #fce96a;
+  --caiden-amber: #e8d040;
+  --caiden-dark: #0d0a08;
+}
+
+.case-page--caiden .case-caiden-topbar {
+  position: absolute;
+  top: clamp(72px, 10vh, 96px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+.case-page--caiden .case-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.78);
+  transition: color 0.2s ease;
+}
+
+.case-page--caiden .case-back:hover {
+  color: var(--caiden-glow);
+}
+
+.case-page--caiden .case-back:focus-visible {
+  outline: 2px solid rgba(252, 233, 106, 0.65);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.case-page--caiden .case-caiden-hero-overlay {
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 20% 15%,
+      rgba(249, 224, 76, 0.38) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 85% 30%,
+      rgba(252, 233, 106, 0.22) 0%,
+      transparent 58%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(13, 10, 8, 0.35) 0%,
+      rgba(13, 10, 8, 0.72) 45%,
+      rgba(13, 10, 8, 0.94) 100%
+    );
+}
+
+.case-page--caiden .case-hero-eyebrow {
+  color: var(--caiden-glow);
+}
+
+.case-page--caiden .case-caiden-hero-body {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  max-width: 52ch;
+  font-size: clamp(0.95rem, 1.4vw, 1.0625rem);
+  line-height: 1.65;
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.case-page--caiden .case-caiden-hero-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  border-top: 1px solid rgba(252, 233, 106, 0.28);
+}
+
+.case-page--caiden .case-caiden-meta-item dt {
+  margin: 0 0 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.75);
+}
+
+.case-page--caiden .case-caiden-meta-item dd {
+  margin: 0;
+  font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgba(250, 250, 248, 0.92);
+}
+
+.case-page--caiden .case-heading {
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.case-page--caiden .case-caiden-pullquote {
+  margin: clamp(2rem, 5vw, 3.5rem) 0 clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+  border: none;
+  border-left: 4px solid var(--caiden-ember);
+  background: linear-gradient(
+    135deg,
+    rgba(249, 224, 76, 0.08) 0%,
+    rgba(252, 233, 106, 0.04) 100%
+  );
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+.case-page--caiden .case-caiden-pullquote p {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  color: var(--text);
+}
+
+.case-page--caiden .case-caiden-statement {
+  margin: clamp(1.25rem, 3vw, 2rem) 0;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--caiden-ember);
+  max-width: 28ch;
+}
+
+.case-page--caiden .case-caiden-statement--light {
+  color: var(--text);
+}
+
+.case-page--caiden .case-section-dark .case-caiden-statement {
+  color: var(--caiden-glow);
+}
+
+.case-page--caiden .case-caiden-final-statement {
+  max-width: 52ch;
+}
+
+.case-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .case-grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page--caiden .case-caiden-hero-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .case-page--caiden .case-caiden-hero-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page--caiden .case-caiden-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.case-page--caiden .case-caiden-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.88);
+}
+
+.case-page--caiden .case-caiden-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--caiden-glow);
+  box-shadow: 0 0 8px rgba(252, 233, 106, 0.6);
+}
+
+/* —— 365 Campaign System — editorial franchise spread —— */
+@keyframes campaign-editorial-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.case-page--caiden .campaign-system-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 75% 50% at 72% 28%,
+      rgba(249, 224, 76, 0.11) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 12% 72%,
+      rgba(249, 224, 76, 0.06) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, #080604 0%, #0d0a08 52%, #100d09 100%);
+}
+
+.case-page--caiden .campaign-system-bg-word {
+  position: absolute;
+  top: clamp(2rem, 8vw, 5rem);
+  right: clamp(-2rem, -4vw, -0.5rem);
+  z-index: 0;
+  margin: 0;
+  max-width: 9ch;
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.045);
+  pointer-events: none;
+  user-select: none;
+  text-wrap: balance;
+}
+
+.case-page--caiden .campaign-system-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.case-page--caiden .campaign-system-heading {
+  position: relative;
+  z-index: 1;
+}
+
+.case-page--caiden .campaign-editorial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.case-page--caiden .campaign-identity {
+  padding-top: clamp(0.25rem, 1vw, 0.75rem);
+  animation: campaign-editorial-reveal 0.85s ease both;
+}
+
+.case-page--caiden .campaign-kicker {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.82);
+}
+
+.case-page--caiden .campaign-title {
+  margin: 0 0 clamp(0.85rem, 1.8vw, 1.15rem);
+  font-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  color: #fafaf8;
+  text-wrap: balance;
+}
+
+.case-page--caiden .campaign-primary-line {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--caiden-glow);
+}
+
+.case-page--caiden .campaign-supporting-line {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-bottom: 1px solid rgba(252, 233, 106, 0.2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.5);
+}
+
+.case-page--caiden .campaign-body {
+  margin: 0 0 clamp(1.75rem, 3vw, 2.25rem);
+  max-width: 36ch;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(250, 250, 248, 0.76);
+}
+
+.case-page--caiden .campaign-pullquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: 30ch;
+}
+
+.case-page--caiden .campaign-pullquote p {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: rgba(252, 233, 106, 0.92);
+}
+
+/* Floating ecosystem map */
+.case-page--caiden .campaign-ecosystem-map {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  animation: campaign-editorial-reveal 0.85s ease 0.12s both;
+}
+
+.case-page--caiden .campaign-map-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.case-page--caiden .campaign-map-branch {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: 100%;
+}
+
+.case-page--caiden .campaign-map-node {
+  position: relative;
+  max-width: 14rem;
+  padding: 0.15rem 0;
+  text-align: center;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.case-page--caiden .campaign-map-node::after {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 2px;
+  margin: 0.45rem auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(252, 233, 106, 0.55),
+    transparent
+  );
+  opacity: 0.65;
+  transition: opacity 0.25s ease, box-shadow 0.25s ease;
+}
+
+.case-page--caiden .campaign-map-node:hover {
+  transform: translateY(-2px);
+}
+
+.case-page--caiden .campaign-map-node:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(249, 224, 76, 0.45);
+}
+
+.case-page--caiden .campaign-map-node-title {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fafaf8;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.case-page--caiden .campaign-map-node:hover .campaign-map-node-title {
+  color: var(--caiden-glow);
+  text-shadow: 0 0 28px rgba(249, 224, 76, 0.35);
+}
+
+.case-page--caiden .campaign-map-node-description {
+  margin: 0 auto;
+  max-width: 18ch;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(250, 250, 248, 0.58);
+}
+
+.case-page--caiden .campaign-map-connector {
+  display: block;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(252, 233, 106, 0.15) 0%,
+    rgba(252, 233, 106, 0.5) 50%,
+    rgba(252, 233, 106, 0.15) 100%
+  );
+  box-shadow: 0 0 14px rgba(249, 224, 76, 0.15);
+}
+
+.case-page--caiden .campaign-map-connector--vertical {
+  width: 1px;
+  height: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.case-page--caiden .campaign-map-connector--horizontal {
+  align-self: center;
+  width: clamp(2rem, 5vw, 3.5rem);
+  height: 1px;
+  margin-top: 1.35rem;
+  background: linear-gradient(
+    90deg,
+    rgba(252, 233, 106, 0.15) 0%,
+    rgba(252, 233, 106, 0.5) 50%,
+    rgba(252, 233, 106, 0.15) 100%
+  );
+}
+
+/* Campaign label strip */
+.case-page--caiden .campaign-label-strip {
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(252, 233, 106, 0.14);
+  animation: campaign-editorial-reveal 0.85s ease 0.2s both;
+}
+
+.case-page--caiden .campaign-label-strip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.case-page--caiden .campaign-label-strip-row--offset {
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+}
+
+.case-page--caiden .campaign-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(252, 233, 106, 0.3);
+  background: transparent;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.82);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.case-page--caiden .campaign-chip:hover {
+  border-color: rgba(252, 233, 106, 0.55);
+  color: var(--caiden-glow);
+  box-shadow: 0 0 20px -8px rgba(249, 224, 76, 0.45);
+}
+
+/* Year-round activation — 2x2 franchise roadmap grid */
+.case-page--caiden .activation-editorial {
+  margin-top: clamp(4rem, 9vw, 7rem);
+  animation: campaign-editorial-reveal 0.85s ease 0.28s both;
+}
+
+.case-page--caiden .activation-label {
+  margin: 0 0 clamp(2rem, 4.5vw, 3rem);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.75);
+}
+
+.case-page--caiden .activation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 4.5vw, 3.5rem);
+  align-items: stretch;
+}
+
+.case-page--caiden .activation-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0 0 clamp(1.75rem, 3vw, 2.25rem);
+  border-bottom: 1px solid rgba(252, 233, 106, 0.14);
+}
+
+.case-page--caiden .activation-micro-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.72);
+}
+
+.case-page--caiden .activation-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.85rem;
+  font-size: clamp(0.9375rem, 1.35vw, 1.125rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #fafaf8;
+}
+
+.case-page--caiden .activation-quarter-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--caiden-ember);
+  box-shadow: 0 0 10px rgba(249, 224, 76, 0.55);
+}
+
+.case-page--caiden .activation-copy {
+  margin: 0 0 1.25rem;
+  flex: 1;
+  font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.case-page--caiden .activation-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.55rem;
+}
+
+.case-page--caiden .activation-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(252, 233, 106, 0.28);
+  background: transparent;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.62);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-page--caiden .campaign-identity,
+  .case-page--caiden .campaign-ecosystem-map,
+  .case-page--caiden .campaign-label-strip,
+  .case-page--caiden .activation-editorial {
+    animation: none;
+  }
+
+  .case-page--caiden .campaign-map-node:hover {
+    transform: none;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .case-page--caiden .campaign-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .case-page--caiden .campaign-ecosystem-map {
+    padding-bottom: 0;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .case-page--caiden .campaign-map-branch {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .case-page--caiden .campaign-map-connector--horizontal {
+    width: 1px;
+    height: clamp(1.25rem, 3vw, 1.75rem);
+    margin-top: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(252, 233, 106, 0.15) 0%,
+      rgba(252, 233, 106, 0.5) 50%,
+      rgba(252, 233, 106, 0.15) 100%
+    );
+  }
+
+  .case-page--caiden .campaign-label-strip-row--offset {
+    padding-left: 0;
+  }
+
+  .case-page--caiden .activation-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2.25rem, 5vw, 3rem);
+  }
+}
+
+/* Visual + Creative Direction — blue section */
+.case-page--caiden .case-caiden-section-visual {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 15% 10%,
+      rgba(80, 130, 220, 0.32) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 90% 20%,
+      rgba(252, 233, 106, 0.14) 0%,
+      transparent 60%
+    ),
+    linear-gradient(165deg, #2a4378 0%, #325596 55%, #1f3460 100%);
+  border-top: 1px solid rgba(252, 233, 106, 0.22);
+  color: #fafaf8;
+}
+
+.case-page--caiden .case-caiden-section-visual .case-section-prose {
+  color: rgba(250, 250, 248, 0.85);
+}
+
+.case-page--caiden .case-caiden-section-visual .case-caiden-media-figure {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Visual direction — cream pills on blue */
+.case-page--caiden .case-caiden-section-visual .case-caiden-visual-tags {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 0;
+}
+
+.case-page--caiden .case-caiden-visual-tags li {
+  background: #fdf9ee;
+  border-color: rgba(26, 24, 19, 0.12);
+  color: #1a1813;
+}
+
+.case-page--caiden .case-caiden-media-figure {
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.case-page--caiden .case-caiden-content-engine-figure {
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.case-page--caiden .case-caiden-media-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-page--caiden .case-section-dark .case-caiden-media-figure {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.case-page--caiden .case-caiden-merch-mockup {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.case-page--caiden .case-caiden-community-strategy-figure {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.case-page--caiden .case-caiden-execution-grid {
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 28px);
+}
+
+.case-page--caiden .case-caiden-execution-card {
+  position: relative;
+  padding-top: clamp(2.5rem, 4vw, 3rem);
+}
+
+.case-page--caiden .case-caiden-module-index {
+  position: absolute;
+  top: clamp(1.25rem, 2.5vw, 1.5rem);
+  right: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: rgba(252, 233, 106, 0.45);
+}
+
+.case-page--caiden .case-caiden-module-highlight {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--caiden-ember);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--caiden-glow);
+}
+
+.case-page--caiden .case-caiden-module-meta {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(250, 250, 248, 0.65);
+}
+
+.case-page--caiden .case-caiden-module-meta strong {
+  color: rgba(252, 233, 106, 0.85);
+  font-weight: 700;
+}
+
+.case-page--caiden .case-caiden-interactive-media {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.case-page--caiden .case-caiden-interactive-video {
+  border-radius: var(--radius-card);
+  background: #1b1f27;
+}
+
+/* Full-bleed branding banner — separator between sections */
+.case-page--caiden .case-caiden-banner-separator {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  background: #0d0a08;
+}
+
+.case-page--caiden .case-caiden-banner-separator img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Experience Design — blue accent override */
+.case-page--caiden .case-caiden-section-experience .case-caiden-module-index {
+  color: rgba(58, 95, 176, 0.85);
+}
+
+.case-page--caiden .case-caiden-section-experience .case-caiden-interactive-media {
+  position: relative;
+}
+
+.case-page--caiden
+  .case-caiden-section-experience
+  .case-caiden-interactive-video {
+  position: relative;
+  border: 1px solid rgba(58, 95, 176, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(58, 95, 176, 0.28),
+    0 30px 90px -25px rgba(58, 95, 176, 0.55),
+    0 0 80px -20px rgba(58, 95, 176, 0.38);
+}
+
+.case-page--caiden
+  .case-caiden-section-experience
+  .case-visual-caption--dark {
+  color: rgba(58, 95, 176, 0.95);
+}
+
+.case-page--caiden .case-caiden-interactive-video .case-cinematic-video-media {
+  width: 100%;
+  max-height: min(72vh, 720px);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.case-page--caiden .case-caiden-slogans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.65rem, 2vw, 1rem);
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+}
+
+.case-page--caiden .slogan-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid rgba(252, 233, 106, 0.35);
+  background: rgba(249, 224, 76, 0.12);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(250, 250, 248, 0.92);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.case-page--caiden .slogan-chip:hover {
+  border-color: rgba(252, 233, 106, 0.55);
+  background: rgba(249, 224, 76, 0.2);
+  box-shadow: 0 0 20px rgba(249, 224, 76, 0.2);
+}
+
+.case-page--caiden .case-caiden-hashtag {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--caiden-ember);
+}
+
+.case-page--caiden .case-cta.case-caiden-cta {
+  padding: clamp(5.5rem, 12vw, 8.5rem) 0;
+  background:
+    radial-gradient(
+      ellipse 75% 65% at 20% 15%,
+      rgba(255, 255, 255, 0.35) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 85% 75%,
+      rgba(232, 208, 64, 0.5) 0%,
+      transparent 60%
+    ),
+    linear-gradient(165deg, #fce96a 0%, #f9e04c 48%, #e8d040 100%);
+  color: #141413;
+  border-top: 1px solid rgba(20, 20, 19, 0.12);
+  text-align: left;
+}
+
+.case-page--caiden .case-caiden-cta .case-caiden-cta-heading {
+  margin: 0;
+  max-width: 18ch;
+  text-align: left;
+  color: #141413;
+}
+
+.case-page--caiden .case-caiden-cta-subbody {
+  margin: 0;
+  max-width: 40ch;
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: rgba(20, 20, 19, 0.72);
+}
+
+.case-page--caiden .case-caiden-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: left;
+}
+
+.case-page--caiden .case-caiden-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.case-page--caiden .case-caiden-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.75rem;
+  border-radius: var(--radius-control);
+  background: #141413;
+  color: #fafaf8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.case-page--caiden .case-caiden-cta-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(20, 20, 19, 0.18);
+}
+
+.case-page--caiden .case-caiden-cta-primary:focus-visible {
+  outline: 2px solid rgba(20, 20, 19, 0.65);
+  outline-offset: 4px;
+}
+
+.case-page--caiden .case-caiden-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.75rem;
+  border-radius: var(--radius-control);
+  border: 1px solid rgba(20, 20, 19, 0.28);
+  background: transparent;
+  color: #141413;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.case-page--caiden .case-caiden-cta-secondary:hover {
+  border-color: rgba(20, 20, 19, 0.5);
+  background: rgba(20, 20, 19, 0.06);
+}
+
+.case-page--caiden .case-caiden-cta-secondary:focus-visible {
+  outline: 2px solid rgba(20, 20, 19, 0.55);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .case-page--caiden .case-caiden-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .case-page--caiden .case-caiden-cta-primary,
+  .case-page--caiden .case-caiden-cta-secondary {
+    justify-content: center;
+  }
+}
+
+.case-page--caiden .case-section-dark {
+  background: linear-gradient(180deg, #0d0a08 0%, #141010 100%);
+  border-top-color: rgba(252, 233, 106, 0.12);
+}
+
+/* —— Caiden editorial franchise band (blue, 3-video editorial) —— */
+
+.case-page--caiden .case-caiden-editorial {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 15% 10%,
+      rgba(80, 130, 220, 0.32) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 90% 20%,
+      rgba(252, 233, 106, 0.14) 0%,
+      transparent 60%
+    ),
+    linear-gradient(165deg, #2a4378 0%, #325596 55%, #1f3460 100%);
+  border-top: 1px solid rgba(252, 233, 106, 0.22);
+  color: #fafaf8;
+}
+
+.case-page--caiden .case-caiden-editorial-bg-quote {
+  position: absolute;
+  top: clamp(0.5rem, 3vw, 2rem);
+  right: clamp(0rem, 6vw, 4rem);
+  z-index: 0;
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.25rem, 8.5vw, 7rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: rgba(252, 233, 106, 0.04);
+  pointer-events: none;
+  user-select: none;
+  text-wrap: balance;
+}
+
+.case-page--caiden .case-caiden-editorial-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+.case-page--caiden .case-caiden-editorial-label {
+  margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.85);
+}
+
+.case-page--caiden .case-caiden-editorial-title {
+  margin: 0 0 clamp(1.75rem, 3.8vw, 2.5rem);
+  max-width: 22ch;
+  font-size: clamp(2.35rem, 4.6vw, 3.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #fafaf8;
+  text-wrap: balance;
+}
+
+.case-page--caiden .case-caiden-editorial-prose {
+  max-width: 42ch;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.case-page--caiden .case-caiden-editorial-signal {
+  max-width: 42ch;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0;
+  padding-top: clamp(1rem, 2.2vw, 1.4rem);
+  border-top: 1px solid rgba(252, 233, 106, 0.18);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  color: rgba(250, 250, 248, 0.62);
+}
+
+.case-page--caiden .case-caiden-editorial-prose p {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(250, 250, 248, 0.85);
+}
+
+.case-page--caiden .case-caiden-editorial-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 32ch;
+}
+
+.case-page--caiden .case-caiden-editorial-points li {
+  position: relative;
+  margin: 0 0 0.7rem;
+  padding-left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.72);
+  line-height: 1.4;
+}
+
+.case-page--caiden .case-caiden-editorial-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(252, 233, 106, 0.85);
+  box-shadow: 0 0 8px rgba(252, 233, 106, 0.55);
+}
+
+.case-page--caiden .case-caiden-editorial-stack {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: clamp(1rem, 2.4vw, 1.75rem);
+  padding: clamp(0.5rem, 2vw, 1.5rem) 0 clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.case-page--caiden .case-caiden-editorial-poster {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: clamp(180px, 22vw, 260px);
+  margin: 0;
+}
+
+.case-page--caiden .case-caiden-editorial-poster--stagger-2 {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.case-page--caiden .case-caiden-editorial-poster--stagger-3 {
+  margin-top: clamp(4rem, 9vw, 6.5rem);
+}
+
+.case-page--caiden .case-caiden-editorial-poster-inner {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: #070b14;
+  border: 1px solid rgba(252, 233, 106, 0.18);
+  box-shadow:
+    0 32px 60px rgba(7, 11, 20, 0.45),
+    0 12px 24px rgba(7, 11, 20, 0.25),
+    0 0 0 1px rgba(252, 233, 106, 0.08);
+}
+
+.case-page--caiden .case-caiden-editorial-video.case-cinematic-video,
+.case-page--caiden .case-caiden-editorial-video.case-cinematic-video--placeholder {
+  width: auto;
+  height: auto;
+  max-width: clamp(180px, 22vw, 260px);
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  line-height: 0;
+}
+
+.case-page--caiden .case-caiden-editorial-video .case-cinematic-video-media {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: clamp(180px, 22vw, 260px);
+  max-height: min(72vh, 560px);
+  /* Crop a few percent off top/bottom to hide red bars in source */
+  transform: scale(1.03);
+  transform-origin: center center;
+}
+
+.case-page--caiden .case-caiden-editorial-video .case-cinematic-video-poster-shell {
+  width: clamp(180px, 22vw, 260px);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+  min-height: 0;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.case-page--caiden .case-caiden-editorial-video.case-cinematic-video--placeholder {
+  width: clamp(180px, 22vw, 260px);
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+}
+
+.case-page--caiden .case-caiden-editorial-caption {
+  margin: clamp(0.85rem, 1.6vw, 1.1rem) 0 0;
+  padding: 0;
+}
+
+.case-page--caiden .case-caiden-editorial-caption-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.75);
+}
+
+.case-page--caiden .case-caiden-editorial-caption-quote {
+  display: block;
+  margin: 0;
+  font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: rgba(250, 250, 248, 0.94);
+}
+
+.case-page--caiden .case-caiden-editorial-caption-quote::before,
+.case-page--caiden .case-caiden-editorial-caption-quote::after {
+  content: none;
+}
+
+.case-page--caiden .case-caiden-editorial-caption-role {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.55);
+}
+
+@media (max-width: 1024px) {
+  .case-page--caiden .case-caiden-editorial-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page--caiden .case-caiden-editorial-stack {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .case-page--caiden .case-caiden-editorial-poster {
+    max-width: clamp(200px, 30vw, 280px);
+  }
+
+  .case-page--caiden .case-caiden-editorial-poster--stagger-2,
+  .case-page--caiden .case-caiden-editorial-poster--stagger-3 {
+    margin-top: 0;
+  }
+
+  .case-page--caiden .case-caiden-editorial-video.case-cinematic-video,
+  .case-page--caiden .case-caiden-editorial-video.case-cinematic-video--placeholder,
+  .case-page--caiden .case-caiden-editorial-video .case-cinematic-video-media,
+  .case-page--caiden .case-caiden-editorial-video .case-cinematic-video-poster-shell {
+    max-width: clamp(200px, 30vw, 280px);
+    width: clamp(200px, 30vw, 280px);
+  }
+}
+
+@media (max-width: 600px) {
+  .case-page--caiden .case-caiden-editorial-stack {
+    justify-content: center;
+  }
+
+  .case-page--caiden .case-caiden-editorial-poster {
+    max-width: min(78vw, 280px);
+  }
+
+  .case-page--caiden .case-caiden-editorial-video.case-cinematic-video,
+  .case-page--caiden .case-caiden-editorial-video.case-cinematic-video--placeholder,
+  .case-page--caiden .case-caiden-editorial-video .case-cinematic-video-media,
+  .case-page--caiden .case-caiden-editorial-video .case-cinematic-video-poster-shell {
+    max-width: min(78vw, 280px);
+    width: min(78vw, 280px);
+  }
+
+  .case-page--caiden .case-caiden-editorial-bg-quote {
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+    opacity: 0.6;
+  }
+}
+
+/* —— Franchise strategy additions —— */
+
+.case-page--caiden .case-tags {
+  list-style: none;
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+}
+
+.case-page--caiden .case-tags li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(252, 233, 106, 0.32);
+  background: rgba(249, 224, 76, 0.08);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.92);
+}
+
+.case-page--caiden .case-caiden-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.65rem, 2vw, 1rem);
+  margin-top: clamp(0.5rem, 2vw, 0.75rem);
+}
+
+.case-grid--3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  margin-top: clamp(32px, 5vw, 48px);
+}
+
+@media (max-width: 900px) {
+  .case-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page--caiden .case-caiden-opportunity-card,
+.case-page--caiden .case-caiden-audience-card {
+  border-color: rgba(249, 224, 76, 0.22);
+  background: linear-gradient(160deg, #faf8f5 0%, #f5f0ea 100%);
+}
+
+.case-page--caiden .case-caiden-opportunity-figure {
+  position: relative;
+  margin: clamp(1.5rem, 3.5vw, 2.5rem) 0 clamp(2rem, 4.5vw, 3rem);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(249, 224, 76, 0.22);
+  box-shadow:
+    0 32px 60px rgba(13, 10, 8, 0.18),
+    0 12px 24px rgba(13, 10, 8, 0.08);
+  aspect-ratio: 16 / 10;
+  background: #0d0a08;
+}
+
+.case-page--caiden .case-caiden-opportunity-figure img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.case-page--caiden .case-caiden-opportunity-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 10, 8, 0) 55%,
+    rgba(13, 10, 8, 0.18) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .case-page--caiden .case-caiden-opportunity-figure {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Opportunity — Platform Systems sticky */
+.case-page--caiden .platform-systems-section {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  border-top: 1px solid rgba(20, 20, 19, 0.08);
+}
+
+.case-page--caiden .platform-systems-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.5);
+}
+
+.case-page--caiden .platform-systems-title {
+  color: var(--text);
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  max-width: 14ch;
+  text-wrap: balance;
+}
+
+.case-page--caiden .platform-systems-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.case-page--caiden .platform-systems-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.case-page--caiden .platform-systems-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: var(--caiden-ember);
+  box-shadow: 0 0 8px rgba(249, 224, 76, 0.55);
+}
+
+.case-page--caiden .platform-systems-statement {
+  margin: clamp(1.75rem, 3.5vw, 2.25rem) 0 0;
+  padding-top: clamp(1rem, 2vw, 1.25rem);
+  border-top: 1px solid rgba(20, 20, 19, 0.08);
+  max-width: 32ch;
+  font-size: clamp(0.95rem, 1.25vw, 1.0625rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(20, 20, 19, 0.72);
+  letter-spacing: -0.005em;
+}
+
+.case-page--caiden .platform-visual-grid {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.case-page--caiden .platform-visual-card.case-visual-lang-still {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+.case-page--caiden .platform-visual-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(58, 95, 176, 0.45);
+  background: #0d0a08;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px rgba(58, 95, 176, 0.22),
+    0 24px 60px -20px rgba(58, 95, 176, 0.38),
+    0 0 72px -16px rgba(58, 95, 176, 0.28);
+}
+
+.case-page--caiden .platform-visual-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  filter: contrast(1.04) saturate(1.03);
+}
+
+.case-page--caiden .platform-visual-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 10, 8, 0) 70%,
+      rgba(13, 10, 8, 0.12) 100%
+    );
+}
+
+/* Faint blue screen glow along the top edge */
+.case-page--caiden .platform-visual-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 80% 40% at 50% 0%,
+      rgba(58, 95, 176, 0.2) 0%,
+      transparent 65%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.case-page--caiden .platform-visual-caption {
+  margin: clamp(0.85rem, 1.6vw, 1.05rem) 0 0;
+  padding: 0;
+  border: none;
+  display: block;
+}
+
+.case-page--caiden .platform-visual-caption-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.case-page--caiden .platform-visual-caption-meta > span:first-child {
+  color: #3a5fb0;
+}
+
+.case-page--caiden .platform-visual-caption-meta > span:last-child {
+  color: rgba(58, 95, 176, 0.72);
+  text-align: right;
+}
+
+@media (max-width: 540px) {
+  .case-page--caiden .platform-visual-caption-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .case-page--caiden .platform-visual-caption-meta > span:last-child {
+    text-align: left;
+  }
+}
+
+/* Empty placeholder card variant — for swappable UI screens */
+.case-page--caiden .platform-visual-placeholder .platform-visual-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(
+      ellipse 75% 60% at 25% 15%,
+      rgba(249, 224, 76, 0.18) 0%,
+      transparent 55%
+    ),
+    linear-gradient(160deg, #1a1408 0%, #0d0a08 100%);
+}
+
+.case-page--caiden .platform-visual-placeholder-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.78);
+}
+
+.case-page--caiden .case-caiden-audience-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-caiden-emotional-outcome {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  max-width: 36ch;
+  color: #3a5fb0;
+}
+
+/* Participation system — editorial 3 + 2 slide grid */
+.case-page--caiden .case-caiden-participation {
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.case-page--caiden .case-caiden-participation-eyebrow {
+  margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #3a5fb0;
+}
+
+.case-page--caiden .case-caiden-participation-lead {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+  max-width: 52ch;
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: rgba(20, 20, 19, 0.85);
+  text-wrap: balance;
+}
+
+.case-page--caiden .case-caiden-participation-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+  align-items: start;
+}
+
+.case-page--caiden .case-caiden-participation-card {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top row — 3 cards, each spans 2 columns */
+.case-page--caiden .case-caiden-participation-card--top {
+  grid-column: span 2;
+}
+
+/* Bottom row — 2 cards, same size as top, centered under the trio */
+.case-page--caiden .case-caiden-participation-card--bottom {
+  grid-column: span 2;
+}
+
+.case-page--caiden .case-caiden-participation-card--4 {
+  grid-column: 2 / span 2;
+}
+
+.case-page--caiden .case-caiden-participation-card--5 {
+  grid-column: 4 / span 2;
+}
+
+/* Subtle living-world rotation — applied to only two cards */
+.case-page--caiden .case-caiden-participation-card--2 .case-caiden-participation-frame {
+  transform: rotate(-1deg);
+  transform-origin: center;
+}
+
+.case-page--caiden .case-caiden-participation-card--4 .case-caiden-participation-frame {
+  transform: rotate(1deg);
+  transform-origin: center;
+}
+
+.case-page--caiden .case-caiden-participation-frame {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  box-shadow: 0 24px 60px -20px rgba(58, 95, 176, 0.45);
+  isolation: isolate;
+}
+
+.case-page--caiden .case-caiden-participation-frame .case-cinematic-video {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.case-page--caiden .case-caiden-participation-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 80% 40% at 50% 0%,
+      rgba(58, 95, 176, 0.22) 0%,
+      transparent 65%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.case-page--caiden .case-caiden-participation-caption {
+  margin: clamp(0.75rem, 1.5vw, 1rem) 0 0;
+  padding: 0;
+}
+
+.case-page--caiden .case-caiden-participation-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.case-page--caiden .case-caiden-participation-meta > span:first-child {
+  color: rgba(207, 159, 60, 0.95);
+}
+
+.case-page--caiden .case-caiden-participation-meta > span:last-child {
+  color: rgba(20, 20, 19, 0.78);
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .case-page--caiden .case-caiden-participation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .case-page--caiden .case-caiden-participation-card--top,
+  .case-page--caiden .case-caiden-participation-card--bottom,
+  .case-page--caiden .case-caiden-participation-card--4,
+  .case-page--caiden .case-caiden-participation-card--5 {
+    grid-column: span 1;
+  }
+
+  .case-page--caiden .case-caiden-participation-card--3 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-page--caiden .case-caiden-participation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-page--caiden .case-caiden-participation-card--3 {
+    grid-column: span 1;
+  }
+
+  .case-page--caiden .case-caiden-participation-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .case-page--caiden .case-caiden-participation-meta > span:last-child {
+    text-align: left;
+  }
+}
+
+/* Franchise board (ecosystem architecture centerpiece) */
+.case-page--caiden .case-caiden-franchise-board {
+  position: relative;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(252, 233, 106, 0.28);
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 30% 0%,
+      rgba(249, 224, 76, 0.18) 0%,
+      transparent 60%
+    ),
+    linear-gradient(160deg, #1a1408 0%, #0d0a08 100%);
+}
+
+.case-page--caiden .case-caiden-franchise-board img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.92;
+  mix-blend-mode: screen;
+}
+
+.case-page--caiden .case-caiden-franchise-board-caption {
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid rgba(252, 233, 106, 0.18);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(252, 233, 106, 0.78);
+}
+
+.case-page--caiden .ember-glow {
+  box-shadow:
+    0 0 0 1px rgba(252, 233, 106, 0.18),
+    0 24px 60px -20px rgba(249, 224, 76, 0.35);
+}
+
+.case-page--caiden .case-caiden-franchise-flow {
+  list-style: none;
+  margin: clamp(1rem, 3vw, 1.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+  counter-reset: flow;
+}
+
+/* Tight variant — pulls the numbered cards close to the body copy above */
+.case-page--caiden .case-caiden-franchise-flow--tight {
+  margin-top: clamp(1rem, 1.75vw, 1.25rem);
+}
+
+@media (max-width: 1024px) {
+  .case-page--caiden .case-caiden-franchise-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .case-page--caiden .case-caiden-franchise-flow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page--caiden .case-caiden-franchise-flow-step {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(252, 233, 106, 0.18);
+  background: rgba(249, 224, 76, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.case-page--caiden .case-caiden-franchise-flow-index {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(252, 233, 106, 0.7);
+}
+
+.case-page--caiden .case-caiden-franchise-flow-label {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fafaf8;
+  text-transform: uppercase;
+}
+
+.case-page--caiden .case-caiden-franchise-flow-body {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.7);
+}
+
+/* Ecosystem stack — sticky aside + 4-image vertical map stack (dark section) */
+.case-page--caiden .case-caiden-ecosystem-stack-section {
+  margin-top: clamp(7rem, 13vw, 10rem);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-eyebrow {
+  margin: 0 0 clamp(0.85rem, 1.5vw, 1.1rem);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.85);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-title {
+  max-width: 14ch;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: #fafaf8;
+  text-wrap: balance;
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+  max-width: 32ch;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(250, 250, 248, 0.78);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: var(--caiden-ember);
+  box-shadow: 0 0 8px rgba(249, 224, 76, 0.55);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-stills {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-frame {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(252, 233, 106, 0.28);
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 30% 0%,
+      rgba(249, 224, 76, 0.12) 0%,
+      transparent 60%
+    ),
+    linear-gradient(160deg, #1a1408 0%, #0d0a08 100%);
+  box-shadow:
+    0 0 0 1px rgba(252, 233, 106, 0.18),
+    0 24px 60px -20px rgba(249, 224, 76, 0.35);
+  isolation: isolate;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 80% 40% at 50% 0%,
+      rgba(252, 233, 106, 0.14) 0%,
+      transparent 65%
+    );
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-caption {
+  margin: clamp(0.85rem, 1.6vw, 1.05rem) 0 0;
+  padding: 0;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-meta > span:first-child {
+  color: rgba(252, 233, 106, 0.9);
+}
+
+.case-page--caiden .case-caiden-ecosystem-stack-meta > span:last-child {
+  color: rgba(250, 250, 248, 0.6);
+  text-align: right;
+}
+
+@media (max-width: 540px) {
+  .case-page--caiden .case-caiden-ecosystem-stack-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .case-page--caiden .case-caiden-ecosystem-stack-meta > span:last-child {
+    text-align: left;
+  }
+}
+
+/* Experience cards */
+.case-page--caiden .case-caiden-experience-grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.case-page--caiden .case-caiden-experience-card {
+  position: relative;
+  padding-top: clamp(2.5rem, 4vw, 3rem);
+}
+
+/* Content pillars + campaign channels (chip rows) */
+.case-page--caiden .case-caiden-pillars,
+.case-page--caiden .case-caiden-channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  margin: clamp(1.5rem, 4vw, 2.25rem) 0;
+}
+
+.case-page--caiden .case-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.case-page--caiden .case-caiden-pillar-chip {
+  border: 1px solid rgba(20, 20, 19, 0.14);
+  background: rgba(249, 224, 76, 0.14);
+  color: var(--text);
+}
+
+.case-page--caiden .case-caiden-pillar-chip:hover {
+  border-color: rgba(249, 224, 76, 0.55);
+  background: rgba(249, 224, 76, 0.22);
+  transform: translateY(-1px);
+}
+
+.case-page--caiden .case-caiden-channel-chip {
+  border: 1px solid rgba(252, 233, 106, 0.28);
+  background: rgba(249, 224, 76, 0.08);
+  color: rgba(250, 250, 248, 0.92);
+}
+
+.case-page--caiden .case-caiden-channel-chip:hover {
+  border-color: rgba(252, 233, 106, 0.55);
+  background: rgba(249, 224, 76, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Pull quote — dark variant */
+.case-page--caiden .case-caiden-pullquote--dark {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  background: linear-gradient(
+    135deg,
+    rgba(249, 224, 76, 0.12) 0%,
+    rgba(252, 233, 106, 0.04) 100%
+  );
+  border-left-color: rgba(252, 233, 106, 0.7);
+}
+
+.case-page--caiden .case-caiden-pullquote--dark p {
+  color: #fafaf8;
+}
+
+/* Role tags */
+.case-page--caiden .case-role-tags {
+  list-style: none;
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.65rem;
+}
+
+.case-page--caiden .case-role-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(252, 233, 106, 0.28);
+  background: rgba(249, 224, 76, 0.08);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.92);
+}
+
+/* Outcome grid */
+.case-page--caiden .case-outcome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 22px);
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+@media (max-width: 1024px) {
+  .case-page--caiden .case-outcome-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .case-page--caiden .case-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page--caiden .case-outcome-card {
+  position: relative;
+  padding-top: clamp(2.5rem, 4vw, 3rem);
+  border-color: rgba(249, 224, 76, 0.22);
+  background: linear-gradient(160deg, #faf8f5 0%, #f5f0ea 100%);
+}
+
+.case-page--caiden .case-outcome-card-index {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.25rem);
+  left: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-outcome-card .case-card-body {
+  color: var(--text);
+  font-weight: 600;
 }

@@ -158,12 +158,12 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
     description:
       "A narrative IP blending visual storytelling, emotional interaction, and product thinking to help neurodivergent youth see focus as power.",
     metrics: ["Original IP", "Interactive SEL Experience", "Book + Digital Platform"],
-    href: "https://caidenvale.com/",
+    href: "/work/caidens-courage",
     media: [
       {
         label: "Brand System",
         image:
-          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageFlame_Page1.webp",
+          "/images/Portfolio%20Cards/Caidenscourage/caidencourage_top_portfoliocard.webp",
         wide: true,
         aspectRatio: "3021 / 1317",
       },

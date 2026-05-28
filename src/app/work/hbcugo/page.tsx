@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
+const HERO_IMAGE_DESKTOP = "/images/Heros/HBCUgoCTV_Hero.webp";
+const HERO_IMAGE_MOBILE = "/images/Heros/HBCUgo_hero_mobile.webp";
+
 const challengeCards = [
   {
     title: "Event Discovery",
@@ -128,18 +131,15 @@ export default function HBCUGoCaseStudyPage() {
     <div className="case-page">
       <main>
         <section className="case-hero" aria-label="HBCUgo case study">
-          {/* Hero media: HBCUgo reel + poster. Replace `src` / `poster` when final masters are ready. */}
-          <video
-            className="case-hero-media"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/Portfolio%20Cards/HBCUgoCOmputer_stilliano.webp"
-            aria-hidden
-          >
-            <source src="/videos/Open_WIP_RandF_HBCUGO_071822.mov" type="video/quicktime" />
-          </video>
+          <picture className="case-hero-media">
+            <source media="(max-width: 768px)" srcSet={HERO_IMAGE_MOBILE} />
+            <img
+              src={HERO_IMAGE_DESKTOP}
+              alt="HBCUgo hero"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
           <div className="case-hero-overlay" aria-hidden />
           <div className="case-hero-pattern" aria-hidden />
           <div className={`${styles.inner} case-hero-content`}>

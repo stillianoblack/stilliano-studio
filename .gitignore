@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local previews generated during design tuning
+.cursor-previews/
+
+# local large source videos (not for git)
+public/videos/AmiraLearning_Dylon_Testing.mp4

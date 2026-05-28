@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-const POSTER = "/images/Portfolio%20Cards/amiramock-up_stilliano.webp";
+const POSTER = "/images/Heros/Amira_Hero_2.webp";
+const POSTER_MOBILE = "/images/Heros/Amira_Hero_mobile.webp";
 const PROGRESSION_STILL = "/images/Selected%20Works/Amira/wewon_.webp";
 const EXCELLENCE_STILL =
   "/images/Selected%20Works/Amira/GloballyRecognizedExcellence.webp";
@@ -29,7 +30,7 @@ const AMIRA_VIDEOS = {
   overview: amiraVideo("/videos/AmiraLearning.mp4"),
   marketingCelebration: amiraVideo("/videos/Amira_Marketing_9x16_1.mp4"),
   marketingVoice: amiraVideo("/videos/Amira_Marketing_9x16_2.mp4"),
-  userTesting: amiraVideo("/videos/AmiraLearning_Dylon_Testing.mp4"),
+  userTesting: amiraVideo("/videos/AmiraLearning.mp4"),
   danceChicken: amiraVideo("/videos/Amira_Dance_Chicken.mp4"),
   drBackfire: amiraVideo("/videos/DrBackfire_Character.mp4"),
 } as const;
@@ -237,13 +238,15 @@ export default function AmiraLearningCaseStudyPage() {
       <main>
         {/* 1 — Hero */}
         <section className="case-hero" aria-label="Amira AI Learning campaign">
-          <img
-            className="case-hero-media"
-            src={POSTER}
-            alt="Amira AI Learning literacy gameplay across tablet and mobile devices"
-            fetchPriority="high"
-            decoding="async"
-          />
+          <picture className="case-hero-media">
+            <source media="(max-width: 768px)" srcSet={POSTER_MOBILE} />
+            <img
+              src={POSTER}
+              alt="Amira AI Learning hero"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
           <div className="case-hero-overlay" aria-hidden />
           <div className="case-hero-pattern" aria-hidden />
           <div className={`${styles.inner} case-hero-content`}>

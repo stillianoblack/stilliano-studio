@@ -26,8 +26,8 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
     slug: "caidens-courage",
     title: "Caiden's Courage",
     desc: "Story-driven IP blending narrative, interactive experiences, and emotional product design for neurodivergent youth.",
-    image: "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
-    href: "https://caidenvale.com/",
+    image: "/images/Heros/Caidencourage_Hero.webp",
+    href: "/work/caidens-courage",
   },
   {
     slug: "cutclass",

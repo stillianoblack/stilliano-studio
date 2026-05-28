@@ -1,4 +1,4 @@
-import { HeroStage } from "./HeroStage";
+import { HeroCarousel } from "./HeroCarousel";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
 import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
@@ -108,32 +108,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main>
-        <HeroStage>
-          <section className={styles.hero}>
-            <div className={styles.inner}>
-              <p className={styles.heroLabel}>
-                SPORTS • STREAMING • CULTURE
-              </p>
-              <h1 className={styles.heroTitle}>
-                Story-driven products.
-                <br />
-                Real-world <em>growth</em>.
-              </h1>
-              <p className={styles.heroLead}>
-                Shaping streaming, storytelling, and cultural audience experiences
-                across product and brand ecosystems.
-              </p>
-              <div className={styles.heroActions}>
-                <a className={styles.btnPrimary} href="#work">
-                  View Work
-                </a>
-                <a className={styles.btnGhost} href="#contact">
-                  Book Strategy Call
-                </a>
-              </div>
-            </div>
-          </section>
-        </HeroStage>
+        <HeroCarousel />
 
         <section className={styles.trusted} aria-labelledby="trusted-heading">
           <div className={styles.inner}>
