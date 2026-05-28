@@ -121,6 +121,7 @@
   position: absolute;
   inset: 0;
   background-color: #0a0c12;
+  background-image: var(--hero-bg-image);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -133,10 +134,10 @@
 
 @media (max-width: 768px) {
   .heroCarouselSlide {
-    background-image: var(--hero-bg-image-mobile);
-    /* Use mobile-designed hero art, filling the frame. */
-    background-position: var(--hero-bg-position-mobile, center top);
-    background-size: cover;
+    background-image: var(--hero-bg-image-mobile, var(--hero-bg-image));
+    /* Mobile: keep subject centered and consistent across slides. */
+    background-position: var(--hero-bg-position-mobile, 50% 50%);
+    background-size: var(--hero-bg-size-mobile, cover);
     background-repeat: no-repeat;
   }
 }

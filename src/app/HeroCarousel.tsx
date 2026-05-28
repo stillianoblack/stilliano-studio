@@ -17,6 +17,8 @@ type HeroSlide = {
   mobileImage?: string;
   /** Mobile background-position for subject centering (used <=768px). */
   mobilePosition?: string;
+  /** Mobile background-size (used <=768px). */
+  mobileSize?: string;
 };
 
 const SLIDES: HeroSlide[] = [
@@ -24,30 +26,39 @@ const SLIDES: HeroSlide[] = [
     title: "Caiden's Courage",
     image: "/images/Heros/Caidencourage_Hero.webp",
     href: "/work/caidens-courage",
-    mobileImage: "/images/Heros/Mobile/Caiden_Hero_Mobile.webp",
-    // Subject is weighted right; nudge crop right so character centers.
-    mobilePosition: "68% 18%",
+    mobileImage: "/images/Heros/Caiden_Hero_Mobile.webp",
+    mobilePosition: "50% 20%",
+    mobileSize: "cover",
   },
   {
-    title: "HBCUgo",
+    title: "HBCUgo Sports",
     image: "/images/Heros/HBCUgoCTV_Hero.webp",
     href: "/work/hbcugo",
-    mobileImage: "/images/Heros/Mobile/HBCUgo_hero_mobile.webp",
-    // Player sits right; pull crop slightly right.
-    mobilePosition: "62% 18%",
+    mobileImage: "/images/Heros/HBCUgo_hero_mobile.webp",
+    mobilePosition: "50% 20%",
+    mobileSize: "cover",
   },
   {
     title: "Amira Learning",
     image: "/images/Heros/Amira_Hero_2.webp",
     href: "/work/amira-learning",
-    mobileImage: "/images/Heros/Mobile/Amira_Hero_mobile.webp",
-    mobilePosition: "52% 20%",
+    mobileImage: "/images/Heros/Amira_Hero_mobile.webp",
+    mobilePosition: "50% 20%",
+    mobileSize: "cover",
   },
   {
     title: "DC Fandom",
     image: "/images/Heros/DCfandom_hero_2.webp",
-    mobileImage: "/images/Heros/Mobile/DCfandom_hero_mobile.webp",
-    mobilePosition: "55% 12%",
+    mobileImage: "/images/Heros/DCfandom_hero_mobile.webp",
+    mobilePosition: "50% 20%",
+    mobileSize: "cover",
+  },
+  {
+    title: "Genius Sports",
+    image: "/images/Heros/geniussports_hero.webp",
+    mobileImage: "/images/Heros/geniussports_hero_mobile.webp",
+    mobilePosition: "50% 20%",
+    mobileSize: "cover",
   },
 ];
 
@@ -201,12 +212,13 @@ export function HeroCarousel() {
               index === activeIndex ? styles.heroCarouselSlideActive : ""
             }`}
             style={{
-              backgroundImage: `url("${encodeURI(slide.image)}")`,
+              ["--hero-bg-image" as string]: `url("${encodeURI(slide.image)}")`,
               ["--hero-bg-image-mobile" as string]: `url("${encodeURI(
                 slide.mobileImage ?? slide.image,
               )}")`,
               ["--hero-bg-position-mobile" as string]:
                 slide.mobilePosition ?? "center top",
+              ["--hero-bg-size-mobile" as string]: slide.mobileSize ?? "cover",
             }}
           />
         ))}
