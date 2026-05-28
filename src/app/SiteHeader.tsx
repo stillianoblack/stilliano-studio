@@ -23,14 +23,13 @@ export function SiteHeader() {
       <div className={styles.siteHeaderShell}>
         <div className={styles.siteHeaderBar}>
           <div className={styles.headerRow}>
-            <a href="/" className={styles.logo} aria-label="Stilliano Studios home">
+            <a href="/" className={styles.logo} aria-label="Stilliano home">
               <StillianoLogo
                 variant="mark"
                 className={`stilliano-logo stilliano-logo--mark ${styles.logoMark}`}
               />
               <span className={styles.logoWordmark} aria-hidden>
                 <span className={styles.logoPrimary}>STILLIANO</span>
-                <span className={styles.logoSecondary}>STUDIOS</span>
               </span>
             </a>
             <nav className={styles.nav} aria-label="Primary">

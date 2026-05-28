@@ -536,10 +536,8 @@
 
 .logoWordmark {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1;
-  gap: 2px;
 }
 
 .logoPrimary {
@@ -551,27 +549,12 @@
   line-height: 1;
 }
 
-.logoSecondary {
-  font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: inherit;
-  opacity: 0.78;
-  line-height: 1;
-  padding-left: 1px;
-}
-
 .logo:hover {
   opacity: 0.88;
 }
 
 .siteHeaderElevated .logo {
   color: #0a0a0a;
-}
-
-.siteHeaderElevated .logoSecondary {
-  opacity: 0.62;
 }
 
 .nav {
