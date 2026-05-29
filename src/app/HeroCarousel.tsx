@@ -11,6 +11,8 @@ const TRANSITION_MS = 900;
 
 type HeroSlide = {
   title: string;
+  /** Optional line under title in carousel nav (active slide). */
+  subtitle?: string;
   image: string;
   href?: string;
   /** Mobile-only hero image (used <=768px). */
@@ -262,13 +264,24 @@ export function HeroCarousel() {
                   <span className={styles.heroCarouselTitleIndex}>
                     {labelNumber}
                   </span>
-                  <span className={styles.heroCarouselTitleText}>
-                    {slide.title}
+                  <span className={styles.heroCarouselTitleGroup}>
+                    <span className={styles.heroCarouselTitleText}>
+                      {slide.title}
+                    </span>
+                    {slide.subtitle ? (
+                      <span className={styles.heroCarouselTitleSubtitle}>
+                        {slide.subtitle}
+                      </span>
+                    ) : null}
                   </span>
                 </button>
               );
             })}
             </div>
+
+            <Link href="/about" className={styles.heroCarouselNoseyLink}>
+              Get Nosey →
+            </Link>
 
             <div className={styles.heroCarouselMobileTitle} aria-live="polite">
             {SLIDES[activeIndex].href ? (
@@ -291,6 +304,11 @@ export function HeroCarousel() {
                 {SLIDES[activeIndex].title}
               </button>
             )}
+            {SLIDES[activeIndex].subtitle ? (
+              <span className={styles.heroCarouselMobileSubtitle}>
+                {SLIDES[activeIndex].subtitle}
+              </span>
+            ) : null}
             <span className={styles.heroCarouselMobileMeta}>
               {String(activeIndex + 1).padStart(2, "0")}
             </span>

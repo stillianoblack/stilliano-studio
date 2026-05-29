@@ -290,6 +290,14 @@
   color: #fff;
 }
 
+.heroCarouselTitleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  min-width: 0;
+}
+
 .heroCarouselTitleText {
   font-size: clamp(1rem, 1.65vw, 1.35rem);
   font-weight: 600;
@@ -308,6 +316,31 @@
   opacity: 0.88;
 }
 
+.heroCarouselTitleSubtitle {
+  display: block;
+  max-width: min(22rem, 42vw);
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.48);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.35s ease,
+    max-height 0.35s ease,
+    margin-top 0.35s ease;
+}
+
+.heroCarouselTitleBtnActive .heroCarouselTitleSubtitle {
+  opacity: 1;
+  max-height: 3rem;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
 .heroCarouselTitleIndex {
   flex: 0 0 auto;
   min-width: 2rem;
@@ -320,6 +353,34 @@
 
 .heroCarouselTitleBtnActive .heroCarouselTitleIndex {
   color: rgba(255, 255, 255, 0.58);
+}
+
+.heroCarouselNoseyLink {
+  display: inline-block;
+  margin-top: clamp(0.5rem, 1.4vh, 0.85rem);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
+}
+
+.heroCarouselNoseyLink:hover {
+  color: rgba(255, 255, 255, 0.94);
+  text-decoration: underline;
+  text-decoration-color: rgba(249, 224, 76, 0.72);
+  text-underline-offset: 0.22em;
+}
+
+.heroCarouselNoseyLink:focus-visible {
+  outline: none;
+  color: rgba(255, 255, 255, 0.94);
+  text-decoration: underline;
+  text-decoration-color: rgba(249, 224, 76, 0.85);
+  text-underline-offset: 0.22em;
 }
 
 .heroCarouselMobileTitle {
@@ -447,6 +508,15 @@
     text-decoration: underline;
     text-decoration-color: rgba(249, 224, 76, 0.75);
     text-underline-offset: 0.2em;
+  }
+
+  .heroCarouselMobileSubtitle {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.62);
+    max-width: min(78vw, 20rem);
   }
 
   .heroCarouselMobileMeta {
@@ -1369,6 +1439,34 @@
   font-size: 0.8125rem;
   line-height: 1.6;
   color: rgba(20, 20, 19, 0.5);
+}
+
+.aboutNoseyLink {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(20, 20, 19, 0.45);
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
+}
+
+.aboutNoseyLink:hover {
+  color: rgba(20, 20, 19, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 168, 24, 0.85);
+  text-underline-offset: 0.22em;
+}
+
+.aboutNoseyLink:focus-visible {
+  outline: none;
+  color: rgba(20, 20, 19, 0.88);
+  text-decoration: underline;
+  text-decoration-color: rgba(249, 224, 76, 0.9);
+  text-underline-offset: 0.22em;
 }
 
 .aboutEditorialCol {

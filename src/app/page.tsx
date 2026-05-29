@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HeroCarousel } from "./HeroCarousel";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
@@ -231,6 +232,9 @@ export default function Home() {
                   <p className={styles.aboutStatValue}>
                     Streaming platforms · Interactive media · Audience systems
                   </p>
+                  <Link href="/about" className={styles.aboutNoseyLink}>
+                    Get Nosey →
+                  </Link>
                 </div>
               </div>
 

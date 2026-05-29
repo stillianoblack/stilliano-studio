@@ -35,7 +35,7 @@ export function SiteHeader() {
             <nav className={styles.nav} aria-label="Primary">
               <a href="/#work">Work</a>
               <a href="/#services">Services</a>
-              <a href="/#about">About</a>
+              <a href="/about">About</a>
               <a className={styles.navCta} href="/#contact">
                 Contact me
               </a>
