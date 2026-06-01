@@ -484,9 +484,6 @@ export default function CaidensCourageCaseStudyPage() {
               >
                 Explore Live Experience
               </a>
-              <Link href="/#work" className="case-caiden-cta-secondary">
-                Back to Work
-              </Link>
             </div>
           </div>
         </section>

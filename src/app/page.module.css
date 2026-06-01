@@ -151,31 +151,18 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background:
-    linear-gradient(
-      118deg,
-      rgba(6, 10, 18, 0.68) 0%,
-      rgba(6, 10, 18, 0.32) 36%,
-      transparent 60%
-    ),
-    linear-gradient(
-      to top,
-      rgba(4, 8, 16, 0.62) 0%,
-      rgba(4, 8, 16, 0.26) 26%,
-      transparent 46%
-    ),
-    radial-gradient(
-      ellipse 92% 82% at 50% 44%,
-      transparent 0%,
-      transparent 36%,
-      rgba(4, 8, 16, 0.22) 68%,
-      rgba(4, 8, 16, 0.5) 100%
-    );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.38) 30%,
+    rgba(0, 0, 0, 0.1) 55%,
+    transparent 72%
+  );
 }
 
 .heroCarousel .heroPattern {
   z-index: 2;
-  opacity: 0.48;
+  opacity: 0.34;
   mix-blend-mode: overlay;
 }
 
@@ -445,8 +432,17 @@
   }
 
   .heroCarouselScrim {
-    /* The mobile caption panel provides readability; keep overlay minimal. */
-    opacity: 0.85;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.34) 22%,
+      rgba(0, 0, 0, 0.06) 46%,
+      transparent 62%
+    );
+  }
+
+  .heroCarousel .heroPattern {
+    opacity: 0.28;
   }
 
   .heroCarouselShell {

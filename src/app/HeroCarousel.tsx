@@ -115,7 +115,7 @@ export function HeroCarousel() {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      if (wheelLock.current) return;
+      if (wheelLock.current || window.scrollY > 8) return;
       setActiveIndex((current) => {
         const next = (current + 1) % SLIDES.length;
         setIsTransitioning(true);
@@ -214,6 +214,8 @@ export function HeroCarousel() {
 
     const onScroll = () => {
       if (!mobileQuery.matches || wheelLock.current) return;
+      // Only intercept scroll attempts while still at the hero — not when reading below.
+      if (window.scrollY > 8) return;
       const current = activeIndexRef.current;
       if (current >= SLIDES.length - 1 || window.scrollY <= 0) return;
 

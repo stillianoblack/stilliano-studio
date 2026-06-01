@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CaseYouTubePlayCard } from "../../CaseYouTubePlayCard";
 import styles from "../../page.module.css";
 
 export const metadata: Metadata = {
@@ -126,9 +127,44 @@ const outcomeBullets = [
   "Better alignment between content, audience, and brand partners",
 ];
 
+const engagementArchitectureBlocks = [
+  {
+    title: "Mapping the End-to-End Fan Experience",
+    body:
+      "We mapped the complete fan lifecycle—from awareness and ticket sales to game-day participation and post-game retention—to identify opportunities for deeper engagement.",
+    image: "/images/Selected%20Works/HBCUgo/experienceachitecture/audience_loop.webp",
+    alt: "HBCUgo audience engagement lifecycle diagram",
+  },
+  {
+    title: "Building a Content Ecosystem for HBCU Culture",
+    body:
+      "We designed a scalable content architecture that unified live sports, original programming, educational content, campus culture, and community experiences into a single streaming destination.",
+    image: "/images/Selected%20Works/HBCUgo/experienceachitecture/content_ecosystem.webp",
+    alt: "HBCUgo content ecosystem architecture diagram",
+  },
+  {
+    title: "Reducing Friction Across the 10-Foot Experience",
+    body:
+      "Authentication is one of the largest drop-off points in connected TV products. We redesigned the onboarding experience to streamline account creation, device activation, and content access across Roku, Apple TV, Fire TV, and web platforms.",
+    image: "/images/Selected%20Works/HBCUgo/experienceachitecture/tenfoot_architecture.webp",
+    alt: "HBCUgo ten-foot connected TV experience architecture diagram",
+  },
+] as const;
+
+const platformLifeVideos = [
+  {
+    videoId: "BfMaqNtKr9g",
+    title: "HBCUgo promotional asset — platform awareness",
+  },
+  {
+    videoId: "2GnYo7MQPG8",
+    title: "HBCUgo promotional asset — platform discovery",
+  },
+] as const;
+
 export default function HBCUGoCaseStudyPage() {
   return (
-    <div className="case-page">
+    <div className="case-page case-page--hbcugo">
       <main>
         <section className="case-hero" aria-label="HBCUgo case study">
           <picture className="case-hero-media">
@@ -168,8 +204,8 @@ export default function HBCUGoCaseStudyPage() {
               id="overview-heading"
               className="display-heading display-heading-xl case-overview-heading"
             >
-              Designing a streaming experience for culture, sports, and audience
-              engagement.
+              How do we create a streaming destination centered around HBCU
+              culture?
             </h2>
             <div className="case-overview-video">
               <video
@@ -181,7 +217,7 @@ export default function HBCUGoCaseStudyPage() {
                 aria-label="HBCUgo navigation and interface preview"
               >
                 <source
-                  src="/videos/HBCUgomaster.mp4"
+                  src="/videos/Open_WIP_RandF_HBCUGO_071822.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -190,12 +226,12 @@ export default function HBCUGoCaseStudyPage() {
               <div className="case-overview-col">
                 <p className="case-overview-kicker">Services</p>
                 <ul className="case-overview-list">
-                  <li>Creative Systems Strategy</li>
-                  <li>Streaming & CTV Experience</li>
-                  <li>Product & Platform Design</li>
-                  <li>Brand & Audience Experience</li>
-                  <li>Interactive Storytelling</li>
-                  <li>Campaign & Content Ecosystems</li>
+                  <li>Product Strategy</li>
+                  <li>Streaming Platform Architecture</li>
+                  <li>UX Direction</li>
+                  <li>Audience Engagement</li>
+                  <li>Content Discovery Systems</li>
+                  <li>Cross-Platform Experience Design</li>
                 </ul>
               </div>
               <div className="case-overview-col">
@@ -206,23 +242,93 @@ export default function HBCUGoCaseStudyPage() {
                 </p>
               </div>
               <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Overview</p>
+                <p className="case-overview-kicker">Strategy</p>
                 <div className="case-overview-prose">
                   <p>
-                    Stilliano Studio presents HBCUgo as a case study in live streaming,
-                    sports storytelling, and culturally-driven digital experiences. The
-                    work centered on shaping product experience, CTV strategy, and digital
-                    presentation for audiences engaging with HBCU sports, culture, and live
-                    content across streaming platforms.
-                  </p>
-                  <p>
-                    The goal was to create a viewing experience that felt clear, premium,
-                    and culturally relevant — supporting live game discovery, event
-                    presentation, sponsor visibility, and fan engagement.
+                    Build an ecosystem connecting live sports, culture, alumni, and
+                    community.
                   </p>
                 </div>
+                <p className="case-overview-kicker case-overview-kicker--spaced">Outcome</p>
+                <ul className="case-overview-list">
+                  <li>
+                    Expanded HBCUgo from a streaming product into a multi-platform
+                    audience ecosystem.
+                  </li>
+                  <li>
+                    Increased content discoverability across live sports, culture, and
+                    on-demand experiences.
+                  </li>
+                  <li>
+                    Created a scalable framework supporting Plex, Roku, Apple TV, mobile,
+                    and web audiences.
+                  </li>
+                </ul>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          className="case-section case-hbcugo-engagement section-spacing"
+          aria-labelledby="engagement-heading"
+        >
+          <div className={styles.inner}>
+            <h2
+              id="engagement-heading"
+              className="display-heading display-heading--light display-heading-xl case-hbcugo-engagement-title"
+            >
+              Audience Engagement Strategy
+            </h2>
+            <p className="case-hbcugo-engagement-lead">
+              HBCUgo was designed to become the digital home for HBCU sports, culture,
+              and community—creating a unified viewing experience across streaming
+              platforms while increasing audience engagement and content discovery.
+            </p>
+
+            {engagementArchitectureBlocks.map((block) => (
+              <article key={block.title} className="case-hbcugo-engagement-block">
+                <h3 className="case-hbcugo-engagement-block-title">{block.title}</h3>
+                <p className="case-hbcugo-engagement-block-body">{block.body}</p>
+                <figure className="case-hbcugo-engagement-figure">
+                  <img
+                    src={block.image}
+                    alt={block.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={1920}
+                    height={1080}
+                  />
+                </figure>
+              </article>
+            ))}
+
+            <blockquote className="case-hbcugo-engagement-quote">
+              <p className="case-hbcugo-engagement-quote-kicker">Strategic Goal</p>
+              <p className="case-hbcugo-engagement-quote-text">
+                Create multiple entry points into the HBCU ecosystem while increasing
+                content discovery and cross-category engagement.
+              </p>
+            </blockquote>
+
+            <article className="case-hbcugo-engagement-block case-hbcugo-engagement-block--after-quote">
+              <h3 className="case-hbcugo-engagement-block-title">
+                Multi-Platform Experience
+              </h3>
+              <p className="case-hbcugo-engagement-block-body">
+                Building the digital home for HBCU culture.
+              </p>
+              <figure className="case-hbcugo-engagement-figure">
+                <img
+                  src="/images/Selected%20Works/HBCUgo/experienceachitecture/OTTPlatforms_architecture.webp"
+                  alt="HBCUgo multi-platform OTT architecture diagram"
+                  loading="lazy"
+                  decoding="async"
+                  width={1920}
+                  height={1080}
+                />
+              </figure>
+            </article>
           </div>
         </section>
 
@@ -261,11 +367,19 @@ export default function HBCUGoCaseStudyPage() {
                 >
                   The Challenge
                 </h3>
-                <p className="case-visual-lang-sticky-text">
-                  For HBCUgo, the challenge was to create a digital experience that
-                  respected the cultural importance of the platform while also supporting
-                  the practical needs of live streaming.
-                </p>
+                <div className="case-visual-lang-sticky-copy">
+                  <p className="case-visual-lang-sticky-text">
+                    Most sports platforms are designed to maximize viewing sessions.
+                  </p>
+                  <p className="case-visual-lang-sticky-text">
+                    HBCUgo needed to build something larger: a digital destination that
+                    could deepen cultural connection, increase content discovery, and turn
+                    casual viewers into repeat community members.
+                  </p>
+                  <p className="case-visual-lang-sticky-text case-visual-lang-sticky-text--question">
+                    How might we transform a one-time viewer into a returning fan?
+                  </p>
+                </div>
               </aside>
               <div className="case-visual-lang-stills" role="list">
                 {challengeCards.map((card) => (
@@ -382,6 +496,34 @@ export default function HBCUGoCaseStudyPage() {
           </div>
         </section>
 
+        <section
+          className="case-section case-hbcugo-platform-life section-spacing"
+          aria-labelledby="platform-life-heading"
+        >
+          <div className={styles.inner}>
+            <h2
+              id="platform-life-heading"
+              className="display-heading display-heading--light display-heading-xl"
+            >
+              Bringing the Platform to Life
+            </h2>
+            <p className="case-hbcugo-platform-life-lead">
+              To support adoption across streaming platforms, we developed a suite of
+              promotional assets designed to drive awareness, engagement, and platform
+              discovery.
+            </p>
+            <div className="case-hbcugo-platform-life-videos">
+              {platformLifeVideos.map((video) => (
+                <CaseYouTubePlayCard
+                  key={video.videoId}
+                  videoId={video.videoId}
+                  title={video.title}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="case-section section-spacing" aria-labelledby="visual-heading">
           <div className={styles.inner}>
             <h2 id="visual-heading" className="display-heading display-heading-xl">
@@ -450,6 +592,16 @@ export default function HBCUGoCaseStudyPage() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <figure className="case-outcome-figure">
+              <img
+                src="/images/Selected%20Works/HBCUgo/experienceachitecture/DeepeningFanEngagement.webp"
+                alt="HBCUgo deepening fan engagement architecture diagram"
+                loading="lazy"
+                decoding="async"
+                width={1920}
+                height={1080}
+              />
+            </figure>
           </div>
         </section>
 
