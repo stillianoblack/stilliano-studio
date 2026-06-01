@@ -1,31 +1,21 @@
 type StillianoLogoProps = {
   className?: string;
-  variant?: "wordmark" | "mark";
 };
 
-const LOGOS = {
-  wordmark: {
-    src: "/images/SVGS/tarusdstills.svg",
-    width: 480,
-    height: 79,
-  },
-  mark: {
-    src: "/images/SVGS/tds.svg",
-    width: 165,
-    height: 165,
-  },
+const LOGO = {
+  src: "/images/SVGS/tarusdstills.svg",
+  width: 480,
+  height: 79,
 } as const;
 
-export function StillianoLogo({ className, variant = "wordmark" }: StillianoLogoProps) {
-  const logo = LOGOS[variant];
-
+export function StillianoLogo({ className }: StillianoLogoProps) {
   return (
     <img
       className={className}
-      src={logo.src}
+      src={LOGO.src}
       alt=""
-      width={logo.width}
-      height={logo.height}
+      width={LOGO.width}
+      height={LOGO.height}
       decoding="async"
     />
   );

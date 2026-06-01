@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { StillianoLogo } from "./StillianoLogo";
 
 export function SiteHeader() {
   const [navElevated, setNavElevated] = useState(false);
@@ -24,11 +23,7 @@ export function SiteHeader() {
         <div className={styles.siteHeaderBar}>
           <div className={styles.headerRow}>
             <a href="/" className={styles.logo} aria-label="Stilliano home">
-              <StillianoLogo
-                variant="mark"
-                className={`stilliano-logo stilliano-logo--mark ${styles.logoMark}`}
-              />
-              <span className={styles.logoWordmark} aria-hidden>
+              <span className={styles.logoWordmark}>
                 <span className={styles.logoPrimary}>STILLIANO</span>
               </span>
             </a>

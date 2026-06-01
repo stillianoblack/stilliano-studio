@@ -440,6 +440,10 @@
 }
 
 @media (max-width: 768px) {
+  .heroCarousel {
+    overscroll-behavior: none;
+  }
+
   .heroCarouselScrim {
     /* The mobile caption panel provides readability; keep overlay minimal. */
     opacity: 0.85;
@@ -586,22 +590,8 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   color: rgba(247, 247, 244, 0.96);
   transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.logoMark {
-  display: block;
-  height: clamp(28px, 3.6vw, 34px);
-  width: auto;
-  aspect-ratio: 1 / 1;
-  filter: brightness(0) invert(0.97);
-  transition: filter 0.2s ease;
-}
-
-.siteHeaderElevated .logoMark {
-  filter: none;
 }
 
 .logoWordmark {

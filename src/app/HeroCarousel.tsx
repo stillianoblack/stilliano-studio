@@ -36,7 +36,7 @@ const SLIDES: HeroSlide[] = [
     title: "HBCUgo Sports",
     image: "/images/Heros/HBCUgoCTV_Hero.webp",
     href: "/work/hbcugo",
-    mobileImage: "/images/Heros/HBCUgo_hero_mobile.webp",
+    mobileImage: "/images/Heros/HBCUgo_hero_mobile_1.webp",
     mobilePosition: "50% 20%",
     mobileSize: "cover",
   },
@@ -58,7 +58,7 @@ const SLIDES: HeroSlide[] = [
   {
     title: "Genius Sports",
     image: "/images/Heros/geniussports_hero.webp",
-    mobileImage: "/images/Heros/geniussports_hero_mobile.webp",
+    mobileImage: "/images/Heros/geniussports_hero_mobile_1.webp",
     mobilePosition: "50% 20%",
     mobileSize: "cover",
   },
@@ -70,9 +70,10 @@ export function HeroCarousel() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const touchStartY = useRef<number | null>(null);
   const wheelLock = useRef(false);
   const activeIndexRef = useRef(0);
+  const touchStartY = useRef(0);
+  const touchAccumulated = useRef(0);
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -95,16 +96,6 @@ export function HeroCarousel() {
     },
     [beginTransition],
   );
-
-  const goNext = useCallback(() => {
-    const current = activeIndexRef.current;
-    if (current < SLIDES.length - 1) beginTransition(current + 1);
-  }, [beginTransition]);
-
-  const goPrev = useCallback(() => {
-    const current = activeIndexRef.current;
-    if (current > 0) beginTransition(current - 1);
-  }, [beginTransition]);
 
   const handleWorldSelect = useCallback(
     (index: number) => {
@@ -140,6 +131,24 @@ export function HeroCarousel() {
     const section = sectionRef.current;
     if (!section) return;
 
+    const TOUCH_THRESHOLD = 48;
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+    const lockAndTransition = (nextIndex: number) => {
+      wheelLock.current = true;
+      beginTransition(nextIndex);
+      window.setTimeout(() => {
+        wheelLock.current = false;
+      }, TRANSITION_MS + 120);
+    };
+
+    const shouldCaptureScroll = (direction: "up" | "down") => {
+      if (window.scrollY > 8) return false;
+      const current = activeIndexRef.current;
+      if (direction === "down") return current < SLIDES.length - 1;
+      return current > 0;
+    };
+
     const onWheel = (event: WheelEvent) => {
       if (window.scrollY > 8) return;
       if (wheelLock.current) {
@@ -154,45 +163,95 @@ export function HeroCarousel() {
       // Scroll down advances slides; on last slide, allow normal page scroll.
       if (scrollingDown && current < SLIDES.length - 1) {
         event.preventDefault();
-        wheelLock.current = true;
-        beginTransition(current + 1);
-        window.setTimeout(() => {
-          wheelLock.current = false;
-        }, TRANSITION_MS + 120);
+        lockAndTransition(current + 1);
         return;
       }
 
       // Scroll up goes back through slides; on first slide, allow default.
       if (scrollingUp && current > 0) {
         event.preventDefault();
-        wheelLock.current = true;
-        beginTransition(current - 1);
-        window.setTimeout(() => {
-          wheelLock.current = false;
-        }, TRANSITION_MS + 120);
+        lockAndTransition(current - 1);
       }
     };
 
+    const onTouchStart = (event: TouchEvent) => {
+      if (!mobileQuery.matches || window.scrollY > 8) return;
+      touchStartY.current = event.touches[0]?.clientY ?? 0;
+      touchAccumulated.current = 0;
+    };
+
+    const onTouchMove = (event: TouchEvent) => {
+      if (!mobileQuery.matches || window.scrollY > 8) return;
+      if (wheelLock.current) {
+        event.preventDefault();
+        return;
+      }
+
+      const y = event.touches[0]?.clientY ?? 0;
+      touchAccumulated.current = touchStartY.current - y;
+
+      if (touchAccumulated.current > 0 && shouldCaptureScroll("down")) {
+        event.preventDefault();
+      } else if (touchAccumulated.current < 0 && shouldCaptureScroll("up")) {
+        event.preventDefault();
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (!mobileQuery.matches || window.scrollY > 8 || wheelLock.current) return;
+
+      const delta = touchAccumulated.current;
+      if (Math.abs(delta) < TOUCH_THRESHOLD) return;
+
+      const current = activeIndexRef.current;
+      if (delta > 0 && current < SLIDES.length - 1) {
+        lockAndTransition(current + 1);
+      } else if (delta < 0 && current > 0) {
+        lockAndTransition(current - 1);
+      }
+      touchAccumulated.current = 0;
+    };
+
+    const onScroll = () => {
+      if (!mobileQuery.matches || wheelLock.current) return;
+      const current = activeIndexRef.current;
+      if (current >= SLIDES.length - 1 || window.scrollY <= 0) return;
+
+      window.scrollTo({ top: 0, behavior: "instant" });
+      lockAndTransition(current + 1);
+    };
+
     section.addEventListener("wheel", onWheel, { passive: false });
-    return () => section.removeEventListener("wheel", onWheel);
+
+    const attachMobileScroll = () => {
+      if (!mobileQuery.matches) return;
+      document.addEventListener("touchstart", onTouchStart, { passive: true });
+      document.addEventListener("touchmove", onTouchMove, { passive: false });
+      document.addEventListener("touchend", onTouchEnd, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true });
+    };
+
+    const detachMobileScroll = () => {
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchmove", onTouchMove);
+      document.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("scroll", onScroll);
+    };
+
+    const onMobileQueryChange = () => {
+      detachMobileScroll();
+      attachMobileScroll();
+    };
+
+    attachMobileScroll();
+    mobileQuery.addEventListener("change", onMobileQueryChange);
+
+    return () => {
+      section.removeEventListener("wheel", onWheel);
+      mobileQuery.removeEventListener("change", onMobileQueryChange);
+      detachMobileScroll();
+    };
   }, [beginTransition]);
-
-  const onTouchStart = (event: React.TouchEvent) => {
-    touchStartY.current = event.touches[0]?.clientY ?? null;
-  };
-
-  const onTouchEnd = (event: React.TouchEvent) => {
-    const startY = touchStartY.current;
-    const endY = event.changedTouches[0]?.clientY;
-    touchStartY.current = null;
-    if (startY == null || endY == null || isTransitioning) return;
-
-    const delta = startY - endY;
-    if (Math.abs(delta) < 48) return;
-
-    if (delta > 0) goNext();
-    else goPrev();
-  };
 
   const progress =
     SLIDES.length <= 1 ? 1 : activeIndex / (SLIDES.length - 1);
@@ -203,8 +262,6 @@ export function HeroCarousel() {
       className={styles.heroCarousel}
       aria-label="Featured work"
       aria-roledescription="carousel"
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
     >
       <div className={styles.heroCarouselMedia} aria-hidden>
         {SLIDES.map((slide, index) => (

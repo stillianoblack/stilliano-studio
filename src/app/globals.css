@@ -140,11 +140,6 @@ video {
   aspect-ratio: 480 / 79;
 }
 
-.stilliano-logo--mark {
-  height: clamp(36px, 4.5vw, 42px);
-  aspect-ratio: 1 / 1;
-}
-
 /* Case study template (reusable) */
 .case-hero {
   position: relative;
