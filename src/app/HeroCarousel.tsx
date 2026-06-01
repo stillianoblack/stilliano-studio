@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 import { WorkModal } from "./WorkModal";
 
 const CAROUSEL_INTERVAL_MS = 7000;
-const TRANSITION_MS = 900;
+const TRANSITION_MS = 1000;
 
 type HeroSlide = {
   title: string;
@@ -67,7 +67,7 @@ const SLIDES: HeroSlide[] = [
 export function HeroCarousel() {
   const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const wheelLock = useRef(false);
@@ -82,8 +82,10 @@ export function HeroCarousel() {
   const beginTransition = useCallback((nextIndex: number) => {
     setActiveIndex((current) => {
       if (current === nextIndex) return current;
-      setIsTransitioning(true);
-      window.setTimeout(() => setIsTransitioning(false), TRANSITION_MS);
+      setPrevIndex(current);
+      window.setTimeout(() => {
+        setPrevIndex(null);
+      }, TRANSITION_MS);
       return nextIndex;
     });
   }, []);
@@ -116,16 +118,12 @@ export function HeroCarousel() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       if (wheelLock.current || window.scrollY > 8) return;
-      setActiveIndex((current) => {
-        const next = (current + 1) % SLIDES.length;
-        setIsTransitioning(true);
-        window.setTimeout(() => setIsTransitioning(false), TRANSITION_MS);
-        return next;
-      });
+      const next = (activeIndexRef.current + 1) % SLIDES.length;
+      beginTransition(next);
     }, CAROUSEL_INTERVAL_MS);
 
     return () => window.clearInterval(timer);
-  }, []);
+  }, [beginTransition]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -266,23 +264,37 @@ export function HeroCarousel() {
       aria-roledescription="carousel"
     >
       <div className={styles.heroCarouselMedia} aria-hidden>
-        {SLIDES.map((slide, index) => (
-          <div
-            key={slide.title}
-            className={`${styles.heroCarouselSlide} ${
-              index === activeIndex ? styles.heroCarouselSlideActive : ""
-            }`}
-            style={{
-              ["--hero-bg-image" as string]: `url("${encodeURI(slide.image)}")`,
-              ["--hero-bg-image-mobile" as string]: `url("${encodeURI(
-                slide.mobileImage ?? slide.image,
-              )}")`,
-              ["--hero-bg-position-mobile" as string]:
-                slide.mobilePosition ?? "center top",
-              ["--hero-bg-size-mobile" as string]: slide.mobileSize ?? "cover",
-            }}
-          />
-        ))}
+        {SLIDES.map((slide, index) => {
+          const isActive = index === activeIndex;
+          const isUnder = index === prevIndex;
+          return (
+            <div
+              key={slide.title}
+              className={`${styles.heroCarouselSlide} ${
+                isActive ? styles.heroCarouselSlideActive : ""
+              } ${isUnder ? styles.heroCarouselSlideUnder : ""}`}
+              style={{
+                ["--hero-object-position" as string]:
+                  slide.mobilePosition ?? "center center",
+              }}
+            >
+              <picture className={styles.heroCarouselSlidePicture}>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={slide.mobileImage ?? slide.image}
+                />
+                <img
+                  className={styles.heroCarouselSlideImage}
+                  src={slide.image}
+                  alt=""
+                  decoding="async"
+                  draggable={false}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                />
+              </picture>
+            </div>
+          );
+        })}
       </div>
 
       <div className={styles.heroCarouselScrim} aria-hidden />
