@@ -377,6 +377,91 @@ video {
   color: var(--text-muted);
 }
 
+.case-hbcugo-audience-loop {
+  margin-top: clamp(7.5rem, 14vw, 11rem);
+}
+
+/* Matches .case-hbcugo-engagement-quote-text (Strategic Goal quote) */
+.case-hbcugo-audience-loop-intro {
+  margin: 0 0 clamp(2rem, 4.5vw, 3rem);
+  max-width: 100%;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-hbcugo-audience-loop-figure {
+  margin: 0 0 clamp(2rem, 4.5vw, 3rem);
+  line-height: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.case-hbcugo-audience-loop-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-hbcugo-audience-loop-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+  width: 100%;
+}
+
+.case-hbcugo-audience-loop-stage {
+  min-width: 0;
+  max-width: none;
+  padding-inline: clamp(0.25rem, 0.75vw, 0.75rem);
+}
+
+@media (max-width: 768px) {
+  .case-hbcugo-audience-loop-flow {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: clamp(1.25rem, 4vw, 2rem);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+
+  .case-hbcugo-audience-loop-stage {
+    flex: 0 0 auto;
+    min-width: 7.5rem;
+    padding-inline: 0;
+  }
+}
+
+.case-hbcugo-audience-loop-stage-title {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.case-hbcugo-audience-loop-list {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+  font-size: clamp(0.8125rem, 1.1vw, 0.9375rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.3;
+}
+
 .case-page .case-section.case-section-strategic.section-spacing {
   background: linear-gradient(180deg, #152a52 0%, #1e3a72 48%, #152a52 100%);
   border-top-color: rgba(255, 255, 255, 0.08);
@@ -856,6 +941,32 @@ video.case-hero-media {
 
 .case-overview-kicker--spaced {
   margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.case-overview-subheading {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.case-overview-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.case-overview-strategy-group .case-overview-kicker {
+  margin-bottom: 0.65rem;
+}
+
+@media (min-width: 1100px) {
+  .case-overview-strategy-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .case-overview-list {
@@ -2964,6 +3075,223 @@ a.work-card {
   }
 }
 
+/* Amira — overview band */
+.case-page--amira .case-page-overview-band.case-section {
+  --amira-overview-accent: #2f5497;
+  background: #ffffff;
+  border-top-color: var(--border);
+  color: var(--text);
+}
+
+.case-page--amira .case-page-overview-band .case-overview-heading {
+  color: var(--text);
+}
+
+.case-page--amira .case-page-overview-band .case-amira-overview-accent {
+  color: var(--amira-overview-accent);
+}
+
+.case-page--amira .case-amira-overview-strategy-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--text-muted);
+}
+
+.case-page--amira .case-amira-overview-editorial-quote p {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-page--amira .case-amira-overview-editorial-quote p::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 0.12em;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  color: var(--amira-overview-accent);
+}
+
+.case-page--amira .case-amira-overview-editorial-quote p::after {
+  content: "\201D";
+  margin-left: 0.06em;
+  color: var(--amira-overview-accent);
+}
+
+.case-page--amira .case-amira-overview-editorial-quote + .case-overview-video {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.case-page--amira .case-amira-overview-strategy {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 62ch;
+}
+
+.case-page--amira .case-amira-overview-editorial-quote {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-left: clamp(2rem, 12vw, 7.5rem);
+  margin-right: clamp(0.5rem, 4vw, 2rem);
+  padding: 0;
+  border: none;
+  max-width: min(38ch, 90%);
+}
+
+.case-page--amira .case-amira-reading-ecosystem {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  width: 100%;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.case-page--amira .case-amira-reading-ecosystem-supporting {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  width: 100%;
+}
+
+.case-page--amira .case-amira-reading-ecosystem-card {
+  margin: 0;
+  min-width: 0;
+}
+
+.case-page--amira .case-amira-reading-ecosystem-media {
+  position: relative;
+  line-height: 0;
+  aspect-ratio: 16 / 9;
+  overflow: visible;
+}
+
+.case-page--amira .case-amira-reading-ecosystem-card--hero .case-amira-reading-ecosystem-media {
+  aspect-ratio: 16 / 9;
+}
+
+.case-page--amira
+  .case-amira-reading-ecosystem-card--supporting:first-child
+  .case-amira-reading-ecosystem-media::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1.5px solid rgba(20, 20, 19, 0.3);
+  border-top: 1.5px solid rgba(20, 20, 19, 0.3);
+  transform: translate(calc(50% + clamp(0.625rem, 1.25vw, 1rem)), -50%) rotate(45deg);
+  pointer-events: none;
+}
+
+.case-page--amira .case-amira-reading-ecosystem-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background: #f5f0ea;
+}
+
+.case-page--amira .case-amira-reading-loop-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+  row-gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+}
+
+.case-page--amira .case-amira-reading-loop-grid + .case-amira-overview-editorial-quote {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .case-page--amira .case-amira-overview-editorial-quote {
+    margin-left: clamp(0.5rem, 4vw, 1.5rem);
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.case-page--amira .case-amira-reading-loop-col {
+  min-width: 0;
+  padding-inline: clamp(0.25rem, 0.75vw, 0.75rem);
+}
+
+.case-page--amira .case-amira-reading-loop-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--amira .case-amira-reading-loop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.case-page--amira .case-amira-overview-meta {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .case-page--amira .case-amira-reading-ecosystem-supporting {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 2.75rem);
+  }
+
+  .case-page--amira
+    .case-amira-reading-ecosystem-card--supporting:first-child
+    .case-amira-reading-ecosystem-media::after {
+    right: 50%;
+    top: auto;
+    bottom: 0;
+    border-top: none;
+    border-right: 1.5px solid rgba(20, 20, 19, 0.3);
+    border-bottom: 1.5px solid rgba(20, 20, 19, 0.3);
+    transform: translate(-50%, calc(100% + clamp(0.85rem, 2vw, 1.1rem))) rotate(45deg);
+  }
+
+  .case-page--amira .case-amira-reading-loop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-page--amira .case-amira-overview-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .case-page--amira .case-amira-reading-loop-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .case-amira-narrative-kicker {
   margin: 0 0 clamp(1rem, 2vw, 1.35rem);
   font-size: 0.6875rem;
@@ -4233,6 +4561,185 @@ a.work-card {
 .case-page--caiden .case-section-dark {
   background: linear-gradient(180deg, #0d0a08 0%, #141010 100%);
   border-top-color: rgba(252, 233, 106, 0.12);
+}
+
+/* —— Caiden overview band (white, strategy + transformation loop) —— */
+
+.case-page--caiden .case-caiden-overview-band {
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.case-page--caiden .case-caiden-overview-heading {
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  text-align: left;
+  color: var(--text);
+}
+
+.case-page--caiden .case-caiden-overview-accent {
+  color: var(--accent);
+}
+
+.case-page--caiden .case-caiden-overview-strategy {
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+  max-width: 62ch;
+}
+
+.case-page--caiden .case-caiden-overview-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-caiden-overview-strategy-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--text-muted);
+}
+
+.case-page--caiden .case-caiden-transformation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  width: 100%;
+}
+
+.case-page--caiden .case-caiden-transformation-card {
+  margin: 0;
+  min-width: 0;
+}
+
+.case-page--caiden .case-caiden-transformation-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-caiden-transformation-media {
+  position: relative;
+  line-height: 0;
+  aspect-ratio: 16 / 9;
+  overflow: visible;
+}
+
+.case-page--caiden .case-caiden-transformation-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background: #f5f0ea;
+}
+
+.case-page--caiden
+  .case-caiden-transformation-card:not(:last-child)
+  .case-caiden-transformation-media::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1.5px solid rgba(20, 20, 19, 0.3);
+  border-top: 1.5px solid rgba(20, 20, 19, 0.3);
+  transform: translate(calc(50% + clamp(0.625rem, 1.25vw, 1rem)), -50%) rotate(45deg);
+  pointer-events: none;
+}
+
+.case-page--caiden .case-caiden-transformation-caption {
+  margin: clamp(0.85rem, 1.75vw, 1.1rem) 0 0;
+  font-size: clamp(0.875rem, 1.1vw, 0.9375rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.case-page--caiden .case-caiden-transformation-caption-keyword {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.case-page--caiden .case-caiden-transformation-caption-body {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.case-page--caiden .case-caiden-ecosystem-loop-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+  row-gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid var(--border);
+}
+
+.case-page--caiden .case-caiden-ecosystem-loop-col {
+  min-width: 0;
+  padding-inline: clamp(0.25rem, 0.75vw, 0.75rem);
+}
+
+.case-page--caiden .case-caiden-ecosystem-loop-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-caiden-ecosystem-loop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .case-page--caiden .case-caiden-transformation-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 2.75rem);
+  }
+
+  .case-page--caiden
+    .case-caiden-transformation-card:not(:last-child)
+    .case-caiden-transformation-media::after {
+    right: 50%;
+    top: auto;
+    bottom: 0;
+    border-top: none;
+    border-right: 1.5px solid rgba(20, 20, 19, 0.3);
+    border-bottom: 1.5px solid rgba(20, 20, 19, 0.3);
+    transform: translate(-50%, calc(100% + clamp(0.85rem, 2vw, 1.1rem))) rotate(45deg);
+  }
+
+  .case-page--caiden .case-caiden-ecosystem-loop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .case-page--caiden .case-caiden-ecosystem-loop-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* —— Caiden editorial franchise band (blue, 3-video editorial) —— */

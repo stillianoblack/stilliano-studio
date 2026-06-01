@@ -57,6 +57,33 @@ const approachPillars = [
   },
 ];
 
+const AUDIENCE_LOOP_DIAGRAM =
+  "/images/Selected%20Works/HBCUgo/experienceachitecture/Hbcugo_diagrams_mobile_journey.webp";
+
+const audienceLoopStages = [
+  { title: "Discover" },
+  {
+    title: "Anticipate",
+    items: ["Upcoming Games", "Schedules", "Notifications"],
+  },
+  {
+    title: "Watch",
+    items: ["Live Sports", "Real-Time Stats", "Game Day Experience"],
+  },
+  {
+    title: "Engage",
+    items: ["Community", "Commentary", "Highlights"],
+  },
+  {
+    title: "Return",
+    items: ["Recommended Content", "Upcoming Matchups"],
+  },
+  {
+    title: "Grow",
+    items: ["Audience Retention", "Platform Loyalty", "Subscriber Value"],
+  },
+] as const;
+
 const journeySteps = [
   {
     title: "Discover",
@@ -126,6 +153,25 @@ const outcomeBullets = [
   "More premium platform presentation",
   "Better alignment between content, audience, and brand partners",
 ];
+
+const strategyFramework = [
+  {
+    label: "Audience",
+    items: ["Sports Fans", "Alumni", "Students", "Culture Enthusiasts"],
+  },
+  {
+    label: "Platforms",
+    items: ["Roku", "Apple TV", "Fire TV", "Mobile", "Web"],
+  },
+  {
+    label: "Systems",
+    items: ["CMS", "Scheduling", "Content Ops", "Community"],
+  },
+  {
+    label: "Outcome",
+    items: ["Discovery", "Engagement", "Retention"],
+  },
+] as const;
 
 const engagementArchitectureBlocks = [
   {
@@ -242,28 +288,25 @@ export default function HBCUGoCaseStudyPage() {
                 </p>
               </div>
               <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Strategy</p>
+                <h3 className="case-overview-subheading">Strategy</h3>
                 <div className="case-overview-prose">
                   <p>
                     Build an ecosystem connecting live sports, culture, alumni, and
                     community.
                   </p>
                 </div>
-                <p className="case-overview-kicker case-overview-kicker--spaced">Outcome</p>
-                <ul className="case-overview-list">
-                  <li>
-                    Expanded HBCUgo from a streaming product into a multi-platform
-                    audience ecosystem.
-                  </li>
-                  <li>
-                    Increased content discoverability across live sports, culture, and
-                    on-demand experiences.
-                  </li>
-                  <li>
-                    Created a scalable framework supporting Plex, Roku, Apple TV, mobile,
-                    and web audiences.
-                  </li>
-                </ul>
+                <div className="case-overview-strategy-grid">
+                  {strategyFramework.map((group) => (
+                    <div key={group.label} className="case-overview-strategy-group">
+                      <p className="case-overview-kicker">{group.label}</p>
+                      <ul className="case-overview-list">
+                        {group.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -432,6 +475,40 @@ export default function HBCUGoCaseStudyPage() {
                 </article>
               ))}
             </div>
+
+            <article
+              className="case-hbcugo-audience-loop"
+              aria-labelledby="audience-loop-heading"
+            >
+              <p id="audience-loop-heading" className="case-hbcugo-audience-loop-intro">
+                Building the HBCU Sports Audience Loop - Connecting discovery, engagement,
+                and retention across mobile, web, and streaming platforms.
+              </p>
+              <figure className="case-hbcugo-audience-loop-figure">
+                <img
+                  src={AUDIENCE_LOOP_DIAGRAM}
+                  alt="HBCU sports audience loop — mobile journey diagram"
+                  loading="lazy"
+                  decoding="async"
+                  width={1920}
+                  height={1080}
+                />
+              </figure>
+              <div className="case-hbcugo-audience-loop-flow" role="list">
+                {audienceLoopStages.map((stage) => (
+                  <div key={stage.title} className="case-hbcugo-audience-loop-stage" role="listitem">
+                    <p className="case-hbcugo-audience-loop-stage-title">{stage.title}</p>
+                    {"items" in stage && stage.items.length > 0 ? (
+                      <ul className="case-hbcugo-audience-loop-list">
+                        {stage.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </article>
           </div>
         </section>
 

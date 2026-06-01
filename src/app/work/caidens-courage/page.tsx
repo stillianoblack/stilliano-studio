@@ -137,6 +137,69 @@ const heroTags = [
   "Franchise Ecosystem",
 ];
 
+const transformationLoopCards = [
+  {
+    eyebrow: "Discover",
+    src: "/images/Selected%20Works/caidencourage/images/Transformation%20Loop/Awareness_Caiden_crowd.webp",
+    alt: "Caiden's Courage — awareness and emotional recognition among kids",
+    captionKeyword: "Awareness",
+    captionBody: "Kids recognize their emotions, challenges, and strengths.",
+  },
+  {
+    eyebrow: "Practice",
+    src: "/images/Selected%20Works/caidencourage/images/Transformation%20Loop/practice_Caiden_SEL.webp",
+    alt: "Caiden's Courage — SEL practice and focus training",
+    captionKeyword: "Action",
+    captionBody:
+      "Kids practice focus, emotional regulation, courage, and self-awareness.",
+  },
+  {
+    eyebrow: "Transform",
+    src: "/images/Selected%20Works/caidencourage/images/Transformation%20Loop/transform_genesis.webp",
+    alt: "Caiden's Courage — transformation and confidence building",
+    captionKeyword: "Growth",
+    captionBody:
+      "Kids build confidence, resilience, and leadership through repetition.",
+  },
+] as const;
+
+const ecosystemLoopColumns = [
+  {
+    label: "Discover",
+    items: ["Story World", "Comic Books", "Characters", "SEL Reflection"],
+  },
+  {
+    label: "Practice",
+    items: [
+      "Interactive Missions",
+      "Focus Flame Lab",
+      "B-4 Coaching",
+      "Brave Challenges",
+    ],
+  },
+  {
+    label: "Apply",
+    items: [
+      "Classroom Activities",
+      "Camp Courage",
+      "Family Discussions",
+      "Real-Life Actions",
+    ],
+  },
+  {
+    label: "Grow",
+    items: ["Confidence", "Focus", "Emotional Regulation", "Leadership"],
+  },
+  {
+    label: "Share",
+    items: ["Student Artwork", "Challenges", "Community Stories", "Parent Wins"],
+  },
+  {
+    label: "Belong",
+    items: ["Brave Minds Community", "School Programs", "Clubs", "Events"],
+  },
+] as const;
+
 type EditorialVideo = {
   src: string;
   ariaLabel: string;
@@ -484,6 +547,73 @@ export default function CaidensCourageCaseStudyPage() {
               >
                 Explore Live Experience
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Overview — strategy + transformation loop */}
+        <section
+          className="case-section case-caiden-overview-band section-spacing"
+          aria-labelledby="caiden-overview-heading"
+        >
+          <div className={styles.inner}>
+            <h2
+              id="caiden-overview-heading"
+              className="display-heading display-heading-xl case-caiden-overview-heading"
+            >
+              How do we help{" "}
+              <span className="case-caiden-overview-accent">neurodiverse kids</span> build
+              confidence and focus?
+            </h2>
+            <div className="case-caiden-overview-strategy">
+              <p className="case-caiden-overview-kicker">Strategy</p>
+              <p className="case-caiden-overview-strategy-text">
+                Create a franchise ecosystem combining story, SEL learning, community, and
+                play.
+              </p>
+            </div>
+            <div className="case-caiden-transformation-grid" role="list">
+              {transformationLoopCards.map((card) => (
+                <figure
+                  key={card.eyebrow}
+                  className="case-caiden-transformation-card"
+                  role="listitem"
+                >
+                  <p className="case-caiden-transformation-eyebrow">{card.eyebrow}</p>
+                  <div className="case-caiden-transformation-media">
+                    <img
+                      src={card.src}
+                      alt={card.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={1920}
+                      height={1080}
+                    />
+                  </div>
+                  <figcaption className="case-caiden-transformation-caption">
+                    <span className="case-caiden-transformation-caption-keyword">
+                      {card.captionKeyword}
+                    </span>
+                    {" - "}
+                    <span className="case-caiden-transformation-caption-body">
+                      {card.captionBody}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+
+            <div className="case-caiden-ecosystem-loop-grid" role="list">
+              {ecosystemLoopColumns.map((column) => (
+                <div key={column.label} className="case-caiden-ecosystem-loop-col" role="listitem">
+                  <p className="case-caiden-ecosystem-loop-kicker">{column.label}</p>
+                  <ul className="case-caiden-ecosystem-loop-list">
+                    {column.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </section>

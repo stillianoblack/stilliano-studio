@@ -115,6 +115,49 @@ const overviewServices = [
   "User Research & Classroom Testing",
 ];
 
+const readingEcosystemHero = {
+  src: "/images/Selected%20Works/Amira/experiencearchitecture/amira_studentjourney.webp",
+  alt: "Amira AI Learning student journey — personalized reading ecosystem",
+} as const;
+
+const readingEcosystemSupporting = [
+  {
+    src: "/images/Selected%20Works/Amira/experiencearchitecture/gameloop.webp",
+    alt: "Amira AI Learning game loop — student reading engagement cycle",
+  },
+  {
+    src: "/images/Selected%20Works/Amira/experiencearchitecture/flowchart_amira.webp",
+    alt: "Amira AI Learning flowchart — personalized reading journey",
+  },
+] as const;
+
+const readingLoopColumns = [
+  {
+    label: "Discover",
+    items: ["Story Selection", "Character Introduction", "Reading Goal"],
+  },
+  {
+    label: "Read",
+    items: ["Interactive Reading", "Voice Recognition", "Guided Support"],
+  },
+  {
+    label: "Practice",
+    items: ["Vocabulary", "Fluency", "Comprehension"],
+  },
+  {
+    label: "Feedback",
+    items: ["Real-time Coaching", "Progress Tracking", "Teacher Insights"],
+  },
+  {
+    label: "Confidence",
+    items: ["Achievement Moments", "Growth Recognition", "Reading Streaks"],
+  },
+  {
+    label: "Mastery",
+    items: ["Independent Reading", "Higher Reading Levels", "Continued Engagement"],
+  },
+] as const;
+
 const strategySystems = [
   { title: "XP + Progression", body: "Visible ladders that translate practice into momentum." },
   { title: "Reward Loops", body: "Celebration beats timed to effort, not only correctness." },
@@ -379,8 +422,69 @@ export default function AmiraLearningCaseStudyPage() {
               id="overview-heading"
               className="display-heading display-heading-xl case-overview-heading"
             >
-              Designing learning systems students actually wanted to return to.
+              How do we help{" "}
+              <span className="case-amira-overview-accent">struggling readers</span> become
+              confident, independent learners?
             </h2>
+            <div className="case-amira-overview-strategy">
+              <p className="case-overview-kicker">Strategy</p>
+              <p className="case-amira-overview-strategy-text">
+                Build a personalized reading ecosystem connecting story discovery, AI-powered
+                coaching, real-time feedback, and measurable literacy growth.
+              </p>
+            </div>
+            <div className="case-amira-reading-ecosystem">
+              <figure className="case-amira-reading-ecosystem-card case-amira-reading-ecosystem-card--hero">
+                <div className="case-amira-reading-ecosystem-media">
+                  <img
+                    src={readingEcosystemHero.src}
+                    alt={readingEcosystemHero.alt}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
+                    width={1920}
+                    height={1080}
+                  />
+                </div>
+              </figure>
+              <div className="case-amira-reading-ecosystem-supporting" role="list">
+                {readingEcosystemSupporting.map((image) => (
+                  <figure
+                    key={image.src}
+                    className="case-amira-reading-ecosystem-card case-amira-reading-ecosystem-card--supporting"
+                    role="listitem"
+                  >
+                    <div className="case-amira-reading-ecosystem-media">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        loading="lazy"
+                        decoding="async"
+                        width={1920}
+                        height={1080}
+                      />
+                    </div>
+                  </figure>
+                ))}
+              </div>
+            </div>
+            <div className="case-amira-reading-loop-grid" role="list">
+              {readingLoopColumns.map((column) => (
+                <div key={column.label} className="case-amira-reading-loop-col" role="listitem">
+                  <p className="case-amira-reading-loop-kicker">{column.label}</p>
+                  <ul className="case-amira-reading-loop-list">
+                    {column.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <blockquote className="case-amira-overview-editorial-quote">
+              <p>
+                Designing learning systems students actually wanted to return to.
+              </p>
+            </blockquote>
             <div className="case-overview-video case-overview-video--player">
               <CaseCinematicVideo
                 src={AMIRA_VIDEOS.overview}
@@ -389,7 +493,7 @@ export default function AmiraLearningCaseStudyPage() {
                 className="case-overview-cinematic-video"
               />
             </div>
-            <div className="case-overview-meta">
+            <div className="case-overview-meta case-amira-overview-meta">
               <div className="case-overview-col">
                 <p className="case-overview-kicker">Services</p>
                 <ul className="case-overview-list">
@@ -404,21 +508,6 @@ export default function AmiraLearningCaseStudyPage() {
                 <p className="case-overview-project-meta">
                   Product & experience design, adaptive literacy · Education
                 </p>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Overview</p>
-                <div className="case-overview-prose">
-                  <p>
-                    Designing an AI-powered reading platform proven to accelerate student
-                    learning outcomes
-                  </p>
-                  <p>
-                    Led end-to-end product and experience design for an adaptive learning
-                    ecosystem that combined AI, storytelling, gameplay systems, and behavioral
-                    engagement mechanics to improve literacy participation, retention, and
-                    student confidence across classroom and mobile experiences.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
