@@ -4,13 +4,13 @@ import styles from "../page.module.css";
 import { TrackRecordSticky, type TrackRecordEntry } from "./TrackRecordSticky";
 
 export const metadata: Metadata = {
-  title: "Tarus D. Stills — Creative Technologist & Product Systems Strategist | Stilliano Studios",
+  title: "Tarus D. Stills — Creative Director for Interactive Experiences | Stilliano Studios",
   description:
-    "Product systems strategy, GTM alignment, and creative technology for platforms accelerating engagement, adoption, and operational scale.",
+    "Creative leader at the intersection of product, storytelling, audience engagement, entertainment, education, retail, and emerging technology.",
   openGraph: {
-    title: "Tarus D. Stills — Creative Technologist & Product Systems Strategist | Stilliano Studios",
+    title: "Tarus D. Stills — Creative Director for Interactive Experiences | Stilliano Studios",
     description:
-      "Helping platforms accelerate GTM execution, engagement systems, and product adoption through strategic product, design, and operational alignment.",
+      "Building audience experiences across product, entertainment, education, retail, and emerging technology.",
   },
 };
 
@@ -104,16 +104,18 @@ const engagementPhases = [
 ];
 
 const coreStrengths = [
-  "Product Systems",
-  "GTM Strategy",
-  "UX Architecture",
-  "Interface Design",
-  "Engagement Design",
-  "AI Workflows",
-  "Ecosystem Thinking",
-  "Operational Scaling",
-  "Interactive Storytelling",
-  "Illustration",
+  "Creative Direction",
+  "Product Strategy",
+  "Audience Engagement",
+  "Interactive Experiences",
+  "Brand Systems",
+  "Experience Design",
+  "Storytelling",
+  "Gamification",
+  "Emerging Technology",
+  "Cross-Functional Leadership",
+  "Go-To-Market Thinking",
+  "Platform Design",
 ];
 
 export default function AboutPage() {
@@ -136,18 +138,20 @@ export default function AboutPage() {
             />
           </picture>
           <div className="case-hero-overlay about-hero-overlay" aria-hidden />
-          <div className="case-hero-pattern" aria-hidden />
           <div className={`${styles.inner} case-hero-content about-hero-content`}>
             <div className="about-hero-copy">
               <p className="case-hero-eyebrow about-hero-eyebrow">TARUS D. STILLS</p>
               <h1 className="case-hero-title about-hero-title">
-                <span className="about-hero-title-line">Designing the systems</span>
-                <span className="about-hero-title-line">behind audience experiences.</span>
+                <span className="about-hero-title-line">Creative Director</span>
+                <span className="about-hero-title-line">for Interactive Experiences</span>
               </h1>
               <p className="case-hero-subtitle about-hero-subline">
-                Tarus D. Stills helps teams align product strategy, UX systems, storytelling,
-                and go-to-market thinking into cohesive digital ecosystems built for
-                engagement, clarity, and scale.
+                Building audience experiences across product, entertainment, education,
+                retail, and emerging technology.
+              </p>
+              <p className="about-hero-proof">
+                Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning
+                &bull; HBCUGo &bull; State Farm
               </p>
               <Link href="/#contact" className="about-hero-cta">
                 Start a Conversation
@@ -195,6 +199,41 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ol>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="case-section section-spacing about-section about-stilliano-editorial"
+          aria-labelledby="stilliano-heading"
+        >
+          <div className={`${styles.inner} about-stilliano-inner`}>
+            <p className="about-section-kicker">Who is Stilliano</p>
+            <h2 id="stilliano-heading" className="about-stilliano-heading">
+              Product. Story. Systems.
+            </h2>
+            <div className="about-stilliano-body">
+              <p>
+                I build experiences that sit between product, story, and culture.
+              </p>
+              <p>
+                Over the last decade I&apos;ve led work across sports streaming,
+                children&apos;s media, AI learning platforms, retail technology,
+                interactive installations, and original IP development.
+              </p>
+              <p>
+                My work combines product thinking, audience engagement, creative
+                direction, and emerging technology to help ideas become systems people
+                actually return to.
+              </p>
+              <p>
+                Whether designing fan engagement ecosystems, interactive learning
+                platforms, retail experiences, or story-driven worlds, I focus on
+                creating experiences that connect emotionally and scale strategically.
+              </p>
+              <p className="about-stilliano-closing">
+                Design is the tool. Engagement is the outcome.
+              </p>
             </div>
           </div>
         </section>
@@ -281,13 +320,13 @@ export default function AboutPage() {
               id="about-cta-heading"
               className="case-heading display-heading display-heading-xl about-cta-heading"
             >
-              <span className="about-cta-heading-line">Let&apos;s align</span>
-              <span className="about-cta-heading-line">product, story, and</span>
-              <span className="about-cta-heading-line">systems.</span>
+              <span className="about-cta-heading-line">
+                Let&apos;s build experiences people return to.
+              </span>
             </h2>
             <p className="about-cta-body">
-              Available for strategic consulting, fractional product leadership, and
-              ecosystem design engagements.
+              From audience platforms and interactive products to brand ecosystems and
+              original IP, I help organizations connect strategy, story, and execution.
             </p>
             <div className="about-cta-actions">
               <Link href="/#contact" className="about-hero-cta">

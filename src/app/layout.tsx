@@ -14,25 +14,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle =
+  "Still•i•ano | Interactive Media • Storytelling • Emerging Technology";
+
+const siteDescription =
+  "Creative Director for Interactive Experiences bridging product design, storytelling, and emerging technology across entertainment, education, retail, and digital platforms.";
+
+const socialImage = "/images/Heros/socialsharing_stilliano.webp";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://stillianoblack.com"),
-  title: "Stilliano Studio | Strategic Product & Experience Consultancy",
-  description:
-    "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
+  title: siteTitle,
+  description: siteDescription,
   openGraph: {
-    title: "Stilliano Studio | Strategic Product & Experience Consultancy",
-    description:
-      "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
+    title: siteTitle,
+    description: siteDescription,
     url: "https://stillianoblack.com",
-    siteName: "Stilliano Studio",
+    siteName: "Still•i•ano",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: socialImage,
+        alt: "Still•i•ano — Creative Director for Interactive Experiences",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stilliano Studio | Strategic Product & Experience Consultancy",
-    description:
-      "Shaping streaming, storytelling, and cultural audience experiences across product and brand ecosystems.",
+    title: siteTitle,
+    description: siteDescription,
+    images: [socialImage],
   },
 };
 

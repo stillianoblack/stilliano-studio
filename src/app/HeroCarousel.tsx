@@ -26,6 +26,8 @@ type HeroSlide = {
 const SLIDES: HeroSlide[] = [
   {
     title: "Caiden's Courage",
+    subtitle:
+      "Building an original interactive world for focus and emotional growth.",
     image: "/images/Heros/Caidencourage_Hero.webp",
     href: "/work/caidens-courage",
     mobileImage: "/images/Heros/Caiden_Hero_Mobile.webp",
@@ -34,6 +36,7 @@ const SLIDES: HeroSlide[] = [
   },
   {
     title: "HBCUgo Sports",
+    subtitle: "Modernizing the streaming ecosystem behind 29% YoY growth.",
     image: "/images/Heros/HBCUgoCTV_Hero.webp",
     href: "/work/hbcugo",
     mobileImage: "/images/Heros/HBCUgo_hero_mobile_1.webp",
@@ -42,6 +45,7 @@ const SLIDES: HeroSlide[] = [
   },
   {
     title: "Amira Learning",
+    subtitle: "Designing learning systems students wanted to return to.",
     image: "/images/Heros/Amira_Hero_2.webp",
     href: "/work/amira-learning",
     mobileImage: "/images/Heros/Amira_Hero_mobile.webp",
@@ -50,6 +54,8 @@ const SLIDES: HeroSlide[] = [
   },
   {
     title: "DC Fandom",
+    subtitle:
+      "Creating culture-driven fan experiences for entertainment audiences.",
     image: "/images/Heros/DCfandom_hero_2.webp",
     mobileImage: "/images/Heros/DCfandom_hero_mobile.webp",
     mobilePosition: "50% 20%",
@@ -57,6 +63,7 @@ const SLIDES: HeroSlide[] = [
   },
   {
     title: "Home Depot",
+    subtitle: "Designing interactive retail experiences for physical environments.",
     image: "/images/Heros/homedepot_desktop_header.webp",
     mobileImage: "/images/Heros/homedepot_Mobile_header.webp",
     mobilePosition: "50% 20%",
@@ -212,7 +219,6 @@ export function HeroCarousel() {
 
     const onScroll = () => {
       if (!mobileQuery.matches || wheelLock.current) return;
-      // Only intercept scroll attempts while still at the hero — not when reading below.
       if (window.scrollY > 8) return;
       const current = activeIndexRef.current;
       if (current >= SLIDES.length - 1 || window.scrollY <= 0) return;
@@ -308,9 +314,13 @@ export function HeroCarousel() {
                 Creative Director
               </span>
               <span className={styles.heroCarouselHeadlineLine}>
-                Across Product, Entertainment &amp; Interactive Media
+                for Interactive Experiences
               </span>
             </h1>
+            <p className={styles.heroCarouselLead}>
+              Bridging product design, storytelling, and emerging technology across
+              retail, entertainment, and digital platforms.
+            </p>
             <p className={styles.heroCarouselSubcopy}>
               Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning
               &bull; HBCUGo &bull; State Farm
@@ -354,40 +364,41 @@ export function HeroCarousel() {
             })}
             </div>
 
-            <Link href="/about" className={styles.heroCarouselNoseyLink}>
-              Get Nosey →
-            </Link>
-
-            <div className={styles.heroCarouselMobileTitle} aria-live="polite">
-            {SLIDES[activeIndex].href ? (
-              <Link
-                href={SLIDES[activeIndex].href}
-                className={styles.heroCarouselMobileTitleLink}
-                onClick={(event) => {
-                  event.preventDefault();
-                  handleWorldSelect(activeIndex);
-                }}
-              >
-                {SLIDES[activeIndex].title}
-              </Link>
-            ) : (
-              <button
-                type="button"
-                className={styles.heroCarouselMobileTitleLink}
-                onClick={() => handleWorldSelect(activeIndex)}
-              >
-                {SLIDES[activeIndex].title}
-              </button>
-            )}
-            {SLIDES[activeIndex].subtitle ? (
-              <span className={styles.heroCarouselMobileSubtitle}>
-                {SLIDES[activeIndex].subtitle}
+            <div className={styles.heroCarouselMobileFeatured} aria-live="polite">
+              <span className={styles.heroCarouselMobileLabel}>Featured Work</span>
+              <span className={styles.heroCarouselMobileIndex}>
+                {String(activeIndex + 1).padStart(2, "0")}
               </span>
-            ) : null}
-            <span className={styles.heroCarouselMobileMeta}>
-              {String(activeIndex + 1).padStart(2, "0")}
-            </span>
+              {SLIDES[activeIndex].href ? (
+                <Link
+                  href={SLIDES[activeIndex].href}
+                  className={styles.heroCarouselMobileTitleLink}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleWorldSelect(activeIndex);
+                  }}
+                >
+                  {SLIDES[activeIndex].title}
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className={styles.heroCarouselMobileTitleLink}
+                  onClick={() => handleWorldSelect(activeIndex)}
+                >
+                  {SLIDES[activeIndex].title}
+                </button>
+              )}
+              {SLIDES[activeIndex].subtitle ? (
+                <p className={styles.heroCarouselMobileDescription}>
+                  {SLIDES[activeIndex].subtitle}
+                </p>
+              ) : null}
             </div>
+
+            <Link href="/#about" className={styles.heroCarouselNoseyLink}>
+              Who is Stilliano? →
+            </Link>
           </div>
 
           <div

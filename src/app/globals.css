@@ -5982,10 +5982,21 @@ a.work-card {
 .case-page--about .about-hero-subline {
   max-width: 560px;
   width: 100%;
-  margin: 0 0 clamp(2rem, 4vh, 3rem);
+  margin: 0 0 clamp(1rem, 2vh, 1.35rem);
   font-size: clamp(0.9875rem, 1.45vw, 1.125rem);
   line-height: 1.68;
   color: rgba(250, 250, 248, 0.7);
+}
+
+.case-page--about .about-hero-proof {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 0 clamp(2rem, 4vh, 3rem);
+  font-size: clamp(0.8125rem, 1.1vw, 0.9375rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.55);
 }
 
 .case-page--about .about-hero-cta {
@@ -6169,6 +6180,50 @@ a.work-card {
   color: rgba(20, 20, 19, 0.055);
   pointer-events: none;
   user-select: none;
+}
+
+/* Who is Stilliano — editorial profile */
+.case-page--about .about-stilliano-editorial {
+  background: #fafaf8;
+}
+
+.case-page--about .about-stilliano-inner {
+  max-width: 42rem;
+  padding-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.case-page--about .about-stilliano-heading {
+  margin: 0 0 clamp(2rem, 4.5vw, 3.25rem);
+  max-width: 14ch;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-page--about .about-stilliano-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.case-page--about .about-stilliano-body p {
+  margin: 0;
+  max-width: 65ch;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.78;
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.case-page--about .about-stilliano-closing {
+  margin-top: clamp(0.5rem, 1.5vw, 1rem) !important;
+  font-size: clamp(1.0625rem, 1.5vw, 1.2rem) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.5 !important;
+  color: var(--text) !important;
 }
 
 .case-page--about .capability-text {

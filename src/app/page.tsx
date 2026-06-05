@@ -228,23 +228,23 @@ export default function Home() {
                 <figure className={styles.aboutPortrait}>
                   <img
                     className={styles.aboutPhoto}
-                    src="/images/headshots-profiles/TD_Headshot_copy.webp"
+                    src="/images/headshots-profiles/CD_TD_Headshot_copy.webp"
                     alt="Tarus D. Stills"
                     width={340}
                     height={420}
                     loading="lazy"
                     decoding="async"
                   />
-                  <span className={styles.aboutPortraitShade} aria-hidden="true" />
-                  <span className={styles.aboutPortraitGrain} aria-hidden="true" />
                 </figure>
                 <p className={styles.aboutRole}>
-                  Creative Director, Product &amp; Experience
+                  Creative Director,
+                  <br />
+                  Interactive Experiences
                 </p>
                 <div className={styles.aboutStatBlock}>
                   <span className={styles.aboutStatLabel}>Focus</span>
                   <p className={styles.aboutStatValue}>
-                    Streaming platforms · Interactive media · Audience systems
+                    Interactive Media &bull; Storytelling &bull; Emerging Technology
                   </p>
                   <Link href="/about" className={styles.aboutNoseyLink}>
                     Get Nosey →
