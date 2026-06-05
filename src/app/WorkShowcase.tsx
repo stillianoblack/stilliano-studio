@@ -239,8 +239,11 @@ export function WorkShowcase() {
         ))}
       </div>
 
-      <div className={styles.moreWorkBlock}>
-        <h3 className={styles.moreWorkHeading}>More Selected Work</h3>
+      <div
+        className={styles.moreWorkBlock}
+        id="entertainment-interactive-media"
+      >
+        <h3 className={styles.moreWorkHeading}>Entertainment + Interactive Media</h3>
         <div className={styles.moreWorkGrid}>
           {compactWorkProjects.map((project) =>
             project.href ? (

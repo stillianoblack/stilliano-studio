@@ -3,15 +3,22 @@ import { HeroCarousel } from "./HeroCarousel";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
 import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
+import { TrustedByVideo } from "./TrustedByVideo";
 import { WorkShowcase } from "./WorkShowcase";
 
 const trustedClients = [
-  "Sprite",
-  "Best Buy",
-  "Target",
+  "Cartoon Network",
+  "PBS Kids",
+  "State Farm",
+  "DC Comics",
+  "Amira Learning AI",
   "HBCUgo",
-  "Montage",
-  "Amira Learning",
+  "TBS",
+  "Target",
+  "Petro Canada",
+  "Office Depot",
+  "AMC",
+  "Best Buy",
 ];
 
 
@@ -113,19 +120,28 @@ export default function Home() {
 
         <section className={styles.trusted} aria-labelledby="trusted-heading">
           <div className={styles.inner}>
-            <div className={styles.trustedLayout}>
-              <div className={styles.trustedLead}>
-                <h2 id="trusted-heading" className="section-title">
-                  Trusted By
-                </h2>
-                <p className={styles.trustedIntro}>
-                  Selected experience across Sprite, Best Buy, Target, HBCUgo,
-                  Montage, Amira Learning, and digital product ecosystems.
-                </p>
+            <header className={styles.trustedIntroBlock}>
+              <span className={`section-eyebrow ${styles.trustedEyebrow}`}>
+                Selected Clients &amp; Collaborators
+              </span>
+              <h2 id="trusted-heading" className={styles.trustedHeadline}>
+                Work spanning streaming, education, entertainment, retail, and emerging
+                technology.
+              </h2>
+              <p className={styles.trustedSubcopy}>
+                A reel of selected motion, interactive, product, and entertainment work.
+              </p>
+            </header>
+
+            <div className={styles.trustedSplit} aria-label="Demo reel and clients">
+              <div className={styles.trustedSplitLeft}>
+                <div className={styles.trustedVideo}>
+                  <TrustedByVideo src="/videos/demo_2026.mp4" />
+                </div>
               </div>
-              <div className={styles.trustedClients}>
+              <div className={styles.trustedSplitRight} aria-label="Client list">
                 {trustedClients.map((name) => (
-                  <div key={name} className={styles.trustedClient}>
+                  <div key={name} className={styles.trustedClientName}>
                     {name}
                   </div>
                 ))}
@@ -193,7 +209,7 @@ export default function Home() {
 
         <section id="about" className={styles.about} aria-labelledby="about-heading">
           <p className={styles.aboutBgWord} aria-hidden="true">
-            SYSTEMS
+            STILLS
           </p>
           <p className={styles.aboutVerticalLabel} aria-hidden="true">
             About
@@ -203,8 +219,6 @@ export default function Home() {
               <span className={styles.aboutSectionNo}>01</span>
               <div className={styles.aboutMeta}>
                 <span className={styles.aboutMetaLine}>About</span>
-                <span className={styles.aboutMetaLine}>Streaming / Story / Culture</span>
-                <span className={styles.aboutMetaLine}>Los Angeles, CA</span>
               </div>
               <span className={styles.aboutMastheadRule} aria-hidden="true" />
             </header>
@@ -225,7 +239,7 @@ export default function Home() {
                   <span className={styles.aboutPortraitGrain} aria-hidden="true" />
                 </figure>
                 <p className={styles.aboutRole}>
-                  Associate Creative Director, Product &amp; Experience
+                  Creative Director, Product &amp; Experience
                 </p>
                 <div className={styles.aboutStatBlock}>
                   <span className={styles.aboutStatLabel}>Focus</span>
@@ -239,44 +253,70 @@ export default function Home() {
               </div>
 
               <div className={styles.aboutEditorialCol}>
+                <p className={styles.aboutCaption}>
+                  Los Angeles, CA / Product / Story / Culture
+                </p>
+
                 <h2 id="about-heading" className={styles.aboutTitle}>
-                  <span className={styles.aboutTitleLine}>Designing</span>
-                  <span className={styles.aboutTitleLine}>the systems</span>
-                  <span className={styles.aboutTitleLine}>behind audience</span>
-                  <span className={styles.aboutTitleLine}>experiences.</span>
+                  <span className={styles.aboutTitleLine}>Who is Stills?</span>
+                  <span className={styles.aboutTitleLine}>
+                    What is a Still&bull;i&bull;ano?
+                  </span>
                 </h2>
 
-                <span className={styles.aboutColRule} aria-hidden="true" />
-
                 <div className={styles.aboutBody}>
-                  <p className={styles.aboutBodyLead}>
-                    Most startups and media platforms don&apos;t struggle because of bad
-                    ideas. They struggle when product, brand, audience experience, and
-                    execution stop working together.
+                  <p className={styles.aboutBodyLead}>Good question.</p>
+                  <p>I&apos;ve been trying to answer that for years.</p>
+                  <p>
+                    Officially, I&apos;m Tarus D. Stills.
+                    <br />
+                    Most people call me Stills.
+                    <br />
+                    Somewhere along the way, the internet started calling me Still&bull;i&bull;ano.
                   </p>
                   <p>
-                    Tarus D. Stills helps teams align product strategy, UX systems,
-                    storytelling, and go-to-market thinking into cohesive digital
-                    ecosystems built for engagement, clarity, and scale.
+                    I&apos;ve spent most of my career collecting job titles like Pokémon cards.
                   </p>
-                  <blockquote className={styles.aboutPullQuote}>
-                    <p>
-                      &ldquo;The best audience experiences happen when product, story,
-                      and systems work together.&rdquo;
-                    </p>
-                  </blockquote>
+                  <ul className={styles.aboutJobTitles}>
+                    <li>Designer.</li>
+                    <li>Creative Director.</li>
+                    <li>Producer.</li>
+                    <li>Strategist.</li>
+                    <li>Founder.</li>
+                    <li>Occasional professional overthinker.</li>
+                  </ul>
+                  <p>The common thread has always been curiosity.</p>
+                  <p>And if we&apos;re being honest, a healthy amount of ADHD.</p>
                   <p>
-                    His work spans streaming platforms, interactive media, audience
-                    engagement systems, and culturally-driven digital experiences —
-                    operating at the intersection of product thinking, brand storytelling,
-                    and scalable execution.
+                    The kind that makes you learn motion graphics, build products, direct
+                    campaigns, produce films, launch platforms, and somehow end up creating a
+                    children&apos;s universe along the way.
                   </p>
                   <p>
-                    From UX architecture and platform strategy to creative direction and
-                    audience growth, he builds connected experiences designed to move
-                    products, brands, and people forward.
+                    That universe became Caiden&apos;s Courage — a story-powered world helping
+                    kids discover focus, confidence, and courage.
                   </p>
+                  <p>
+                    Turns out the thing I spent years trying to manage became one of my greatest
+                    creative advantages.
+                  </p>
+
+                  <span className={styles.aboutSectionRule} aria-hidden="true" />
+
+                  <h3 className={styles.aboutSubheading}>So what is a Still&bull;i&bull;ano?</h3>
+                  <ul className={styles.aboutIdentityList}>
+                    <li>Part designer.</li>
+                    <li>Part storyteller.</li>
+                    <li>Part systems thinker.</li>
+                    <li>Part creative technologist.</li>
+                    <li>Part kid who never stopped asking &ldquo;what if?&rdquo;</li>
+                  </ul>
+                  <p>Still figuring it out.</p>
                 </div>
+
+                <blockquote className={styles.aboutClosingQuote}>
+                  <p>But that&apos;s half the fun.</p>
+                </blockquote>
               </div>
             </div>
           </div>

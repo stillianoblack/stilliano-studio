@@ -49,12 +49,12 @@ export type CompactWorkProject = {
 export const featuredWorkProjects: FeaturedWorkProject[] = [
   {
     slug: "hbcugo",
-    kicker: "Streaming / CTV / Culture",
-    campaignTitle: "The Culture Rebuild™",
-    headline: "Modernizing HBCUgo’s streaming ecosystem behind 29% YoY growth.",
+    kicker: "STREAMING / SPORTS / CULTURE",
+    campaignTitle: "HBCUgo",
+    headline: "Building the digital home for Black college sports.",
     description:
-      "Led the redesign and platform transformation of HBCUgo across OTT, mobile, and connected TV — aligning product experience, audience engagement, and monetization systems for scale.",
-    metrics: ["29% YoY Growth", "OTT + Mobile + CTV", "Fan Engagement Systems"],
+      "Led the platform transformation across OTT, mobile, web, and connected TV — aligning live sports, cultural programming, audience engagement, and monetization into one scalable streaming ecosystem.",
+    metrics: ["29% YOY GROWTH", "OTT + MOBILE + CTV", "FAN ENGAGEMENT SYSTEMS"],
     href: "/work/hbcugo",
     media: [
       {
@@ -99,15 +99,15 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
   },
   {
     slug: "amira-learning",
-    kicker: "AI Learning / Gamified Education",
+    kicker: "AI LEARNING / GAMIFIED EDUCATION",
     campaignTitle: "Amira AI Learning",
-    headline: "Designing learning systems students actually wanted to return to.",
+    headline: "What if reading felt more like a game?",
     description:
-      "Led end-to-end product and experience design for an adaptive learning ecosystem — combining AI, storytelling, gameplay systems, and behavioral engagement to improve literacy participation, retention, and student confidence.",
+      "Led product and experience design for an adaptive literacy experience combining AI coaching, character-led storytelling, gameplay loops, classroom use, and behavioral engagement to help students build confidence and return consistently.",
     metrics: [
-      "4M+ Students Reached",
-      "Gamified Learning Ecosystem",
-      "Mobile + Classroom Platform",
+      "4M+ STUDENTS REACHED",
+      "GAMIFIED LEARNING ECOSYSTEM",
+      "MOBILE + CLASSROOM PLATFORM",
     ],
     href: "/work/amira-learning",
     media: [
@@ -152,12 +152,12 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
   },
   {
     slug: "caidens-courage",
-    kicker: "Story IP / Interactive / Youth",
+    kicker: "STORY IP / INTERACTIVE / YOUTH",
     campaignTitle: "The Focus Flame™",
-    headline: "Building a story-driven world for focus, emotion, and self-belief.",
+    headline: "A story world built for kids who think differently.",
     description:
-      "A narrative IP blending visual storytelling, emotional interaction, and product thinking to help neurodivergent youth see focus as power.",
-    metrics: ["Original IP", "Interactive SEL Experience", "Book + Digital Platform"],
+      "Created an original story-powered universe blending comics, SEL tools, interactive missions, classroom experiences, and emotional storytelling to help neurodivergent kids see focus as power.",
+    metrics: ["ORIGINAL IP", "INTERACTIVE SEL EXPERIENCE", "BOOK + DIGITAL PLATFORM"],
     href: "/work/caidens-courage",
     media: [
       {
@@ -189,17 +189,39 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
 
 export const compactWorkProjects: CompactWorkProject[] = [
   {
-    slug: "cutclass",
-    title: "Cutclass.io",
-    description:
-      "Product systems and platform strategy for creator-driven learning experiences.",
-    image: "/images/Portfolio%20Cards/cutclass_card_stilliano.webp",
+    slug: "music-video",
+    title: "DaBaby x Sexyy Red",
+    description: "Producer • Creative Development",
+    image: "/images/Selected%20Works/2x2selected_works/musicvideo_1.webp",
+  },
+  {
+    slug: "tripping-the-fantastic",
+    title: "Tripping the Fantastic",
+    description: "Producer • Story Development",
+    image: "/images/Selected%20Works/2x2selected_works/trippingthefantasic.webp",
+  },
+  {
+    slug: "narrative-film",
+    title: "Independent Feature Film",
+    description: "Producer • Creative Development",
+    image: "/images/Selected%20Works/2x2selected_works/narrative-film.webp",
+  },
+  {
+    slug: "pbs-kids",
+    title: "PBS Kids",
+    description: "Interactive Creative Director",
+    image: "/images/Selected%20Works/2x2selected_works/PBSkids.webp",
+  },
+  {
+    slug: "cartoon-network-allstar-dunk",
+    title: "Cartoon Network x Allstar Dunk",
+    description: "Interactive + Creative Experience Producer",
+    image: "/images/Selected%20Works/2x2selected_works/cartoon_network_allstardunk.webp",
   },
   {
     slug: "dc-comics-fandom",
     title: "DC Comics Fandom",
-    description:
-      "Creative direction and visual storytelling concepts for culture-driven brand experiences.",
+    description: "Creative Direction • Fan Engagement Platform",
     image: "/images/Portfolio%20Cards/Kids-Fandome.webp",
   },
 ];
