@@ -20,7 +20,9 @@ const siteTitle =
 const siteDescription =
   "Creative Director for Interactive Experiences bridging product design, storytelling, and emerging technology across entertainment, education, retail, and digital platforms.";
 
-const socialImage = "/images/Heros/socialsharing_stilliano.webp";
+const socialImage = "/images/Heros/socialsharing_stilliano.jpg";
+const socialImageWidth = 1200;
+const socialImageHeight = 675;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stillianoblack.com"),
@@ -36,6 +38,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: socialImage,
+        width: socialImageWidth,
+        height: socialImageHeight,
+        type: "image/jpeg",
         alt: "Still•i•ano — Creative Director for Interactive Experiences",
       },
     ],
