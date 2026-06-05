@@ -56,9 +56,9 @@ const SLIDES: HeroSlide[] = [
     mobileSize: "cover",
   },
   {
-    title: "Genius Sports",
-    image: "/images/Heros/geniussports_hero.webp",
-    mobileImage: "/images/Heros/geniussports_hero_mobile_1.webp",
+    title: "Home Depot",
+    image: "/images/Heros/homedepot_desktop_header.webp",
+    mobileImage: "/images/Heros/homedepot_Mobile_header.webp",
     mobilePosition: "50% 20%",
     mobileSize: "cover",
   },
@@ -305,12 +305,16 @@ export function HeroCarousel() {
           <div className={styles.heroCarouselBottom}>
             <h1 className={styles.heroCarouselHeadline}>
               <span className={styles.heroCarouselHeadlineLine}>
-                Creative Technologist &amp;
+                Creative Director
               </span>
               <span className={styles.heroCarouselHeadlineLine}>
-                Product Storyteller
+                Across Product, Entertainment &amp; Interactive Media
               </span>
             </h1>
+            <p className={styles.heroCarouselSubcopy}>
+              Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning
+              &bull; HBCUGo &bull; State Farm
+            </p>
 
             <div
               className={styles.heroCarouselTitles}
