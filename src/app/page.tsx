@@ -125,8 +125,8 @@ export default function Home() {
                 Selected Clients &amp; Collaborators
               </span>
               <h2 id="trusted-heading" className={styles.trustedHeadline}>
-                Work spanning streaming, education, entertainment, retail, and emerging
-                technology.
+                Building products, platforms, and interactive experiences across
+                streaming, entertainment, education, AI, and emerging technology.
               </h2>
               <p className={styles.trustedSubcopy}>
                 A reel of selected motion, interactive, product, and entertainment work.
@@ -136,7 +136,7 @@ export default function Home() {
             <div className={styles.trustedSplit} aria-label="Demo reel and clients">
               <div className={styles.trustedSplitLeft}>
                 <div className={styles.trustedVideo}>
-                  <TrustedByVideo src="/videos/demo_2026.mp4" />
+                  <TrustedByVideo src="/videos/demo_2026_1.mp4" />
                 </div>
               </div>
               <div className={styles.trustedSplitRight} aria-label="Client list">

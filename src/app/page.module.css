@@ -230,7 +230,7 @@
 
 .heroCarouselHeadline {
   margin: 0;
-  max-width: min(26ch, 94vw);
+  max-width: min(38ch, 94vw);
   font-size: clamp(2.35rem, 5.8vw, 5.25rem);
   font-weight: 900;
   line-height: 0.95;
@@ -485,7 +485,7 @@
 
   .heroCarouselHeadline {
     font-size: clamp(2rem, 10vw, 2.85rem);
-    max-width: min(24ch, 92vw);
+    max-width: min(32ch, 92vw);
   }
 
   .heroCarouselLead {

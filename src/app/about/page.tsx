@@ -4,13 +4,13 @@ import styles from "../page.module.css";
 import { TrackRecordSticky, type TrackRecordEntry } from "./TrackRecordSticky";
 
 export const metadata: Metadata = {
-  title: "Tarus D. Stills — Creative Director for Interactive Experiences | Stilliano Studios",
+  title: "Tarus D. Stills — Building Products, Platforms & Interactive Worlds | Stilliano Studios",
   description:
-    "Creative leader at the intersection of product, storytelling, audience engagement, entertainment, education, retail, and emerging technology.",
+    "Product Strategy Leader and Creative Technologist helping organizations transform ideas into scalable digital products across entertainment, AI, streaming, education, and audience engagement.",
   openGraph: {
-    title: "Tarus D. Stills — Creative Director for Interactive Experiences | Stilliano Studios",
+    title: "Tarus D. Stills — Building Products, Platforms & Interactive Worlds | Stilliano Studios",
     description:
-      "Building audience experiences across product, entertainment, education, retail, and emerging technology.",
+      "Product Strategy Leader and Creative Technologist helping organizations transform ideas into scalable digital products across entertainment, AI, streaming, education, and audience engagement.",
   },
 };
 
@@ -142,12 +142,14 @@ export default function AboutPage() {
             <div className="about-hero-copy">
               <p className="case-hero-eyebrow about-hero-eyebrow">TARUS D. STILLS</p>
               <h1 className="case-hero-title about-hero-title">
-                <span className="about-hero-title-line">Creative Director</span>
-                <span className="about-hero-title-line">for Interactive Experiences</span>
+                <span className="about-hero-title-line">Building Products,</span>
+                <span className="about-hero-title-line">Platforms & Interactive</span>
+                <span className="about-hero-title-line">Worlds</span>
               </h1>
               <p className="case-hero-subtitle about-hero-subline">
-                Building audience experiences across product, entertainment, education,
-                retail, and emerging technology.
+                Product Strategy Leader and Creative Technologist helping organizations
+                transform ideas into scalable digital products across entertainment, AI,
+                streaming, education, and audience engagement.
               </p>
               <p className="about-hero-proof">
                 Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning

@@ -311,15 +311,19 @@ export function HeroCarousel() {
           <div className={styles.heroCarouselBottom}>
             <h1 className={styles.heroCarouselHeadline}>
               <span className={styles.heroCarouselHeadlineLine}>
-                Creative Director
+                Building Products,
               </span>
               <span className={styles.heroCarouselHeadlineLine}>
-                for Interactive Experiences
+                Platforms & Interactive
+              </span>
+              <span className={styles.heroCarouselHeadlineLine}>
+                Worlds
               </span>
             </h1>
             <p className={styles.heroCarouselLead}>
-              Bridging product design, storytelling, and emerging technology across
-              retail, entertainment, and digital platforms.
+              Product Strategy Leader and Creative Technologist helping organizations
+              transform ideas into scalable digital products across entertainment, AI,
+              streaming, education, and audience engagement.
             </p>
             <p className={styles.heroCarouselSubcopy}>
               Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning
