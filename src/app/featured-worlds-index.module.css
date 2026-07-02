@@ -40,7 +40,7 @@
 
 .mediaImage {
   object-fit: cover;
-  object-position: center center;
+  object-position: var(--world-object-position, center center);
 }
 
 .scrim {
@@ -85,6 +85,10 @@
     );
   background-size: 6px 6px, 4.5px 4.5px;
   background-position: 0 0, 3px 3px;
+}
+
+.mobileFeatureFrame {
+  display: none;
 }
 
 .content {
@@ -202,6 +206,15 @@
   outline: 2px solid rgba(249, 224, 76, 0.65);
   outline-offset: 4px;
   border-radius: 2px;
+}
+
+.featureBlock {
+  width: 100%;
+  animation: featureFadeIn 0.45s ease both;
+}
+
+.featureCtaMobile {
+  display: none;
 }
 
 .index {
@@ -357,33 +370,126 @@
 }
 
 @media (max-width: 768px) {
-  .mediaImage {
-    object-position: var(--world-object-position, center center);
+  .section {
+    min-height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .media,
+  .scrim,
+  .pattern {
+    display: none;
+  }
+
+  .mobileFeatureFrame {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0a0c12;
+    flex-shrink: 0;
+  }
+
+  .mobileFeatureSlide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.85s cubic-bezier(0.45, 0.05, 0.25, 1);
+    pointer-events: none;
+  }
+
+  .mobileFeatureSlideActive {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .mobileFeatureImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
 
   .content {
-    padding-bottom: 0;
+    position: relative;
+    z-index: 3;
+    flex: none;
+    min-height: auto;
+    padding: 0;
+    pointer-events: auto;
+  }
+
+  .shell {
+    flex: none;
+    min-height: auto;
+    justify-content: flex-start;
+    padding: 0;
   }
 
   .layout {
     max-width: 100%;
     gap: 0;
-    background: rgba(4, 6, 10, 0.94);
+    background: rgba(4, 6, 10, 0.96);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 18px var(--pad-x) max(18px, env(safe-area-inset-bottom, 18px));
+    padding: clamp(1.25rem, 4.5vw, 1.5rem) var(--pad-x)
+      max(clamp(1.25rem, 4.5vw, 1.5rem), env(safe-area-inset-bottom, 0px));
+  }
+
+  .featureBlock {
+    width: 100%;
+    margin-bottom: 0.25rem;
   }
 
   .featurePanel {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 0.85rem;
-    padding: 0.85rem 0 0.95rem;
+    margin-bottom: 0;
+    padding: 0 0 1rem;
     border: 0;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
     backdrop-filter: none;
+    animation: none;
+    border-bottom: 0;
+  }
+
+  .featureCtaMobile {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 1.15rem;
+    padding-bottom: 1.15rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .featureCtaMobile:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(249, 224, 76, 0.75);
+    text-underline-offset: 0.22em;
+  }
+
+  .featureCtaMobile:focus-visible {
+    outline: 2px solid rgba(249, 224, 76, 0.65);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  .featureHeading {
+    text-shadow: none;
   }
 
   .featureDescription {
@@ -391,14 +497,25 @@
     font-size: 0.8125rem;
     line-height: 1.55;
   }
+
+  .index {
+    gap: 0.35rem;
+  }
+
+  .indexPreviewBtn,
+  .indexLink {
+    padding: 0.4rem 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mediaSlide {
+  .mediaSlide,
+  .mobileFeatureSlide {
     transition-duration: 0.01ms;
   }
 
-  .featurePanel {
+  .featurePanel,
+  .featureBlock {
     animation: none;
   }
 

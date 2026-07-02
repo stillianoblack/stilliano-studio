@@ -7,8 +7,8 @@ export type FeaturedWorldProject = {
   heading: string;
   subheading: string;
   description: string;
-  backgroundImage: string;
-  mobileBackgroundImage?: string;
+  desktopImage: string;
+  desktopObjectPosition?: string;
   mobileObjectPosition?: string;
   href?: string;
 };
@@ -24,9 +24,9 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     subheading: "Every universe starts with one story.",
     description:
       "An original entertainment universe for focus, courage, and emotional growth — spanning books, games, education, interactive technology, school pilots, and film development.",
-    backgroundImage: "/images/Heros/Caidencourage_Hero.webp",
-    mobileBackgroundImage: "/images/Heros/Caiden_Hero_Mobile.webp",
-    mobileObjectPosition: "50% 20%",
+    desktopImage: "/images/Heros/Caidencourage_Hero.webp",
+    desktopObjectPosition: "center center",
+    mobileObjectPosition: "center center",
     href: "/work/caidens-courage",
   },
   {
@@ -39,9 +39,9 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     subheading: "The digital home for Black college sports.",
     description:
       "Led platform transformation across OTT, mobile, web, and connected TV — aligning live sports, cultural programming, audience engagement, and monetization into one scalable streaming ecosystem.",
-    backgroundImage: "/images/Heros/HBCUgoCTV_Hero.webp",
-    mobileBackgroundImage: "/images/Heros/HBCUgo_hero_mobile_1.webp",
-    mobileObjectPosition: "50% 20%",
+    desktopImage: "/images/Heros/HBCUgoCTV_Hero.webp",
+    desktopObjectPosition: "center center",
+    mobileObjectPosition: "center center",
     href: "/work/hbcugo",
   },
   {
@@ -54,9 +54,9 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     subheading: "What if reading felt more like a game?",
     description:
       "Product and experience design for an adaptive literacy platform combining AI coaching, character-led storytelling, gameplay loops, and classroom engagement.",
-    backgroundImage: "/images/Heros/Amira_Hero_2.webp",
-    mobileBackgroundImage: "/images/Heros/Amira_Hero_mobile.webp",
-    mobileObjectPosition: "50% 20%",
+    desktopImage: "/images/Heros/Amira_Hero_2.webp",
+    desktopObjectPosition: "center center",
+    mobileObjectPosition: "center center",
     href: "/work/amira-learning",
   },
   {
@@ -69,9 +69,9 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     subheading: "Culture-driven fan experiences at scale.",
     description:
       "Interactive creative direction and fan engagement systems that transformed iconic IP into story-driven digital experiences for entertainment audiences.",
-    backgroundImage: "/images/Heros/DCfandom_hero_2.webp",
-    mobileBackgroundImage: "/images/Heros/DCfandom_hero_mobile.webp",
-    mobileObjectPosition: "50% 20%",
+    desktopImage: "/images/Heros/DCfandom_hero_2.webp",
+    desktopObjectPosition: "center center",
+    mobileObjectPosition: "center center",
   },
   {
     id: "home-depot",
@@ -83,10 +83,18 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     subheading: "Interactive retail for physical environments.",
     description:
       "Designed interactive retail experiences connecting digital touchpoints, in-store environments, and customer participation.",
-    backgroundImage: "/images/Heros/homedepot_desktop_header.webp",
-    mobileBackgroundImage: "/images/Heros/homedepot_Mobile_header.webp",
-    mobileObjectPosition: "50% 20%",
+    desktopImage: "/images/Heros/homedepot_desktop_header.webp",
+    desktopObjectPosition: "center center",
+    mobileObjectPosition: "center center",
   },
 ];
 
 export const DEFAULT_FEATURED_WORLD_INDEX = 0;
+
+export function getDesktopObjectPosition(project: FeaturedWorldProject): string {
+  return project.desktopObjectPosition ?? "center center";
+}
+
+export function getMobileObjectPosition(project: FeaturedWorldProject): string {
+  return project.mobileObjectPosition ?? getDesktopObjectPosition(project);
+}

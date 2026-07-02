@@ -6009,11 +6009,16 @@ a.work-card {
   width: fit-content;
   max-width: min(44ch, 100%);
   margin: 0 0 clamp(1.75rem, 3.5vh, 2.75rem);
-  font-size: clamp(2.65rem, 5.25vw, 6.5rem);
+  font-size: clamp(2.385rem, 4.725vw, 5.85rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
   font-weight: 800;
   hyphens: none;
+}
+
+.portrait-hero-title-accent {
+  color: #9ec5f0;
+  text-shadow: 0 0 40px rgba(80, 130, 210, 0.28);
 }
 
 .portrait-hero .about-hero-title-line {
@@ -6926,7 +6931,7 @@ a.work-card {
 
   .portrait-hero .about-hero-title {
     width: 100%;
-    font-size: clamp(2.15rem, 8.5vw, 3rem);
+    font-size: clamp(1.935rem, 7.65vw, 2.7rem);
     line-height: 1;
   }
 

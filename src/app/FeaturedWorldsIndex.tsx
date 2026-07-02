@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import {
   DEFAULT_FEATURED_WORLD_INDEX,
   featuredWorldProjects,
+  getDesktopObjectPosition,
+  getMobileObjectPosition,
   type FeaturedWorldProject,
 } from "@/data/featured-worlds";
 import { WorkModal } from "./WorkModal";
@@ -24,14 +26,20 @@ function useCoarsePointer() {
   return isCoarse;
 }
 
-function FeaturedPanel({ project }: { project: FeaturedWorldProject }) {
+function FeaturedPanel({
+  project,
+  showCta = true,
+}: {
+  project: FeaturedWorldProject;
+  showCta?: boolean;
+}) {
   return (
     <header className={styles.featurePanel} aria-live="polite">
       <span className={styles.featureEyebrow}>{project.eyebrow}</span>
       <h2 className={styles.featureHeading}>{project.heading}</h2>
       <p className={styles.featureSubhead}>{project.subheading}</p>
       <p className={styles.featureDescription}>{project.description}</p>
-      {project.href ? (
+      {showCta && project.href ? (
         <Link href={project.href} className={styles.featureCta}>
           View Project →
         </Link>
@@ -76,23 +84,17 @@ export function FeaturedWorldsIndex() {
               }`}
               style={{
                 ["--world-object-position" as string]:
-                  project.mobileObjectPosition ?? "center center",
+                  getDesktopObjectPosition(project),
               }}
             >
-              <picture className={styles.mediaPicture}>
-                <source
-                  media="(max-width: 768px)"
-                  srcSet={project.mobileBackgroundImage ?? project.backgroundImage}
-                />
-                <img
-                  className={styles.mediaImage}
-                  src={project.backgroundImage}
-                  alt=""
-                  decoding="async"
-                  draggable={false}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                />
-              </picture>
+              <img
+                className={styles.mediaImage}
+                src={project.desktopImage}
+                alt=""
+                decoding="async"
+                draggable={false}
+                fetchPriority={index === 0 ? "high" : "auto"}
+              />
             </div>
           );
         })}
@@ -101,10 +103,42 @@ export function FeaturedWorldsIndex() {
       <div className={styles.scrim} aria-hidden />
       <div className={styles.pattern} aria-hidden />
 
+      <div className={styles.mobileFeatureFrame}>
+        {featuredWorldProjects.map((project, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={project.id}
+              className={`${styles.mobileFeatureSlide} ${
+                isActive ? styles.mobileFeatureSlideActive : ""
+              }`}
+            >
+              <img
+                className={styles.mobileFeatureImage}
+                src={project.desktopImage}
+                alt=""
+                decoding="async"
+                draggable={false}
+                style={{
+                  objectPosition: getMobileObjectPosition(project),
+                }}
+              />
+            </div>
+          );
+        })}
+      </div>
+
       <div className={styles.content}>
         <div className={styles.shell}>
           <div className={styles.layout}>
-            <FeaturedPanel key={activeProject.id} project={activeProject} />
+            <div key={activeProject.id} className={styles.featureBlock}>
+              <FeaturedPanel project={activeProject} showCta={!isCoarsePointer} />
+              {isCoarsePointer && activeProject.href ? (
+                <Link href={activeProject.href} className={styles.featureCtaMobile}>
+                  View Project →
+                </Link>
+              ) : null}
+            </div>
 
             <ul className={styles.index} aria-label="Project index">
               {featuredWorldProjects.map((project, index) => {

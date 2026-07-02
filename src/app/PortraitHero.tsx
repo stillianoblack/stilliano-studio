@@ -37,8 +37,19 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
           </p>
           <h1 className="case-hero-title about-hero-title">
             {content.headlineLines.map((line) => (
-              <span key={line} className="about-hero-title-line">
-                {line}
+              <span
+                key={line.parts.map((part) => part.text).join("")}
+                className="about-hero-title-line"
+              >
+                {line.parts.map((part) =>
+                  part.accent ? (
+                    <span key={part.text} className="portrait-hero-title-accent">
+                      {part.text}
+                    </span>
+                  ) : (
+                    <span key={part.text}>{part.text}</span>
+                  ),
+                )}
               </span>
             ))}
           </h1>

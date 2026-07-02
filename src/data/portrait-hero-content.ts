@@ -1,9 +1,18 @@
 export type PortraitHeroVariant = "home" | "about";
 
+export type PortraitHeroHeadlinePart = {
+  text: string;
+  accent?: boolean;
+};
+
+export type PortraitHeroHeadlineLine = {
+  parts: readonly PortraitHeroHeadlinePart[];
+};
+
 export type PortraitHeroContent = {
   chapter: string;
   label: string;
-  headlineLines: readonly string[];
+  headlineLines: readonly PortraitHeroHeadlineLine[];
   subcopy: string;
   proof?: string;
   ctaHref: string;
@@ -15,10 +24,14 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
     chapter: "CHAPTER 01",
     label: "TARUS D. STILLS",
     headlineLines: [
-      "Creating Story-Driven",
-      "Worlds Across Film,",
-      "Games & Interactive",
-      "Media",
+      {
+        parts: [
+          { text: "Creating " },
+          { text: "Story Worlds", accent: true },
+        ],
+      },
+      { parts: [{ text: "Across Film, Games &" }] },
+      { parts: [{ text: "Technology" }] },
     ],
     subcopy:
       "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
@@ -28,7 +41,10 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
   about: {
     chapter: "CHAPTER 02",
     label: "TARUS D. STILLS",
-    headlineLines: ["The System Behind", "the Worlds"],
+    headlineLines: [
+      { parts: [{ text: "The System Behind" }] },
+      { parts: [{ text: "the Worlds" }] },
+    ],
     subcopy:
       "Still-i-ano is the creative identity of Tarus D. Stills — a producer, creative technologist, and product leader working at the intersection of story, systems, and emerging technology.",
     ctaHref: "/#contact",

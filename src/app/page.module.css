@@ -778,7 +778,7 @@
 }
 
 .logoPrimary {
-  font-size: clamp(0.95rem, 1.15vw, 1.0625rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -803,7 +803,7 @@
 .nav a {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: rgba(247, 247, 244, 0.76);
+  color: rgba(247, 247, 244, 0.68);
   transition: color 0.2s;
 }
 
