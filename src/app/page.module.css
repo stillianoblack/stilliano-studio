@@ -166,12 +166,36 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.72) 34%,
+      rgba(0, 0, 0, 0.38) 58%,
+      rgba(0, 0, 0, 0.12) 78%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.62) 28%,
+      rgba(0, 0, 0, 0.28) 52%,
+      rgba(0, 0, 0, 0.08) 68%,
+      transparent 82%
+    );
+}
+
+.heroCarouselScrimSide {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.38) 30%,
-    rgba(0, 0, 0, 0.1) 55%,
-    transparent 72%
+    180deg,
+    rgba(4, 6, 10, 0.55) 0%,
+    transparent 22%,
+    transparent 72%,
+    rgba(4, 6, 10, 0.35) 100%
   );
 }
 
@@ -224,23 +248,86 @@
   flex-direction: column;
   align-items: flex-start;
   gap: clamp(0.75rem, 1.8vh, 1.25rem);
-  max-width: min(100%, 640px);
+  max-width: min(100%, 680px);
   padding-left: 16px;
+}
+
+.featuredWorldIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  max-width: min(100%, 560px);
+  margin-bottom: clamp(0.35rem, 1.2vh, 0.75rem);
+  padding: clamp(1rem, 2.2vh, 1.35rem) clamp(1rem, 2vw, 1.25rem);
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 6, 10, 0.82) 0%,
+    rgba(4, 6, 10, 0.58) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.featuredWorldEyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(249, 224, 76, 0.88);
+}
+
+.featuredWorldTitle {
+  margin: 0;
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #f7f7f4;
+  text-shadow: 0 1px 24px rgba(4, 8, 16, 0.45);
+}
+
+.featuredWorldSubhead {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.featuredWorldCopy {
+  margin: 0.2rem 0 0;
+  max-width: 52ch;
+  font-size: clamp(0.875rem, 1.15vw, 0.9875rem);
+  font-weight: 500;
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .heroCarouselHeadline {
   margin: 0;
-  max-width: min(38ch, 94vw);
+  max-width: min(44ch, 94vw);
   font-size: clamp(2.35rem, 5.8vw, 5.25rem);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.06em;
   color: #f7f7f4;
   text-shadow: 0 1px 28px rgba(4, 8, 16, 0.45);
+  hyphens: none;
 }
 
 .heroCarouselHeadlineLine {
   display: block;
+}
+
+@media (min-width: 769px) {
+  .heroCarouselHeadlineLine {
+    white-space: nowrap;
+  }
 }
 
 .heroCarouselLead {
@@ -347,27 +434,22 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  margin-top: 0.35rem;
+  margin-top: 0.28rem;
   font-size: 0.72rem;
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.48);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  max-height: 0;
-  transition:
-    opacity 0.35s ease,
-    max-height 0.35s ease,
-    margin-top 0.35s ease;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+  opacity: 1;
+  max-height: none;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .heroCarouselTitleBtnActive .heroCarouselTitleSubtitle {
-  opacity: 1;
-  max-height: 1.35em;
-  margin-top: 0.4rem;
+  margin-top: 0.32rem;
   color: rgba(255, 255, 255, 0.62);
 }
 
@@ -475,6 +557,22 @@
   }
 
   .heroCarouselScrim,
+  .heroCarouselScrimSide {
+    display: block;
+    opacity: 1;
+  }
+
+  .heroCarouselScrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.2) 28%,
+        rgba(0, 0, 0, 0.55) 72%,
+        rgba(0, 0, 0, 0.88) 100%
+      );
+  }
+
   .heroCarousel .heroPattern {
     display: none;
   }
@@ -502,13 +600,32 @@
   }
 
   .heroCarouselBottom {
-    gap: 0.35rem;
+    gap: 0.5rem;
     padding-left: 0;
     max-width: 100%;
     width: 100%;
-    background: rgba(4, 6, 10, 0.92);
+    background: rgba(4, 6, 10, 0.94);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 18px var(--pad-x) max(18px, env(safe-area-inset-bottom, 18px));
+  }
+
+  .featuredWorldIntro {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0.35rem;
+    padding: 0.85rem 0 0.95rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .featuredWorldCopy {
+    max-width: 100%;
+    font-size: 0.8125rem;
+    line-height: 1.55;
   }
 
   .heroCarouselMain {

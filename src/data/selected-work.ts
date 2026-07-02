@@ -48,6 +48,49 @@ export type CompactWorkProject = {
 
 export const featuredWorkProjects: FeaturedWorkProject[] = [
   {
+    slug: "caidens-courage",
+    kicker: "FLAGSHIP WORLD / ORIGINAL IP",
+    campaignTitle: "Caiden's Courage",
+    headline: "An original universe for focus, courage, and emotional growth.",
+    description:
+      "An original entertainment universe for focus, courage, and emotional growth — spanning books, games, education, interactive technology, and film development.",
+    metrics: [
+      "BOOK",
+      "GAMES",
+      "FILM DEVELOPMENT",
+      "EDUCATION",
+      "INTERACTIVE PLATFORM",
+      "AI COMPANION",
+      "SCHOOL PILOTS",
+    ],
+    href: "/work/caidens-courage",
+    media: [
+      {
+        label: "Brand System",
+        image:
+          "/images/Portfolio%20Cards/Caidenscourage/caidencourage_top_portfoliocard.webp",
+        wide: true,
+        aspectRatio: "3021 / 1317",
+      },
+      {
+        label: "Live UI",
+        video:
+          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageInteractive%20Game_2.mov",
+        aspectRatio: "853 / 878",
+        cardBackground: "#1B1F27",
+        centerMedia: true,
+        objectFit: "contain",
+        objectPosition: "center",
+      },
+      {
+        label: "Platform Design",
+        image:
+          "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
+        aspectRatio: "853 / 878",
+      },
+    ],
+  },
+  {
     slug: "hbcugo",
     kicker: "STREAMING / SPORTS / CULTURE",
     campaignTitle: "HBCUgo",
@@ -147,41 +190,6 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
         image: "/images/Selected%20Works/Amira/Ipad_Amira_smallcard.webp",
         aspectRatio: "853 / 878",
         objectFit: "contain",
-      },
-    ],
-  },
-  {
-    slug: "caidens-courage",
-    kicker: "STORY IP / INTERACTIVE / YOUTH",
-    campaignTitle: "The Focus Flame™",
-    headline: "A story world built for kids who think differently.",
-    description:
-      "Created an original story-powered universe blending comics, SEL tools, interactive missions, classroom experiences, and emotional storytelling to help neurodivergent kids see focus as power.",
-    metrics: ["ORIGINAL IP", "INTERACTIVE SEL EXPERIENCE", "BOOK + DIGITAL PLATFORM"],
-    href: "/work/caidens-courage",
-    media: [
-      {
-        label: "Brand System",
-        image:
-          "/images/Portfolio%20Cards/Caidenscourage/caidencourage_top_portfoliocard.webp",
-        wide: true,
-        aspectRatio: "3021 / 1317",
-      },
-      {
-        label: "Live UI",
-        video:
-          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageInteractive%20Game_2.mov",
-        aspectRatio: "853 / 878",
-        cardBackground: "#1B1F27",
-        centerMedia: true,
-        objectFit: "contain",
-        objectPosition: "center",
-      },
-      {
-        label: "Platform Design",
-        image:
-          "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
-        aspectRatio: "853 / 878",
       },
     ],
   },

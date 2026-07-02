@@ -9,6 +9,13 @@ export type PortfolioWorkItem = {
 
 export const portfolioWorkItems: PortfolioWorkItem[] = [
   {
+    slug: "caidens-courage",
+    title: "Caiden's Courage",
+    desc: "An original entertainment universe for focus, courage, and emotional growth — spanning books, games, education, interactive technology, and film development.",
+    image: "/images/Heros/Caidencourage_Hero.webp",
+    href: "/work/caidens-courage",
+  },
+  {
     slug: "hbcugo",
     title: "HBCUgo.tv",
     desc: "Streaming strategy, CTV experience design, and fan engagement systems for HBCU sports and culture.",
@@ -21,13 +28,6 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
     desc: "Game UX and educational product experiences designed to support literacy and engagement.",
     image: "/images/Portfolio%20Cards/amiramock-up_stilliano.webp",
     href: "/work/amira-learning",
-  },
-  {
-    slug: "caidens-courage",
-    title: "Caiden's Courage",
-    desc: "Story-driven IP blending narrative, interactive experiences, and emotional product design for neurodivergent youth.",
-    image: "/images/Heros/Caidencourage_Hero.webp",
-    href: "/work/caidens-courage",
   },
   {
     slug: "cutclass",

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { HeroCarousel } from "./HeroCarousel";
+import { HomePortraitHero } from "./HomePortraitHero";
+import { FeaturedWorldsIndex } from "./FeaturedWorldsIndex";
 import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
 import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
@@ -25,19 +26,19 @@ const trustedClients = [
 const enginePillars = [
   {
     title: "Product Experience",
-    desc: "UX systems, feature flows, and interaction models designed to improve clarity, engagement, and retention across web, mobile, and streaming environments.",
+    desc: "Interaction models, feature flows, and world-facing UX designed to make story-driven products feel intuitive across film, games, web, mobile, and streaming.",
   },
   {
     title: "Brand Systems",
-    desc: "Visual and narrative systems that help products feel cohesive, recognizable, and aligned across every digital touchpoint.",
+    desc: "Visual and narrative systems that keep characters, campaigns, and platforms cohesive as a universe scales across touchpoints.",
   },
   {
     title: "Digital Platforms",
-    desc: "Websites, landing pages, and digital ecosystems designed to support conversion, storytelling, and scalable growth.",
+    desc: "Websites, apps, and connected ecosystems built to support discovery, participation, and long-term audience engagement.",
   },
   {
     title: "Go-To-Market Strategy",
-    desc: "Launch-focused experience strategy designed to help products communicate value clearly and drive audience engagement from day one.",
+    desc: "Launch systems that connect creative vision to adoption — aligning teams, messaging, and operational readiness from concept to release.",
   },
 ];
 
@@ -46,7 +47,7 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
     title: "Product Experience Design",
     summary: "UX systems, feature design, and streaming experiences.",
     description:
-      "We help startups and digital platforms structure products that feel intuitive, scalable, and aligned to user behavior.",
+      "Experience architecture for story-driven products — from gameplay loops and interactive narratives to platforms built for retention and clarity.",
     bullets: [
       "UX / UI Systems",
       "Product Strategy",
@@ -59,7 +60,7 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
     title: "Brand Systems",
     summary: "Identity, visual language, and product cohesion.",
     description:
-      "We create connected visual systems that align brand, interface, and product experience into one recognizable ecosystem.",
+      "Connected visual and narrative systems that align brand, interface, and story into one recognizable creative universe.",
     bullets: [
       "Creative Direction",
       "Visual Identity",
@@ -72,7 +73,7 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
     title: "Digital Experience Design",
     summary: "Web platforms designed for engagement and conversion.",
     description:
-      "From landing pages to full digital ecosystems, we build platforms designed to support growth and audience interaction.",
+      "Digital environments shaped for audience participation — from campaign platforms to full ecosystems that support growth and interaction.",
     bullets: [
       "Website Design",
       "Conversion Strategy",
@@ -85,7 +86,7 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
     title: "Go-To-Market Experience Strategy",
     summary: "Launch positioning and growth-focused experience design.",
     description:
-      "We help teams shape how products are introduced, experienced, and understood during key growth phases.",
+      "Go-to-market systems that help teams introduce story-driven products with clarity during key growth and release phases.",
     bullets: [
       "Launch Strategy",
       "Messaging Hierarchy",
@@ -98,7 +99,7 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
     title: "Streaming + CTV Strategy",
     summary: "Connected TV and live audience experiences.",
     description:
-      "We help sports and streaming platforms create digital experiences that support fan engagement, discovery, sponsorship visibility, and retention.",
+      "Streaming and live-event experiences for sports and entertainment platforms — fan engagement, discovery, sponsorship visibility, and retention.",
     bullets: [
       "Streaming UX",
       "Live Event Systems",
@@ -110,13 +111,14 @@ const serviceAccordionItems: ServiceAccordionItem[] = [
 ];
 
 const marquee =
-  "We don't just make it look good. We make it work. ";
+  "Story first. Systems that ship. ";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main>
-        <HeroCarousel />
+        <HomePortraitHero />
+        <FeaturedWorldsIndex />
 
         <section className={styles.trusted} aria-labelledby="trusted-heading">
           <div className={styles.inner}>
@@ -125,8 +127,8 @@ export default function Home() {
                 Selected Clients &amp; Collaborators
               </span>
               <h2 id="trusted-heading" className={styles.trustedHeadline}>
-                Building products, platforms, and interactive experiences across
-                streaming, entertainment, education, AI, and emerging technology.
+                Story-driven worlds and interactive systems across film, games,
+                entertainment, education, AI, and emerging technology.
               </h2>
               <p className={styles.trustedSubcopy}>
                 A reel of selected motion, interactive, product, and entertainment work.
@@ -184,11 +186,12 @@ export default function Home() {
             <header className={styles.workShowcaseHead}>
               <span className="section-eyebrow">Work</span>
               <h2 id="work-heading" className="section-title">
-                Selected Work
+                Selected Worlds &amp; Systems
               </h2>
               <p className={styles.workShowcaseSubcopy}>
-                A collection of product systems, streaming experiences, brand moments, and
-                story-driven platforms shaped for engagement and growth.
+                Selected work across sports technology, streaming, education, entertainment,
+                retail, and interactive media — each project reflecting a different way to
+                turn ideas into scalable experiences.
               </p>
             </header>
 
@@ -237,14 +240,14 @@ export default function Home() {
                   />
                 </figure>
                 <p className={styles.aboutRole}>
-                  Creative Director,
+                  Creative Product Executive,
                   <br />
-                  Interactive Experiences
+                  Producer &amp; Creative Technologist
                 </p>
                 <div className={styles.aboutStatBlock}>
                   <span className={styles.aboutStatLabel}>Focus</span>
                   <p className={styles.aboutStatValue}>
-                    Interactive Media &bull; Storytelling &bull; Emerging Technology
+                    Film &bull; Games &bull; AI &bull; Education &bull; Interactive Storytelling
                   </p>
                   <Link href="/about" className={styles.aboutNoseyLink}>
                     Get Nosey →
@@ -254,7 +257,7 @@ export default function Home() {
 
               <div className={styles.aboutEditorialCol}>
                 <p className={styles.aboutCaption}>
-                  Los Angeles, CA / Product / Story / Culture
+                  Los Angeles, CA / Story / Systems / Culture
                 </p>
 
                 <h2 id="about-heading" className={styles.aboutTitle}>
@@ -266,56 +269,52 @@ export default function Home() {
 
                 <div className={styles.aboutBody}>
                   <p className={styles.aboutBodyLead}>Good question.</p>
-                  <p>I&apos;ve been trying to answer that for years.</p>
                   <p>
-                    Officially, I&apos;m Tarus D. Stills.
-                    <br />
-                    Most people call me Stills.
-                    <br />
-                    Somewhere along the way, the internet started calling me Still&bull;i&bull;ano.
+                    Still&bull;i&bull;ano is the creative identity of Tarus D. Stills — a
+                    producer, creative technologist, and product leader working at the
+                    intersection of story, systems, and emerging technology.
                   </p>
                   <p>
-                    I&apos;ve spent most of my career collecting job titles like Pokémon cards.
-                  </p>
-                  <ul className={styles.aboutJobTitles}>
-                    <li>Designer.</li>
-                    <li>Creative Director.</li>
-                    <li>Producer.</li>
-                    <li>Strategist.</li>
-                    <li>Founder.</li>
-                    <li>Occasional professional overthinker.</li>
-                  </ul>
-                  <p>The common thread has always been curiosity.</p>
-                  <p>And if we&apos;re being honest, a healthy amount of ADHD.</p>
-                  <p>
-                    The kind that makes you learn motion graphics, build products, direct
-                    campaigns, produce films, launch platforms, and somehow end up creating a
-                    children&apos;s universe along the way.
+                    The work spans film and motion design, product strategy, games, AI,
+                    education, and interactive storytelling — building worlds that move from
+                    concept to audience.
                   </p>
                   <p>
-                    That universe became Caiden&apos;s Courage — a story-powered world helping
-                    kids discover focus, confidence, and courage.
-                  </p>
-                  <p>
-                    Turns out the thing I spent years trying to manage became one of my greatest
-                    creative advantages.
+                    That path runs through entertainment platforms, learning systems, fan
+                    experiences, and original IP — including Caiden&apos;s Courage, a
+                    story-powered universe for focus, courage, and emotional growth.
                   </p>
 
                   <span className={styles.aboutSectionRule} aria-hidden="true" />
 
                   <h3 className={styles.aboutSubheading}>So what is a Still&bull;i&bull;ano?</h3>
                   <ul className={styles.aboutIdentityList}>
-                    <li>Part designer.</li>
-                    <li>Part storyteller.</li>
-                    <li>Part systems thinker.</li>
+                    <li>Part producer.</li>
                     <li>Part creative technologist.</li>
-                    <li>Part kid who never stopped asking &ldquo;what if?&rdquo;</li>
+                    <li>Part product leader.</li>
+                    <li>Part worldbuilder.</li>
+                    <li>Part storyteller who still asks &ldquo;what if?&rdquo;</li>
                   </ul>
-                  <p>Still figuring it out.</p>
+
+                  <span className={styles.aboutSectionRule} aria-hidden="true" />
+
+                  <h3 className={styles.aboutSubheading}>Film, Motion &amp; Production</h3>
+                  <p>
+                    Before product leadership, there was motion design, film, and production.
+                    That foundation still shapes how I build digital products, direct creative
+                    systems, and design story-driven experiences.
+                  </p>
+                  <ul className={styles.aboutIdentityList}>
+                    <li>Produced a feature film on a 14-day shoot</li>
+                    <li>Produced / 1st AD on a Telly Award-winning short screened at Cannes</li>
+                    <li>Executive Produced a short film selected for LA Film Festival</li>
+                    <li>Associate Produced a Lil Baby music video</li>
+                    <li>Produced branded content, motion graphics, and commercial media</li>
+                  </ul>
                 </div>
 
                 <blockquote className={styles.aboutClosingQuote}>
-                  <p>But that&apos;s half the fun.</p>
+                  <p>Worlds are built at the intersection of vision and execution.</p>
                 </blockquote>
               </div>
             </div>
@@ -326,14 +325,14 @@ export default function Home() {
           <div className={styles.inner}>
             <div className="services-wrap">
               <div className="services-left">
-                <span className="section-eyebrow">Services</span>
+                <span className="section-eyebrow">Capabilities</span>
                 <h2 id="services-heading" className="section-title">
                   Strategic systems.
                   <br />
                   Creative execution.
                 </h2>
                 <a className="services-subeyebrow" href="#services">
-                  Our services →
+                  Ways I build →
                 </a>
 
                 <div className="services-media" aria-hidden>
@@ -348,7 +347,7 @@ export default function Home() {
               <div className="services-right">
                 <ServicesAccordion items={serviceAccordionItems} defaultOpenIndex={0} />
                 <a className="services-cta" href="#contact">
-                  Get in Touch
+                  Start a Conversation
                 </a>
               </div>
             </div>
@@ -361,8 +360,8 @@ export default function Home() {
               The system behind the experience.
             </h2>
             <p className={styles.engineIntro}>
-              A strategic framework for shaping how digital products are built,
-              experienced, and scaled.
+              Behind every strong creative experience is a system: the workflows, teams,
+              tools, and decisions that move an idea from concept to launch.
             </p>
             <div className={styles.engineGrid}>
               {enginePillars.map((pillar) => (
@@ -405,20 +404,20 @@ export default function Home() {
               <span className={`${styles.footerCtaTitleLine} ${styles.footerCtaTitleLineMobile}`}>
                 that
               </span>
-              <span className={styles.footerCtaTitleLine}>needs to scale?</span>
+              <span className={styles.footerCtaTitleLine}>needs to feel alive?</span>
             </h2>
             <div className={styles.footerCtaRule} aria-hidden />
             <div className={styles.footerCtaRow}>
               <p className={styles.footerNote}>
-                Stilliano Studio partners with startups, streaming platforms, and
-                modern digital brands to create product systems designed for
-                growth, engagement, and long-term clarity.
+                I collaborate with teams and founders building story-driven products,
+                entertainment experiences, platforms, and creative systems that need to
+                move from idea to launch.
               </p>
               <a
                 className={styles.footerCtaButton}
                 href="mailto:stills@montage.tv"
               >
-                Start a Project
+                Start a Conversation
               </a>
             </div>
           </div>

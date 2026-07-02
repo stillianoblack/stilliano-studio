@@ -1,0 +1,225 @@
+"use client";
+
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import {
+  DEFAULT_FEATURED_WORLD_INDEX,
+  featuredWorldProjects,
+  type FeaturedWorldProject,
+} from "@/data/featured-worlds";
+import { WorkModal } from "./WorkModal";
+import styles from "./featured-worlds-index.module.css";
+
+function useCoarsePointer() {
+  const [isCoarse, setIsCoarse] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: none), (pointer: coarse)");
+    const update = () => setIsCoarse(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return isCoarse;
+}
+
+function FeaturedPanel({ project }: { project: FeaturedWorldProject }) {
+  return (
+    <header className={styles.featurePanel} aria-live="polite">
+      <span className={styles.featureEyebrow}>{project.eyebrow}</span>
+      <h2 className={styles.featureHeading}>{project.heading}</h2>
+      <p className={styles.featureSubhead}>{project.subheading}</p>
+      <p className={styles.featureDescription}>{project.description}</p>
+      {project.href ? (
+        <Link href={project.href} className={styles.featureCta}>
+          View Project →
+        </Link>
+      ) : null}
+    </header>
+  );
+}
+
+export function FeaturedWorldsIndex() {
+  const [activeIndex, setActiveIndex] = useState(DEFAULT_FEATURED_WORLD_INDEX);
+  const [modalOpen, setModalOpen] = useState(false);
+  const isCoarsePointer = useCoarsePointer();
+
+  const activeProject = featuredWorldProjects[activeIndex];
+
+  const previewProject = useCallback((index: number) => {
+    setActiveIndex(index);
+  }, []);
+
+  const openProject = useCallback(
+    (project: FeaturedWorldProject) => {
+      if (project.href) return;
+      setModalOpen(true);
+    },
+    [],
+  );
+
+  return (
+    <section
+      id="worlds"
+      className={styles.section}
+      aria-label="Featured worlds and systems"
+    >
+      <div className={styles.media} aria-hidden>
+        {featuredWorldProjects.map((project, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div
+              key={project.id}
+              className={`${styles.mediaSlide} ${
+                isActive ? styles.mediaSlideActive : ""
+              }`}
+              style={{
+                ["--world-object-position" as string]:
+                  project.mobileObjectPosition ?? "center center",
+              }}
+            >
+              <picture className={styles.mediaPicture}>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet={project.mobileBackgroundImage ?? project.backgroundImage}
+                />
+                <img
+                  className={styles.mediaImage}
+                  src={project.backgroundImage}
+                  alt=""
+                  decoding="async"
+                  draggable={false}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                />
+              </picture>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className={styles.scrim} aria-hidden />
+      <div className={styles.pattern} aria-hidden />
+
+      <div className={styles.content}>
+        <div className={styles.shell}>
+          <div className={styles.layout}>
+            <FeaturedPanel key={activeProject.id} project={activeProject} />
+
+            <ul className={styles.index} aria-label="Project index">
+              {featuredWorldProjects.map((project, index) => {
+                const isActive = index === activeIndex;
+
+                if (isCoarsePointer) {
+                  return (
+                    <li key={project.id} className={styles.indexItem}>
+                      <div
+                        className={`${styles.indexRow} ${
+                          isActive ? styles.indexRowActive : ""
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className={styles.indexPreviewBtn}
+                          aria-current={isActive ? "true" : undefined}
+                          onClick={() => previewProject(index)}
+                        >
+                          <span className={styles.indexNumber}>
+                            {project.number}
+                          </span>
+                          <span className={styles.indexCopy}>
+                            <span className={styles.indexTitle}>
+                              {project.title}
+                            </span>
+                            <span className={styles.indexCategory}>
+                              {project.category}
+                            </span>
+                          </span>
+                        </button>
+                        {project.href ? (
+                          <Link
+                            href={project.href}
+                            className={styles.indexOpenLink}
+                            aria-label={`Open ${project.title}`}
+                          >
+                            View →
+                          </Link>
+                        ) : (
+                          <button
+                            type="button"
+                            className={styles.indexOpenLink}
+                            aria-label={`Open ${project.title}`}
+                            onClick={() => openProject(project)}
+                          >
+                            View →
+                          </button>
+                        )}
+                      </div>
+                    </li>
+                  );
+                }
+
+                if (project.href) {
+                  return (
+                    <li key={project.id} className={styles.indexItem}>
+                      <Link
+                        href={project.href}
+                        className={`${styles.indexLink} ${
+                          isActive ? styles.indexLinkActive : ""
+                        }`}
+                        aria-current={isActive ? "true" : undefined}
+                        onMouseEnter={() => previewProject(index)}
+                        onFocus={() => previewProject(index)}
+                      >
+                        <span className={styles.indexNumber}>
+                          {project.number}
+                        </span>
+                        <span className={styles.indexCopy}>
+                          <span className={styles.indexTitle}>
+                            {project.title}
+                          </span>
+                          <span className={styles.indexCategory}>
+                            {project.category}
+                          </span>
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={project.id} className={styles.indexItem}>
+                    <button
+                      type="button"
+                      className={`${styles.indexLink} ${
+                        isActive ? styles.indexLinkActive : ""
+                      }`}
+                      aria-current={isActive ? "true" : undefined}
+                      onMouseEnter={() => previewProject(index)}
+                      onFocus={() => previewProject(index)}
+                      onClick={() => openProject(project)}
+                    >
+                      <span className={styles.indexNumber}>
+                        {project.number}
+                      </span>
+                      <span className={styles.indexCopy}>
+                        <span className={styles.indexTitle}>
+                          {project.title}
+                        </span>
+                        <span className={styles.indexCategory}>
+                          {project.category}
+                        </span>
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </section>
+  );
+}

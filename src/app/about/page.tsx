@@ -2,20 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "../page.module.css";
 import { TrackRecordSticky, type TrackRecordEntry } from "./TrackRecordSticky";
+import { PortraitHero } from "../PortraitHero";
 
 export const metadata: Metadata = {
-  title: "Tarus D. Stills — Building Products, Platforms & Interactive Worlds | Stilliano Studios",
+  title: "Tarus D. Stills — Creating Story-Driven Worlds Across Film, Games & Interactive Media | Stilliano Studios",
   description:
-    "Product Strategy Leader and Creative Technologist helping organizations transform ideas into scalable digital products across entertainment, AI, streaming, education, and audience engagement.",
+    "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
   openGraph: {
-    title: "Tarus D. Stills — Building Products, Platforms & Interactive Worlds | Stilliano Studios",
+    title: "Tarus D. Stills — Creating Story-Driven Worlds Across Film, Games & Interactive Media | Stilliano Studios",
     description:
-      "Product Strategy Leader and Creative Technologist helping organizations transform ideas into scalable digital products across entertainment, AI, streaming, education, and audience engagement.",
+      "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
   },
 };
 
-const HERO_IMAGE = "/images/Heros/tarus_hero_2.webp";
-const HERO_IMAGE_MOBILE = "/images/Heros/tarus_hero_mobile.webp";
+const CLIENT_PROOF =
+  "Cartoon Network \u2022 PBS Kids \u2022 DC Comics \u2022 Amira Learning \u2022 HBCUGo \u2022 State Farm";
 
 const helpItems = [
   "Translate complex platform capabilities into customer-facing value",
@@ -122,45 +123,7 @@ export default function AboutPage() {
   return (
     <div className="case-page case-page--about">
       <main>
-        <section className="case-hero" aria-label="Tarus D. Stills">
-          <div className={`${styles.inner} about-topbar`}>
-            <Link href="/" className="case-back">
-              ← Back Home
-            </Link>
-          </div>
-          <picture className="case-hero-media">
-            <source media="(max-width: 768px)" srcSet={HERO_IMAGE_MOBILE} />
-            <img
-              src={HERO_IMAGE}
-              alt="Tarus D. Stills"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
-          <div className="case-hero-overlay about-hero-overlay" aria-hidden />
-          <div className={`${styles.inner} case-hero-content about-hero-content`}>
-            <div className="about-hero-copy">
-              <p className="case-hero-eyebrow about-hero-eyebrow">TARUS D. STILLS</p>
-              <h1 className="case-hero-title about-hero-title">
-                <span className="about-hero-title-line">Building Products,</span>
-                <span className="about-hero-title-line">Platforms & Interactive</span>
-                <span className="about-hero-title-line">Worlds</span>
-              </h1>
-              <p className="case-hero-subtitle about-hero-subline">
-                Product Strategy Leader and Creative Technologist helping organizations
-                transform ideas into scalable digital products across entertainment, AI,
-                streaming, education, and audience engagement.
-              </p>
-              <p className="about-hero-proof">
-                Cartoon Network &bull; PBS Kids &bull; DC Comics &bull; Amira Learning
-                &bull; HBCUGo &bull; State Farm
-              </p>
-              <Link href="/#contact" className="about-hero-cta">
-                Start a Conversation
-              </Link>
-            </div>
-          </div>
-        </section>
+        <PortraitHero variant="about" proof={CLIENT_PROOF} />
 
         <section
           className="case-section section-spacing about-section capabilities-editorial"
