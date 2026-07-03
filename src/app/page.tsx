@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { ServicesAccordion, type ServiceAccordionItem } from "./ServicesAccordion";
 import { LeadershipFeedbackSection } from "./LeadershipFeedbackSection";
 import { TrustedByVideo } from "./TrustedByVideo";
+import { BehindTheWorkSection } from "./BehindTheWorkSection";
 import { WorkShowcase } from "./WorkShowcase";
 
 const trustedClients = [
@@ -180,6 +181,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <BehindTheWorkSection />
 
         <section id="work" className={styles.workShowcase} aria-labelledby="work-heading">
           <div className={styles.workShowcaseInner}>
