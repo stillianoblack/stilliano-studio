@@ -26,15 +26,20 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
     headlineLines: [
       {
         parts: [
-          { text: "Creating " },
-          { text: "Story Worlds", accent: true },
+          { text: "Directing " },
+          { text: "Synthetic Media", accent: true },
+          { text: "," },
         ],
       },
-      { parts: [{ text: "Across Film, Games &" }] },
-      { parts: [{ text: "Technology" }] },
+      {
+        parts: [
+          { text: "3D Worlds & " },
+          { text: "AI Storytelling", accent: true },
+        ],
+      },
     ],
     subcopy:
-      "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
+      "Creative Technologist and Interactive Creative Director building AI-powered storytelling systems, digital experiences, and entertainment franchises at the intersection of design, technology, and emerging media.",
     ctaHref: "/#contact",
     ctaLabel: "Start a Conversation",
   },
