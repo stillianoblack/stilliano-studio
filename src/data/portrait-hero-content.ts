@@ -26,20 +26,15 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
     headlineLines: [
       {
         parts: [
-          { text: "Directing " },
-          { text: "Synthetic Media", accent: true },
-          { text: "," },
+          { text: "Building " },
+          { text: "AI-Powered", accent: true },
         ],
       },
-      {
-        parts: [
-          { text: "3D Worlds & " },
-          { text: "AI Storytelling", accent: true },
-        ],
-      },
+      { parts: [{ text: "Stories, Products" }] },
+      { parts: [{ text: "& Franchises" }] },
     ],
     subcopy:
-      "Creative Technologist and Interactive Creative Director building AI-powered storytelling systems, digital experiences, and entertainment franchises at the intersection of design, technology, and emerging media.",
+      "I partner with executive leaders, product organizations, and creative teams to transform emerging technology into products, stories, and experiences that drive customer adoption, cultural relevance, and long-term brand value.",
     ctaHref: "/#contact",
     ctaLabel: "Start a Conversation",
   },

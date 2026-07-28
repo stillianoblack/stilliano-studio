@@ -221,9 +221,9 @@ export function BehindTheWorkSection() {
       >
         <div className={styles.inner}>
           <header className={styles.header}>
-            <p className={styles.eyebrow}>Process</p>
+            <p className={styles.eyebrow}>Leadership</p>
             <h2 id="behind-the-work-heading" className={styles.title}>
-              Behind the Work
+              Executive Perspective
             </h2>
             <p className={styles.intro}>
               A glimpse into the sets, systems, productions, and creative rooms

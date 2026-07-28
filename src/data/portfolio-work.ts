@@ -11,7 +11,7 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
   {
     slug: "caidens-courage",
     title: "Caiden's Courage",
-    desc: "An original entertainment universe for focus, courage, and emotional growth — spanning books, games, education, interactive technology, and film development.",
+    desc: "Building an original children's franchise that unifies publishing, interactive learning, AI, games, and education into one connected product ecosystem.",
     image: "/images/Heros/Caidencourage_Hero.webp",
     href: "/work/caidens-courage",
   },

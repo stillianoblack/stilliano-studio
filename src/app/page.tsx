@@ -187,9 +187,9 @@ export default function Home() {
         <section id="work" className={styles.workShowcase} aria-labelledby="work-heading">
           <div className={styles.workShowcaseInner}>
             <header className={styles.workShowcaseHead}>
-              <span className="section-eyebrow">Work</span>
+              <span className="section-eyebrow">Portfolio</span>
               <h2 id="work-heading" className="section-title">
-                Selected Worlds &amp; Systems
+                Strategic Initiatives
               </h2>
               <p className={styles.workShowcaseSubcopy}>
                 Selected work across sports technology, streaming, education, entertainment,
@@ -328,7 +328,7 @@ export default function Home() {
           <div className={styles.inner}>
             <div className="services-wrap">
               <div className="services-left">
-                <span className="section-eyebrow">Capabilities</span>
+                <span className="section-eyebrow">Areas of Leadership</span>
                 <h2 id="services-heading" className="section-title">
                   Strategic systems.
                   <br />

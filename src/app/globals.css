@@ -6761,14 +6761,32 @@ a.work-card {
   margin-top: 0.5rem;
 }
 
-.case-page--about .about-cta .about-hero-cta {
+.case-page--about .about-cta .about-hero-cta,
+.case-page--how-i-lead .about-cta .about-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 56px;
+  padding: 0 clamp(2rem, 2.8vw, 2.5rem);
+  border-radius: 999px;
+  border: 1px solid #141413;
   background: #141413;
   color: #fff;
-  border-color: #141413;
   box-shadow: none;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.case-page--about .about-cta .about-hero-cta:hover {
+.case-page--about .about-cta .about-hero-cta:hover,
+.case-page--how-i-lead .about-cta .about-hero-cta:hover {
   background: #2a2a28;
   border-color: #2a2a28;
   color: #fff;
@@ -7003,4 +7021,96 @@ a.work-card {
     line-height: 1.62;
     color: rgba(250, 250, 248, 0.76);
   }
+}
+
+/* How I Lead — reuse About editorial section tokens */
+.case-page--how-i-lead .about-section-kicker {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.5);
+  margin: 0 0 1rem;
+}
+
+.case-page--how-i-lead .capabilities-editorial {
+  background: #fafaf8;
+}
+
+.case-page--how-i-lead .about-stilliano-editorial {
+  background: #fafaf8;
+}
+
+.case-page--how-i-lead .about-stilliano-inner {
+  max-width: 42rem;
+  padding-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.case-page--how-i-lead .about-stilliano-heading {
+  margin: 0 0 clamp(2rem, 4.5vw, 3.25rem);
+  max-width: 14ch;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-page--how-i-lead .about-cta.section-spacing {
+  background: #faf9f5;
+  color: #141413;
+  border-top: 1px solid rgba(20, 20, 19, 0.08);
+  padding-block: clamp(5rem, 14vw, 9rem);
+  text-align: left;
+}
+
+.case-page--how-i-lead .about-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  max-width: 48rem;
+}
+
+.case-page--how-i-lead .about-cta-heading {
+  max-width: none;
+  color: #141413;
+}
+
+.case-page--how-i-lead .about-cta-heading-line {
+  display: block;
+}
+
+.case-page--how-i-lead .about-cta-body {
+  margin: 0;
+  max-width: 38ch;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(20, 20, 19, 0.72);
+}
+
+.case-page--how-i-lead .about-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.case-page--how-i-lead .about-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.65);
+  transition: color 0.2s ease;
+}
+
+.case-page--how-i-lead .about-cta-secondary:hover {
+  color: #141413;
 }

@@ -23,7 +23,7 @@ export const featuredWorldProjects: FeaturedWorldProject[] = [
     heading: "Caiden's Courage",
     subheading: "Every universe starts with one story.",
     description:
-      "An original entertainment universe for focus, courage, and emotional growth — spanning books, games, education, interactive technology, school pilots, and film development.",
+      "Building an original children's franchise that unifies publishing, interactive learning, AI, games, and education into one connected product ecosystem.",
     desktopImage: "/images/Heros/Caidencourage_Hero.webp",
     desktopObjectPosition: "center center",
     mobileObjectPosition: "center center",
