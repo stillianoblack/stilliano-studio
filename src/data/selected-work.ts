@@ -35,6 +35,8 @@ export type FeaturedWorkProject = {
   description: string;
   metrics: string[];
   href?: string;
+  /** Visible case-study link label when `href` is set (e.g. View Case Study). */
+  caseStudyCta?: string;
   media: ProjectMediaItem[];
 };
 
@@ -151,6 +153,65 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
     ],
   },
   {
+    slug: "montagecms",
+    kicker: "ZERO-TO-ONE STREAMING PLATFORM",
+    campaignTitle: "MontageCMS",
+    headline: "Building the product framework for an independent streaming ecosystem.",
+    description:
+      "I created MontageCMS to help independent filmmakers, creators, and entertainment brands launch and manage their own streaming experiences. The platform connected content management, audience engagement, monetization, and branded viewing across web, mobile, and connected TV.",
+    metrics: [
+      "PRODUCT STRATEGY",
+      "CREATIVE DIRECTION",
+      "STREAMING",
+      "UX & SYSTEMS DESIGN",
+      "RESEARCH",
+      "ZERO-TO-ONE",
+    ],
+    href: "/work/montagecms",
+    caseStudyCta: "View Case Study",
+    media: [
+      {
+        label: "Platform design — MontageCMS streaming framework",
+        caption: {
+          category: "Platform design",
+          detail: "INDEPENDENT STREAMING ECOSYSTEM",
+          year: "2020",
+        },
+        image: "/images/Selected%20Works/MontageCMS/4MontageCMS_header.webp",
+        wide: true,
+        aspectRatio: "3840 / 2560",
+        objectPosition: "center 38%",
+        mediaScale: 1.02,
+      },
+      {
+        label: "Creator platform — content management and onboarding",
+        caption: {
+          category: "Creator platform",
+          detail: "CONTENT & CHANNEL WORKFLOWS",
+          year: "2020",
+        },
+        image: "/images/Selected%20Works/MontageCMS/montagecms-creator-workspace.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "contain",
+        cardBackground: "#1B1F27",
+        centerMedia: true,
+      },
+      {
+        label: "Viewer experience — branded streaming interface",
+        caption: {
+          category: "Viewer experience",
+          detail: "DISCOVERY & STREAMING UI",
+          year: "2020",
+        },
+        image: "/images/Selected%20Works/MontageCMS/montagecms-viewer-desktop.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "contain",
+        cardBackground: "#1B1F27",
+        centerMedia: true,
+      },
+    ],
+  },
+  {
     slug: "caidens-courage",
     kicker: "FLAGSHIP WORLD / ORIGINAL IP",
     campaignTitle: "Caiden's Courage",
@@ -190,6 +251,67 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
         image:
           "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
         aspectRatio: "853 / 878",
+      },
+    ],
+  },
+  {
+    slug: "genius-sports",
+    kicker: "SPORTS TECHNOLOGY & PLATFORM STRATEGY",
+    campaignTitle: "Genius Sports",
+    headline: "Building a connected platform for modern fan engagement.",
+    description:
+      "As a Principal Product Designer, I helped shape Genius Sports' Fan Engagement OS across Genius Reels, configurable B2B engagement widgets, and partner-facing product experiences. I also created a Lean Design Framework that brought customers directly into discovery, validation, and beta development.",
+    metrics: [
+      "PLATFORM STRATEGY",
+      "FAN ENGAGEMENT",
+      "B2B PRODUCTS",
+      "PARTNER RESEARCH",
+      "PRODUCT DISCOVERY",
+      "EXPERIMENTATION",
+    ],
+    href: "/work/genius-sports",
+    caseStudyCta: "View Case Study",
+    media: [
+      {
+        label: "Fan Engagement OS — connected platform",
+        caption: {
+          category: "Platform strategy",
+          detail: "FAN ENGAGEMENT OS",
+          year: "2025",
+        },
+        image: "/images/Selected%20Works/GeniusSports/genius-sports-fan-engagement-os.avif",
+        wide: true,
+        aspectRatio: "16 / 10",
+        objectFit: "contain",
+        cardBackground: "#12161f",
+        centerMedia: true,
+        mediaScale: 1.02,
+      },
+      {
+        label: "Lean Design Framework — partner-led development",
+        caption: {
+          category: "Process innovation",
+          detail: "LEAN DESIGN FRAMEWORK",
+          year: "2025",
+        },
+        image: "/images/Selected%20Works/GeniusSports/genius-sports-lean-design-framework.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "contain",
+        cardBackground: "#f4f4f2",
+        centerMedia: true,
+      },
+      {
+        label: "Genius Reels — content creation",
+        caption: {
+          category: "Genius Reels",
+          detail: "CONTENT CREATION WORKFLOWS",
+          year: "2025",
+        },
+        image: "/images/Selected%20Works/GeniusSports/genius-sports-reels.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "contain",
+        cardBackground: "#1B1F27",
+        centerMedia: true,
       },
     ],
   },

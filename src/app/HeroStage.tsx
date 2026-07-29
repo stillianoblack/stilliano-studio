@@ -10,11 +10,12 @@ export function HeroStage({ children }: HeroStageProps) {
     <section className={styles.heroStage} aria-label="Introduction">
       <video
         className={styles.heroVideo}
-        src="/videos/Open_WIP_RandF_HBCUGO_071822.mov"
+        src="/videos/HBCUgomaster.mp4"
         autoPlay
         loop
         muted
         playsInline
+        preload="metadata"
         aria-hidden
       />
       <div className={styles.heroScrim} aria-hidden />

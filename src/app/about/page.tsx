@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const CLIENT_PROOF =
-  "Cartoon Network \u2022 PBS Kids \u2022 DC Comics \u2022 Amira Learning \u2022 HBCUGo \u2022 State Farm";
+  "Cartoon Network \u2022 PBS Kids \u2022 DC Comics \u2022 Amira Learning \u2022 HBCUGo";
 
 const helpItems = [
   "Translate complex platform capabilities into customer-facing value",

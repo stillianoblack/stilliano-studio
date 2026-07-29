@@ -899,6 +899,22 @@ video.case-hero-media {
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
+.case-page--montagecms .case-page-overview-band .case-overview-media-block,
+.case-page--genius-sports .case-page-overview-band .case-overview-media-block,
+.case-page--state-farm .case-page-overview-band .case-overview-media-block {
+  margin-bottom: clamp(2.25rem, 5.5vw, 3.5rem);
+}
+
+.case-page--montagecms .case-page-overview-band .case-overview-media-block .case-montage-artifact-figure--overview,
+.case-page--state-farm .case-page-overview-band .case-overview-media-block .case-montage-artifact-figure--overview {
+  margin-top: 0;
+}
+
+.case-page--montagecms .case-page-overview-band .case-overview-media-block .case-genius-video-figure,
+.case-page--genius-sports .case-page-overview-band .case-overview-media-block .case-genius-video-figure {
+  margin-top: 0;
+}
+
 .case-overview-video {
   width: 100%;
   margin: 0 0 clamp(3.5rem, 8vw, 5.75rem);
@@ -7113,4 +7129,465 @@ a.work-card {
 
 .case-page--how-i-lead .about-cta-secondary:hover {
   color: #141413;
+}
+
+/* MontageCMS case study */
+.case-page--montagecms .case-hero-media img {
+  object-fit: cover;
+}
+
+.case-montage-artifact-figure {
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #ececec;
+}
+
+.case-montage-artifact-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.case-montage-artifact-figure--overview {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.case-montage-artifact-figure--compact {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-montage-artifact-figure--compact img {
+  max-height: min(72vh, 820px);
+  margin-inline: auto;
+}
+
+.case-section-dark .case-montage-artifact-figure {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.case-montage-leadership-list {
+  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  max-width: 52rem;
+}
+
+.case-montage-leadership-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.88);
+}
+
+.case-montage-leadership-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: rgba(147, 186, 255, 0.95);
+}
+
+.case-montage-leadership-list--sticky {
+  margin-top: clamp(1.5rem, 3.5vw, 2.25rem);
+  max-width: none;
+}
+
+.case-page--montagecms .case-section-dark .case-visual-lang-sticky-text {
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.case-page--montagecms .case-section-dark .case-visual-lang-sticky-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-page--montagecms .case-montage-still--dark {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.case-page--montagecms .case-montage-role-sticky,
+.case-page--montagecms .case-montage-platform-sticky {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-page--montagecms .case-montage-sticky-experience {
+  margin-top: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.case-montage-viewer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-montage-viewer-grid .case-montage-artifact-figure {
+  margin-top: 0;
+}
+
+.case-page--montagecms .case-montage-process-grid .case-genius-lean-title {
+  color: #c44d6e;
+}
+
+@media (max-width: 768px) {
+  .case-montage-viewer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-montage-dual-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-montage-dual-col--light {
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.case-montage-dual-col--light .case-montage-artifact-figure {
+  margin-top: 0;
+}
+
+.case-montage-col-title {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.52);
+}
+
+.case-montage-list {
+  color: rgba(250, 250, 248, 0.9);
+}
+
+.case-montage-eyebrow {
+  margin-bottom: 0.75rem;
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.case-montage-process {
+  margin: clamp(2.25rem, 5vw, 3.25rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.case-montage-process-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: start;
+  padding: clamp(1.1rem, 2.5vw, 1.35rem) clamp(1.15rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+}
+
+.case-montage-process-index {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(20, 20, 19, 0.38);
+}
+
+.case-montage-process-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-montage-process-body {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .case-montage-dual-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* State Farm case study */
+.case-page--state-farm .case-hero-media img {
+  object-fit: cover;
+}
+
+.case-state-farm-eyebrow-dark {
+  color: rgba(250, 250, 248, 0.52);
+}
+
+.case-state-farm-subheading {
+  margin: clamp(2rem, 5vw, 2.75rem) 0 0.75rem;
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.case-state-farm-focus-list {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  max-width: 52rem;
+}
+
+.case-state-farm-focus-list li {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: rgba(20, 20, 19, 0.72);
+  background: var(--bg-card);
+}
+
+.case-state-farm-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+@media (max-width: 768px) {
+  .case-state-farm-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Genius Sports case study */
+.case-page--genius-sports .case-hero-media img {
+  object-fit: cover;
+}
+
+.case-genius-video-figure {
+  margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.case-genius-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background: #0f141c;
+}
+
+.case-genius-video--scroll-placeholder {
+  aspect-ratio: 16 / 9;
+  min-height: clamp(180px, 40vw, 420px);
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(196, 77, 110, 0.12), transparent 55%),
+    linear-gradient(155deg, #0f141c 0%, #171e2b 48%, #101620 100%);
+}
+
+.case-genius-video-caption {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding: clamp(1rem, 2vw, 1.35rem) clamp(1.15rem, 2.5vw, 1.5rem);
+  background: #12161f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  color: rgba(250, 250, 248, 0.92);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.case-genius-video-caption .case-visual-caption-meta {
+  color: #8eb4ff;
+  font-weight: 600;
+  text-transform: none;
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  letter-spacing: -0.01em;
+}
+
+.case-genius-video-summary {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  text-transform: none;
+  color: rgba(250, 250, 248, 0.88);
+}
+
+.case-page--genius-sports .case-visual-caption--genius-reels .case-visual-caption-meta {
+  color: #8eb4ff;
+  font-weight: 600;
+  text-transform: none;
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  letter-spacing: -0.01em;
+}
+
+.case-page--genius-sports .case-visual-caption--genius-reels {
+  color: rgba(250, 250, 248, 0.9);
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.case-genius-lean-grid {
+  margin: clamp(2rem, 5vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.case-genius-lean-cell {
+  padding: clamp(1rem, 2vw, 1.2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 100%;
+}
+
+.case-genius-lean-index {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(20, 20, 19, 0.38);
+}
+
+.case-genius-lean-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3d6ec4;
+}
+
+.case-genius-lean-body {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .case-genius-lean-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .case-genius-lean-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page--genius-sports .case-genius-os-sticky {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-page--genius-sports .case-genius-lean-sticky {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.case-genius-subheading {
+  margin: clamp(1.75rem, 4vw, 2.25rem) 0 0.75rem;
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.case-genius-subheading--dark {
+  color: rgba(250, 250, 248, 0.92);
+}
+
+.case-genius-focus-list {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  max-width: 52rem;
+}
+
+.case-genius-focus-list--dark li {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(250, 250, 248, 0.82);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.case-genius-focus-list li {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: rgba(20, 20, 19, 0.72);
+  background: var(--bg-card);
+}
+
+.case-genius-experiments {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 3.5rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.case-genius-experiment-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 248, 0.95);
+}
+
+.case-genius-experiment-dl {
+  margin: 0 0 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.case-genius-experiment-dl dt {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.48);
+}
+
+.case-genius-experiment-dl dd {
+  margin: 0.25rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(250, 250, 248, 0.82);
+}
+
+.case-section-dark .case-genius-experiment .case-montage-artifact-figure {
+  margin-top: 0;
 }

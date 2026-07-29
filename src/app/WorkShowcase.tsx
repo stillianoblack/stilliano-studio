@@ -174,6 +174,9 @@ function FeaturedProjectBlock({
           </li>
         ))}
       </ul>
+      {project.caseStudyCta ? (
+        <p className={styles.projectCaseStudyCta}>{project.caseStudyCta} →</p>
+      ) : null}
     </>
   );
 

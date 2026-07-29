@@ -30,6 +30,20 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
     href: "/work/amira-learning",
   },
   {
+    slug: "montagecms",
+    title: "MontageCMS",
+    desc: "Zero-to-one product strategy and creative direction for an independent streaming platform connecting creator tools, viewer experiences, and monetization.",
+    image: "/images/Portfolio%20Cards/montagecms_card_stilliano.webp",
+    href: "/work/montagecms",
+  },
+  {
+    slug: "genius-sports",
+    title: "Genius Sports",
+    desc: "Principal Product Designer shaping the Fan Engagement OS—Genius Reels, B2B widgets, partner research, and a Lean Design Framework for customer-led beta development.",
+    image: "/images/Selected%20Works/GeniusSports/genius-sports-hero.webp",
+    href: "/work/genius-sports",
+  },
+  {
     slug: "cutclass",
     title: "Cutclass.io",
     desc: "Product systems and digital platform strategy for creator-driven learning experiences.",
