@@ -1,0 +1,79 @@
+.page {
+  background: #fff;
+  color: #141413;
+  min-height: 100vh;
+}
+
+.main {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: clamp(6rem, 12vw, 8rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(5rem, 10vw, 7rem);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.figure {
+  margin: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pieceTitle {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.pieceDetail {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(20, 20, 19, 0.72);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

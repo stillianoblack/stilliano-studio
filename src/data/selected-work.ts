@@ -177,11 +177,11 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
           detail: "INDEPENDENT STREAMING ECOSYSTEM",
           year: "2020",
         },
-        image: "/images/Selected%20Works/MontageCMS/4MontageCMS_header.webp",
+        image:
+          "/images/Selected%20Works/MontageCMS/montageCMS_portfolio_cover%40caiden.webp",
         wide: true,
-        aspectRatio: "3840 / 2560",
-        objectPosition: "center 38%",
-        mediaScale: 1.02,
+        aspectRatio: "3021 / 1317",
+        objectPosition: "center 42%",
       },
       {
         label: "Creator platform — content management and onboarding",
@@ -192,9 +192,8 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
         },
         image: "/images/Selected%20Works/MontageCMS/montagecms-creator-workspace.webp",
         aspectRatio: "853 / 878",
-        objectFit: "contain",
-        cardBackground: "#1B1F27",
-        centerMedia: true,
+        objectFit: "cover",
+        objectPosition: "center center",
       },
       {
         label: "Viewer experience — branded streaming interface",
@@ -203,11 +202,10 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
           detail: "DISCOVERY & STREAMING UI",
           year: "2020",
         },
-        image: "/images/Selected%20Works/MontageCMS/montagecms-viewer-desktop.webp",
+        video: "/videos/montage-overview-end-credits.mp4",
         aspectRatio: "853 / 878",
-        objectFit: "contain",
-        cardBackground: "#1B1F27",
-        centerMedia: true,
+        objectFit: "cover",
+        objectPosition: "center center",
       },
     ],
   },
@@ -232,9 +230,11 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
       {
         label: "Brand System",
         image:
-          "/images/Portfolio%20Cards/Caidenscourage/caidencourage_top_portfoliocard.webp",
+          "/images/Selected%20Works/caidencourage/images/Caiden%27sCourage_Cover_Courage.webp",
         wide: true,
         aspectRatio: "3021 / 1317",
+        objectFit: "cover",
+        objectPosition: "center 50%",
       },
       {
         label: "Live UI",
@@ -279,13 +279,13 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
           detail: "FAN ENGAGEMENT OS",
           year: "2025",
         },
-        image: "/images/Selected%20Works/GeniusSports/genius-sports-fan-engagement-os.avif",
+        image:
+          "/images/Selected%20Works/GeniusSports/Geniussports_cover_portfolio%40caiden.webp",
         wide: true,
         aspectRatio: "16 / 10",
-        objectFit: "contain",
-        cardBackground: "#12161f",
-        centerMedia: true,
-        mediaScale: 1.02,
+        objectFit: "cover",
+        objectPosition: "54% 14%",
+        cardBackground: "#1e1e1e",
       },
       {
         label: "Lean Design Framework — partner-led development",
@@ -309,15 +309,15 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
         },
         image: "/images/Selected%20Works/GeniusSports/genius-sports-reels.webp",
         aspectRatio: "853 / 878",
-        objectFit: "contain",
-        cardBackground: "#1B1F27",
-        centerMedia: true,
+        objectFit: "cover",
+        objectPosition: "center center",
+        cardBackground: "#E9EEF0",
       },
     ],
   },
 ];
 
-export const compactWorkProjects: CompactWorkProject[] = [
+export const entertainmentMediaProjects: CompactWorkProject[] = [
   {
     slug: "music-video",
     title: "DaBaby x Sexyy Red",
@@ -336,6 +336,9 @@ export const compactWorkProjects: CompactWorkProject[] = [
     description: "Producer • Creative Development",
     image: "/images/Selected%20Works/2x2selected_works/narrative-film.webp",
   },
+];
+
+export const interactiveMediaProjects: CompactWorkProject[] = [
   {
     slug: "pbs-kids",
     title: "PBS Kids",
@@ -354,4 +357,10 @@ export const compactWorkProjects: CompactWorkProject[] = [
     description: "Creative Direction • Fan Engagement Platform",
     image: "/images/Portfolio%20Cards/Kids-Fandome.webp",
   },
+];
+
+/** @deprecated Use entertainmentMediaProjects or interactiveMediaProjects */
+export const compactWorkProjects: CompactWorkProject[] = [
+  ...entertainmentMediaProjects,
+  ...interactiveMediaProjects,
 ];

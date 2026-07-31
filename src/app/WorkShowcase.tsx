@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import {
-  compactWorkProjects,
   featuredWorkProjects,
+  interactiveMediaProjects,
   type FeaturedWorkProject,
   type ProjectMediaItem,
 } from "@/data/selected-work";
-import { WorkModal } from "./WorkModal";
+import { MoreWorkGrid } from "./MoreWorkGrid";
 import styles from "./work-showcase.module.css";
 
 function isExternalHref(href: string) {
@@ -79,29 +78,14 @@ function ProjectMediaCard({
     <img
       className={styles.projectMediaImage}
       src={item.image}
-      alt=""
+      alt={item.label}
       style={hasMediaStyle ? mediaStyle : undefined}
       loading="lazy"
       decoding="async"
     />
   );
 
-  const meta = item.caption ? (
-    <div className={styles.projectMediaCaption}>
-      <span className={styles.projectMediaCaptionCategory}>{item.caption.category}</span>
-      <span className={styles.projectMediaCaptionDetail}>{item.caption.detail}</span>
-      <span className={styles.projectMediaCaptionYear}>{item.caption.year}</span>
-    </div>
-  ) : (
-    <span className={styles.projectMediaLabel}>{item.label}</span>
-  );
-
-  const content = (
-    <>
-      {media}
-      {meta}
-    </>
-  );
+  const content = media;
 
   if (href) {
     if (isExternalHref(href)) {
@@ -224,76 +208,29 @@ function FeaturedProjectBlock({
   );
 }
 
-export function WorkShowcase() {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-
+export function WorkShowcase({ theme = "dark" }: { theme?: "dark" | "light" }) {
   return (
-    <div className={styles.workSection}>
+    <div
+      className={`${styles.workSection}${
+        theme === "light" ? ` ${styles.workSectionLight}` : ""
+      }`}
+    >
       <div className={styles.workInner}>
       <div className={styles.featuredStack}>
         {featuredWorkProjects.map((project) => (
           <FeaturedProjectBlock
             key={project.slug}
             project={project}
-            onOpenModal={openModal}
+            onOpenModal={() => {}}
           />
         ))}
       </div>
 
-      <div
-        className={styles.moreWorkBlock}
+      <MoreWorkGrid
+        projects={interactiveMediaProjects}
+        heading="Interactive Media"
         id="entertainment-interactive-media"
-      >
-        <h3 className={styles.moreWorkHeading}>Entertainment + Interactive Media</h3>
-        <div className={styles.moreWorkGrid}>
-          {compactWorkProjects.map((project) =>
-            project.href ? (
-              <Link
-                key={project.slug}
-                href={project.href}
-                className={styles.moreWorkCard}
-                aria-label={`${project.title}. ${project.description}`}
-              >
-                <img
-                  className={styles.moreWorkCardMedia}
-                  src={project.image}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className={styles.moreWorkCardBody}>
-                  <h4 className={styles.moreWorkCardTitle}>{project.title}</h4>
-                  <p className={styles.moreWorkCardDesc}>{project.description}</p>
-                </div>
-              </Link>
-            ) : (
-              <button
-                key={project.slug}
-                type="button"
-                className={styles.moreWorkCard}
-                aria-label={`${project.title}. ${project.description}`}
-                onClick={openModal}
-              >
-                <img
-                  className={styles.moreWorkCardMedia}
-                  src={project.image}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className={styles.moreWorkCardBody}>
-                  <h4 className={styles.moreWorkCardTitle}>{project.title}</h4>
-                  <p className={styles.moreWorkCardDesc}>{project.description}</p>
-                </div>
-              </button>
-            ),
-          )}
-        </div>
-      </div>
-
-      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      />
       </div>
     </div>
   );

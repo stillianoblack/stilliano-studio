@@ -37,13 +37,29 @@
 .featuredStack {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 8vw, 6.5rem);
+  gap: clamp(5rem, 10vw, 8rem);
 }
 
 .featuredProject {
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+@media (min-width: 960px) {
+  .featuredProject {
+    display: grid;
+    grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+    column-gap: clamp(1.75rem, 3.5vw, 3rem);
+    row-gap: clamp(1rem, 2vw, 1.25rem);
+    align-items: stretch;
+  }
+
+  .projectIntro {
+    max-width: none;
+    position: sticky;
+    top: calc(64px + 1.25rem);
+  }
 }
 
 .projectIntro {
@@ -84,7 +100,7 @@
 
 .projectHeadline {
   margin: 0 0 1rem;
-  font-size: clamp(1.125rem, 2vw, 1.45rem);
+  font-size: clamp(1.0625rem, 1.85vw, 1.3rem);
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.02em;
@@ -93,8 +109,8 @@
 
 .projectDescription {
   margin: 0;
-  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
-  line-height: 1.65;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  line-height: 1.6;
   color: rgba(250, 250, 248, 0.68);
 }
 
@@ -131,8 +147,16 @@
 .projectMediaGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: clamp(12px, 2vw, 20px);
+}
+
+@media (min-width: 960px) {
+  .projectMediaGrid {
+    height: min(66vh, 680px);
+    max-height: min(66vh, 680px);
+    grid-template-rows: minmax(0, 0.54fr) minmax(0, 0.46fr);
+  }
 }
 
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCardWide,
@@ -144,11 +168,11 @@
   min-height: unset;
 }
 
-/* HBCUgo + Amira media grid — editorial framing: tighter radius, lighter chrome, caption-led hierarchy */
+/* HBCUgo + Amira — rounded panels, no border stroke */
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCard,
 .projectMediaGrid[data-project="amira-learning"] .projectMediaCard {
   border-radius: clamp(10px, 1.25vw, 12px);
-  border-color: rgba(255, 255, 255, 0.055);
+  border: none;
   box-shadow: none;
 }
 
@@ -157,6 +181,13 @@
   .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(2) {
     position: relative;
     top: 0.4rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(2),
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(2) {
+    top: 0;
   }
 }
 
@@ -174,18 +205,32 @@ button.projectMediaCard {
   justify-self: stretch;
   min-width: 0;
   width: 100%;
-  min-height: clamp(200px, 28vw, 280px);
+  min-height: clamp(180px, 24vw, 240px);
   border-radius: var(--radius-card);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: none;
   background: #e8eaef;
   text-decoration: none;
   color: inherit;
 }
 
+@media (min-width: 960px) {
+  .projectMediaCard {
+    min-height: 0;
+    height: 100%;
+    aspect-ratio: auto !important;
+  }
+}
+
 .projectMediaCardWide {
   grid-column: 1 / -1;
-  min-height: clamp(220px, 36vw, 380px);
+  min-height: clamp(200px, 32vw, 320px);
+}
+
+@media (min-width: 960px) {
+  .projectMediaCardWide {
+    min-height: 0;
+  }
 }
 
 .projectMediaCardFit {
@@ -194,9 +239,23 @@ button.projectMediaCard {
   background: #12161f;
 }
 
+@media (min-width: 960px) {
+  .projectMediaCardFit {
+    height: 100%;
+  }
+}
+
 .projectMediaCardFit .projectMediaImage {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+}
+
+@media (min-width: 960px) {
+  .projectMediaCard:not(.projectMediaCardCenteredMedia) .projectMediaImage {
+    object-fit: cover !important;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /* HBCUgo: 16:9 cinematic frames; cover + zoom fills card edge-to-edge. */
@@ -227,10 +286,13 @@ button.projectMediaCard {
   object-position: 48% 44%;
 }
 
-/* HBCUgo CTV + Amira gameplay still — full collage visible (contain overrides cover above). */
-.projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(3) .projectMediaImage,
-.projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(3) .projectMediaImage {
-  object-fit: contain;
+@media (min-width: 960px) {
+  .projectMediaGrid[data-project="hbcugo"] .projectMediaCard:nth-child(3) .projectMediaImage,
+  .projectMediaGrid[data-project="amira-learning"] .projectMediaCard:nth-child(3) .projectMediaImage,
+  .projectMediaGrid[data-project="caidens-courage"] .projectMediaCard:nth-child(3) .projectMediaImage {
+    object-fit: cover !important;
+    object-position: center;
+  }
 }
 
 /* Desktop hover zoom — HBCUgo & Focus Flame image/media cards only. */
@@ -294,11 +356,12 @@ button.projectMediaCard {
 }
 
 .projectMediaCardCenteredMedia .projectVideo {
-  position: relative;
-  width: 97%;
-  height: auto;
-  max-height: 97%;
-  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
   object-position: center;
   transform: none;
 }
@@ -311,9 +374,9 @@ button.projectMediaCard {
 }
 
 .projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia .projectVideo {
-  width: 97%;
-  height: auto;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-height: none;
 }
 
 .projectMediaGrid[data-project="amira-learning"] .projectMediaCardCenteredMedia:hover .projectVideo,
@@ -551,4 +614,126 @@ button.projectMediaCard {
   .projectMediaCard:hover .projectVideo {
     transform: none;
   }
+}
+
+/* Light theme — Strategic Work on homepage */
+.workSectionLight {
+  --work-accent: #141413;
+  color: var(--text);
+}
+
+.workSectionLight .projectIntro:focus-visible {
+  outline-color: rgba(20, 20, 19, 0.35);
+}
+
+.workSectionLight .projectKicker {
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.workSectionLight .projectTitle {
+  color: var(--text);
+}
+
+.workSectionLight .projectHeadline {
+  color: rgba(20, 20, 19, 0.88);
+}
+
+.workSectionLight .projectDescription {
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.workSectionLight .projectMetric {
+  border-color: var(--border);
+  background: var(--bg-card);
+  color: rgba(20, 20, 19, 0.72);
+}
+
+.workSectionLight .projectCaseStudyCta {
+  color: rgba(20, 20, 19, 0.72);
+}
+
+.workSectionLight .projectMediaCard {
+  border: none;
+  background: #ececec;
+}
+
+.workSectionLight .projectMediaCardFit,
+.workSectionLight .projectMediaCardCenteredMedia,
+.workSectionLight .projectMediaCardRowFill {
+  background: #f4f4f2;
+}
+
+.workSectionLight .projectMediaGrid[data-project="hbcugo"] .projectMediaCard,
+.workSectionLight .projectMediaGrid[data-project="amira-learning"] .projectMediaCard {
+  border: none;
+}
+
+.workSectionLight .projectMediaCard:focus-visible {
+  outline-color: rgba(20, 20, 19, 0.35);
+}
+
+.workSectionLight .moreWorkBlock {
+  border-top-color: var(--border);
+}
+
+.workSectionLight .moreWorkHeading {
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.workSectionLight .moreWorkCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.workSectionLight .moreWorkCard:hover {
+  background: #f8f8f6;
+}
+
+.workSectionLight .moreWorkCard:focus-visible {
+  outline-color: rgba(20, 20, 19, 0.35);
+}
+
+.workSectionLight .moreWorkCardTitle {
+  color: var(--text);
+}
+
+.workSectionLight .moreWorkCardDesc {
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide {
+  background: #f0f0ee;
+}
+
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide .projectMediaImage {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.projectMediaGrid[data-project="montagecms"] .projectMediaCard:nth-child(2) .projectMediaImage {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.projectMediaGrid[data-project="genius-sports"] .projectMediaCardWide {
+  background: #1e1e1e !important;
+}
+
+.projectMediaGrid[data-project="genius-sports"] .projectMediaCardWide .projectMediaImage {
+  object-fit: cover !important;
+  object-position: 54% 14% !important;
+}
+
+.projectMediaGrid[data-project="genius-sports"] .projectMediaCard:nth-child(3) {
+  background: #e9eef0 !important;
+}
+
+.projectMediaGrid[data-project="genius-sports"] .projectMediaCard:nth-child(3) .projectMediaImage {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.projectMediaGrid[data-project="montagecms"] .projectMediaCard:nth-child(3) .projectVideo {
+  object-fit: cover !important;
+  object-position: center center !important;
 }

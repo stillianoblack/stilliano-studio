@@ -11,7 +11,7 @@ export type PortraitHeroHeadlineLine = {
 
 export type PortraitHeroContent = {
   chapter: string;
-  label: string;
+  label?: string;
   headlineLines: readonly PortraitHeroHeadlineLine[];
   subcopy: string;
   proof?: string;
@@ -21,22 +21,15 @@ export type PortraitHeroContent = {
 
 export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroContent> = {
   home: {
-    chapter: "CHAPTER 01",
-    label: "TARUS D. STILLS",
+    chapter: "Tarus D. Stills",
     headlineLines: [
-      {
-        parts: [
-          { text: "Building " },
-          { text: "AI-Powered", accent: true },
-        ],
-      },
-      { parts: [{ text: "Stories, Products" }] },
-      { parts: [{ text: "& Franchises" }] },
+      { parts: [{ text: "Interactive Creative" }] },
+      { parts: [{ text: "Executive" }] },
     ],
     subcopy:
-      "I partner with executive leaders, product organizations, and creative teams to transform emerging technology into products, stories, and experiences that drive customer adoption, cultural relevance, and long-term brand value.",
-    ctaHref: "/#contact",
-    ctaLabel: "Start a Conversation",
+      "I align creative vision, product strategy, and emerging technology to build products, experiences, and brands that create lasting customer value.",
+    ctaHref: "#work",
+    ctaLabel: "See Work",
   },
   about: {
     chapter: "CHAPTER 02",

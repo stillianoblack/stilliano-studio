@@ -32,9 +32,11 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
       <div className={`${styles.inner} case-hero-content about-hero-content`}>
         <div className="about-hero-copy">
           <p className="portrait-hero-chapter">{content.chapter}</p>
-          <p className="case-hero-eyebrow about-hero-eyebrow portrait-hero-label">
-            {content.label}
-          </p>
+          {content.label ? (
+            <p className="case-hero-eyebrow about-hero-eyebrow portrait-hero-label">
+              {content.label}
+            </p>
+          ) : null}
           <h1 className="case-hero-title about-hero-title">
             {content.headlineLines.map((line) => (
               <span
@@ -55,9 +57,15 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
           </h1>
           <p className="case-hero-subtitle about-hero-subline">{content.subcopy}</p>
           {proofLine ? <p className="about-hero-proof">{proofLine}</p> : null}
-          <Link href={content.ctaHref} className="about-hero-cta">
-            {content.ctaLabel}
-          </Link>
+          {content.ctaHref.startsWith("#") ? (
+            <a href={content.ctaHref} className="about-hero-cta">
+              {content.ctaLabel}
+            </a>
+          ) : (
+            <Link href={content.ctaHref} className="about-hero-cta">
+              {content.ctaLabel}
+            </Link>
+          )}
         </div>
       </div>
     </section>

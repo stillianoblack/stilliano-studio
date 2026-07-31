@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "../page.module.css";
-import { TrackRecordSticky, type TrackRecordEntry } from "./TrackRecordSticky";
 import { PortraitHero } from "../PortraitHero";
+import { HomeAboutSection } from "../HomeAboutSection";
+import { ServicesLeadershipSection } from "../ServicesLeadershipSection";
 
 export const metadata: Metadata = {
   title: "Tarus D. Stills — Creating Story-Driven Worlds Across Film, Games & Interactive Media | Stilliano Studios",
@@ -18,97 +19,11 @@ export const metadata: Metadata = {
 const CLIENT_PROOF =
   "Cartoon Network \u2022 PBS Kids \u2022 DC Comics \u2022 Amira Learning \u2022 HBCUGo";
 
-const helpItems = [
-  "Translate complex platform capabilities into customer-facing value",
-  "Bridge product, engineering, GTM, and design execution",
-  "Build scalable engagement and operational systems",
-  "Accelerate 0→1 MVP and roadmap delivery",
-  "Prototype and validate workflows using AI-native tooling",
-  "Align product launches with adoption and operational readiness",
-];
-
-/** Highlighted capability block index (0-based) on the editorial board. */
-const CAPABILITIES_HIGHLIGHT_INDEX = 2;
-
-const experienceEntries: TrackRecordEntry[] = [
-  {
-    name: "Genius Sports",
-    titleLines: ["Genius", "Sports"],
-    body:
-      "Built fan engagement ecosystems across Social streaming, sports data, and interactive experiences.",
-    image: "/images/Heros/geniussports_hero.webp",
-    meta: "Product Systems • Streaming • Engagement",
-    href: "https://www.geniussports.com/",
-  },
-  {
-    name: "HBCUgo Sports",
-    body:
-      "Helped scale OTT/CTV platform ecosystems across Roku, Plex, Apple TV, and web.",
-    image: "/images/Heros/HBCUgoCTV_Hero.webp",
-    meta: "OTT • CTV • Platform Scale",
-    href: "/work/hbcugo",
-  },
-  {
-    name: "Cutclass",
-    body:
-      "Product systems and digital platform strategy for creator-driven learning experiences.",
-    image: "/images/Portfolio%20Cards/cutclass_card_stilliano.webp",
-    meta: "Streaming • Film Education • Platform",
-    href: "https://cutclass.io/",
-  },
-  {
-    name: "Caiden\u2019s Courage",
-    body:
-      "Developing a cross-platform SEL + interactive storytelling ecosystem for kids.",
-    image: "/images/Heros/Caidencourage_Hero.webp",
-    meta: "Story IP • SEL • Interactive",
-    href: "/work/caidens-courage",
-  },
-];
-
-const engagementPhases = [
-  {
-    phase: "Phase 1",
-    title: "Discovery & Alignment",
-    window: "Week 1–2",
-    items: [
-      "product + GTM workflow audit",
-      "roadmap analysis",
-      "operational bottlenecks",
-      "launch readiness evaluation",
-    ],
-  },
-  {
-    phase: "Phase 2",
-    title: "Systems & Execution",
-    window: "Week 3–8",
-    items: [
-      "GTM/product alignment",
-      "workflow systems",
-      "adoption optimization",
-      "AI-assisted prototyping",
-      "product/design acceleration",
-    ],
-  },
-  {
-    phase: "Phase 3",
-    title: "Launch & Optimization",
-    window: "Week 9–12",
-    items: [
-      "rollout support",
-      "KPI monitoring",
-      "engagement optimization",
-      "operational refinement",
-      "future-state recommendations",
-    ],
-  },
-];
-
 const coreStrengths = [
   "Creative Direction",
   "Product Strategy",
   "Audience Engagement",
-  "Interactive Experiences",
+  "Interactive ExP.",
   "Brand Systems",
   "Experience Design",
   "Storytelling",
@@ -125,48 +40,9 @@ export default function AboutPage() {
       <main>
         <PortraitHero variant="about" proof={CLIENT_PROOF} />
 
-        <section
-          className="case-section section-spacing about-section capabilities-editorial"
-          aria-labelledby="capabilities-heading"
-        >
-          <div className={styles.inner}>
-            <div className="capabilities-editorial-layout">
-              <div className="capabilities-intro">
-                <p className="capabilities-eyebrow">Capabilities</p>
-                <h2 id="capabilities-heading" className="capabilities-heading">
-                  The Value of Product Systems
-                  <sup className="capabilities-heading-mark" aria-hidden>
-                    ™
-                  </sup>
-                </h2>
-                <p className="capabilities-copy">
-                  Every strong product lives in the space between vision, execution, and
-                  adoption.
-                </p>
-                <Link href="/#contact" className="capabilities-cta">
-                  Start a Conversation
-                </Link>
-              </div>
-              <ol className="capabilities-board" aria-label="Product systems capabilities">
-                {helpItems.map((item, index) => (
-                  <li
-                    key={item}
-                    className={`capability-cell${
-                      index === CAPABILITIES_HIGHLIGHT_INDEX
-                        ? " capability-cell-highlight"
-                        : ""
-                    }`}
-                  >
-                    <span className="capability-number" aria-hidden>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="capability-text">{item}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
+        <HomeAboutSection />
+
+        <ServicesLeadershipSection ctaHref="/#contact" />
 
         <section
           className="case-section section-spacing about-section about-stilliano-editorial"
@@ -204,56 +80,6 @@ export default function AboutPage() {
         </section>
 
         <section
-          className="case-section case-section-dark section-spacing track-record-section"
-          aria-labelledby="track-record-heading"
-        >
-          <div className={styles.inner}>
-            <TrackRecordSticky entries={experienceEntries} />
-          </div>
-        </section>
-
-        <section
-          className="case-section section-spacing about-section about-section--engagement"
-          aria-labelledby="about-engagement-heading"
-        >
-          <div className={`${styles.inner} about-engagement-editorial`}>
-            <div className="about-engagement-intro">
-              <p className="about-section-kicker">Engagement Model</p>
-              <h2
-                id="about-engagement-heading"
-                className="case-heading display-heading display-heading-xl"
-              >
-                Example Engagement Structure
-              </h2>
-              <p className="case-body case-section-lead about-engagement-lead">
-                A strategic systems arc — discovery through launch — designed for clarity,
-                velocity, and measurable adoption.
-              </p>
-            </div>
-            <ol className="about-engagement-timeline">
-              {engagementPhases.map((phase) => (
-                <li key={phase.phase} className="about-engagement-phase">
-                  <header className="about-engagement-phase-header">
-                    <span className="about-engagement-phase-label">{phase.phase}</span>
-                    <h3 className="about-engagement-phase-title">
-                      {phase.title}
-                      <span className="about-engagement-phase-window">
-                        ({phase.window})
-                      </span>
-                    </h3>
-                  </header>
-                  <ul className="about-engagement-phase-list">
-                    {phase.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section
           className="case-section case-section-dark section-spacing about-section about-section--strengths"
           aria-labelledby="about-strengths-heading"
         >
@@ -281,26 +107,26 @@ export default function AboutPage() {
         >
           <div className={styles.inner}>
             <div className="about-cta-inner">
-            <h2
-              id="about-cta-heading"
-              className="case-heading display-heading display-heading-xl about-cta-heading"
-            >
-              <span className="about-cta-heading-line">
-                Let&apos;s build experiences people return to.
-              </span>
-            </h2>
-            <p className="about-cta-body">
-              From audience platforms and interactive products to brand ecosystems and
-              original IP, I help organizations connect strategy, story, and execution.
-            </p>
-            <div className="about-cta-actions">
-              <Link href="/#contact" className="about-hero-cta">
-                Get in Touch
-              </Link>
-              <Link href="/#work" className="about-cta-secondary">
-                View Selected Work
-              </Link>
-            </div>
+              <h2
+                id="about-cta-heading"
+                className="case-heading display-heading display-heading-xl about-cta-heading"
+              >
+                <span className="about-cta-heading-line">
+                  Let&apos;s build experiences people return to.
+                </span>
+              </h2>
+              <p className="about-cta-body">
+                From audience platforms and interactive products to brand ecosystems and
+                original IP, I help organizations connect strategy, story, and execution.
+              </p>
+              <div className="about-cta-actions">
+                <Link href="/#contact" className="about-hero-cta">
+                  Get in Touch
+                </Link>
+                <Link href="/#work" className="about-cta-secondary">
+                  View Selected Work
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -223,7 +223,7 @@ export function BehindTheWorkSection() {
           <header className={styles.header}>
             <p className={styles.eyebrow}>Leadership</p>
             <h2 id="behind-the-work-heading" className={styles.title}>
-              Executive Perspective
+              Creative Producer and Content
             </h2>
             <p className={styles.intro}>
               A glimpse into the sets, systems, productions, and creative rooms

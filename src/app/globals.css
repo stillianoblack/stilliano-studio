@@ -6121,18 +6121,18 @@ a.work-card {
 }
 
 /* Capabilities — editorial systems board */
-.case-page--about .capabilities-editorial {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-editorial {
   background: #fafaf8;
 }
 
-.case-page--about .capabilities-editorial-layout {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-editorial-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: start;
 }
 
-.case-page--about .capabilities-intro {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -6140,7 +6140,7 @@ a.work-card {
   padding-top: clamp(0.25rem, 1.5vw, 0.75rem);
 }
 
-.case-page--about .capabilities-eyebrow {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-eyebrow {
   margin: 0 0 clamp(1.35rem, 2.8vw, 2rem);
   font-size: 0.6875rem;
   font-weight: 700;
@@ -6149,7 +6149,7 @@ a.work-card {
   color: rgba(20, 20, 19, 0.5);
 }
 
-.case-page--about .capabilities-heading {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-heading {
   margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
   max-width: 11ch;
   font-size: clamp(2.35rem, 4.8vw, 4.5rem);
@@ -6159,7 +6159,7 @@ a.work-card {
   text-wrap: balance;
 }
 
-.case-page--about .capabilities-heading-mark {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-heading-mark {
   margin-left: 0.12em;
   font-size: 0.42em;
   font-weight: 600;
@@ -6168,7 +6168,7 @@ a.work-card {
   color: rgba(20, 20, 19, 0.38);
 }
 
-.case-page--about .capabilities-copy {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-copy {
   margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
   max-width: 34ch;
   font-size: clamp(1rem, 1.35vw, 1.125rem);
@@ -6176,7 +6176,7 @@ a.work-card {
   color: rgba(20, 20, 19, 0.58);
 }
 
-.case-page--about .capabilities-cta {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-cta {
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -6192,18 +6192,18 @@ a.work-card {
     border-color 0.2s ease;
 }
 
-.case-page--about .capabilities-cta:hover {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-cta:hover {
   color: #325596;
   border-color: rgba(50, 85, 150, 0.55);
 }
 
-.case-page--about .capabilities-cta:focus-visible {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-cta:focus-visible {
   outline: 2px solid rgba(50, 85, 150, 0.45);
   outline-offset: 4px;
   border-radius: 2px;
 }
 
-.case-page--about .capabilities-board {
+:is(.case-page--about, .case-page--how-i-lead) .capabilities-board {
   list-style: none;
   margin: clamp(1.5rem, 3.5vw, 2.75rem) 0 0;
   padding: 0;
@@ -6213,7 +6213,7 @@ a.work-card {
   border: 1px solid rgba(20, 20, 19, 0.1);
 }
 
-.case-page--about .capability-cell {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6226,27 +6226,27 @@ a.work-card {
   border-bottom: 1px dotted rgba(20, 20, 19, 0.2);
 }
 
-.case-page--about .capability-cell:nth-child(2n) {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell:nth-child(2n) {
   border-right: none;
 }
 
-.case-page--about .capability-cell:nth-child(n + 5) {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell:nth-child(n + 5) {
   border-bottom: none;
 }
 
-.case-page--about .capability-cell-highlight {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell-highlight {
   background: #f9e04c;
 }
 
-.case-page--about .capability-cell-highlight .capability-number {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell-highlight .capability-number {
   color: rgba(20, 20, 19, 0.22);
 }
 
-.case-page--about .capability-cell-highlight .capability-text {
+:is(.case-page--about, .case-page--how-i-lead) .capability-cell-highlight .capability-text {
   color: #141413;
 }
 
-.case-page--about .capability-number {
+:is(.case-page--about, .case-page--how-i-lead) .capability-number {
   position: absolute;
   top: clamp(0.5rem, 1.5vw, 0.85rem);
   right: clamp(0.35rem, 1.2vw, 0.65rem);
@@ -6303,7 +6303,7 @@ a.work-card {
   color: var(--text) !important;
 }
 
-.case-page--about .capability-text {
+:is(.case-page--about, .case-page--how-i-lead) .capability-text {
   position: relative;
   z-index: 1;
   margin: 0;
@@ -6316,11 +6316,11 @@ a.work-card {
 }
 
 @media (min-width: 901px) {
-  .case-page--about .capabilities-board {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-board {
     margin-top: clamp(2.25rem, 5vw, 4rem);
   }
 
-  .case-page--about .capabilities-intro {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-intro {
     padding-right: clamp(0.5rem, 2vw, 1.5rem);
   }
 }
@@ -6572,51 +6572,51 @@ a.work-card {
   }
 }
 
-.case-page--about .about-section--engagement {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement {
   background: #f9e04c;
   border-top-color: rgba(20, 20, 19, 0.08);
 }
 
-.case-page--about .about-section--engagement .about-section-kicker {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .about-section-kicker {
   color: rgba(20, 20, 19, 0.5);
 }
 
-.case-page--about .about-section--engagement .case-heading,
-.case-page--about .about-section--engagement .about-engagement-phase-title {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .case-heading,
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .about-engagement-phase-title {
   color: #141413;
 }
 
-.case-page--about .about-section--engagement .case-body,
-.case-page--about .about-section--engagement .about-engagement-phase-list li {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .case-body,
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .about-engagement-phase-list li {
   color: rgba(20, 20, 19, 0.72);
 }
 
-.case-page--about .about-section--engagement .about-engagement-phase {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .about-engagement-phase {
   border-top-color: rgba(20, 20, 19, 0.12);
 }
 
-.case-page--about .about-section--engagement .about-engagement-phase-list li::before {
+:is(.case-page--about, .case-page--how-i-lead) .about-section--engagement .about-engagement-phase-list li::before {
   background: #141413;
   opacity: 0.65;
 }
 
-.case-page--about .about-engagement-editorial {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-editorial {
   margin-left: auto;
   width: min(100%, 920px);
   max-width: 82%;
   padding-left: clamp(2.5rem, 10vw, 16%);
 }
 
-.case-page--about .about-engagement-intro {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-intro {
   max-width: 52ch;
 }
 
-.case-page--about .about-engagement-lead {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-lead {
   max-width: 52ch;
   margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 
-.case-page--about .about-engagement-timeline {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-timeline {
   list-style: none;
   margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
   padding: 0;
@@ -6624,7 +6624,7 @@ a.work-card {
   gap: clamp(2rem, 4vw, 2.75rem);
 }
 
-.case-page--about .about-engagement-phase {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase {
   display: grid;
   grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 3rem);
@@ -6632,12 +6632,12 @@ a.work-card {
   border-top: 1px solid rgba(20, 20, 19, 0.1);
 }
 
-.case-page--about .about-engagement-phase:first-child {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase:first-child {
   border-top: 0;
   padding-top: 0;
 }
 
-.case-page--about .about-engagement-phase-label {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-label {
   display: block;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -6647,7 +6647,7 @@ a.work-card {
   margin-bottom: 0.65rem;
 }
 
-.case-page--about .about-engagement-phase-title {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-title {
   margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 800;
@@ -6655,7 +6655,7 @@ a.work-card {
   line-height: 1.05;
 }
 
-.case-page--about .about-engagement-phase-window {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-window {
   display: block;
   margin-top: 0.35rem;
   font-size: 0.875rem;
@@ -6664,7 +6664,7 @@ a.work-card {
   color: rgba(20, 20, 19, 0.5);
 }
 
-.case-page--about .about-engagement-phase-list {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -6673,7 +6673,7 @@ a.work-card {
   align-content: start;
 }
 
-.case-page--about .about-engagement-phase-list li {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-list li {
   position: relative;
   padding-left: 1.15rem;
   font-size: 0.9375rem;
@@ -6682,7 +6682,7 @@ a.work-card {
   text-transform: capitalize;
 }
 
-.case-page--about .about-engagement-phase-list li::before {
+:is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase-list li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -6827,39 +6827,39 @@ a.work-card {
 }
 
 @media (max-width: 900px) {
-  .case-page--about .capabilities-editorial-layout {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-editorial-layout {
     grid-template-columns: 1fr;
     gap: clamp(2rem, 5vw, 3rem);
   }
 
-  .case-page--about .capabilities-intro {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-intro {
     max-width: none;
   }
 
-  .case-page--about .capabilities-heading {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-heading {
     max-width: 14ch;
   }
 
-  .case-page--about .capabilities-board {
+  :is(.case-page--about, .case-page--how-i-lead) .capabilities-board {
     margin-top: 0;
     grid-template-columns: 1fr;
   }
 
-  .case-page--about .capability-cell {
+  :is(.case-page--about, .case-page--how-i-lead) .capability-cell {
     min-height: clamp(148px, 38vw, 188px);
     border-right: none;
     border-bottom: 1px dotted rgba(20, 20, 19, 0.2);
   }
 
-  .case-page--about .capability-cell:nth-child(2n) {
+  :is(.case-page--about, .case-page--how-i-lead) .capability-cell:nth-child(2n) {
     border-right: none;
   }
 
-  .case-page--about .capability-cell:nth-child(n + 5) {
+  :is(.case-page--about, .case-page--how-i-lead) .capability-cell:nth-child(n + 5) {
     border-bottom: 1px dotted rgba(20, 20, 19, 0.2);
   }
 
-  .case-page--about .capability-cell:last-child {
+  :is(.case-page--about, .case-page--how-i-lead) .capability-cell:last-child {
     border-bottom: none;
   }
 
@@ -6916,13 +6916,13 @@ a.work-card {
     gap: 0.85rem;
   }
 
-  .case-page--about .about-engagement-editorial {
+  :is(.case-page--about, .case-page--how-i-lead) .about-engagement-editorial {
     max-width: 100%;
     margin-left: 0;
     padding-left: 0;
   }
 
-  .case-page--about .about-engagement-phase {
+  :is(.case-page--about, .case-page--how-i-lead) .about-engagement-phase {
     grid-template-columns: 1fr;
   }
 }

@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import leadStyles from "./how-i-lead.module.css";
 import { HowILeadHero } from "./HowILeadHero";
+import { EngagementStructureSection } from "../EngagementStructureSection";
+import { ProductSystemsSection } from "../ProductSystemsSection";
 import {
   leadershipAreas,
   leadershipPrinciples,
@@ -80,6 +82,10 @@ export default function HowILeadPage() {
             </ol>
           </div>
         </section>
+
+        <EngagementStructureSection />
+
+        <ProductSystemsSection ctaHref="/#contact" />
 
         <section
           className={`case-section section-spacing ${leadStyles.operate}`}
