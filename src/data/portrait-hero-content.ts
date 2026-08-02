@@ -9,12 +9,19 @@ export type PortraitHeroHeadlineLine = {
   parts: readonly PortraitHeroHeadlinePart[];
 };
 
+export type PortraitHeroProof =
+  | string
+  | {
+      prefix: string;
+      clients: string;
+    };
+
 export type PortraitHeroContent = {
   chapter: string;
   label?: string;
   headlineLines: readonly PortraitHeroHeadlineLine[];
   subcopy: string;
-  proof?: string;
+  proof?: PortraitHeroProof;
   ctaHref: string;
   ctaLabel: string;
 };
@@ -27,9 +34,14 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
       { parts: [{ text: "Executive" }] },
     ],
     subcopy:
-      "I align creative vision, product strategy, and emerging technology to build products, experiences, and brands that create lasting customer value.",
+      "I lead multidisciplinary teams across creative, product, and emerging technology to build interactive experiences, products, and brands that create lasting customer value.",
+    proof: {
+      prefix: "Work with:",
+      clients:
+        "Cartoon Network \u2022 PBS Kids \u2022 NBA \u2022 HBCU GO \u2022 Genius Sports \u2022 Amira Learning \u2022 State Farm",
+    },
     ctaHref: "#work",
-    ctaLabel: "See Work",
+    ctaLabel: "Explore Projects",
   },
   about: {
     chapter: "CHAPTER 02",

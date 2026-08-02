@@ -40,6 +40,10 @@
   gap: clamp(7rem, 14vw, 11rem);
 }
 
+.workSectionLight .featuredStack {
+  gap: clamp(9rem, 17vw, 14rem);
+}
+
 .featuredProject {
   display: flex;
   flex-direction: column;

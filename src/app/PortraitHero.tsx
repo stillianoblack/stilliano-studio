@@ -1,17 +1,34 @@
 import Link from "next/link";
-import { portraitHeroContent, type PortraitHeroVariant } from "@/data/portrait-hero-content";
+import {
+  portraitHeroContent,
+  type PortraitHeroProof,
+  type PortraitHeroVariant,
+} from "@/data/portrait-hero-content";
 import { portraitHeroImages } from "@/data/hero-images";
 import styles from "./page.module.css";
 
 type PortraitHeroProps = {
   variant: PortraitHeroVariant;
-  proof?: string;
+  proof?: PortraitHeroProof;
 };
+
+function HeroProof({ proof }: { proof: PortraitHeroProof }) {
+  if (typeof proof === "string") {
+    return <p className="about-hero-proof">{proof}</p>;
+  }
+
+  return (
+    <p className="about-hero-proof">
+      {proof.prefix}{" "}
+      <em className="about-hero-proof-clients">{proof.clients}</em>
+    </p>
+  );
+}
 
 export function PortraitHero({ variant, proof }: PortraitHeroProps) {
   const content = portraitHeroContent[variant];
   const images = portraitHeroImages[variant];
-  const proofLine = proof ?? content.proof;
+  const proofContent = proof ?? content.proof;
 
   return (
     <section
@@ -56,7 +73,7 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
             ))}
           </h1>
           <p className="case-hero-subtitle about-hero-subline">{content.subcopy}</p>
-          {proofLine ? <p className="about-hero-proof">{proofLine}</p> : null}
+          {proofContent ? <HeroProof proof={proofContent} /> : null}
           {content.ctaHref.startsWith("#") ? (
             <a href={content.ctaHref} className="about-hero-cta">
               {content.ctaLabel}

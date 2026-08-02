@@ -1441,11 +1441,20 @@
 }
 
 .workShowcaseLight :global(.section-eyebrow) {
-  color: rgba(20, 20, 19, 0.48);
+  color: #141413;
 }
 
 .workShowcaseLight :global(.section-title) {
-  color: var(--text);
+  color: var(--accent);
+}
+
+.workShowcaseLight .workShowcaseHead :global(.section-eyebrow) {
+  color: #141413;
+}
+
+.workShowcaseLight .workShowcaseHead :global(.section-title) {
+  margin-top: 0.25rem;
+  color: var(--accent);
 }
 
 .workShowcaseInner {
@@ -1456,6 +1465,10 @@
   max-width: var(--max);
   margin: 0 auto clamp(2.5rem, 5vw, 4rem);
   padding: clamp(72px, 10vw, 120px) var(--pad-x) 0;
+}
+
+.workShowcaseLight .workShowcaseHead {
+  margin-bottom: clamp(7rem, 10.5vw, 10.5rem);
 }
 
 .workShowcaseSubcopy {

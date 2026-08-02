@@ -41,7 +41,7 @@ export default function Home() {
             <header className={styles.workShowcaseHead}>
               <span className="section-eyebrow">Portfolio</span>
               <h2 id="work-heading" className="section-title">
-                Interactive ExP.
+                Selected Work
               </h2>
               <p className={styles.workShowcaseSubcopy}>
                 Selected work across sports technology, streaming, education, entertainment,
