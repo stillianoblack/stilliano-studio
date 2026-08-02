@@ -13,6 +13,7 @@ import {
   montageCmsViewerExperience,
 } from "@/data/montagecms-case-study";
 import { CaseStudyScrollVideo } from "@/app/CaseStudyScrollVideo";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
 export const metadata: Metadata = {
   title:
@@ -61,6 +62,8 @@ export default function MontageCmsCaseStudyPage() {
           </div>
         </section>
 
+        <ExecutiveSummary slug="montagecms" />
+
         <section
           className="case-section case-page-overview-band section-spacing"
           aria-labelledby="montage-overview-heading"
@@ -87,39 +90,6 @@ export default function MontageCmsCaseStudyPage() {
               vision, product strategy, experience architecture, brand direction, and core
               creator and viewer workflows.
             </p>
-            <div className="case-overview-meta">
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Role</p>
-                <p className="case-overview-project">
-                  Founder, Product Strategy &amp; Creative Direction
-                </p>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Focus</p>
-                <ul className="case-overview-list">
-                  <li>Streaming</li>
-                  <li>Creator Tools</li>
-                  <li>Consumer Experience</li>
-                </ul>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Platforms</p>
-                <ul className="case-overview-list">
-                  <li>Web</li>
-                  <li>Mobile</li>
-                  <li>Connected TV</li>
-                </ul>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Capabilities</p>
-                <ul className="case-overview-list">
-                  <li>Product Strategy</li>
-                  <li>Creative Direction</li>
-                  <li>UX &amp; Research</li>
-                  <li>Systems Design</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 

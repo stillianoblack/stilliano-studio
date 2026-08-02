@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseCinematicVideo } from "../../CaseCinematicVideo";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
 export const metadata: Metadata = {
@@ -550,6 +551,8 @@ export default function CaidensCourageCaseStudyPage() {
             </div>
           </div>
         </section>
+
+        <ExecutiveSummary slug="caidens-courage" />
 
         {/* Overview — strategy + transformation loop */}
         <section

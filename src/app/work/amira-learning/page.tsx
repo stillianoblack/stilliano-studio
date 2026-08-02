@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseCinematicVideo } from "../../CaseCinematicVideo";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
 export const metadata: Metadata = {
@@ -100,19 +101,6 @@ const heroMetrics = [
   "Gamified Learning Ecosystem",
   "Mobile + Classroom Platform",
   "Behavioral Engagement Design",
-];
-
-const overviewServices = [
-  "AI-Powered Learning Experiences",
-  "Educational Game Design",
-  "Adaptive Reading Systems",
-  "Product & Platform Design",
-  "Student Engagement Strategy",
-  "Interactive Storytelling",
-  "Learning UX & Behavioral Design",
-  "Gamification & Reward Loops",
-  "Character & World Development",
-  "User Research & Classroom Testing",
 ];
 
 const readingEcosystemHero = {
@@ -310,6 +298,8 @@ export default function AmiraLearningCaseStudyPage() {
           </div>
         </section>
 
+        <ExecutiveSummary slug="amira-learning" />
+
         {/* 2 — AI learning experience campaign */}
         <section
           className="case-section case-amira-ai-experience section-spacing"
@@ -492,23 +482,6 @@ export default function AmiraLearningCaseStudyPage() {
                 ariaLabel="Amira AI Learning platform and gameplay preview"
                 className="case-overview-cinematic-video"
               />
-            </div>
-            <div className="case-overview-meta case-amira-overview-meta">
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Services</p>
-                <ul className="case-overview-list">
-                  {overviewServices.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Project</p>
-                <p className="case-overview-project">Amira AI Learning</p>
-                <p className="case-overview-project-meta">
-                  Product & experience design, adaptive literacy · Education
-                </p>
-              </div>
             </div>
           </div>
         </section>

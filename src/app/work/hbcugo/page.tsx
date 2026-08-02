@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseYouTubePlayCard } from "../../CaseYouTubePlayCard";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
 export const metadata: Metadata = {
@@ -241,6 +242,8 @@ export default function HBCUGoCaseStudyPage() {
           </div>
         </section>
 
+        <ExecutiveSummary slug="hbcugo" />
+
         <section
           className="case-section case-page-overview-band section-spacing"
           aria-labelledby="overview-heading"
@@ -268,45 +271,25 @@ export default function HBCUGoCaseStudyPage() {
                 />
               </video>
             </div>
-            <div className="case-overview-meta">
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Services</p>
-                <ul className="case-overview-list">
-                  <li>Product Strategy</li>
-                  <li>Streaming Platform Architecture</li>
-                  <li>UX Direction</li>
-                  <li>Audience Engagement</li>
-                  <li>Content Discovery Systems</li>
-                  <li>Cross-Platform Experience Design</li>
-                </ul>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Project</p>
-                <p className="case-overview-project">HBCUgo</p>
-                <p className="case-overview-project-meta">
-                  Product strategy, UX direction, streaming experience · 2023
+            <div className="case-overview-strategy-only">
+              <h3 className="case-overview-subheading">Strategy</h3>
+              <div className="case-overview-prose">
+                <p>
+                  Build an ecosystem connecting live sports, culture, alumni, and
+                  community.
                 </p>
               </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <h3 className="case-overview-subheading">Strategy</h3>
-                <div className="case-overview-prose">
-                  <p>
-                    Build an ecosystem connecting live sports, culture, alumni, and
-                    community.
-                  </p>
-                </div>
-                <div className="case-overview-strategy-grid">
-                  {strategyFramework.map((group) => (
-                    <div key={group.label} className="case-overview-strategy-group">
-                      <p className="case-overview-kicker">{group.label}</p>
-                      <ul className="case-overview-list">
-                        {group.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+              <div className="case-overview-strategy-grid">
+                {strategyFramework.map((group) => (
+                  <div key={group.label} className="case-overview-strategy-group">
+                    <p className="case-overview-kicker">{group.label}</p>
+                    <ul className="case-overview-list">
+                      {group.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

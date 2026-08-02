@@ -16,6 +16,7 @@ import {
   geniusSportsWidgetFocus,
 } from "@/data/genius-sports-case-study";
 import { CaseStudyScrollVideo } from "@/app/CaseStudyScrollVideo";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
 export const metadata: Metadata = {
   title: "Genius Sports Fan Engagement Platform | Stilliano Black",
@@ -59,6 +60,8 @@ export default function GeniusSportsCaseStudyPage() {
           </div>
         </section>
 
+        <ExecutiveSummary slug="genius-sports" />
+
         <section
           className="case-section case-page-overview-band section-spacing"
           aria-labelledby="genius-overview-heading"
@@ -86,45 +89,6 @@ export default function GeniusSportsCaseStudyPage() {
               help these capabilities operate as a more connected Fan Engagement OS while
               creating a stronger way for product teams to learn directly with partners.
             </p>
-            <div className="case-overview-meta">
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Role</p>
-                <p className="case-overview-project">Principal Product Designer</p>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Focus</p>
-                <p className="case-overview-project">
-                  Fan Engagement OS and Partner-Led Product Development
-                </p>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Product Areas</p>
-                <ul className="case-overview-list">
-                  <li>Genius Reels</li>
-                  <li>B2B Engagement Widgets</li>
-                  <li>Partner Platform Experiences</li>
-                </ul>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Capabilities</p>
-                <ul className="case-overview-list">
-                  <li>Product Strategy</li>
-                  <li>Platform Design</li>
-                  <li>Research &amp; UX</li>
-                  <li>Experimentation</li>
-                  <li>Cross-Functional Leadership</li>
-                </ul>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Customers</p>
-                <ul className="case-overview-list">
-                  <li>Leagues &amp; Teams</li>
-                  <li>Sportsbooks</li>
-                  <li>Media Partners</li>
-                  <li>Brands</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 

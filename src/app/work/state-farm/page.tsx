@@ -10,6 +10,7 @@ import {
   stateFarmLeadershipImpact,
   stateFarmMyAccountsFocus,
 } from "@/data/state-farm-case-study";
+import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
 export const metadata: Metadata = {
   title: "State Farm Enterprise Experience Architecture | Stilliano Black",
@@ -56,6 +57,8 @@ export default function StateFarmCaseStudyPage() {
           </div>
         </section>
 
+        <ExecutiveSummary slug="state-farm" />
+
         <section
           className="case-section case-page-overview-band section-spacing"
           aria-labelledby="sf-overview-heading"
@@ -87,39 +90,6 @@ export default function StateFarmCaseStudyPage() {
               presidents, product leaders, designers, engineers, and researchers to
               clarify complex systems and establish scalable experience direction.
             </p>
-            <div className="case-overview-meta">
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Role</p>
-                <p className="case-overview-project">Principal UX Architect</p>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Focus</p>
-                <p className="case-overview-project">
-                  Enterprise Experience Architecture
-                </p>
-              </div>
-              <div className="case-overview-col">
-                <p className="case-overview-kicker">Organization</p>
-                <p className="case-overview-project">State Farm</p>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Capabilities</p>
-                <ul className="case-overview-list">
-                  <li>Product Strategy</li>
-                  <li>Systems Thinking</li>
-                  <li>UX Architecture</li>
-                  <li>Executive Partnership</li>
-                  <li>Customer Experience</li>
-                </ul>
-              </div>
-              <div className="case-overview-col case-overview-col--wide">
-                <p className="case-overview-kicker">Project Areas</p>
-                <ul className="case-overview-list">
-                  <li>My Accounts Platform</li>
-                  <li>Claims Experience</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 

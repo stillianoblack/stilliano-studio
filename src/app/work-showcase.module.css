@@ -37,7 +37,7 @@
 .featuredStack {
   display: flex;
   flex-direction: column;
-  gap: clamp(5rem, 10vw, 8rem);
+  gap: clamp(7rem, 14vw, 11rem);
 }
 
 .featuredProject {
