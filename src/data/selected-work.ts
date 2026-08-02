@@ -230,7 +230,7 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
       {
         label: "Brand System",
         image:
-          "/images/Selected%20Works/caidencourage/images/Caiden%27sCourage_Cover_Courage.webp",
+          "/images/Selected%20Works/caidencourage/images/Asset%201%40caiden.webp",
         wide: true,
         aspectRatio: "3021 / 1317",
         objectFit: "cover",
