@@ -16,7 +16,21 @@ const trustedClients = [
   "Best Buy",
 ];
 
-export function TrustedClientsSection() {
+type TrustedClientsSectionProps = {
+  headline?: string;
+  subcopy?: string;
+};
+
+const defaultHeadline =
+  "Story-driven worlds and interactive systems across film, games, entertainment, education, AI, and emerging technology.";
+
+const defaultSubcopy =
+  "A reel of selected motion, interactive, product, and entertainment work.";
+
+export function TrustedClientsSection({
+  headline = defaultHeadline,
+  subcopy = defaultSubcopy,
+}: TrustedClientsSectionProps = {}) {
   return (
     <section className={styles.trusted} aria-labelledby="trusted-heading">
       <div className={styles.inner}>
@@ -25,12 +39,9 @@ export function TrustedClientsSection() {
             Selected Clients &amp; Collaborators
           </span>
           <h2 id="trusted-heading" className={styles.trustedHeadline}>
-            Story-driven worlds and interactive systems across film, games,
-            entertainment, education, AI, and emerging technology.
+            {headline}
           </h2>
-          <p className={styles.trustedSubcopy}>
-            A reel of selected motion, interactive, product, and entertainment work.
-          </p>
+          <p className={styles.trustedSubcopy}>{subcopy}</p>
         </header>
 
         <div className={styles.trustedSplit} aria-label="Demo reel and clients">

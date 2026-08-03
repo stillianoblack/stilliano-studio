@@ -1,0 +1,294 @@
+.inner {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.eyebrowLight {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(249, 224, 76, 0.72);
+}
+
+.systems {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: #0b0f1b;
+  color: #fafaf8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.systemsHeading {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  line-height: 0.96;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: #fafaf8;
+}
+
+.systemsBody {
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 clamp(2.5rem, 5vw, 3.75rem);
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.68;
+  color: rgba(250, 250, 248, 0.72);
+}
+
+.systemsGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.35rem);
+}
+
+.systemsCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.systemsCard:hover {
+  border-color: rgba(249, 224, 76, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.systemsCard:focus-visible {
+  outline: 2px solid rgba(249, 224, 76, 0.55);
+  outline-offset: 4px;
+}
+
+.systemsMedia {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #141413;
+}
+
+.systemsMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.systemsCopy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.systemsEyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(249, 224, 76, 0.72);
+}
+
+.systemsTitle {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #fafaf8;
+}
+
+.systemsDescription {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.58;
+  color: rgba(250, 250, 248, 0.68);
+}
+
+.systemsLink {
+  margin-top: auto;
+  padding-top: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(249, 224, 76, 0.88);
+}
+
+.process {
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  background: #fafaf8;
+  border-bottom: 1px solid var(--border);
+}
+
+.processHeading {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  line-height: 0.96;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: var(--text);
+}
+
+.processSequence {
+  list-style: none;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.processStep {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-top: clamp(1rem, 2vw, 1.25rem);
+  border-top: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.processNumber {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(20, 20, 19, 0.38);
+}
+
+.processTitle {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.processDescription {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.58;
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.recognition {
+  padding: clamp(4.5rem, 9vw, 7rem) 0 clamp(5rem, 10vw, 8rem);
+  background: #ffffff;
+}
+
+.recognitionAfterHero {
+  padding-top: clamp(3.5rem, 7vw, 5.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.recognitionHeading {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 0.98;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+
+.recognitionList {
+  list-style: none;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.recognitionItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+  align-items: start;
+  padding: clamp(1rem, 2vw, 1.25rem) 0;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.recognitionCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.recognitionTitle {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.recognitionDetail {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.recognitionContext {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.48);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .systemsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processSequence {
+    grid-template-columns: 1fr;
+  }
+
+  .recognitionItem {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .recognitionContext {
+    text-align: left;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .processSequence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1101px) {
+  .processSequence {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

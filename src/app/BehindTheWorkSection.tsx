@@ -23,7 +23,19 @@ function captionMeta(item: BehindTheWorkItem) {
   return [item.project, item.year].filter(Boolean).join(" · ");
 }
 
-export function BehindTheWorkSection() {
+type BehindTheWorkSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  items?: BehindTheWorkItem[];
+};
+
+export function BehindTheWorkSection({
+  eyebrow = "Leadership",
+  title = "Creative Producer and Content",
+  intro = "A glimpse into the sets, systems, productions, and creative rooms behind the stories and experiences I've helped bring to life.",
+  items = behindTheWorkItems,
+}: BehindTheWorkSectionProps = {}) {
   const stripRef = useRef<HTMLDivElement>(null);
   const [activeItem, setActiveItem] = useState<BehindTheWorkItem | null>(null);
   const [canScrollBack, setCanScrollBack] = useState(false);
@@ -39,8 +51,8 @@ export function BehindTheWorkSection() {
   });
 
   const loopItems = useMemo(
-    () => [...behindTheWorkItems, ...behindTheWorkItems],
-    [],
+    () => [...items, ...items],
+    [items],
   );
 
   const updateScrollState = useCallback(() => {
@@ -221,14 +233,11 @@ export function BehindTheWorkSection() {
       >
         <div className={styles.inner}>
           <header className={styles.header}>
-            <p className={styles.eyebrow}>Leadership</p>
+            <p className={styles.eyebrow}>{eyebrow}</p>
             <h2 id="behind-the-work-heading" className={styles.title}>
-              Creative Producer and Content
+              {title}
             </h2>
-            <p className={styles.intro}>
-              A glimpse into the sets, systems, productions, and creative rooms
-              behind the stories and experiences I&apos;ve helped bring to life.
-            </p>
+            <p className={styles.intro}>{intro}</p>
           </header>
         </div>
 
@@ -248,7 +257,7 @@ export function BehindTheWorkSection() {
             {loopItems.map((item, index) => {
               const meta = captionMeta(item);
               const isLandscape = item.aspectRatio === "16/9";
-              const isDuplicate = index >= behindTheWorkItems.length;
+              const isDuplicate = index >= items.length;
 
               return (
                 <div

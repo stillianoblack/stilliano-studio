@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 
 const navLinks: Array<{ href: string; label: string; cta?: boolean }> = [
   { href: "/#work", label: "Work" },
-  { href: "/film-content", label: "Film" },
+  { href: "/stories", label: "IP & Stories" },
   { href: "/not-work", label: "Illustrations" },
   { href: "/how-i-lead", label: "How I Lead" },
   { href: "/about", label: "About" },

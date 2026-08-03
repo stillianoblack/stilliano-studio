@@ -12,33 +12,36 @@ export const metadata: Metadata = {
   },
 };
 
+const ILLUSTRATIONS = "/images/Selected%20Works/illustrations";
+const CC = "/images/Selected%20Works/caidencourage/images";
+
 const illustrations = [
   {
     title: "Black Soniq",
     year: "2024",
     medium: "Digital illustration",
-    src: "/images/Selected Works/illustrations/Black Soniq Portfolio@caiden.webp",
+    src: `${ILLUSTRATIONS}/Black%20Soniq%20Portfolio%40caiden.webp`,
     alt: "Black Soniq illustration",
   },
   {
     title: "Caiden Fallen",
     year: "2024",
     medium: "Digital illustration",
-    src: "/images/Selected Works/caidencourage/images/CaidenFallen@caiden.webp",
+    src: `${CC}/CaidenFallen%40caiden.webp`,
     alt: "Caiden Fallen illustration",
   },
   {
     title: "Underneath",
     year: "2024",
     medium: "Digital illustration",
-    src: "/images/Selected Works/caidencourage/images/caidenunderneath@caiden.webp",
+    src: `${CC}/caidenunderneath%40caiden.webp`,
     alt: "Caiden underneath illustration",
   },
   {
     title: "My Brain Has Too Many Tabs Open",
     year: "2024",
     medium: "Digital illustration",
-    src: "/images/Selected Works/illustrations/My Brain Has Too Many Tabs Open@caiden.webp",
+    src: `${ILLUSTRATIONS}/My%20Brain%20Has%20Too%20Many%20Tabs%20Open%40caiden.webp`,
     alt: "My Brain Has Too Many Tabs Open illustration",
   },
 ] as const;
