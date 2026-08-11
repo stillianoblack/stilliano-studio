@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { CompactWorkProject } from "@/data/selected-work";
-import { WorkModal } from "./WorkModal";
+import { WorkModal, type WorkModalProject } from "./WorkModal";
 import styles from "./work-showcase.module.css";
 
 type MoreWorkGridProps = {
@@ -18,8 +18,7 @@ export function MoreWorkGrid({
   heading,
   id,
 }: MoreWorkGridProps) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => setModalOpen(true);
+  const [activeProject, setActiveProject] = useState<WorkModalProject | null>(null);
 
   return (
     <>
@@ -52,7 +51,13 @@ export function MoreWorkGrid({
                 type="button"
                 className={styles.moreWorkCard}
                 aria-label={`${project.title}. ${project.description}`}
-                onClick={openModal}
+                onClick={() =>
+                  setActiveProject({
+                    title: project.title,
+                    description: project.description,
+                    image: project.image,
+                  })
+                }
               >
                 <img
                   className={styles.moreWorkCardMedia}
@@ -71,7 +76,11 @@ export function MoreWorkGrid({
         </div>
       </div>
 
-      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <WorkModal
+        open={activeProject != null}
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
     </>
   );
 }

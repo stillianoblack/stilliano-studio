@@ -15,10 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 const siteTitle =
-  "Still•i•ano | Interactive Media • Storytelling • Emerging Technology";
+  "Tarus D. Stills | Director of Product Marketing & Brand Growth — Media & Entertainment Tech";
 
 const siteDescription =
-  "Creative Director for Interactive Experiences bridging product design, storytelling, and emerging technology across entertainment, education, retail, and digital platforms.";
+  "Director of Product Marketing & Brand Growth leading streaming, sports, and entertainment platforms — audience growth, positioning, and go-to-market strategy.";
+
+const socialTitle = "Tarus D. Stills | Director of Product Marketing & Brand Growth";
+const socialDescription =
+  "Audience growth, brand positioning, and go-to-market strategy across streaming, sports, and entertainment tech.";
 
 const socialImage = "/images/Heros/socialsharing_stilliano.jpg";
 const socialImageWidth = 1200;
@@ -29,8 +33,8 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   openGraph: {
-    title: siteTitle,
-    description: siteDescription,
+    title: socialTitle,
+    description: socialDescription,
     url: "https://stillianoblack.com",
     siteName: "Still•i•ano",
     locale: "en_US",
@@ -41,15 +45,18 @@ export const metadata: Metadata = {
         width: socialImageWidth,
         height: socialImageHeight,
         type: "image/jpeg",
-        alt: "Still•i•ano — Creative Director for Interactive Experiences",
+        alt: "Tarus D. Stills — Director of Product Marketing & Brand Growth",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
+    title: socialTitle,
+    description: socialDescription,
     images: [socialImage],
+  },
+  other: {
+    "twitter:url": "https://stillianoblack.com",
   },
 };
 

@@ -30,16 +30,11 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
   home: {
     chapter: "Tarus D. Stills",
     headlineLines: [
-      { parts: [{ text: "Interactive Creative" }] },
-      { parts: [{ text: "Executive" }] },
+      { parts: [{ text: "Brands people return to." }] },
+      { parts: [{ text: "Growth that lasts." }] },
     ],
     subcopy:
-      "I lead multidisciplinary teams across creative, product, and emerging technology to build interactive experiences, products, and brands that create lasting customer value.",
-    proof: {
-      prefix: "Work with:",
-      clients:
-        "Cartoon Network \u2022 PBS Kids \u2022 NBA \u2022 HBCU GO \u2022 Genius Sports \u2022 Amira Learning \u2022 State Farm",
-    },
+      "I lead product marketing and brand growth across streaming, sports, and entertainment platforms — turning audience insight into positioning, go-to-market, and long-term fandom.",
     ctaHref: "#work",
     ctaLabel: "Explore Projects",
   },

@@ -55,6 +55,11 @@ export default function AboutPage() {
             </h2>
             <div className="about-stilliano-body">
               <p>
+                I lead multidisciplinary teams across creative, product, and emerging
+                technology to build interactive experiences, products, and brands that
+                create lasting customer value.
+              </p>
+              <p>
                 I build experiences that sit between product, story, and culture.
               </p>
               <p>

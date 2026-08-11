@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { portfolioWorkItems, type PortfolioWorkItem } from "@/data/portfolio-work";
-import { WorkModal } from "./WorkModal";
+import { WorkModal, type WorkModalProject } from "./WorkModal";
 
 function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
@@ -15,7 +15,7 @@ function MoreWorkCard({
   onOpenModal,
 }: {
   item: PortfolioWorkItem;
-  onOpenModal: () => void;
+  onOpenModal: (item: PortfolioWorkItem) => void;
 }) {
   const content = (
     <>
@@ -67,7 +67,7 @@ function MoreWorkCard({
       type="button"
       className="more-work-card"
       aria-label={`${item.title}. ${item.desc}`}
-      onClick={onOpenModal}
+      onClick={() => onOpenModal(item)}
     >
       {content}
     </button>
@@ -78,7 +78,7 @@ export function MoreWorkSection() {
   const pathname = usePathname();
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalProject, setModalProject] = useState<WorkModalProject | null>(null);
   const [sectionInView, setSectionInView] = useState(false);
   const [visibleSlides, setVisibleSlides] = useState<Set<string>>(new Set());
   const [activeIndex, setActiveIndex] = useState(0);
@@ -252,7 +252,16 @@ export function MoreWorkSection() {
                 role="listitem"
                 style={{ transitionDelay: `${index * 0.09}s` }}
               >
-                <MoreWorkCard item={item} onOpenModal={() => setModalOpen(true)} />
+                <MoreWorkCard
+                  item={item}
+                  onOpenModal={(selected) =>
+                    setModalProject({
+                      title: selected.title,
+                      description: selected.desc,
+                      image: selected.image,
+                    })
+                  }
+                />
               </div>
             ))}
           </div>
@@ -293,7 +302,11 @@ export function MoreWorkSection() {
         </div>
       </div>
 
-      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <WorkModal
+        open={modalProject != null}
+        project={modalProject}
+        onClose={() => setModalProject(null)}
+      />
     </section>
   );
 }

@@ -23,6 +23,27 @@ const enginePillars = [
   },
 ];
 
+const growthCallouts = [
+  {
+    label: "50K → 200K+ MAU",
+    value: "HBCU Go streaming platform growth across OTT, mobile & CTV",
+  },
+  {
+    label: "50% Increase in Fan Engagement",
+    value: "Genius Sports platform-wide audience growth",
+  },
+];
+
+const homeClientBrands = [
+  "Cartoon Network",
+  "PBS Kids",
+  "NBA",
+  "HBCU GO",
+  "Genius Sports",
+  "Amira Learning",
+  "State Farm",
+];
+
 const marquee =
   "Story first. Systems that ship. ";
 
@@ -31,6 +52,42 @@ export default function Home() {
     <div className={styles.page}>
       <main>
         <HomePortraitHero />
+
+        <section
+          className={styles.engine}
+          aria-label="Growth highlights"
+        >
+          <div className={styles.inner}>
+            <div className={styles.engineGrid}>
+              {growthCallouts.map((callout) => (
+                <div
+                  key={callout.label}
+                  className={`${styles.engineCard} ${styles.quoteCard}`}
+                >
+                  <h3>{callout.label}</h3>
+                  <p>{callout.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className={styles.marqueeWrap} aria-label="Selected collaborators">
+          <div className={`${styles.marquee} ${styles.clientMarquee}`}>
+            {[0, 1].map((loop) => (
+              <span key={loop} className={styles.clientMarqueeTrack}>
+                {homeClientBrands.map((brand) => (
+                  <span key={`${loop}-${brand}`} className={styles.clientMarqueeItem}>
+                    <strong>{brand}</strong>
+                    <span className={styles.clientMarqueeDot} aria-hidden>
+                      ●
+                    </span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <section
           id="work"

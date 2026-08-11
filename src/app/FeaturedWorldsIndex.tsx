@@ -9,7 +9,7 @@ import {
   getMobileObjectPosition,
   type FeaturedWorldProject,
 } from "@/data/featured-worlds";
-import { WorkModal } from "./WorkModal";
+import { WorkModal, type WorkModalProject } from "./WorkModal";
 import styles from "./featured-worlds-index.module.css";
 
 function useCoarsePointer() {
@@ -50,7 +50,7 @@ function FeaturedPanel({
 
 export function FeaturedWorldsIndex() {
   const [activeIndex, setActiveIndex] = useState(DEFAULT_FEATURED_WORLD_INDEX);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalProject, setModalProject] = useState<WorkModalProject | null>(null);
   const isCoarsePointer = useCoarsePointer();
 
   const activeProject = featuredWorldProjects[activeIndex];
@@ -59,13 +59,14 @@ export function FeaturedWorldsIndex() {
     setActiveIndex(index);
   }, []);
 
-  const openProject = useCallback(
-    (project: FeaturedWorldProject) => {
-      if (project.href) return;
-      setModalOpen(true);
-    },
-    [],
-  );
+  const openProject = useCallback((project: FeaturedWorldProject) => {
+    if (project.href) return;
+    setModalProject({
+      title: project.title,
+      description: project.description,
+      image: project.desktopImage,
+    });
+  }, []);
 
   return (
     <section
@@ -253,7 +254,11 @@ export function FeaturedWorldsIndex() {
         </div>
       </div>
 
-      <WorkModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <WorkModal
+        open={modalProject != null}
+        project={modalProject}
+        onClose={() => setModalProject(null)}
+      />
     </section>
   );
 }

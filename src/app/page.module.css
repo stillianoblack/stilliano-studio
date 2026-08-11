@@ -1699,12 +1699,62 @@
   color: #141413;
 }
 
+.clientMarquee {
+  align-items: center;
+  gap: 0;
+}
+
+.marquee .clientMarqueeTrack {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.marquee .clientMarqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-right: 0.85rem;
+  font-size: clamp(0.9375rem, 1.6vw, 1.125rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  white-space: nowrap;
+  color: #141413;
+}
+
+.clientMarqueeItem strong {
+  font-weight: 700;
+}
+
+.clientMarqueeDot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  font-size: 0.45rem;
+  line-height: 1;
+  color: #141413;
+}
+
 @keyframes marqueeScroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
   }
 }
 

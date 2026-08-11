@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import leadStyles from "../how-i-lead/how-i-lead.module.css";
 import { BehindTheWorkSection } from "../BehindTheWorkSection";
+import { TrustedClientsSection } from "../TrustedClientsSection";
 import { StoriesHero } from "./StoriesHero";
 import { CreativeDevelopmentSlate } from "./CreativeDevelopmentSlate";
 import {
@@ -28,6 +29,11 @@ export default function StoriesPage() {
         <StoriesHero />
 
         <StoriesRecognitionSection />
+
+        <TrustedClientsSection
+          headline="Stories and systems built across entertainment, streaming, education, gaming, and emerging technology."
+          subcopy="Selected work spanning creative development, motion, interactive products, production, and platform-driven storytelling."
+        />
 
         <CreativeDevelopmentSlate />
 

@@ -2,12 +2,19 @@
 
 import { useEffect } from "react";
 
+export type WorkModalProject = {
+  title: string;
+  description: string;
+  image: string;
+};
+
 type WorkModalProps = {
   open: boolean;
   onClose: () => void;
+  project: WorkModalProject | null;
 };
 
-export function WorkModal({ open, onClose }: WorkModalProps) {
+export function WorkModal({ open, onClose, project }: WorkModalProps) {
   useEffect(() => {
     if (!open) {
       return;
@@ -29,54 +36,37 @@ export function WorkModal({ open, onClose }: WorkModalProps) {
     };
   }, [open, onClose]);
 
-  const bookStrategyCall = () => {
-    onClose();
-    const contact = document.getElementById("contact");
-    if (contact) {
-      contact.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-
-    window.location.href = "/#contact";
-  };
+  const isOpen = open && project != null;
 
   return (
     <div
-      className={`work-modal-backdrop${open ? " is-open" : ""}`}
+      className={`work-modal-backdrop${isOpen ? " is-open" : ""}`}
       onClick={onClose}
-      aria-hidden={!open}
+      aria-hidden={!isOpen}
     >
-      <div
-        className="work-modal"
-        role="dialog"
-        aria-modal={open}
-        aria-labelledby="work-modal-heading"
-        aria-hidden={!open}
-        onClick={(event) => event.stopPropagation()}
-      >
-        <h2 id="work-modal-heading" className="work-modal-header">
-          Full Case Study Coming Soon
-        </h2>
-        <div className="work-modal-body">
-          <p>
-            Stilliano Studio is currently expanding detailed project documentation and
-            strategic breakdowns for selected work.
-          </p>
-          <p>
-            For project inquiries or to discuss product strategy, experience systems, or
-            consulting opportunities, reach out directly below.
-          </p>
+      {project ? (
+        <div
+          className="work-modal work-modal--preview"
+          role="dialog"
+          aria-modal={isOpen}
+          aria-labelledby="work-modal-heading"
+          aria-hidden={!isOpen}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="work-modal-media">
+            <img src={project.image} alt="" decoding="async" />
+          </div>
+          <div className="work-modal-meta">
+            <h2 id="work-modal-heading" className="work-modal-header">
+              {project.title}
+            </h2>
+            <p className="work-modal-description">{project.description}</p>
+            <button type="button" className="work-modal-secondary" onClick={onClose}>
+              Close
+            </button>
+          </div>
         </div>
-        <div className="work-modal-actions">
-          <button type="button" className="work-modal-primary" onClick={bookStrategyCall}>
-            Book Strategy Call
-          </button>
-          <button type="button" className="work-modal-secondary" onClick={onClose}>
-            Close
-          </button>
-        </div>
-      </div>
+      ) : null}
     </div>
   );
 }
-
