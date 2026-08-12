@@ -7,17 +7,20 @@ export type ExecutiveSummaryTeam =
 
 export type ExecutiveSummaryData = {
   role: string;
+  /** Optional label override for the role field (e.g. "Case Study Role"). */
+  roleLabel?: string;
   team: ExecutiveSummaryTeam;
   duration?: string;
   industry?: string;
   ownership: readonly string[];
   executivePartners?: readonly string[];
+  buildSpeed?: string;
   businessOutcome: string;
 };
 
 export const executiveSummaryBySlug = {
   montagecms: {
-    role: "Head of Product, Design & Content",
+    role: "Creative Technologist & Head of Product Design",
     team: "Cross-functional product team including UX, engineering, creators, product, and business stakeholders.",
     duration: "2+ Years",
     industry: "Streaming & Entertainment Technology",
@@ -39,24 +42,27 @@ export const executiveSummaryBySlug = {
       "Content Creators",
       "Business Stakeholders",
     ],
+    buildSpeed:
+      "Creator dashboard: concept to working prototype in 1 week — designed in Figma, executed in Cursor",
     businessOutcome:
       "Created the zero-to-one framework for an independent streaming platform connecting creator workflows, audience engagement, and cross-platform entertainment experiences.",
   },
   "caidens-courage": {
-    role: "Creator, Creative Director & Franchise Builder",
+    role: "Director, Creative Technology",
+    roleLabel: "Case Study Role",
     team: "Cross-functional team spanning engineering, AI, illustration, curriculum, educators, motion, and creative production.",
     duration: "2023 – Present",
     industry: "Entertainment • Education • Gaming",
     ownership: [
       "Product Vision",
-      "Franchise Development",
-      "Creative Direction",
-      "World Building",
+      "Platform Architecture",
+      "Creative Technology",
+      "Experience Strategy",
       "AI Integration",
-      "Product Strategy",
-      "Interactive Experiences",
-      "Curriculum Design",
-      "Brand Development",
+      "Interactive Systems",
+      "Technical Prototyping",
+      "Data + Analytics",
+      "Creative Direction",
     ],
     executivePartners: [
       "Engineering",
@@ -67,7 +73,7 @@ export const executiveSummaryBySlug = {
       "School Leaders",
     ],
     businessOutcome:
-      "Built an original children's entertainment ecosystem spanning books, games, curriculum, AI, and interactive learning experiences.",
+      "Built and shipped a connected children's product ecosystem spanning interactive learning, games, publishing, educator tools, AI-assisted experiences, and real-world pilot programs.",
   },
   hbcugo: {
     role: "Principal Product Manager & Experience Lead",
@@ -131,7 +137,7 @@ export const executiveSummaryBySlug = {
       "Defined product strategy and interactive learning systems for an AI-powered literacy platform improving student engagement and educational outcomes.",
   },
   "genius-sports": {
-    role: "Principal Product Design Strategist",
+    role: "Principal Product Design & Growth Strategist",
     team: "Cross-functional product organization across Product, Engineering, Marketing, Sales, Customer Success, and Executive Leadership.",
     ownership: [
       "Product Strategy",

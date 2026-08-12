@@ -6,39 +6,56 @@ import { HomeAboutSection } from "../HomeAboutSection";
 import { ServicesLeadershipSection } from "../ServicesLeadershipSection";
 
 export const metadata: Metadata = {
-  title: "Tarus D. Stills — Creating Story-Driven Worlds Across Film, Games & Interactive Media | Stilliano Studios",
+  title:
+    "Tarus D. Stills — Creative Technologist & Product Innovation Leader | Stilliano Studios",
   description:
-    "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
+    "Creative technologist and product leader working across generative AI, entertainment, interactive experiences, and emerging platforms.",
   openGraph: {
-    title: "Tarus D. Stills — Creating Story-Driven Worlds Across Film, Games & Interactive Media | Stilliano Studios",
+    title:
+      "Tarus D. Stills — Creative Technologist & Product Innovation Leader | Stilliano Studios",
     description:
-      "Creative Product Executive, Producer, and Creative Technologist building original worlds through film, games, AI, publishing, education, and interactive experiences.",
+      "Creative technologist and product leader working across generative AI, entertainment, interactive experiences, and emerging platforms.",
   },
 };
 
-const CLIENT_PROOF =
-  "Cartoon Network \u2022 PBS Kids \u2022 DC Comics \u2022 Amira Learning \u2022 HBCUGo";
-
 const coreStrengths = [
-  "Creative Direction",
   "Product Strategy",
-  "Audience Engagement",
-  "Interactive ExP.",
-  "Brand Systems",
-  "Experience Design",
-  "Storytelling",
-  "Gamification",
-  "Emerging Technology",
-  "Cross-Functional Leadership",
-  "Go-To-Market Thinking",
-  "Platform Design",
+  "Creative Technology",
+  "Generative AI",
+  "Rapid Prototyping",
+  "Interactive Systems",
+  "Platform Architecture",
+  "Entertainment Technology",
+  "Streaming Platforms",
+  "Audience Experience",
+  "Zero-to-One Development",
+  "GTM Strategy",
 ];
 
 export default function AboutPage() {
   return (
     <div className="case-page case-page--about">
       <main>
-        <PortraitHero variant="about" proof={CLIENT_PROOF} />
+        <PortraitHero variant="about" />
+
+        <section
+          className="case-section about-intent-callout section-spacing"
+          aria-label="Career focus"
+        >
+          <div className={styles.inner}>
+            <blockquote className="about-intent-quote">
+              <p>
+                I&apos;m looking for leadership roles where I can drive innovation in
+                generative AI for film, animation, and video games — building products,
+                platforms, and experiences from zero to one.
+              </p>
+            </blockquote>
+            <p className="about-intent-support">
+              Product vision • Creative technology • Emerging platforms • Zero-to-one
+              innovation
+            </p>
+          </div>
+        </section>
 
         <HomeAboutSection />
 
@@ -55,30 +72,23 @@ export default function AboutPage() {
             </h2>
             <div className="about-stilliano-body">
               <p>
-                I lead multidisciplinary teams across creative, product, and emerging
-                technology to build interactive experiences, products, and brands that
-                create lasting customer value.
+                I don&apos;t separate product strategy from creative execution, or
+                technology from audience experience.
               </p>
               <p>
-                I build experiences that sit between product, story, and culture.
+                I work across those systems because the strongest products emerge when
+                they&apos;re designed together — from the customer problem and product
+                architecture to the working prototype, creative experience, and path to
+                market.
               </p>
               <p>
-                Over the last decade I&apos;ve led work across sports streaming,
-                children&apos;s media, AI learning platforms, retail technology,
-                interactive installations, and original IP development.
-              </p>
-              <p>
-                My work combines product thinking, audience engagement, creative
-                direction, and emerging technology to help ideas become systems people
-                actually return to.
-              </p>
-              <p>
-                Whether designing fan engagement ecosystems, interactive learning
-                platforms, retail experiences, or story-driven worlds, I focus on
-                creating experiences that connect emotionally and scale strategically.
+                My work has moved across streaming, animation, interactive entertainment,
+                creator platforms, AI, branded content, and original IP — but the
+                throughline has remained the same: understanding how product, story,
+                technology, and audience behavior connect.
               </p>
               <p className="about-stilliano-closing">
-                Design is the tool. Engagement is the outcome.
+                Systems are the tool. Engagement is the outcome.
               </p>
             </div>
           </div>
@@ -121,8 +131,9 @@ export default function AboutPage() {
                 </span>
               </h2>
               <p className="about-cta-body">
-                From audience platforms and interactive products to brand ecosystems and
-                original IP, I help organizations connect strategy, story, and execution.
+                I&apos;m interested in leadership opportunities across creative
+                technology, product innovation, generative AI, entertainment, and
+                emerging platforms.
               </p>
               <div className="about-cta-actions">
                 <Link href="/#contact" className="about-hero-cta">

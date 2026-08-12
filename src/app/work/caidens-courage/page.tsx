@@ -485,26 +485,83 @@ const sloganChips = [
   "Different Minds. Powerful Kids.",
 ];
 
-const roleTags = [
-  "Creative Direction",
-  "Franchise Strategy",
-  "Interactive Experience Design",
-  "World Building",
-  "Campaign Architecture",
-  "Audience Engagement Systems",
-  "Brand Identity",
-  "Product Ecosystem Design",
-  "Narrative Systems",
-  "Go-To-Market Thinking",
-];
+const howItWasBuiltStack = [
+  "React",
+  "TypeScript",
+  "Supabase",
+  "SQL",
+  "APIs",
+  "AI-Assisted Prototyping",
+] as const;
+
+const roleGroups = [
+  {
+    label: "Product",
+    tags: ["Product Vision", "Product Strategy", "Platform Architecture"],
+  },
+  {
+    label: "Experience",
+    tags: ["UX Architecture", "Interaction Systems", "Multi-User Journeys"],
+  },
+  {
+    label: "Technology",
+    tags: [
+      "React / TypeScript",
+      "Supabase / SQL",
+      "APIs",
+      "AI-Assisted Prototyping",
+    ],
+  },
+  {
+    label: "Creative",
+    tags: [
+      "Creative Direction",
+      "Interactive Storytelling",
+      "Animation + Game Systems",
+    ],
+  },
+  {
+    label: "Delivery",
+    tags: [
+      "Rapid Prototyping",
+      "Analytics + Iteration",
+      "Pilot Implementation",
+    ],
+  },
+] as const;
 
 const outcomeCards = [
-  "Generated early preorder traction from parents and educators.",
-  "Developed a scalable framework for interactive SEL storytelling.",
-  "Built foundational franchise architecture spanning publishing, games, curriculum, and digital engagement.",
-  "Validated emotional resonance through community feedback and educator outreach.",
-  "Positioned the IP as a confidence-building world, not just content.",
-];
+  {
+    category: "Product",
+    title: "Working Platform Shipped",
+    body:
+      "Built and launched a connected interactive experience spanning students, educators, content, progression, rewards, and supporting tools.",
+  },
+  {
+    category: "System",
+    title: "One Connected Product Ecosystem",
+    body:
+      "Connected story, missions, progression, rewards, educator workflows, and reporting into a shared system rather than isolated experiences.",
+  },
+  {
+    category: "Technology",
+    title: "From Static Design to Working Software",
+    body:
+      "Moved product ideas into React/TypeScript prototypes supported by Supabase, SQL, APIs, and AI-assisted development.",
+  },
+  {
+    category: "Validation",
+    title: "Prototype to Real Users",
+    body:
+      "Deployed the experience in a live Summer 2026 pilot with real learners and educators.",
+  },
+  {
+    category: "Creative",
+    title: "One World Across Multiple Surfaces",
+    body:
+      "Extended the narrative system across publishing, interactive experiences, games, animation development, and education.",
+  },
+] as const;
 
 export default function CaidensCourageCaseStudyPage() {
   return (
@@ -554,6 +611,51 @@ export default function CaidensCourageCaseStudyPage() {
 
         <ExecutiveSummary slug="caidens-courage" />
 
+        {/* How It Was Built */}
+        <section
+          className="case-section section-spacing"
+          aria-labelledby="caiden-how-built-heading"
+        >
+          <div className={styles.inner}>
+            <p className="platform-systems-label">Building the System</p>
+            <h2
+              id="caiden-how-built-heading"
+              className="display-heading display-heading-md"
+            >
+              How It Was Built
+            </h2>
+            <div className="case-body case-section-prose">
+              <p>
+                I designed and built the interactive learning platform, quest system, and
+                educator experience directly — moving from product architecture and UX into
+                working prototypes using React, TypeScript, Supabase, APIs, SQL, and
+                AI-assisted development workflows.
+              </p>
+              <p>
+                Instead of treating design as a handoff, I used working software to test
+                interaction models, progression systems, user states, and content behavior.
+                That allowed the product to evolve through real use rather than static
+                documentation alone.
+              </p>
+            </div>
+            <div
+              className="case-caiden-pillars"
+              role="list"
+              aria-label="Technical capabilities"
+            >
+              {howItWasBuiltStack.map((item) => (
+                <span
+                  key={item}
+                  role="listitem"
+                  className="case-chip case-caiden-pillar-chip"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Overview — strategy + transformation loop */}
         <section
           className="case-section case-caiden-overview-band section-spacing"
@@ -571,8 +673,10 @@ export default function CaidensCourageCaseStudyPage() {
             <div className="case-caiden-overview-strategy">
               <p className="case-caiden-overview-kicker">Strategy</p>
               <p className="case-caiden-overview-strategy-text">
-                Create a franchise ecosystem combining story, SEL learning, community, and
-                play.
+                Answering that question required more than a book, curriculum, or digital
+                experience. I needed to design a connected product system capable of turning
+                storytelling, interactive learning, games, progress, rewards, and educator
+                tools into one experience that could evolve with the people using it.
               </p>
             </div>
             <div className="case-caiden-transformation-grid" role="list">
@@ -781,7 +885,7 @@ export default function CaidensCourageCaseStudyPage() {
           </div>
         </section>
 
-        {/* 3 — Franchise Ecosystem Vision */}
+        {/* 3 — Platform Architecture & Systems Design */}
         <section
           className="case-section case-section-dark section-spacing"
           aria-labelledby="ecosystem-heading"
@@ -791,12 +895,15 @@ export default function CaidensCourageCaseStudyPage() {
               id="ecosystem-heading"
               className="case-heading display-heading display-heading--light display-heading-xl"
             >
-              Franchise Ecosystem Vision
+              Platform Architecture &amp; Systems Design
             </h2>
             <p className="case-body case-section-lead case-section-lead--muted">
-              Caiden&apos;s Courage was designed as a scalable entertainment ecosystem —
-              combining narrative storytelling, emotional learning, interactive engagement, and
-              community-driven experiences.
+              The experience needed to work as one connected system across students,
+              educators, families, content, progression, and reporting. I directed the
+              product and creative architecture that connected these touchpoints while
+              designing the platform to support new missions, games, learning experiences,
+              and community features without rebuilding the underlying experience each
+              time.
             </p>
             <p className="case-body case-section-lead case-section-lead--muted">
               This was not built as a single book. It was designed as a world that could expand
@@ -818,6 +925,27 @@ export default function CaidensCourageCaseStudyPage() {
                 </li>
               ))}
             </ol>
+
+            <div className="case-body case-section-prose case-caiden-subsection-pad">
+              <h3
+                id="one-product-heading"
+                className="case-heading display-heading display-heading--light display-heading-md"
+              >
+                One Product. Multiple User Experiences.
+              </h3>
+              <p className="case-section-lead case-section-lead--muted">
+                The platform serves different users without treating them as disconnected
+                products. Students move through stories, missions, games, rewards, and
+                progression. Educators manage participants, activities, assessments, and
+                reporting. Families connect to progress and supporting experiences, while
+                administrative tools manage the programs, content, and data underneath them.
+              </p>
+              <p className="case-section-lead case-section-lead--muted">
+                The architecture was designed so those experiences could share identity,
+                content, progress, permissions, and behavioral data across the same product
+                ecosystem.
+              </p>
+            </div>
 
             <div className="case-visual-lang-layout case-challenge-sticky-layout case-caiden-ecosystem-stack-section">
               <aside
@@ -908,8 +1036,9 @@ export default function CaidensCourageCaseStudyPage() {
             </p>
             <div className="case-body case-section-prose">
               <p>
-                The core positioning platform reframed focus as confidence, identity, and inner
-                power rather than discipline.
+                Creative direction became part of the interaction model, not a layer applied
+                after the product was built. The core positioning platform reframed focus as
+                confidence, identity, and inner power rather than discipline.
               </p>
               <p>
                 Instead of asking kids to &ldquo;pay attention,&rdquo; the brand invited them to
@@ -942,7 +1071,7 @@ export default function CaidensCourageCaseStudyPage() {
                 Participation System
               </p>
               <p className="case-caiden-participation-lead">
-                Campaign moments designed for participation, identity, and
+                Interaction moments designed for participation, identity, and
                 emotional engagement.
               </p>
               <div className="case-caiden-participation-grid" role="list">
@@ -988,13 +1117,14 @@ export default function CaidensCourageCaseStudyPage() {
               Experience Design
             </h2>
             <p className="case-body case-section-lead case-section-lead--muted">
-              The Caiden&apos;s Courage ecosystem was designed to move beyond passive reading
-              into interactive emotional participation.
+              The experience was designed around behavior, state, and progression — not just
+              screens.
             </p>
             <p className="case-body case-section-lead case-section-lead--muted">
-              The experience strategy included story moments, decision-based SEL interactions,
-              badge systems, classroom activities, and future-ready digital experiences that help
-              kids practice focus, courage, and emotional regulation.
+              Each interaction needed to understand where a learner was in the journey, what
+              they had completed, what they had earned, and what should happen next. That
+              required the UX, content model, progression system, and underlying data to work
+              together.
             </p>
 
             <div className="case-grid case-grid--3 case-caiden-experience-grid">
@@ -1007,6 +1137,22 @@ export default function CaidensCourageCaseStudyPage() {
                   <p className="case-card-body">{card.body}</p>
                 </article>
               ))}
+            </div>
+
+            <div className="case-body case-section-prose case-caiden-subsection-pad">
+              <p className="case-caiden-ecosystem-stack-eyebrow">Interaction Systems</p>
+              <h3
+                id="designing-product-remembers-heading"
+                className="case-heading display-heading display-heading--light display-heading-md"
+              >
+                Designing a Product That Remembers
+              </h3>
+              <p className="case-section-lead case-section-lead--muted">
+                Student identity, mission completion, Focus Coins, badges, B-4 selection,
+                assessment state, and current adventures persist across the experience.
+                Designing those states forced the product thinking beyond individual screens
+                and into the behavior of the system itself.
+              </p>
             </div>
 
             <figure className="case-caiden-media-figure case-caiden-interactive-media">
@@ -1036,9 +1182,11 @@ export default function CaidensCourageCaseStudyPage() {
               Cross-Platform Content Engine
             </h2>
             <p className="case-body case-section-lead">
-              Caiden&apos;s Courage was structured as a content engine that could grow across
-              social, short-form video, classroom engagement, digital products, community
-              storytelling, and future streaming concepts.
+              The content system was designed so one story idea could become multiple
+              connected product experiences instead of isolated pieces of media. A
+              narrative moment could extend into an interactive story, game mechanic,
+              mission, educator activity, animation, or family touchpoint while remaining
+              part of the same ecosystem.
             </p>
             <figure className="case-caiden-media-figure case-caiden-content-engine-figure">
               <img
@@ -1084,13 +1232,16 @@ export default function CaidensCourageCaseStudyPage() {
 
             <div className="campaign-editorial-grid">
               <article className="campaign-identity">
-                <p className="campaign-kicker">Campaign System</p>
+                <p className="campaign-kicker">Engagement Architecture</p>
                 <h3 className="campaign-title">Find Your Flame</h3>
                 <p className="campaign-primary-line">Focus Is Your Flame.</p>
                 <p className="campaign-supporting-line">Where Focus Becomes Power.</p>
                 <p className="campaign-body">
-                  A year-round engagement engine designed to turn emotional storytelling into
-                  participation, community, and long-term franchise growth.
+                  The same product thinking extended into an ongoing engagement
+                  architecture. Content, social touchpoints, community participation,
+                  interactive experiences, partnerships, and physical products were designed
+                  to move audiences back into the larger ecosystem rather than operate as
+                  isolated campaigns.
                 </p>
                 <blockquote className="campaign-pullquote">
                   <p>
@@ -1199,14 +1350,17 @@ export default function CaidensCourageCaseStudyPage() {
               Visual + Creative Direction
             </h2>
             <div className="case-body case-section-prose">
+              <p>Technology only works when people want to enter the experience.</p>
               <p>
-                The visual system blended cinematic storytelling, anime-inspired framing,
-                emotional realism, modern youth culture, and premium entertainment branding.
+                The visual system, animation language, characters, motion, interfaces, and
+                physical touchpoints were designed as one creative system so the technology
+                never felt separate from the world it supported.
               </p>
               <p>
-                The goal was to make Caiden&apos;s Courage feel closer to a premium streaming IP,
-                interactive gaming world, or emotional adventure franchise than traditional
-                children&apos;s publishing.
+                The visual language blended cinematic storytelling, anime-inspired framing,
+                emotional realism, modern youth culture, and premium entertainment branding —
+                making the product feel closer to a premium streaming IP or interactive world
+                than traditional children&apos;s publishing.
               </p>
             </div>
 
@@ -1245,7 +1399,9 @@ export default function CaidensCourageCaseStudyPage() {
               Brand Language
             </h2>
             <p className="case-body case-section-lead case-section-lead--muted">
-              The campaign language was intentionally built to live beyond advertising.
+              The same system thinking extended into the visual and physical language of the
+              product, creating consistency across interfaces, publishing, merchandise,
+              animation, and real-world experiences.
             </p>
             <div className="case-caiden-slogans">
               {sloganChips.map((slogan) => (
@@ -1285,12 +1441,9 @@ export default function CaidensCourageCaseStudyPage() {
             </h2>
             <p className="case-caiden-hashtag">#FindYourFlame</p>
             <p className="case-body case-section-lead">
-              The campaign was built around participation — encouraging students, parents, and
-              teachers to share artwork, reading wins, emotional growth moments, acts of
-              courage, and classroom achievements.
-            </p>
-            <p className="case-body case-section-lead">
-              This transformed the audience into contributors to the brand narrative.
+              The product was designed to move participation beyond the screen. Community
+              prompts, creative activities, physical artifacts, and shared experiences gave
+              users ways to contribute back to the world rather than only consume it.
             </p>
             <figure className="case-caiden-media-figure case-caiden-media-figure--wide case-caiden-community-strategy-figure">
               <img
@@ -1305,6 +1458,65 @@ export default function CaidensCourageCaseStudyPage() {
           </div>
         </section>
 
+        {/* Data + Iteration */}
+        <section
+          className="case-section case-section-dark section-spacing"
+          aria-labelledby="data-iteration-heading"
+        >
+          <div className={styles.inner}>
+            <p className="case-caiden-ecosystem-stack-eyebrow">Data + Iteration</p>
+            <h2
+              id="data-iteration-heading"
+              className="case-heading display-heading display-heading--light display-heading-xl"
+            >
+              Closing the Loop With Real Behavior
+            </h2>
+            <div className="case-body case-section-prose">
+              <p className="case-section-lead case-section-lead--muted">
+                Shipping the platform wasn&apos;t the end of the design process. I built
+                SQL-based reporting and analytics workflows to understand how students and
+                educators were actually using the experience — including participation,
+                mission completion, progression, rewards, and assessment activity.
+              </p>
+              <p className="case-section-lead case-section-lead--muted">
+                Those signals helped identify friction, validate interaction decisions, and
+                inform what the product needed next.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Real-World Validation */}
+        <section
+          className="case-section section-spacing"
+          aria-labelledby="real-world-validation-heading"
+        >
+          <div className={styles.inner}>
+            <p className="platform-systems-label">Real-World Validation</p>
+            <h2
+              id="real-world-validation-heading"
+              className="case-heading display-heading display-heading-xl"
+            >
+              From Working Prototype to Real Users
+            </h2>
+            <div className="case-body case-section-prose">
+              <p>
+                The system moved beyond prototype into a live learning environment. During
+                the Summer 2026 pilot, students interacted with the story, missions, rewards,
+                and supporting learning experiences while educators used the program tools
+                around them.
+              </p>
+              <p>
+                That real-world usage created the feedback loop I wanted from the beginning:
+                build, observe, learn, and improve.
+              </p>
+              <p className="platform-systems-label">
+                Blue Ribbon Results Academy · Summer 2026 Pilot
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* 11 — My Role */}
         <section
           className="case-section case-section-dark section-spacing"
@@ -1315,20 +1527,27 @@ export default function CaidensCourageCaseStudyPage() {
               id="role-heading"
               className="case-heading display-heading display-heading--light display-heading-xl"
             >
-              My Role
+              My Role: Director, Creative Technology
             </h2>
             <p className="case-body case-section-lead case-section-lead--muted">
-              I led the creative, product, and franchise strategy for Caiden&apos;s Courage —
-              shaping the world, experience architecture, brand system, campaign platform,
-              interactive concepts, and audience engagement strategy.
+              I directed the intersection of product strategy, experience design, creative
+              systems, and technical prototyping — moving between vision, architecture,
+              working software, creative direction, data, and real-world implementation.
             </p>
-            <ul className="case-role-tags" aria-label="Role responsibilities">
-              {roleTags.map((tag) => (
-                <li key={tag} className="case-role-tag">
-                  {tag}
-                </li>
+            <div className="case-caiden-role-groups" aria-label="Role capabilities">
+              {roleGroups.map((group) => (
+                <div key={group.label} className="case-caiden-role-group">
+                  <p className="case-caiden-ecosystem-stack-eyebrow">{group.label}</p>
+                  <ul className="case-role-tags" aria-label={`${group.label} capabilities`}>
+                    {group.tags.map((tag) => (
+                      <li key={tag} className="case-role-tag">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
@@ -1344,19 +1563,16 @@ export default function CaidensCourageCaseStudyPage() {
             >
               Outcomes
             </h2>
-            <p className="case-body case-section-lead">
-              Caiden&apos;s Courage established a scalable foundation for publishing, animation,
-              SEL education, digital products, experiential learning, merchandise, and licensing
-              opportunities.
-            </p>
 
             <div className="case-outcome-grid">
-              {outcomeCards.map((outcome, index) => (
-                <article key={outcome} className="case-card case-card--light case-outcome-card">
-                  <span className="case-outcome-card-index" aria-hidden>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <p className="case-card-body">{outcome}</p>
+              {outcomeCards.map((outcome) => (
+                <article
+                  key={outcome.category}
+                  className="case-card case-card--light case-outcome-card"
+                >
+                  <span className="case-outcome-card-index">{outcome.category}</span>
+                  <h3 className="case-card-title">{outcome.title}</h3>
+                  <p className="case-card-body">{outcome.body}</p>
                 </article>
               ))}
             </div>
@@ -1376,13 +1592,14 @@ export default function CaidensCourageCaseStudyPage() {
               Creative Takeaway
             </h2>
             <p className="case-body case-section-lead case-section-lead--muted">
-              Modern kids don&apos;t just want entertainment. They want stories that understand
-              them.
+              The most interesting creative technology doesn&apos;t start with technology. It
+              starts with a human experience worth building — then uses product thinking,
+              design, code, AI, data, and storytelling to make that experience real.
             </p>
             <p className="case-caiden-statement case-caiden-final-statement">
-              Caiden&apos;s Courage was built to prove that emotional storytelling, culturally
-              aware branding, and immersive design can create a new category of children&apos;s
-              media: entertainment that empowers.
+              I didn&apos;t design an app.
+              <br />
+              I directed a system.
             </p>
           </div>
         </section>
@@ -1400,8 +1617,8 @@ export default function CaidensCourageCaseStudyPage() {
               Explore the world of Caiden&apos;s Courage
             </h2>
             <p className="case-caiden-cta-subbody">
-              A living story universe where kids discover focus, courage, and the flame already
-              inside them.
+              Explore the connected story, product, and interactive experiences behind the
+              system.
             </p>
             <div className="case-caiden-cta-actions">
               <a

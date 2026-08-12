@@ -53,8 +53,9 @@ export default function MontageCmsCaseStudyPage() {
               MontageCMS
             </h1>
             <p className="case-hero-subtitle">
-              Building the product and experience framework for independent
-              streaming.
+              I designed, coded, and shaped the technical foundation for a zero-to-one
+              streaming CMS — connecting creator tools, viewer experience, and platform
+              architecture into one working system.
             </p>
             <Link href="/#work" className="case-hero-back">
               Back to Work →
@@ -73,7 +74,7 @@ export default function MontageCmsCaseStudyPage() {
               id="montage-overview-heading"
               className="display-heading display-heading-xl case-overview-heading"
             >
-              Establishing the design framework for independent streaming.
+              Building the platform behind independent streaming.
             </h2>
             <div className="case-overview-media-block">
               <CaseStudyScrollVideo
@@ -83,13 +84,78 @@ export default function MontageCmsCaseStudyPage() {
                 showCaption={false}
               />
             </div>
-            <p className="case-body case-section-lead">
-              MontageCMS began with a clear opportunity: independent filmmakers and
-              entertainment brands needed more control over how they distributed content,
-              reached audiences, and built sustainable businesses. I developed the platform
-              vision, product strategy, experience architecture, brand direction, and core
-              creator and viewer workflows.
-            </p>
+          </div>
+        </section>
+
+        <section
+          className="case-section section-spacing"
+          aria-labelledby="montage-how-built-heading"
+        >
+          <div className={styles.inner}>
+            <h2
+              id="montage-how-built-heading"
+              className="display-heading display-heading-md"
+            >
+              How It Was Built
+            </h2>
+            <div className="case-body case-section-prose">
+              <p>
+                I worked closely with MontageCMS&apos;s CTO throughout, taking an active
+                hands-on role in prototyping — moving quickly from architecture conversations
+                into working React/TypeScript builds, using Supabase for data and auth. Rather
+                than handing off finished designs and waiting, I prototyped directly alongside
+                engineering, testing creator-tool flows and platform structure in code before
+                they were fully specified — shortening the distance between a design decision
+                and something the team could actually see working.
+              </p>
+            </div>
+            <div className="case-grid case-grid--2">
+              <article className="case-card case-card--light">
+                <h3 className="case-card-title">Stack</h3>
+                <p className="case-card-body">
+                  React, TypeScript, Supabase, APIs
+                </p>
+              </article>
+              <article className="case-card case-card--light">
+                <h3 className="case-card-title">Partnership</h3>
+                <p className="case-card-body">
+                  Prototyped directly with the CTO on platform architecture and creator
+                  tooling
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="case-section section-spacing"
+          aria-labelledby="montage-technical-problem-heading"
+        >
+          <div className={styles.inner}>
+            <h2
+              id="montage-technical-problem-heading"
+              className="display-heading display-heading-md"
+            >
+              A Technical Problem Worth Solving
+            </h2>
+            <div className="case-body case-section-prose">
+              <p>
+                As we grew toward partnerships with film schools, one of the harder problems
+                we worked through together was permissions logic — separating viewership from
+                ownership as student filmmakers graduated. Working directly with the CTO, I
+                helped shape the permission model that governed what happened to a student&apos;s
+                work and access after graduation, balancing continued visibility for their
+                portfolio against the platform&apos;s ownership and licensing structure.
+              </p>
+            </div>
+            <figure className="case-montage-artifact-figure case-montage-artifact-figure--compact">
+              <img
+                src={montageCmsImages.databaseUml}
+                alt="MontageCMS database UML diagram showing users, teams, and permissions relationships"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </section>
 
@@ -464,10 +530,11 @@ export default function MontageCmsCaseStudyPage() {
             </h2>
             <div className="case-body case-section-prose">
               <p className="case-section-lead case-section-lead--muted">
-                MontageCMS changed the way I understood design leadership. It showed me that
-                the most meaningful products are rarely created by one discipline. They
-                emerge when customer insight, product strategy, storytelling, technology, and
-                creative execution are treated as one connected system.
+                MontageCMS changed the way I understood what it takes to build a product
+                end-to-end. It showed me that the most meaningful platforms aren&apos;t just
+                designed — they&apos;re built, tested, and shipped by someone close enough to
+                the code and the system architecture to make the design real, not just
+                proposed.
               </p>
               <p className="case-section-lead case-section-lead--muted">
                 That lesson has continued through my work in streaming, interactive
@@ -477,8 +544,8 @@ export default function MontageCmsCaseStudyPage() {
             </div>
             <blockquote className="case-challenge-quote">
               <p>
-                Customer insight, product strategy, and creative execution are one connected
-                system.
+                Customer insight, product strategy, technology, and creative execution are one
+                connected system.
               </p>
             </blockquote>
           </div>

@@ -29,12 +29,13 @@ export type PortraitHeroContent = {
 export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroContent> = {
   home: {
     chapter: "Tarus D. Stills",
+    label: "CREATIVE TECHNOLOGY • PRODUCT • AI",
     headlineLines: [
-      { parts: [{ text: "Brands people return to." }] },
-      { parts: [{ text: "Growth that lasts." }] },
+      { parts: [{ text: "I Turn Ideas Into" }] },
+      { parts: [{ text: "Working Experiences." }] },
     ],
     subcopy:
-      "I lead product marketing and brand growth across streaming, sports, and entertainment platforms — turning audience insight into positioning, go-to-market, and long-term fandom.",
+      "Creative technologist and product strategist building zero-to-one products at the intersection of AI, storytelling, design, and emerging technology—from interactive experiences and streaming platforms to animation and original IP.",
     ctaHref: "#work",
     ctaLabel: "Explore Projects",
   },
@@ -46,7 +47,8 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
       { parts: [{ text: "the Worlds" }] },
     ],
     subcopy:
-      "Still-i-ano is the creative identity of Tarus D. Stills — a producer, creative technologist, and product leader working at the intersection of story, systems, and emerging technology.",
+      "Creative technology leader working across product strategy, generative AI, interactive experiences, and entertainment — building the systems that turn stories and ideas into working products.",
+    proof: "GENERATIVE AI • PROTOTYPING • PRODUCT SYSTEMS • INTERACTIVE • STREAMING",
     ctaHref: "/#contact",
     ctaLabel: "Start a Conversation",
   },

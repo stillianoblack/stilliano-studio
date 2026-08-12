@@ -20,9 +20,11 @@ export function ServicesLeadershipSection({
           <div className="services-left">
             <span className="section-eyebrow">Areas of Leadership</span>
             <h2 id="services-heading" className="section-title">
-              Strategic systems.
+              Product vision.
               <br />
-              Creative execution.
+              Creative technology.
+              <br />
+              Systems thinking.
             </h2>
             <a className="services-subeyebrow" href="#services">
               Ways I build →

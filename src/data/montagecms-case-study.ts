@@ -14,6 +14,7 @@ export const montageCmsImages = {
   creatorBackend: `${base}/montagecms_backend.webp`,
   movieAdaptive: `${base}/MovieAdaptive.webp`,
   scheduleRelease: `${base}/ScheduleRelease.webp`,
+  databaseUml: `${base}/Database%20UML%20v2%20%28Montage%29.webp`,
 } as const;
 
 export const montageCmsVideos = {

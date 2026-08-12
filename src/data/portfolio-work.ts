@@ -39,7 +39,7 @@ export const portfolioWorkItems: PortfolioWorkItem[] = [
   {
     slug: "genius-sports",
     title: "Genius Sports",
-    desc: "Principal Product Designer shaping the Fan Engagement OS—Genius Reels, B2B widgets, partner research, and a Lean Design Framework for customer-led beta development.",
+    desc: "Principal Product Design & Growth Strategist shaping audience engagement and growth across the Fan Engagement OS—Genius Reels, B2B widgets, partner research, and a Lean Design Framework for customer-led beta development.",
     image: "/images/Selected%20Works/GeniusSports/genius-sports-hero.webp",
     href: "/work/genius-sports",
   },

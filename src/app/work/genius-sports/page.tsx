@@ -21,11 +21,11 @@ import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 export const metadata: Metadata = {
   title: "Genius Sports Fan Engagement Platform | Stilliano Black",
   description:
-    "A Principal Product Designer case study exploring Genius Sports' Fan Engagement OS, Genius Reels, B2B engagement widgets, partner research, and a Lean Design Framework for customer-led product development.",
+    "A Principal Product Design & Growth Strategist case study exploring Genius Sports' fan-engagement platform, Genius Reels, B2B engagement widgets, partner growth, and a Lean Design Framework for customer-led product development.",
   openGraph: {
     title: "Genius Sports: Building a Connected Fan Engagement OS",
     description:
-      "How platform strategy, partner research, Genius Reels, B2B widgets, and a Lean Design Framework supported a more connected approach to fan engagement.",
+      "How audience growth, go-to-market strategy, Genius Reels, B2B widgets, and a Lean Design Framework supported a more connected approach to fan engagement.",
   },
 };
 
@@ -47,7 +47,7 @@ export default function GeniusSportsCaseStudyPage() {
           <div className="case-hero-overlay" aria-hidden />
           <div className="case-hero-pattern" aria-hidden />
           <div className={`${styles.inner} case-hero-content`}>
-            <p className="case-hero-eyebrow">PRINCIPAL PRODUCT DESIGN</p>
+            <p className="case-hero-eyebrow">PRINCIPAL PRODUCT DESIGN &amp; GROWTH STRATEGIST</p>
             <h1 className="case-hero-title display-heading display-heading-xl">
               Genius Sports
             </h1>
@@ -126,11 +126,14 @@ export default function GeniusSportsCaseStudyPage() {
             </h2>
             <div className="case-body case-section-prose">
               <p className="case-section-lead case-section-lead--muted">
-                As a Principal Product Designer, I worked across product discovery, experience
-                architecture, research, prototyping, interface design, and cross-functional
-                delivery. My scope included Genius Reels, configurable B2B engagement widgets,
-                partner workflows, and the broader product framework connecting the
-                fan-engagement suite.
+                As Principal Product Design &amp; Growth Strategist, I led audience engagement
+                and growth strategy across Genius Sports&apos; fan-engagement platform —
+                including Genius Reels, configurable B2B engagement widgets, and
+                partner-facing product experiences — translating fan behavior insights into
+                scalable growth outcomes. Partnering across Product, Engineering, and
+                Marketing, this work increased fan engagement 50% and improved partner
+                adoption 20%. I also created a Lean Design Framework that brought customers
+                directly into discovery, validation, and beta development.
               </p>
               <p className="case-section-lead case-section-lead--muted">
                 My role extended beyond screen design. I helped identify product gaps, clarify

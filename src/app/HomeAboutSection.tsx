@@ -43,7 +43,7 @@ export function HomeAboutSection() {
             <div className={styles.aboutStatBlock}>
               <span className={styles.aboutStatLabel}>Focus</span>
               <p className={styles.aboutStatValue}>
-                Film &bull; Games &bull; AI &bull; Education &bull; Interactive Storytelling
+                Generative AI &bull; Product &bull; Entertainment &bull; Interactive
               </p>
             </div>
           </div>
@@ -63,24 +63,36 @@ export function HomeAboutSection() {
             <div className={styles.aboutBody}>
               <p className={styles.aboutBodyLead}>Good question.</p>
               <p>
-                Still&bull;i&bull;ano is the creative identity of Tarus D. Stills — a
-                producer, creative technologist, and product leader working at the
-                intersection of story, systems, and emerging technology.
+                I&apos;m a creative technologist and product leader working at the
+                intersection of generative AI, entertainment, interactive experiences,
+                and emerging platforms.
               </p>
               <p>
-                The work spans film and motion design, product strategy, games, AI,
-                education, and interactive storytelling — building worlds that move from
-                concept to audience.
+                My career began in design, but my work increasingly moved beyond the
+                interface — into product strategy, streaming systems, technical
+                prototyping, creator tools, interactive storytelling, and the technology
+                required to turn ideas into working experiences.
               </p>
               <p>
-                That path runs through entertainment platforms, learning systems, fan
-                experiences, and original IP — including Caiden&apos;s Courage, a
-                story-powered universe for focus, courage, and emotional growth.
+                Today, I move between product vision and execution — using AI-assisted
+                development, rapid prototyping, UX, data, and creative direction to
+                explore what emerging technology can become.
+              </p>
+              <p>
+                I&apos;ve worked across entertainment and technology with organizations
+                including Cartoon Network, PBS Kids, DC Comics, TBS, HBCU GO, State Farm,
+                and others — connecting creative vision with the systems required to
+                deliver it.
               </p>
 
               <span className={styles.aboutSectionRule} aria-hidden="true" />
 
               <h3 className={styles.aboutSubheading}>So what is a Still&bull;i&bull;ano?</h3>
+              <p>
+                A Still&bull;i&bull;ano is someone who moves fluidly between product,
+                creativity, technology, and culture — connecting disciplines that are
+                often treated as separate.
+              </p>
               <ul className={styles.aboutIdentityList}>
                 <li>Part producer.</li>
                 <li>Part creative technologist.</li>
@@ -91,11 +103,14 @@ export function HomeAboutSection() {
 
               <span className={styles.aboutSectionRule} aria-hidden="true" />
 
-              <h3 className={styles.aboutSubheading}>Film, Motion &amp; Production</h3>
+              <h3 className={styles.aboutSubheading}>
+                Entertainment + Creative Technology
+              </h3>
               <p>
-                Before product leadership, there was motion design, film, and production.
-                That foundation still shapes how I build digital products, direct creative
-                systems, and design story-driven experiences.
+                My background in filmmaking, animation, branded content, and production
+                taught me how stories move from concept through production, distribution,
+                and audience experience — knowledge I now apply to interactive products,
+                streaming systems, creator tools, and emerging technology.
               </p>
               <ul className={styles.aboutIdentityList}>
                 <li>Produced a feature film on a 14-day shoot</li>

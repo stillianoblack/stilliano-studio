@@ -26,11 +26,12 @@ const enginePillars = [
 const growthCallouts = [
   {
     label: "50K → 200K+ MAU",
-    value: "HBCU Go streaming platform growth across OTT, mobile & CTV",
+    value: "Scaled HBCU GO across OTT, web, mobile & connected TV",
   },
   {
-    label: "50% Increase in Fan Engagement",
-    value: "Genius Sports platform-wide audience growth",
+    label: "0 → 1 Interactive Platform",
+    value:
+      "Architected and shipped Caiden’s Courage across student, educator & family experiences",
   },
 ];
 

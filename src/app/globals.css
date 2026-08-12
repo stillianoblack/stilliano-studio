@@ -5959,6 +5959,10 @@ a.work-card {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+.case-page--caiden .case-caiden-subsection-pad {
+  padding-top: clamp(2.75rem, 5.5vw, 4rem);
+}
+
 .case-page--caiden .case-caiden-experience-card {
   position: relative;
   padding-top: clamp(2.5rem, 4vw, 3rem);
@@ -6027,6 +6031,16 @@ a.work-card {
 }
 
 /* Role tags */
+.case-page--caiden .case-caiden-role-groups {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.case-page--caiden .case-caiden-role-group .case-role-tags {
+  margin-top: 0.75rem;
+}
+
 .case-page--caiden .case-role-tags {
   list-style: none;
   margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
@@ -6084,7 +6098,18 @@ a.work-card {
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: rgba(20, 20, 19, 0.42);
+}
+
+.case-page--caiden .case-outcome-card .case-card-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-transform: none;
+  line-height: 1.25;
+  color: var(--text);
 }
 
 .case-page--caiden .case-outcome-card .case-card-body {
@@ -6270,6 +6295,43 @@ a.work-card {
 
 .case-page--about .about-section-kicker--light {
   color: rgba(250, 250, 248, 0.55);
+}
+
+.case-page--about .about-intent-callout.section-spacing {
+  padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  background: rgba(249, 224, 76, 0.08);
+  border-top: 1px solid rgba(20, 20, 19, 0.06);
+  border-bottom: 1px solid rgba(20, 20, 19, 0.06);
+}
+
+.case-page--about .about-intent-quote {
+  margin: 0 auto;
+  max-width: 52ch;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.case-page--about .about-intent-quote p {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-page--about .about-intent-support {
+  margin: clamp(1rem, 2vw, 1.35rem) auto 0;
+  max-width: 52ch;
+  text-align: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.5);
+  line-height: 1.55;
 }
 
 /* Capabilities — editorial systems board */

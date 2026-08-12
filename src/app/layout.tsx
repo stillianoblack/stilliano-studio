@@ -15,14 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 const siteTitle =
-  "Tarus D. Stills | Director of Product Marketing & Brand Growth — Media & Entertainment Tech";
+  "Tarus D. Stills | Generative AI Creative Technologist & Principal Product Designer";
 
 const siteDescription =
-  "Director of Product Marketing & Brand Growth leading streaming, sports, and entertainment platforms — audience growth, positioning, and go-to-market strategy.";
+  "Generative AI Creative Technologist and Principal Product Designer who personally designs, codes, and ships AI-powered products — from prototype to production across media and entertainment.";
 
-const socialTitle = "Tarus D. Stills | Director of Product Marketing & Brand Growth";
+const socialTitle =
+  "Tarus D. Stills | Generative AI Creative Technologist & Principal Product Designer";
 const socialDescription =
-  "Audience growth, brand positioning, and go-to-market strategy across streaming, sports, and entertainment tech.";
+  "I design, code, and ship AI-powered products by hand — turning ambiguous ideas into working software across media and entertainment.";
 
 const socialImage = "/images/Heros/socialsharing_stilliano.jpg";
 const socialImageWidth = 1200;
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
         width: socialImageWidth,
         height: socialImageHeight,
         type: "image/jpeg",
-        alt: "Tarus D. Stills — Director of Product Marketing & Brand Growth",
+        alt: "Tarus D. Stills — Generative AI Creative Technologist & Principal Product Designer",
       },
     ],
   },

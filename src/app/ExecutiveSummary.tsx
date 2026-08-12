@@ -60,7 +60,7 @@ function BulletValue({ items }: { items: readonly string[] }) {
 }
 
 export function ExecutiveSummary({ slug, data }: ExecutiveSummaryProps) {
-  const summary = data ?? executiveSummaryBySlug[slug];
+  const summary: ExecutiveSummaryData = data ?? executiveSummaryBySlug[slug];
 
   return (
     <section
@@ -72,7 +72,7 @@ export function ExecutiveSummary({ slug, data }: ExecutiveSummaryProps) {
           Executive Summary
         </h2>
         <div className="executive-summary-grid">
-          <SummaryBlock label="Role">
+          <SummaryBlock label={summary.roleLabel ?? "Role"}>
             <p className="executive-summary-value">{summary.role}</p>
           </SummaryBlock>
 
@@ -99,6 +99,12 @@ export function ExecutiveSummary({ slug, data }: ExecutiveSummaryProps) {
           {"executivePartners" in summary && summary.executivePartners?.length ? (
             <SummaryBlock label="Executive Partners">
               <BulletValue items={summary.executivePartners} />
+            </SummaryBlock>
+          ) : null}
+
+          {"buildSpeed" in summary && summary.buildSpeed ? (
+            <SummaryBlock label="Build Speed" fullWidth>
+              <p className="executive-summary-value">{summary.buildSpeed}</p>
             </SummaryBlock>
           ) : null}
 

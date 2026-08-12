@@ -2,68 +2,63 @@ import type { ServiceAccordionItem } from "@/app/ServicesAccordion";
 
 export const serviceAccordionItems: ServiceAccordionItem[] = [
   {
-    title: "Product Experience Design",
-    summary: "UX systems, feature design, and streaming experiences.",
+    title: "Product Innovation & Zero-to-One",
+    summary: "From ambiguous opportunity to working experience.",
     description:
-      "Experience architecture for story-driven products — from gameplay loops and interactive narratives to platforms built for retention and clarity.",
+      "Turning ambiguous opportunities into product strategy, prototypes, and working experiences.",
     bullets: [
-      "UX / UI Systems",
       "Product Strategy",
-      "Feature Architecture",
-      "Streaming & CTV Experience",
-      "User Engagement Flows",
+      "Rapid Prototyping",
+      "Zero-to-One Development",
+      "Experience Architecture",
     ],
   },
   {
-    title: "Brand Systems",
-    summary: "Identity, visual language, and product cohesion.",
+    title: "Creative Technology & Generative AI",
+    summary: "AI, APIs, and emerging technology in practice.",
     description:
-      "Connected visual and narrative systems that align brand, interface, and story into one recognizable creative universe.",
+      "Using AI, APIs, rapid prototyping, and emerging technology to explore new product and entertainment experiences.",
     bullets: [
-      "Creative Direction",
-      "Visual Identity",
-      "Product Brand Systems",
-      "Interface Design Language",
-      "Design Consistency",
+      "Generative AI",
+      "AI-Assisted Prototyping",
+      "APIs",
+      "Technical Exploration",
     ],
   },
   {
-    title: "Digital Experience Design",
-    summary: "Web platforms designed for engagement and conversion.",
+    title: "Interactive Experience Systems",
+    summary: "Connected experiences across surfaces.",
     description:
-      "Digital environments shaped for audience participation — from campaign platforms to full ecosystems that support growth and interaction.",
+      "Architecting connected experiences across web, streaming, games, mobile, and emerging interfaces.",
     bullets: [
-      "Website Design",
-      "Conversion Strategy",
-      "Information Architecture",
+      "Multi-Surface Experiences",
+      "Interaction Systems",
       "Platform UX",
-      "Content Systems",
+      "Audience Participation",
     ],
   },
   {
-    title: "Go-To-Market Experience Strategy",
-    summary: "Launch positioning and growth-focused experience design.",
+    title: "Entertainment Technology",
+    summary: "Story, streaming, and interactive systems.",
     description:
-      "Go-to-market systems that help teams introduce story-driven products with clarity during key growth and release phases.",
+      "Connecting storytelling, animation, film, streaming, and interactive systems into scalable audience experiences.",
     bullets: [
+      "Streaming Systems",
+      "Animation + Story",
+      "Creator Workflows",
+      "Audience Experience",
+    ],
+  },
+  {
+    title: "Product Strategy & GTM",
+    summary: "Vision, positioning, and adoption.",
+    description:
+      "Connecting customer insight, product vision, positioning, distribution, and adoption.",
+    bullets: [
+      "Customer Insight",
+      "Positioning",
       "Launch Strategy",
-      "Messaging Hierarchy",
-      "Onboarding Systems",
-      "Audience Positioning",
-      "Conversion Paths",
-    ],
-  },
-  {
-    title: "Streaming + CTV Strategy",
-    summary: "Connected TV and live audience experiences.",
-    description:
-      "Streaming and live-event experiences for sports and entertainment platforms — fan engagement, discovery, sponsorship visibility, and retention.",
-    bullets: [
-      "Streaming UX",
-      "Live Event Systems",
-      "Fan Engagement",
-      "Sponsor Visibility",
-      "Cross-Platform Strategy",
+      "Adoption Paths",
     ],
   },
 ];

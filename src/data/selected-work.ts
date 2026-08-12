@@ -50,6 +50,109 @@ export type CompactWorkProject = {
 
 export const featuredWorkProjects: FeaturedWorkProject[] = [
   {
+    slug: "montagecms",
+    kicker: "ZERO-TO-ONE STREAMING PLATFORM",
+    campaignTitle: "MontageCMS / Cutclass",
+    headline:
+      "Designing the creative and technical system for an independent streaming ecosystem.",
+    description:
+      "I conceived and built MontageCMS as a zero-to-one platform for independent filmmakers, creators, and entertainment brands. Translating creative ambition into a scalable product system, I connected content management, audience engagement, monetization, and branded viewing experiences across web, mobile, and connected TV.",
+    metrics: [
+      "CREATIVE TECHNOLOGY",
+      "PRODUCT STRATEGY",
+      "EXPERIENCE DESIGN",
+      "PLATFORM ARCHITECTURE",
+      "STREAMING SYSTEMS",
+      "ZERO-TO-ONE",
+    ],
+    href: "/work/montagecms",
+    caseStudyCta: "View Case Study",
+    media: [
+      {
+        label: "Platform design — MontageCMS streaming framework",
+        caption: {
+          category: "Platform design",
+          detail: "INDEPENDENT STREAMING ECOSYSTEM",
+          year: "2020",
+        },
+        image:
+          "/images/Selected%20Works/MontageCMS/montageCMS_portfolio_cover%40caiden.webp",
+        wide: true,
+        aspectRatio: "3021 / 1317",
+        objectPosition: "center 42%",
+      },
+      {
+        label: "Creator platform — content management and onboarding",
+        caption: {
+          category: "Creator platform",
+          detail: "CONTENT & CHANNEL WORKFLOWS",
+          year: "2020",
+        },
+        image: "/images/Selected%20Works/MontageCMS/montagecms-creator-workspace.webp",
+        aspectRatio: "853 / 878",
+        objectFit: "cover",
+        objectPosition: "center center",
+      },
+      {
+        label: "Viewer experience — branded streaming interface",
+        caption: {
+          category: "Viewer experience",
+          detail: "DISCOVERY & STREAMING UI",
+          year: "2020",
+        },
+        video: "/videos/montage-overview-end-credits.mp4",
+        aspectRatio: "853 / 878",
+        objectFit: "cover",
+        objectPosition: "center center",
+      },
+    ],
+  },
+  {
+    slug: "caidens-courage",
+    kicker: "BUILDING A KID'S UNIVERSE",
+    campaignTitle: "Caiden's Courage",
+    headline: "Building an original IP as a connected product ecosystem.",
+    description:
+      "I'm designing and shipping the technology behind an original children's franchise—connecting interactive storytelling, AI-assisted experiences, games, publishing, and educator tools into one working platform. From product architecture and UX to rapid prototyping, data systems, and GTM, Caiden's Courage is where I explore how story, technology, and real-world audience behavior can shape a product from zero to one.",
+    metrics: [
+      "REACT + TYPESCRIPT",
+      "SUPABASE + SQL",
+      "AI-ASSISTED PROTOTYPING",
+      "INTERACTIVE GAMES",
+      "PRODUCT ARCHITECTURE",
+      "ANIMATION + STORY SYSTEMS",
+      "LIVE SCHOOL PILOTS",
+    ],
+    href: "/work/caidens-courage",
+    media: [
+      {
+        label: "Brand System",
+        image:
+          "/images/Selected%20Works/caidencourage/images/Asset%201%40caiden.webp",
+        wide: true,
+        aspectRatio: "3021 / 1317",
+        objectFit: "cover",
+        objectPosition: "center 50%",
+      },
+      {
+        label: "Live UI",
+        video:
+          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageInteractive%20Game_2.mov",
+        aspectRatio: "853 / 878",
+        cardBackground: "#1B1F27",
+        centerMedia: true,
+        objectFit: "contain",
+        objectPosition: "center",
+      },
+      {
+        label: "Platform Design",
+        image:
+          "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
+        aspectRatio: "853 / 878",
+      },
+    ],
+  },
+  {
     slug: "hbcugo",
     kicker: "STREAMING / SPORTS / CULTURE",
     campaignTitle: "HBCUgo",
@@ -153,120 +256,18 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
     ],
   },
   {
-    slug: "montagecms",
-    kicker: "ZERO-TO-ONE STREAMING PLATFORM",
-    campaignTitle: "MontageCMS",
-    headline: "Building the product framework for an independent streaming ecosystem.",
-    description:
-      "I created MontageCMS to help independent filmmakers, creators, and entertainment brands launch and manage their own streaming experiences. The platform connected content management, audience engagement, monetization, and branded viewing across web, mobile, and connected TV.",
-    metrics: [
-      "PRODUCT STRATEGY",
-      "CREATIVE DIRECTION",
-      "STREAMING",
-      "UX & SYSTEMS DESIGN",
-      "RESEARCH",
-      "ZERO-TO-ONE",
-    ],
-    href: "/work/montagecms",
-    caseStudyCta: "View Case Study",
-    media: [
-      {
-        label: "Platform design — MontageCMS streaming framework",
-        caption: {
-          category: "Platform design",
-          detail: "INDEPENDENT STREAMING ECOSYSTEM",
-          year: "2020",
-        },
-        image:
-          "/images/Selected%20Works/MontageCMS/montageCMS_portfolio_cover%40caiden.webp",
-        wide: true,
-        aspectRatio: "3021 / 1317",
-        objectPosition: "center 42%",
-      },
-      {
-        label: "Creator platform — content management and onboarding",
-        caption: {
-          category: "Creator platform",
-          detail: "CONTENT & CHANNEL WORKFLOWS",
-          year: "2020",
-        },
-        image: "/images/Selected%20Works/MontageCMS/montagecms-creator-workspace.webp",
-        aspectRatio: "853 / 878",
-        objectFit: "cover",
-        objectPosition: "center center",
-      },
-      {
-        label: "Viewer experience — branded streaming interface",
-        caption: {
-          category: "Viewer experience",
-          detail: "DISCOVERY & STREAMING UI",
-          year: "2020",
-        },
-        video: "/videos/montage-overview-end-credits.mp4",
-        aspectRatio: "853 / 878",
-        objectFit: "cover",
-        objectPosition: "center center",
-      },
-    ],
-  },
-  {
-    slug: "caidens-courage",
-    kicker: "FLAGSHIP WORLD / ORIGINAL IP",
-    campaignTitle: "Caiden's Courage",
-    headline: "An original universe for focus, courage, and emotional growth.",
-    description:
-      "Building an original children's franchise that unifies publishing, interactive learning, AI, games, and education into one connected product ecosystem.",
-    metrics: [
-      "BOOK",
-      "GAMES",
-      "FILM DEVELOPMENT",
-      "EDUCATION",
-      "INTERACTIVE PLATFORM",
-      "AI COMPANION",
-      "SCHOOL PILOTS",
-    ],
-    href: "/work/caidens-courage",
-    media: [
-      {
-        label: "Brand System",
-        image:
-          "/images/Selected%20Works/caidencourage/images/Asset%201%40caiden.webp",
-        wide: true,
-        aspectRatio: "3021 / 1317",
-        objectFit: "cover",
-        objectPosition: "center 50%",
-      },
-      {
-        label: "Live UI",
-        video:
-          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageInteractive%20Game_2.mov",
-        aspectRatio: "853 / 878",
-        cardBackground: "#1B1F27",
-        centerMedia: true,
-        objectFit: "contain",
-        objectPosition: "center",
-      },
-      {
-        label: "Platform Design",
-        image:
-          "/images/Portfolio%20Cards/Caidenscourage/caidenscourage_card_stilliano.webp",
-        aspectRatio: "853 / 878",
-      },
-    ],
-  },
-  {
     slug: "genius-sports",
     kicker: "SPORTS TECHNOLOGY & PLATFORM STRATEGY",
     campaignTitle: "Genius Sports",
     headline: "Building a connected platform for modern fan engagement.",
     description:
-      "As a Principal Product Designer, I helped shape Genius Sports' Fan Engagement OS across Genius Reels, configurable B2B engagement widgets, and partner-facing product experiences. I also created a Lean Design Framework that brought customers directly into discovery, validation, and beta development.",
+      "As Principal Product Design & Growth Strategist, I led audience engagement and growth strategy across Genius Sports' fan-engagement platform — including Genius Reels, configurable B2B engagement widgets, and partner-facing product experiences — translating fan behavior insights into scalable growth outcomes. Partnering across Product, Engineering, and Marketing, this work increased fan engagement 50% and improved partner adoption 20%. I also created a Lean Design Framework that brought customers directly into discovery, validation, and beta development.",
     metrics: [
+      "PRINCIPAL PRODUCT DESIGN",
+      "CREATIVE TECHNOLOGIST",
+      "AI PROTOTYPING",
       "PLATFORM STRATEGY",
       "FAN ENGAGEMENT",
-      "B2B PRODUCTS",
-      "PARTNER RESEARCH",
-      "PRODUCT DISCOVERY",
       "EXPERIMENTATION",
     ],
     href: "/work/genius-sports",
