@@ -14,16 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle =
-  "Tarus D. Stills | Generative AI Creative Technologist & Principal Product Designer";
+const siteTitle = "Tarus D. Stills | World Builder, Storyteller & Founder";
 
 const siteDescription =
-  "Generative AI Creative Technologist and Principal Product Designer who personally designs, codes, and ships AI-powered products — from prototype to production across media and entertainment.";
+  "Creative executive working across original IP, product, media, film, and technology — building story worlds of his own, including Caiden’s Courage.";
 
-const socialTitle =
-  "Tarus D. Stills | Generative AI Creative Technologist & Principal Product Designer";
+const socialTitle = "Tarus D. Stills | World Builder, Storyteller & Founder";
 const socialDescription =
-  "I design, code, and ship AI-powered products by hand — turning ambiguous ideas into working software across media and entertainment.";
+  "Raised in product and media, shaped by film and animation, and proven by building worlds of my own.";
 
 const socialImage = "/images/Heros/socialsharing_stilliano.jpg";
 const socialImageWidth = 1200;
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
         width: socialImageWidth,
         height: socialImageHeight,
         type: "image/jpeg",
-        alt: "Tarus D. Stills — Generative AI Creative Technologist & Principal Product Designer",
+        alt: "Tarus D. Stills — World Builder, Storyteller & Founder",
       },
     ],
   },

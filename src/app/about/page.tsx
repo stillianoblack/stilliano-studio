@@ -1,36 +1,41 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import styles from "../page.module.css";
 import { PortraitHero } from "../PortraitHero";
-import { HomeAboutSection } from "../HomeAboutSection";
-import { ServicesLeadershipSection } from "../ServicesLeadershipSection";
+import aboutStyles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title:
-    "Tarus D. Stills — Creative Technologist & Product Innovation Leader | Stilliano Studios",
+  title: "About Tarus D. Stills | Product Leader, Creative Technologist & Founder",
   description:
-    "Creative technologist and product leader working across generative AI, entertainment, interactive experiences, and emerging platforms.",
+    "Product leader across streaming, CTV, media, and content production — and creator of Caiden’s Courage.",
   openGraph: {
-    title:
-      "Tarus D. Stills — Creative Technologist & Product Innovation Leader | Stilliano Studios",
+    title: "About Tarus D. Stills | Product Leader, Creative Technologist & Founder",
     description:
-      "Creative technologist and product leader working across generative AI, entertainment, interactive experiences, and emerging platforms.",
+      "Product leader across streaming, CTV, media, and content production — focused on how stories are built, distributed, and experienced across screens.",
   },
 };
 
-const coreStrengths = [
-  "Product Strategy",
-  "Creative Technology",
-  "Generative AI",
-  "Rapid Prototyping",
-  "Interactive Systems",
-  "Platform Architecture",
-  "Entertainment Technology",
-  "Streaming Platforms",
-  "Audience Experience",
-  "Zero-to-One Development",
-  "GTM Strategy",
-];
+const selectedExperience = [
+  {
+    org: "HBCU GO",
+    role: "Head of Product & Design / Streaming + CTV",
+  },
+  {
+    org: "Genius Sports",
+    role: "Principal Product / Fan Engagement",
+  },
+  {
+    org: "Amira Learning",
+    role: "Product / Education Technology",
+  },
+  {
+    org: "MontageCMS / CutClass",
+    role: "Founder / Streaming Technology",
+  },
+  {
+    org: "Caiden’s Courage",
+    role: "Creator / Original IP",
+  },
+] as const;
 
 export default function AboutPage() {
   return (
@@ -38,78 +43,42 @@ export default function AboutPage() {
       <main>
         <PortraitHero variant="about" />
 
-        <section
-          className="case-section about-intent-callout section-spacing"
-          aria-label="Career focus"
-        >
-          <div className={styles.inner}>
-            <blockquote className="about-intent-quote">
-              <p>
-                I&apos;m looking for leadership roles where I can drive innovation in
-                generative AI for film, animation, and video games — building products,
-                platforms, and experiences from zero to one.
-              </p>
-            </blockquote>
-            <p className="about-intent-support">
-              Product vision • Creative technology • Emerging platforms • Zero-to-one
-              innovation
-            </p>
-          </div>
-        </section>
-
-        <HomeAboutSection />
-
-        <ServicesLeadershipSection ctaHref="/#contact" />
-
-        <section
-          className="case-section section-spacing about-section about-stilliano-editorial"
-          aria-labelledby="stilliano-heading"
-        >
-          <div className={`${styles.inner} about-stilliano-inner`}>
-            <p className="about-section-kicker">Who is Stilliano</p>
-            <h2 id="stilliano-heading" className="about-stilliano-heading">
-              Product. Story. Systems.
+        <section className={aboutStyles.section} aria-labelledby="about-bio-heading">
+          <div className={`${aboutStyles.inner} ${aboutStyles.bioInner}`}>
+            <p className={aboutStyles.kicker}>About</p>
+            <h2 id="about-bio-heading" className={aboutStyles.heading}>
+              Bio
             </h2>
-            <div className="about-stilliano-body">
+            <div className={aboutStyles.bioBody}>
               <p>
-                I don&apos;t separate product strategy from creative execution, or
-                technology from audience experience.
+                Tarus D. Stills is a product leader, creative technologist, and founder with
+                experience across streaming, CTV, sports, education, and entertainment. His
+                work sits at the intersection of product strategy, content production, and
+                audience experience — building the systems and stories people engage with
+                across screens.
               </p>
               <p>
-                I work across those systems because the strongest products emerge when
-                they&apos;re designed together — from the customer problem and product
-                architecture to the working prototype, creative experience, and path to
-                market.
-              </p>
-              <p>
-                My work has moved across streaming, animation, interactive entertainment,
-                creator platforms, AI, branded content, and original IP — but the
-                throughline has remained the same: understanding how product, story,
-                technology, and audience behavior connect.
-              </p>
-              <p className="about-stilliano-closing">
-                Systems are the tool. Engagement is the outcome.
+                Today, he is the creator of Caiden&apos;s Courage, an original children&apos;s
+                universe spanning books, games, interactive learning, and media.
               </p>
             </div>
           </div>
         </section>
 
         <section
-          className="case-section case-section-dark section-spacing about-section about-section--strengths"
-          aria-labelledby="about-strengths-heading"
+          className={`${aboutStyles.section} ${aboutStyles.sectionAlt}`}
+          aria-labelledby="experience-heading"
         >
-          <div className={styles.inner}>
-            <p className="about-section-kicker about-section-kicker--light">Focus Areas</p>
-            <h2
-              id="about-strengths-heading"
-              className="case-heading display-heading display-heading--light display-heading-xl"
-            >
-              Core Strengths
+          <div className={`${aboutStyles.inner} ${aboutStyles.blockInner}`}>
+            <p className={aboutStyles.kicker}>Career</p>
+            <h2 id="experience-heading" className={aboutStyles.heading}>
+              Selected Experience
             </h2>
-            <ul className="about-strengths-grid" aria-label="Core strengths">
-              {coreStrengths.map((strength) => (
-                <li key={strength} className="about-strength-pill">
-                  {strength}
+            <ul className={aboutStyles.experienceList}>
+              {selectedExperience.map((item) => (
+                <li key={item.org} className={aboutStyles.experienceItem}>
+                  <p className={aboutStyles.experienceOrg}>{item.org}</p>
+                  <p className={aboutStyles.experienceRole}>{item.role}</p>
                 </li>
               ))}
             </ul>
@@ -117,32 +86,54 @@ export default function AboutPage() {
         </section>
 
         <section
-          className="case-cta about-cta section-spacing"
-          aria-labelledby="about-cta-heading"
+          className={aboutStyles.section}
+          aria-labelledby="creative-practice-heading"
         >
-          <div className={styles.inner}>
-            <div className="about-cta-inner">
-              <h2
-                id="about-cta-heading"
-                className="case-heading display-heading display-heading-xl about-cta-heading"
-              >
-                <span className="about-cta-heading-line">
-                  Let&apos;s build experiences people return to.
-                </span>
-              </h2>
-              <p className="about-cta-body">
-                I&apos;m interested in leadership opportunities across creative
-                technology, product innovation, generative AI, entertainment, and
-                emerging platforms.
-              </p>
-              <div className="about-cta-actions">
-                <Link href="/#contact" className="about-hero-cta">
-                  Get in Touch
-                </Link>
-                <Link href="/#work" className="about-cta-secondary">
-                  View Selected Work
-                </Link>
-              </div>
+          <div className={`${aboutStyles.inner} ${aboutStyles.blockInner}`}>
+            <p className={aboutStyles.kicker}>Creative</p>
+            <h2 id="creative-practice-heading" className={aboutStyles.heading}>
+              Creative Practice
+            </h2>
+            <p className={aboutStyles.prose}>
+              Alongside product leadership, Tarus has worked across filmmaking, producing,
+              motion design, and visual storytelling. That creative background informs how he
+              approaches products built around content, audiences, and entertainment.
+            </p>
+          </div>
+        </section>
+
+        <section
+          className={`${aboutStyles.section} ${aboutStyles.sectionAlt}`}
+          aria-labelledby="current-work-heading"
+        >
+          <div className={`${aboutStyles.inner} ${aboutStyles.blockInner}`}>
+            <p className={aboutStyles.kicker}>Now</p>
+            <h2 id="current-work-heading" className={aboutStyles.heading}>
+              Current Focus
+            </h2>
+            <p className={aboutStyles.prose}>
+              Today, Tarus is building Caiden&apos;s Courage — an original children&apos;s
+              story world spanning publishing, interactive learning, games, and media.
+            </p>
+          </div>
+        </section>
+
+        <section className={aboutStyles.cta} aria-labelledby="about-cta-heading">
+          <div className={`${aboutStyles.inner} ${aboutStyles.ctaInner}`}>
+            <h2 id="about-cta-heading" className={aboutStyles.ctaHeading}>
+              Let&apos;s talk.
+            </h2>
+            <p className={aboutStyles.ctaBody}>
+              Open to collaborations across streaming, media technology, entertainment, and
+              original IP.
+            </p>
+            <div className={aboutStyles.ctaActions}>
+              <Link href="/#contact" className={aboutStyles.ctaPrimary}>
+                Get in Touch
+              </Link>
+              <Link href="/#work" className={aboutStyles.ctaSecondary}>
+                View Selected Work
+              </Link>
             </div>
           </div>
         </section>

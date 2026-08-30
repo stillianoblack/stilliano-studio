@@ -36,14 +36,14 @@ export function HomeAboutSection() {
               />
             </figure>
             <p className={styles.aboutRole}>
-              Creative Product Executive,
+              Creative Executive,
               <br />
-              Producer &amp; Creative Technologist
+              Founder &amp; Storyteller
             </p>
             <div className={styles.aboutStatBlock}>
               <span className={styles.aboutStatLabel}>Focus</span>
               <p className={styles.aboutStatValue}>
-                Generative AI &bull; Product &bull; Entertainment &bull; Interactive
+                Original IP &bull; Film &bull; Media &bull; Product &bull; Technology
               </p>
             </div>
           </div>
@@ -63,54 +63,49 @@ export function HomeAboutSection() {
             <div className={styles.aboutBody}>
               <p className={styles.aboutBodyLead}>Good question.</p>
               <p>
-                I&apos;m a creative technologist and product leader working at the
-                intersection of generative AI, entertainment, interactive experiences,
-                and emerging platforms.
+                I&apos;m a creative executive, product leader, founder, and storyteller —
+                building original worlds across books, games, film, interactive experiences,
+                and emerging technology.
               </p>
               <p>
-                My career began in design, but my work increasingly moved beyond the
-                interface — into product strategy, streaming systems, technical
-                prototyping, creator tools, interactive storytelling, and the technology
-                required to turn ideas into working experiences.
+                The first part of my career was spent building products across streaming,
+                education, sports, media, and technology — with organizations including
+                Cartoon Network, PBS Kids, DC Comics, TBS, HBCU GO, State Farm, and others.
               </p>
               <p>
-                Today, I move between product vision and execution — using AI-assisted
-                development, rapid prototyping, UX, data, and creative direction to
-                explore what emerging technology can become.
+                That experience didn&apos;t end. It expanded. Today it informs how I build
+                original story worlds — including Caiden&apos;s Courage, a kids media universe
+                spanning publishing, interactive experiences, games, and education.
               </p>
               <p>
-                I&apos;ve worked across entertainment and technology with organizations
-                including Cartoon Network, PBS Kids, DC Comics, TBS, HBCU GO, State Farm,
-                and others — connecting creative vision with the systems required to
-                deliver it.
+                He didn&apos;t leave product behind. He expanded beyond it.
               </p>
 
               <span className={styles.aboutSectionRule} aria-hidden="true" />
 
               <h3 className={styles.aboutSubheading}>So what is a Still&bull;i&bull;ano?</h3>
               <p>
-                A Still&bull;i&bull;ano is someone who moves fluidly between product,
-                creativity, technology, and culture — connecting disciplines that are
-                often treated as separate.
+                A Still&bull;i&bull;ano moves fluidly between product, creativity, technology,
+                and culture — connecting disciplines that are often treated as separate.
               </p>
               <ul className={styles.aboutIdentityList}>
-                <li>Part producer.</li>
-                <li>Part creative technologist.</li>
+                <li>Part founder.</li>
+                <li>Part creative executive.</li>
                 <li>Part product leader.</li>
-                <li>Part worldbuilder.</li>
+                <li>Part filmmaker and producer.</li>
                 <li>Part storyteller who still asks &ldquo;what if?&rdquo;</li>
               </ul>
 
               <span className={styles.aboutSectionRule} aria-hidden="true" />
 
               <h3 className={styles.aboutSubheading}>
-                Entertainment + Creative Technology
+                Entertainment + Creative Practice
               </h3>
               <p>
-                My background in filmmaking, animation, branded content, and production
-                taught me how stories move from concept through production, distribution,
-                and audience experience — knowledge I now apply to interactive products,
-                streaming systems, creator tools, and emerging technology.
+                Filmmaking, animation, branded content, and production taught me how stories
+                move from concept through production, distribution, and audience experience —
+                knowledge now applied to original IP, interactive products, and media
+                systems.
               </p>
               <ul className={styles.aboutIdentityList}>
                 <li>Produced a feature film on a 14-day shoot</li>

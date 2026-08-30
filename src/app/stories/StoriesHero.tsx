@@ -23,17 +23,15 @@ export function StoriesHero() {
       <div className={`${styles.inner} case-hero-content about-hero-content`}>
         <div className="about-hero-copy">
           <p className="case-hero-eyebrow about-hero-eyebrow portrait-hero-label">
-            STORY • IP • PLATFORM
+            STORIES + ORIGINAL IP
           </p>
           <h1 id="stories-hero-heading" className="case-hero-title about-hero-title">
-            <span className="about-hero-title-line">Story Development</span>
-            <span className="about-hero-title-line">&amp; Content Strategy</span>
+            <span className="about-hero-title-line">Building Story Worlds</span>
           </h1>
           <p className="case-hero-subtitle about-hero-subline">
-            The strongest brands understand that content, technology, and audience
-            experience are part of the same ecosystem. I approach storytelling as a connected
-            system where content, product strategy, and technology work together to deepen
-            engagement and grow long-term audiences.
+            Original storytelling and IP across books, characters, interactive experiences,
+            games, and narrative development — led by Caiden&apos;s Courage and extended
+            through branded entertainment and story systems.
           </p>
           <p className="about-hero-proof">
             Work with:{" "}

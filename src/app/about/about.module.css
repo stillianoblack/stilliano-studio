@@ -1,0 +1,168 @@
+/* Executive About — short bio page */
+
+.section {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+}
+
+.sectionAlt {
+  background: #fafaf8;
+  border-top: 1px solid rgba(20, 20, 19, 0.06);
+  border-bottom: 1px solid rgba(20, 20, 19, 0.06);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.bioInner,
+.blockInner {
+  max-width: min(40rem, 100%);
+}
+
+.kicker {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.5);
+}
+
+.heading {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.bioBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.bioBody p {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+  color: rgba(20, 20, 19, 0.78);
+}
+
+.experienceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.experienceItem {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  gap: 0.75rem 1.5rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.experienceOrg {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.experienceRole {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgba(20, 20, 19, 0.62);
+}
+
+.prose {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+  color: rgba(20, 20, 19, 0.78);
+}
+
+.cta {
+  padding: clamp(4rem, 9vw, 6.5rem) 0;
+}
+
+.ctaInner {
+  max-width: min(36rem, 100%);
+}
+
+.ctaHeading {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.ctaBody {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.25rem);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: rgba(20, 20, 19, 0.65);
+  max-width: 36ch;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  align-items: center;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.85rem 1.35rem;
+  border-radius: 14px;
+  background: #f9e04c;
+  color: #141413;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  background: #f3d84b;
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(20, 20, 19, 0.72);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.22);
+  padding-bottom: 0.1rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .experienceItem {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

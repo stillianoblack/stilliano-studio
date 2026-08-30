@@ -17,8 +17,9 @@ export type PortraitHeroProof =
     };
 
 export type PortraitHeroContent = {
-  chapter: string;
+  chapter?: string;
   label?: string;
+  roles?: string;
   headlineLines: readonly PortraitHeroHeadlineLine[];
   subcopy: string;
   proof?: PortraitHeroProof;
@@ -40,15 +41,10 @@ export const portraitHeroContent: Record<PortraitHeroVariant, PortraitHeroConten
     ctaLabel: "Explore Projects",
   },
   about: {
-    chapter: "CHAPTER 02",
-    label: "TARUS D. STILLS",
-    headlineLines: [
-      { parts: [{ text: "The System Behind" }] },
-      { parts: [{ text: "the Worlds" }] },
-    ],
+    headlineLines: [{ parts: [{ text: "Tarus D. Stills" }] }],
+    roles: "Creative Technologist • Product Leader • Founder",
     subcopy:
-      "Creative technology leader working across product strategy, generative AI, interactive experiences, and entertainment — building the systems that turn stories and ideas into working products.",
-    proof: "GENERATIVE AI • PROTOTYPING • PRODUCT SYSTEMS • INTERACTIVE • STREAMING",
+      "Product leader across streaming, CTV, media, and content production — focused on how stories are built, distributed, and experienced across screens.",
     ctaHref: "/#contact",
     ctaLabel: "Start a Conversation",
   },

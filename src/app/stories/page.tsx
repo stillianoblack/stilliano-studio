@@ -12,13 +12,13 @@ import {
 import { storiesBehindTheWorkItems } from "@/data/stories-behind-the-work";
 
 export const metadata: Metadata = {
-  title: "Story Development & Content Strategy | Stilliano Black",
+  title: "Stories + IP | Tarus D. Stills",
   description:
-    "Story development, original IP, branded content, narrative production, and platform strategy across entertainment, streaming, animation, and interactive media.",
+    "Original storytelling and IP — Caiden’s Courage, books, characters, interactive experiences, games, and story development.",
   openGraph: {
-    title: "Story Development & Content Strategy",
+    title: "Stories + IP | Tarus D. Stills",
     description:
-      "Explore original development, branded storytelling, narrative projects, and the platforms that help stories reach and grow audiences.",
+      "Explore original IP, story worlds, branded entertainment, and narrative development led by Caiden’s Courage.",
   },
 };
 

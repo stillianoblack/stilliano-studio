@@ -137,7 +137,7 @@ export const featuredWorkProjects: FeaturedWorkProject[] = [
       {
         label: "Live UI",
         video:
-          "/images/Portfolio%20Cards/Caidenscourage/Caiden%27sCourageInteractive%20Game_2.mov",
+          "/images/Selected%20Works/caidencourage/Videos/CaidensCourageInteractiveGame_2.mp4",
         aspectRatio: "853 / 878",
         cardBackground: "#1B1F27",
         centerMedia: true,

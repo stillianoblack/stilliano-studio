@@ -6,15 +6,16 @@ import styles from "./page.module.css";
 
 const navLinks: Array<{ href: string; label: string; cta?: boolean }> = [
   { href: "/#work", label: "Work" },
-  { href: "/stories", label: "IP + Stories" },
-  { href: "/how-i-lead", label: "How I Lead" },
+  { href: "/stories", label: "Stories + IP" },
+  { href: "/film", label: "Film" },
   { href: "/about", label: "About" },
-  { href: "/#contact", label: "Contact me", cta: true },
+  { href: "/#contact", label: "Contact", cta: true },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const isLightHeaderPage = pathname === "/not-work";
+  /* Light pages need dark idle nav (default idle styles assume a dark hero). */
+  const isLightHeaderPage = pathname === "/" || pathname === "/not-work";
   const [navElevated, setNavElevated] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

@@ -48,7 +48,9 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
 
       <div className={`${styles.inner} case-hero-content about-hero-content`}>
         <div className="about-hero-copy">
-          <p className="portrait-hero-chapter">{content.chapter}</p>
+          {content.chapter ? (
+            <p className="portrait-hero-chapter">{content.chapter}</p>
+          ) : null}
           {content.label ? (
             <p className="case-hero-eyebrow about-hero-eyebrow portrait-hero-label">
               {content.label}
@@ -72,6 +74,9 @@ export function PortraitHero({ variant, proof }: PortraitHeroProps) {
               </span>
             ))}
           </h1>
+          {content.roles ? (
+            <p className="about-hero-roles">{content.roles}</p>
+          ) : null}
           <p className="case-hero-subtitle about-hero-subline">{content.subcopy}</p>
           {proofContent ? <HeroProof proof={proofContent} /> : null}
           {content.ctaHref.startsWith("#") ? (

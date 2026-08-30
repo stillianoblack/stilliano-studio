@@ -6202,6 +6202,16 @@ a.work-card {
   hyphens: none;
 }
 
+.portrait-hero .about-hero-roles {
+  margin: -1.15rem 0 clamp(1.35rem, 2.8vh, 1.85rem);
+  max-width: 40rem;
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  color: rgba(250, 250, 248, 0.82);
+}
+
 .portrait-hero-title-accent {
   color: #9ec5f0;
   text-shadow: 0 0 40px rgba(80, 130, 210, 0.28);

@@ -5,7 +5,8 @@ export const portraitHeroImages = {
     mobile: "/images/Heros/tarus_hero_mobile.webp",
   },
   about: {
-    desktop: "/images/Heros/tarus_hero_bike.webp",
-    mobile: "/images/Heros/tarus_hero_bike.webp",
+    /** Blue-shirt portrait moved from the former homepage hero. */
+    desktop: "/images/Heros/tarus_hero_2.webp",
+    mobile: "/images/Heros/tarus_hero_mobile.webp",
   },
 } as const;

@@ -10,7 +10,7 @@ export function SiteFooter() {
       <span className={styles.footerCopyright}>
         © {new Date().getFullYear()} Stilliano Black
       </span>
-      <span className={styles.footerTagline}>Strategy · Identity · Digital product</span>
+      <span className={styles.footerTagline}>Story · Worlds · Original IP</span>
     </footer>
   );
 }

@@ -1,0 +1,171 @@
+.page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hero {
+  padding: clamp(7rem, 14vw, 10rem) 0 clamp(3.5rem, 7vw, 5rem);
+  background: linear-gradient(180deg, #070b14 0%, #0b1020 55%, #070b14 100%);
+  color: #fafaf8;
+}
+
+.heroInner {
+  max-width: min(40rem, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(252, 233, 106, 0.78);
+}
+
+.hero .eyebrow {
+  color: rgba(252, 233, 106, 0.78);
+}
+
+.title {
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  color: #fafaf8;
+}
+
+.lead {
+  margin: 0;
+  max-width: 38ch;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(250, 250, 248, 0.7);
+}
+
+.credits {
+  padding: clamp(4rem, 9vw, 6.5rem) 0;
+}
+
+.creditsLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.credits .eyebrow {
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.creditsTitle {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: var(--text);
+}
+
+.creditsBody {
+  margin: 0;
+  max-width: 36ch;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.creditList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(20, 20, 19, 0.1);
+}
+
+.creditList li {
+  margin: 0;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.1);
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  line-height: 1.45;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cta {
+  padding: clamp(4rem, 9vw, 6.5rem) 0;
+  background: #fafaf8;
+  border-top: 1px solid rgba(20, 20, 19, 0.08);
+}
+
+.ctaTitle {
+  margin: 0 0 1rem;
+  max-width: 16ch;
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: var(--text);
+}
+
+.ctaBody {
+  margin: 0 0 2rem;
+  max-width: 42ch;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ctaPrimary {
+  background: #141413;
+  border: 1px solid #141413;
+  color: #fafaf8;
+}
+
+.ctaPrimary:hover {
+  background: transparent;
+  color: var(--text);
+}
+
+.ctaSecondary {
+  background: transparent;
+  border: 1px solid rgba(20, 20, 19, 0.22);
+  color: var(--text);
+}
+
+.ctaSecondary:hover {
+  border-color: rgba(20, 20, 19, 0.55);
+}
+
+@media (max-width: 900px) {
+  .creditsLayout {
+    grid-template-columns: 1fr;
+  }
+}

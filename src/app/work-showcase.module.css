@@ -157,8 +157,8 @@
 
 @media (min-width: 960px) {
   .projectMediaGrid {
-    height: min(66vh, 680px);
-    max-height: min(66vh, 680px);
+    height: min(82vh, 860px);
+    max-height: min(82vh, 860px);
     grid-template-rows: minmax(0, 0.54fr) minmax(0, 0.46fr);
   }
 }
@@ -168,13 +168,16 @@
 .projectMediaGrid[data-project="amira-learning"] .projectMediaCardWide,
 .projectMediaGrid[data-project="amira-learning"] .projectMediaCardFit,
 .projectMediaGrid[data-project="caidens-courage"] .projectMediaCardWide,
-.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit {
+.projectMediaGrid[data-project="caidens-courage"] .projectMediaCardFit,
+.projectMediaGrid[data-project="local-now"] .projectMediaCardWide,
+.projectMediaGrid[data-project="local-now"] .projectMediaCardFit {
   min-height: unset;
 }
 
-/* HBCUgo + Amira — rounded panels, no border stroke */
+/* HBCUgo + Amira + Local Now — rounded panels, no border stroke */
 .projectMediaGrid[data-project="hbcugo"] .projectMediaCard,
-.projectMediaGrid[data-project="amira-learning"] .projectMediaCard {
+.projectMediaGrid[data-project="amira-learning"] .projectMediaCard,
+.projectMediaGrid[data-project="local-now"] .projectMediaCard {
   border-radius: clamp(10px, 1.25vw, 12px);
   border: none;
   box-shadow: none;
@@ -209,7 +212,7 @@ button.projectMediaCard {
   justify-self: stretch;
   min-width: 0;
   width: 100%;
-  min-height: clamp(180px, 24vw, 240px);
+  min-height: clamp(220px, 30vw, 300px);
   border-radius: var(--radius-card);
   overflow: hidden;
   border: none;
@@ -228,7 +231,7 @@ button.projectMediaCard {
 
 .projectMediaCardWide {
   grid-column: 1 / -1;
-  min-height: clamp(200px, 32vw, 320px);
+  min-height: clamp(240px, 38vw, 400px);
 }
 
 @media (min-width: 960px) {

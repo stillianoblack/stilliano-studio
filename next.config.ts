@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/film-content",
-        destination: "/stories",
+        destination: "/film",
         permanent: true,
       },
     ];
