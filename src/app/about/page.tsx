@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PortraitHero } from "../PortraitHero";
+import {
+  IDENTITY_BYLINE,
+  IDENTITY_SUPPORTING_COPY,
+  buildPageMetadata,
+} from "@/data/site-seo";
 import aboutStyles from "./about.module.css";
 
-export const metadata: Metadata = {
-  title: "About Tarus D. Stills | Product Leader, Creative Technologist & Founder",
-  description:
-    "Product leader across streaming, CTV, media, and content production — and creator of Caiden’s Courage.",
-  openGraph: {
-    title: "About Tarus D. Stills | Product Leader, Creative Technologist & Founder",
-    description:
-      "Product leader across streaming, CTV, media, and content production — focused on how stories are built, distributed, and experienced across screens.",
-  },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "About",
+  description: IDENTITY_SUPPORTING_COPY,
+  path: "/about",
+});
 
 const selectedExperience = [
   {
@@ -39,28 +38,51 @@ const selectedExperience = [
 
 export default function AboutPage() {
   return (
-    <div className="case-page case-page--about">
+    <div className={`case-page case-page--about ${aboutStyles.page}`}>
       <main>
-        <PortraitHero variant="about" />
-
-        <section className={aboutStyles.section} aria-labelledby="about-bio-heading">
-          <div className={`${aboutStyles.inner} ${aboutStyles.bioInner}`}>
-            <p className={aboutStyles.kicker}>About</p>
-            <h2 id="about-bio-heading" className={aboutStyles.heading}>
-              Bio
-            </h2>
-            <div className={aboutStyles.bioBody}>
-              <p>
-                Tarus D. Stills is a product leader, creative technologist, and founder with
-                experience across streaming, CTV, sports, education, and entertainment. His
-                work sits at the intersection of product strategy, content production, and
-                audience experience — building the systems and stories people engage with
-                across screens.
-              </p>
-              <p>
-                Today, he is the creator of Caiden&apos;s Courage, an original children&apos;s
-                universe spanning books, games, interactive learning, and media.
-              </p>
+        <section className={aboutStyles.hero} aria-labelledby="about-hero-heading">
+          <div className={aboutStyles.inner}>
+            <div className={aboutStyles.heroShell}>
+              <div className={aboutStyles.heroLayout}>
+                <div className={aboutStyles.heroCopy}>
+                  <p className={aboutStyles.kicker}>About</p>
+                  <h1 id="about-hero-heading" className={aboutStyles.heroHeading}>
+                    Hey there! I&apos;m T.D.
+                  </h1>
+                  <p className={aboutStyles.heroByline}>{IDENTITY_BYLINE}</p>
+                  <div className={aboutStyles.heroBody}>
+                    <p>{IDENTITY_SUPPORTING_COPY}</p>
+                    <p>
+                      I&apos;m a filmmaker, author, and founder who loves building stories,
+                      worlds, and experiences that help people see possibility in themselves.
+                    </p>
+                    <p>
+                      Right now, much of my creative energy is focused on building Caiden&apos;s
+                      Courage — a story-driven world designed to help kids who think differently
+                      build confidence, imagination, and courage through books, media,
+                      technology, and learning experiences.
+                    </p>
+                    <p>
+                      I&apos;m also interested in what happens when a story becomes more than a
+                      story — when it can become a book, an animated world, a classroom
+                      experience, a game, a community, or something a kid carries with them long
+                      after they&apos;ve finished reading.
+                    </p>
+                    <p className={aboutStyles.heroMission}>
+                      My mission is to help kids see the way their minds work as something worth
+                      believing in.
+                    </p>
+                  </div>
+                </div>
+                <div className={aboutStyles.heroMask}>
+                  <img
+                    src="/images/headshots-profiles/TD_Headshot_copy.webp"
+                    alt="T.D. Stills"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -103,9 +125,23 @@ export default function AboutPage() {
         </section>
 
         <section
+          id="speaking"
           className={`${aboutStyles.section} ${aboutStyles.sectionAlt}`}
-          aria-labelledby="current-work-heading"
+          aria-labelledby="speaking-heading"
         >
+          <div className={`${aboutStyles.inner} ${aboutStyles.blockInner}`}>
+            <p className={aboutStyles.kicker}>Speaking</p>
+            <h2 id="speaking-heading" className={aboutStyles.heading}>
+              Creative Leadership
+            </h2>
+            <p className={aboutStyles.prose}>
+              Ideas on media, technology, storytelling, and culture — shared through talks,
+              panels, and creative leadership conversations.
+            </p>
+          </div>
+        </section>
+
+        <section className={aboutStyles.section} aria-labelledby="current-work-heading">
           <div className={`${aboutStyles.inner} ${aboutStyles.blockInner}`}>
             <p className={aboutStyles.kicker}>Now</p>
             <h2 id="current-work-heading" className={aboutStyles.heading}>
@@ -131,8 +167,8 @@ export default function AboutPage() {
               <Link href="/#contact" className={aboutStyles.ctaPrimary}>
                 Get in Touch
               </Link>
-              <Link href="/#work" className={aboutStyles.ctaSecondary}>
-                View Selected Work
+              <Link href="/product" className={aboutStyles.ctaSecondary}>
+                View Portfolio
               </Link>
             </div>
           </div>

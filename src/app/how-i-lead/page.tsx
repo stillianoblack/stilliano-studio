@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import styles from "../page.module.css";
 import leadStyles from "./how-i-lead.module.css";
 import { HowILeadHero } from "./HowILeadHero";
@@ -13,16 +14,12 @@ import {
   teamExpectations,
 } from "@/data/how-i-lead-content";
 
-export const metadata: Metadata = {
-  title: "How I Lead — Tarus D. Stills | Stilliano Studios",
+export const metadata: Metadata = buildPageMetadata({
+  title: "How I Lead",
   description:
-    "Creative executive leadership at the intersection of product strategy, emerging technology, storytelling, and cross-functional teams.",
-  openGraph: {
-    title: "How I Lead — Tarus D. Stills | Stilliano Studios",
-    description:
-      "Creative executive leadership at the intersection of product strategy, emerging technology, storytelling, and cross-functional teams.",
-  },
-};
+    "Creative executive leadership from T.D. Stills at the intersection of product strategy, emerging technology, storytelling, and cross-functional teams.",
+  path: "/how-i-lead",
+});
 
 export default function HowILeadPage() {
   return (
@@ -255,7 +252,7 @@ export default function HowILeadPage() {
                 <Link href="/#contact" className="about-hero-cta">
                   Start a Conversation
                 </Link>
-                <Link href="/#work" className="about-cta-secondary">
+                <Link href="/product" className="about-cta-secondary">
                   View My Work
                 </Link>
               </div>

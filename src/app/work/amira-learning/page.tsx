@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import { CaseCinematicVideo } from "../../CaseCinematicVideo";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
-export const metadata: Metadata = {
-  title: "Amira AI Learning | Stilliano Studio",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Amira Learning",
   description:
-    "Editorial product campaign on behavioral engagement systems, gamified learning, emotional reinforcement, and student motivation for Amira AI Learning.",
-  openGraph: {
-    title: "Amira AI Learning | Stilliano Studio",
-    description:
-      "How gameplay systems, emotional reinforcement, and progression loops help students want to keep learning.",
-  },
-};
+    "How gameplay systems, emotional reinforcement, and progression loops help students want to keep learning — an Amira AI Learning case study.",
+  path: "/work/amira-learning",
+});
 
 const POSTER = "/images/Heros/Amira_Hero_2.webp";
 const POSTER_MOBILE = "/images/Heros/Amira_Hero_mobile.webp";
@@ -292,8 +289,8 @@ export default function AmiraLearningCaseStudyPage() {
               engagement loops designed to improve participation, retention, and reading confidence
               for students.
             </p>
-            <Link href="/#work" className="case-hero-back">
-              Back to Work →
+            <Link href="/product" className="case-hero-back">
+              Back to Product →
             </Link>
           </div>
         </section>
@@ -829,7 +826,7 @@ export default function AmiraLearningCaseStudyPage() {
                 View more selected work or explore the HBCUgo streaming case study.
               </p>
               <div className="case-cta-editorial-actions">
-                <Link href="/#work" className="case-cta-editorial-button">
+                <Link href="/product" className="case-cta-editorial-button">
                   View More Work
                 </Link>
                 <Link href="/work/hbcugo" className="case-cta-editorial-link-secondary">

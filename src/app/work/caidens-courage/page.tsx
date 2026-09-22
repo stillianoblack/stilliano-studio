@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import { CaseCinematicVideo } from "../../CaseCinematicVideo";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
-export const metadata: Metadata = {
-  title: "Caiden's Courage — Franchise Ecosystem & Brand Strategy | Stilliano Studios",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Caiden's Courage",
   description:
-    "A story-driven franchise ecosystem and emotional confidence platform combining SEL, interactive storytelling, audience engagement, and scalable IP strategy.",
-  openGraph: {
-    title: "Caiden's Courage — Franchise Ecosystem & Brand Strategy | Stilliano Studios",
-    description:
-      "A story-driven franchise ecosystem and emotional confidence platform combining SEL, interactive storytelling, audience engagement, and scalable IP strategy.",
-  },
-};
+    "A story-driven franchise ecosystem and emotional confidence platform by T.D. Stills — combining SEL, interactive storytelling, audience engagement, and scalable IP strategy.",
+  path: "/work/caidens-courage",
+});
 
 const HERO_IMAGE = "/images/Heros/Caidencourage_Hero.webp";
 const HERO_IMAGE_MOBILE = "/images/Heros/Caiden_Hero_Mobile.webp";
@@ -568,8 +565,8 @@ export default function CaidensCourageCaseStudyPage() {
     <div className="case-page case-page--caiden">
       <main>
         <div className={`${styles.inner} case-caiden-topbar`}>
-          <Link href="/#work" className="case-back">
-            ← Back to Work
+          <Link href="/content-strategy#stories" className="case-back">
+            ← Back to Content Strategy
           </Link>
         </div>
 
@@ -1629,8 +1626,8 @@ export default function CaidensCourageCaseStudyPage() {
               >
                 Explore Caiden&apos;s Courage
               </a>
-              <Link href="/#work" className="case-caiden-cta-secondary">
-                Back to Work
+              <Link href="/content-strategy#stories" className="case-caiden-cta-secondary">
+                Back to Content Strategy
               </Link>
               <Link href="/#contact" className="case-caiden-cta-secondary">
                 Get in Touch

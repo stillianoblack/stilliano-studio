@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import styles from "../../page.module.css";
 import {
   geniusSportsBetaSteps,
@@ -18,16 +19,12 @@ import {
 import { CaseStudyScrollVideo } from "@/app/CaseStudyScrollVideo";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
-export const metadata: Metadata = {
-  title: "Genius Sports Fan Engagement Platform | Stilliano Black",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Genius Sports",
   description:
-    "A Principal Product Design & Growth Strategist case study exploring Genius Sports' fan-engagement platform, Genius Reels, B2B engagement widgets, partner growth, and a Lean Design Framework for customer-led product development.",
-  openGraph: {
-    title: "Genius Sports: Building a Connected Fan Engagement OS",
-    description:
-      "How audience growth, go-to-market strategy, Genius Reels, B2B widgets, and a Lean Design Framework supported a more connected approach to fan engagement.",
-  },
-};
+    "A case study on Genius Sports' fan-engagement platform — Genius Reels, B2B widgets, partner growth, and a Lean Design Framework for customer-led product development.",
+  path: "/work/genius-sports",
+});
 
 export default function GeniusSportsCaseStudyPage() {
   return (
@@ -54,8 +51,8 @@ export default function GeniusSportsCaseStudyPage() {
             <p className="case-hero-subtitle">
               Building a connected platform for modern fan engagement.
             </p>
-            <Link href="/#work" className="case-hero-back">
-              Back to Work →
+            <Link href="/product" className="case-hero-back">
+              Back to Product →
             </Link>
           </div>
         </section>

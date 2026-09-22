@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/site-seo";
 import { HomePageArchiveV1 } from "../../HomePageArchiveV1";
 
 export const metadata: Metadata = {
-  title: "Archived Homepage v1 | Stilliano",
-  description: "Archived previous homepage version — preserved for reference.",
+  ...buildPageMetadata({
+    title: "Archived Homepage v1",
+    description: "Archived previous homepage version — preserved for reference.",
+    path: "/archive/home-v1",
+  }),
   robots: {
     index: false,
     follow: false,

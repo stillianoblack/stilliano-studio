@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/data/site-seo";
 import styles from "./not-work.module.css";
 
-export const metadata: Metadata = {
-  title: "Original Worlds — Tarus D. Stills | Stilliano Studios",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Original Worlds",
   description:
-    "Selected illustrations from the Caiden's Courage universe and personal creative work.",
-  openGraph: {
-    title: "Original Worlds — Tarus D. Stills | Stilliano Studios",
-    description:
-      "Selected illustrations from the Caiden's Courage universe and personal creative work.",
-  },
-};
+    "Selected illustrations from the Caiden's Courage universe and personal creative work by T.D. Stills.",
+  path: "/not-work",
+});
 
 const ILLUSTRATIONS = "/images/Selected%20Works/illustrations";
 const CC = "/images/Selected%20Works/caidencourage/images";

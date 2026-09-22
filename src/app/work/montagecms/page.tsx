@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import styles from "../../page.module.css";
 import {
   montageCmsCreatorExperience,
@@ -15,17 +16,12 @@ import {
 import { CaseStudyScrollVideo } from "@/app/CaseStudyScrollVideo";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
-export const metadata: Metadata = {
-  title:
-    "MontageCMS — Streaming Product Strategy & Creative Direction | Stilliano Black",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Montage",
   description:
-    "A zero-to-one case study exploring the product strategy, creative direction, systems design, and streaming experiences behind MontageCMS.",
-  openGraph: {
-    title: "MontageCMS: Building an Independent Streaming Ecosystem",
-    description:
-      "From product vision and creator research to viewer experience and platform architecture, see how MontageCMS was developed from zero to one.",
-  },
-};
+    "A zero-to-one case study exploring the product strategy, creative direction, systems design, and streaming experiences behind Montage — founded by T.D. Stills.",
+  path: "/work/montagecms",
+});
 
 const HERO_DESKTOP = montageCmsImages.hero;
 const HERO_MOBILE = montageCmsImages.hero;
@@ -57,8 +53,8 @@ export default function MontageCmsCaseStudyPage() {
               streaming CMS — connecting creator tools, viewer experience, and platform
               architecture into one working system.
             </p>
-            <Link href="/#work" className="case-hero-back">
-              Back to Work →
+            <Link href="/product" className="case-hero-back">
+              Back to Product →
             </Link>
           </div>
         </section>

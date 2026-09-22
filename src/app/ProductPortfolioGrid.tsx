@@ -2,20 +2,29 @@
 
 import Link from "next/link";
 import {
-  entertainmentMediaProjects,
   featuredWorkProjects,
+  interactiveMediaProjects,
   type FeaturedWorkProject,
   type ProjectMediaItem,
 } from "@/data/selected-work";
-import { homeOnlyWorkProjects, homeSelectedWorkSlugs } from "@/data/home-selected-work";
+import { homeOnlyWorkProjects } from "@/data/home-selected-work";
 import styles from "./work-showcase.module.css";
 import homeStyles from "./home-editorial.module.css";
 
-const homeCategories: Record<string, string> = {
+/** Product portfolio order — visual grids only (role + title + media). */
+export const productPortfolioSlugs = [
+  "hbcugo",
+  "local-now",
+  "montagecms",
+  "genius-sports",
+  "amira-learning",
+] as const;
+
+const productCategories: Record<string, string> = {
   hbcugo: "Head of Product",
   "local-now": "Product Manager",
-  "caidens-courage": "Founder",
   montagecms: "Head of Product, Design, and Content",
+  "genius-sports": "Principal Product",
   "amira-learning": "Interactive Product Manager",
 };
 
@@ -121,13 +130,13 @@ function ProjectMediaCard({
 }
 
 function VisualProjectBlock({ project }: { project: FeaturedWorkProject }) {
-  const category = homeCategories[project.slug] ?? project.kicker;
+  const category = productCategories[project.slug] ?? project.kicker;
 
   return (
     <article className={homeStyles.visualProject}>
       <div className={homeStyles.visualProjectHead}>
         <p className={homeStyles.workCategory}>{category}</p>
-        <h3 className={homeStyles.visualProjectTitle}>{project.campaignTitle}</h3>
+        <h2 className={homeStyles.visualProjectTitle}>{project.campaignTitle}</h2>
         {project.href ? (
           isExternalHref(project.href) ? (
             <a
@@ -160,7 +169,8 @@ function VisualProjectBlock({ project }: { project: FeaturedWorkProject }) {
   );
 }
 
-export function HomeWorkGrid() {
+/** Image-first product portfolio — role, title, CTA, media grids only. */
+export function ProductPortfolioGrid() {
   const projectIndex = new Map(
     [...featuredWorkProjects, ...homeOnlyWorkProjects].map((project) => [
       project.slug,
@@ -168,7 +178,7 @@ export function HomeWorkGrid() {
     ]),
   );
 
-  const projects = homeSelectedWorkSlugs
+  const projects = productPortfolioSlugs
     .map((slug) => projectIndex.get(slug))
     .filter((project): project is FeaturedWorkProject => project != null);
 
@@ -182,26 +192,19 @@ export function HomeWorkGrid() {
 
           <article className={homeStyles.visualProject}>
             <div className={homeStyles.visualProjectHead}>
-              <p className={homeStyles.workCategory}>
-                Producer • Content Strategy • Programming
-              </p>
-              <h3 className={homeStyles.visualProjectTitle}>Film / Production</h3>
-              <Link href="/content-strategy" className={homeStyles.workCta}>
-                View Project →
-              </Link>
+              <p className={homeStyles.workCategory}>Interactive Media</p>
+              <h2 className={homeStyles.visualProjectTitle}>Platform Experiences</h2>
             </div>
-
             <div className={homeStyles.filmGrid}>
-              {entertainmentMediaProjects.map((item) => (
-                <Link
-                  key={item.slug}
-                  href="/content-strategy"
-                  className={homeStyles.filmCard}
-                  aria-label={`${item.title}: ${item.description}`}
-                >
-                  <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
-                  <span className={homeStyles.filmCardTitle}>{item.title}</span>
-                </Link>
+              {interactiveMediaProjects.map((item) => (
+                <div key={item.slug} className={homeStyles.filmCard}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               ))}
             </div>
           </article>

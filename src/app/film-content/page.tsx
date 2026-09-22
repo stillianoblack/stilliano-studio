@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-/** Legacy route — Film now lives at /film. */
+/** Legacy route — Film now lives under Content Strategy. */
 export default function FilmContentPage() {
-  redirect("/film");
+  redirect("/content-strategy#film");
 }

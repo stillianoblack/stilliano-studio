@@ -734,6 +734,7 @@
 
 .siteHeaderBar {
   pointer-events: auto;
+  width: 100%;
   border-radius: 14px;
   border: 1px solid transparent;
   background: transparent;
@@ -767,8 +768,24 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  gap: 0.55rem;
   color: rgba(247, 247, 244, 0.96);
   transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.logoMark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.logoDivider {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: inherit;
+  opacity: 0.45;
+  line-height: 1;
 }
 
 .logoWordmark {
@@ -778,10 +795,10 @@
 }
 
 .logoPrimary {
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.05vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: inherit;
   line-height: 1;
 }
@@ -797,14 +814,17 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 3vw, 32px);
+  gap: clamp(12px, 2vw, 26px);
 }
 
 .nav a {
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: rgba(247, 247, 244, 0.68);
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .siteHeaderElevated .nav a {
@@ -986,7 +1006,8 @@
   padding: 0.75rem 0.25rem;
   font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: #141413;
   text-decoration: none;
   border-bottom: 1px solid rgba(20, 20, 19, 0.08);
@@ -2375,10 +2396,10 @@
   color: var(--text);
 }
 
-.footerLogo :global(.stilliano-logo) {
-  filter: none;
-  height: clamp(17.3px, 2.43vw, 23.8px);
-  aspect-ratio: 480 / 79;
+.footerLogoMark {
+  display: block;
+  width: clamp(36px, 3.5vw, 44px);
+  height: clamp(36px, 3.5vw, 44px);
 }
 
 @media (max-width: 768px) {
@@ -2393,9 +2414,5 @@
   .footerTagline {
     display: block;
     text-align: left;
-  }
-
-  .footerLogo :global(.stilliano-logo) {
-    height: clamp(19.9px, 2.79vw, 27.4px);
   }
 }

@@ -7,10 +7,13 @@
   padding: clamp(7rem, 14vw, 10rem) 0 clamp(3.5rem, 7vw, 5rem);
   background: linear-gradient(180deg, #070b14 0%, #0b1020 55%, #070b14 100%);
   color: #fafaf8;
+  text-align: left;
 }
 
 .heroInner {
-  max-width: min(40rem, 100%);
+  max-width: min(48rem, 100%);
+  margin: 0;
+  text-align: left;
 }
 
 .eyebrow {
@@ -20,6 +23,15 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(252, 233, 106, 0.78);
+}
+
+.credential {
+  margin: 0 0 0.85rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.55);
 }
 
 .hero .eyebrow {
@@ -36,11 +48,78 @@
 }
 
 .lead {
-  margin: 0;
-  max-width: 38ch;
+  margin: 1.25rem 0 0;
+  max-width: 42ch;
   font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
   line-height: 1.6;
   color: rgba(250, 250, 248, 0.7);
+}
+
+.projects {
+  padding: clamp(4rem, 9vw, 6.5rem) 0 0;
+}
+
+.projects .eyebrow {
+  color: rgba(20, 20, 19, 0.48);
+}
+
+.projectGroups {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 3.75rem);
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.projectGroupTitle {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 19, 0.5);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.5vw, 1.25rem);
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.projectCard img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #141413;
+}
+
+.projectCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.projectCardTitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.projectCardMeta {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-muted);
 }
 
 .credits {
@@ -166,6 +245,10 @@
 
 @media (max-width: 900px) {
   .creditsLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .projectGrid {
     grid-template-columns: 1fr;
   }
 }

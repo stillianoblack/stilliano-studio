@@ -102,7 +102,7 @@ export const homeSelectedWork: HomeSelectedWorkItem[] = [
   },
   {
     title: "Film / Production",
-    category: "Head of Content and Programming",
+    category: "Producer • Content Strategy • Programming",
     image: "/images/Selected%20Works/2x2selected_works/narrative-film.webp",
     href: "/film",
     imageAlt: "Film and production work",

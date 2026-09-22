@@ -5,17 +5,23 @@ import { usePathname } from "next/navigation";
 import styles from "./page.module.css";
 
 const navLinks: Array<{ href: string; label: string; cta?: boolean }> = [
-  { href: "/#work", label: "Work" },
-  { href: "/stories", label: "Stories + IP" },
-  { href: "/film", label: "Film" },
+  { href: "/", label: "Home" },
+  { href: "/product", label: "Portfolio" },
+  { href: "/content-strategy", label: "Storyteller" },
+  { href: "/books-and-products", label: "Books & Products" },
   { href: "/about", label: "About" },
-  { href: "/#contact", label: "Contact", cta: true },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
   /* Light pages need dark idle nav (default idle styles assume a dark hero). */
-  const isLightHeaderPage = pathname === "/" || pathname === "/not-work";
+  const isLightHeaderPage =
+    pathname === "/not-work" ||
+    pathname === "/product" ||
+    pathname === "/content-strategy" ||
+    pathname === "/books-and-products" ||
+    pathname === "/about" ||
+    pathname.startsWith("/work/");
   const [navElevated, setNavElevated] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,9 +64,19 @@ export function SiteHeader() {
       <div className={styles.siteHeaderShell}>
         <div className={styles.siteHeaderBar}>
           <div className={styles.headerRow}>
-            <a href="/" className={styles.logo} aria-label="Stilliano home">
+            <a href="/" className={styles.logo} aria-label="T.D. Stills home">
+              <img
+                src="/images/SVGS/TDLogo.svg"
+                alt=""
+                className={styles.logoMark}
+                width={36}
+                height={36}
+              />
+              <span className={styles.logoDivider} aria-hidden>
+                |
+              </span>
               <span className={styles.logoWordmark}>
-                <span className={styles.logoPrimary}>STILLIANO</span>
+                <span className={styles.logoPrimary}>T.D. Stills</span>
               </span>
             </a>
 

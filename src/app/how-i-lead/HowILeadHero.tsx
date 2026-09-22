@@ -39,8 +39,8 @@ export function HowILeadHero() {
             Clear vision. Strong systems. Better work.
           </p>
           <div className={leadStyles.heroActions}>
-            <Link href="/#work" className="about-hero-cta">
-              View Selected Work
+            <Link href="/product" className="about-hero-cta">
+              View Product Growth
             </Link>
           </div>
         </div>

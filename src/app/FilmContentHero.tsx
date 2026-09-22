@@ -40,8 +40,8 @@ export function FilmContentHero() {
             Sets. Stories. Systems that ship.
           </p>
           <div className={leadStyles.heroActions}>
-            <Link href="/#work" className="about-hero-cta">
-              View Interactive Work
+              <Link href="/content-strategy" className="about-hero-cta">
+              Explore Content Strategy
             </Link>
           </div>
         </div>

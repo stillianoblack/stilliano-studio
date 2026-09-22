@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import { CaseYouTubePlayCard } from "../../CaseYouTubePlayCard";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 import styles from "../../page.module.css";
 
-export const metadata: Metadata = {
-  title: "HBCUgo Case Study | Stilliano Studio",
+export const metadata: Metadata = buildPageMetadata({
+  title: "HBCUgo",
   description:
-    "A Stilliano Studio case study exploring CTV strategy, live streaming UX, and digital presentation for HBCU sports and culture.",
-  openGraph: {
-    title: "HBCUgo Case Study | Stilliano Studio",
-    description:
-      "A Stilliano Studio case study exploring CTV strategy, live streaming UX, and digital presentation for HBCU sports and culture.",
-  },
-};
+    "A case study exploring CTV strategy, live streaming UX, and digital presentation for HBCU sports and culture.",
+  path: "/work/hbcugo",
+});
 
 const HERO_IMAGE_DESKTOP = "/images/Heros/HBCUgoCTV_Hero.webp";
 const HERO_IMAGE_MOBILE = "/images/Heros/HBCUgo_hero_mobile.webp";
@@ -236,8 +233,8 @@ export default function HBCUGoCaseStudyPage() {
               CTV strategy, live streaming UX, and digital presentation for HBCU
               sports and culture.
             </p>
-            <Link href="/#work" className="case-hero-back">
-              Back to Work →
+            <Link href="/product" className="case-hero-back">
+              Back to Product →
             </Link>
           </div>
         </section>

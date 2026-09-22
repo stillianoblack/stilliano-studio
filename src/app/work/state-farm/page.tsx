@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/data/site-seo";
 import styles from "../../page.module.css";
 import {
   stateFarmAlignmentPrinciples,
@@ -12,16 +13,12 @@ import {
 } from "@/data/state-farm-case-study";
 import { ExecutiveSummary } from "@/app/ExecutiveSummary";
 
-export const metadata: Metadata = {
-  title: "State Farm Enterprise Experience Architecture | Stilliano Black",
+export const metadata: Metadata = buildPageMetadata({
+  title: "State Farm",
   description:
-    "A Principal UX Architect case study exploring global experience architecture, executive partnership, product strategy, and critical customer journeys at State Farm.",
-  openGraph: {
-    title: "State Farm: Leading Enterprise Experience Architecture",
-    description:
-      "How enterprise architecture, customer insight, and executive partnership shaped connected account and claims experiences at State Farm.",
-  },
-};
+    "A case study on enterprise experience architecture, executive partnership, product strategy, and critical customer journeys at State Farm.",
+  path: "/work/state-farm",
+});
 
 const HERO_IMAGE = stateFarmImages.hero;
 
@@ -51,8 +48,8 @@ export default function StateFarmCaseStudyPage() {
               Leading global experience architecture across complex products and
               critical customer journeys.
             </p>
-            <Link href="/#work" className="case-hero-back">
-              Back to Work →
+            <Link href="/product" className="case-hero-back">
+              Back to Product →
             </Link>
           </div>
         </section>
