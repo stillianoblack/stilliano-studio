@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 /** Canonical personal site */
-export const SITE_URL = "https://tarusstills.com";
+export const SITE_URL = "https://tdstills.com";
 
 /** Site branding / short-form creative name */
 export const SITE_NAME = "T.D. Stills";
@@ -9,7 +9,7 @@ export const SITE_NAME = "T.D. Stills";
 /** Full legal / professional name for Person schema and long-form bio */
 export const PERSON_NAME = "Tarus D. Stills";
 
-export const PERSON_ALTERNATE_NAMES = ["T.D. Stills"] as const;
+export const PERSON_ALTERNATE_NAMES = ["T.D. Stills", "TD Stills"] as const;
 
 export const PERSON_JOB_TITLES = [
   "Filmmaker",
@@ -23,20 +23,59 @@ export const PERSON_DESCRIPTION =
   "Filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const HOME_META_DESCRIPTION =
-  "Tarus D. Stills, also known professionally as T.D. Stills, is a filmmaker, author, speaker, creator, and the founder of Caiden's Courage and Montage.";
+  "Tarus D. Stills, professionally known as T.D. Stills, is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+
+/** Shorter variant when space is constrained */
+export const HOME_META_DESCRIPTION_SHORT =
+  "Tarus D. Stills (T.D. Stills) is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const IDENTITY_BYLINE = "Filmmaker • Author • Speaker • Creator • Founder";
 
 export const IDENTITY_SUPPORTING_COPY =
-  "Tarus D. Stills is a filmmaker, author, speaker, creator, and the founder of Caiden's Courage and Montage.";
+  "Tarus D. Stills, professionally known as T.D. Stills, is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const SOCIAL_SHARE_IMAGE = "/images/Heros/socialsharing_stilliano.jpg";
 
 /**
- * No verified LinkedIn / Instagram / IMDb URLs exist in this repo.
- * Omit sameAs until real profile URLs are added.
+ * No verified LinkedIn / Instagram / IMDb profile URLs exist in this repo
+ * (homepage social links use "#" placeholders). Omit sameAs until real URLs are added.
  */
 export const PERSON_SAME_AS: string[] = [];
+
+/** Projects founded/created — separate Organization entities, not Person alternate names */
+export const FOUNDED_ORGANIZATIONS = [
+  {
+    id: "caidens-courage",
+    name: "Caiden's Courage",
+    /** Real project URL already used on the site */
+    url: "https://caidenvale.com",
+    description: "Original children's story world and emotional confidence platform.",
+  },
+  {
+    id: "montage",
+    name: "Montage",
+    /** Case study on this site — no separate public Montage marketing URL in the repo */
+    path: "/work/montagecms",
+    description: "AI-native media operating system for creators and streaming.",
+  },
+] as const;
+
+/** Public indexable routes for sitemap generation */
+export const SITEMAP_PATHS = [
+  "/",
+  "/about",
+  "/product",
+  "/content-strategy",
+  "/books-and-products",
+  "/how-i-lead",
+  "/not-work",
+  "/work/caidens-courage",
+  "/work/montagecms",
+  "/work/hbcugo",
+  "/work/genius-sports",
+  "/work/amira-learning",
+  "/work/state-farm",
+] as const;
 
 export function absoluteUrl(path = "/"): string {
   if (!path || path === "/") return SITE_URL;
@@ -77,15 +116,6 @@ export function buildPageMetadata({
       url,
       siteName: SITE_NAME,
       type: "website",
-      images: [
-        {
-          url: SOCIAL_SHARE_IMAGE,
-          width: 1200,
-          height: 675,
-          type: "image/jpeg",
-          alt: fullTitle,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -99,7 +129,19 @@ export function buildPageMetadata({
 export function buildSiteJsonLd() {
   const personId = `${SITE_URL}/#person`;
   const websiteId = `${SITE_URL}/#website`;
-  const profileId = `${SITE_URL}/#profilepage`;
+  const profileId = `${SITE_URL}/#profile`;
+
+  const orgNodes = FOUNDED_ORGANIZATIONS.map((org) => {
+    const url = "url" in org && org.url ? org.url : absoluteUrl("path" in org ? org.path : "/");
+    return {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#${org.id}`,
+      name: org.name,
+      url,
+      description: org.description,
+      founder: { "@id": personId },
+    };
+  });
 
   const person: Record<string, unknown> = {
     "@type": "Person",
@@ -109,6 +151,7 @@ export function buildSiteJsonLd() {
     url: SITE_URL,
     description: PERSON_DESCRIPTION,
     jobTitle: [...PERSON_JOB_TITLES],
+    founderOf: orgNodes.map((org) => ({ "@id": org["@id"] })),
   };
 
   if (PERSON_SAME_AS.length > 0) {
@@ -131,13 +174,14 @@ export function buildSiteJsonLd() {
         "@type": "ProfilePage",
         "@id": profileId,
         url: SITE_URL,
-        name: pageTitle("Filmmaker, Author & Creator"),
+        name: SITE_NAME,
         description: HOME_META_DESCRIPTION,
         isPartOf: { "@id": websiteId },
         mainEntity: { "@id": personId },
         about: { "@id": personId },
       },
       person,
+      ...orgNodes,
     ],
   };
 }

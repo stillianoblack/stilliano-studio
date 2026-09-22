@@ -7,3 +7,8 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Domain redirects for legacy hosts should be configured in the Netlify UI
+# (or DNS / domain settings) as 301s to https://tdstills.com — not as
+# client-side JS redirects. No path-level [[redirects]] here that would
+# conflict with Next.js App Router routes.
