@@ -23,16 +23,16 @@ export const PERSON_DESCRIPTION =
   "Filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const HOME_META_DESCRIPTION =
-  "Tarus D. Stills, professionally known as T.D. Stills, is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 /** Shorter variant when space is constrained */
 export const HOME_META_DESCRIPTION_SHORT =
-  "Tarus D. Stills (T.D. Stills) is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const IDENTITY_BYLINE = "Filmmaker • Author • Speaker • Creator • Founder";
 
 export const IDENTITY_SUPPORTING_COPY =
-  "Tarus D. Stills, professionally known as T.D. Stills, is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const SOCIAL_SHARE_IMAGE = "/images/Heros/socialsharing_stilliano.jpg";
 

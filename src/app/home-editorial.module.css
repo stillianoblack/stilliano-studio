@@ -1011,13 +1011,70 @@
 }
 
 @media (max-width: 768px) {
+  /* Nathan Barry–style stack: copy first, inset rounded portrait below */
   .hero {
-    min-height: min(88vh, 760px);
-    align-items: flex-end;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: clamp(6.75rem, 18vw, 8rem) 0 clamp(1.75rem, 5vw, 2.5rem);
+    overflow: visible;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  .heroOverlay {
+    display: none;
+  }
+
+  .heroContent {
+    order: 1;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .heroInner {
+    max-width: 100%;
+  }
+
+  .heroStatement {
+    max-width: 100%;
+    color: var(--text);
+  }
+
+  .heroRoles {
+    max-width: 100%;
+    color: rgba(20, 20, 19, 0.78);
+  }
+
+  .heroIdentity {
+    max-width: 100%;
+    color: rgba(20, 20, 19, 0.7);
+  }
+
+  .heroLead {
+    max-width: 100%;
+    color: rgba(20, 20, 19, 0.62);
+  }
+
+  .heroMedia {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    order: 2;
+    width: calc(100% - (2 * var(--pad-x)));
+    margin: 1.5rem auto 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #141413;
+    box-shadow: 0 12px 36px rgba(8, 16, 32, 0.1);
   }
 
   .heroMedia img {
-    object-position: 62% 18%;
+    object-fit: cover;
+    object-position: 55% 22%;
   }
 }
 
