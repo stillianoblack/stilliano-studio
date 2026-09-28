@@ -50,7 +50,7 @@ export default function Home() {
           <div className={`${styles.inner} ${homeStyles.heroContent}`}>
             <div className={homeStyles.heroInner}>
               <h1 className={homeStyles.heroStatement} id="home-hero-heading">
-                <span aria-hidden>👋🏾 </span>Hello, I&apos;m T.D. Stills.
+                <span aria-hidden>👋🏾 </span>Hello, I&apos;m T. D. Stills.
               </h1>
               <p className={homeStyles.heroRoles}>{IDENTITY_BYLINE}</p>
               <p className={homeStyles.heroIdentity}>{IDENTITY_SUPPORTING_COPY}</p>

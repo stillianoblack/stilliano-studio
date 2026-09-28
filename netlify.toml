@@ -12,3 +12,27 @@
 # (or DNS / domain settings) as 301s to https://tdstills.com — not as
 # client-side JS redirects. No path-level [[redirects]] here that would
 # conflict with Next.js App Router routes.
+
+[[redirects]]
+  from = "https://stillianoblack.com/*"
+  to = "https://tdstills.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.stillianoblack.com/*"
+  to = "https://tdstills.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tarusstills.com/*"
+  to = "https://tdstills.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.tarusstills.com/*"
+  to = "https://tdstills.com/:splat"
+  status = 301
+  force = true

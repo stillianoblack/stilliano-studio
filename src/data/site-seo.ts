@@ -23,16 +23,16 @@ export const PERSON_DESCRIPTION =
   "Filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
 
 export const HOME_META_DESCRIPTION =
-  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "Founder of Montage + Creator of Caiden's Courage — Building better ways to create, distribute, and experience stories";
 
 /** Shorter variant when space is constrained */
 export const HOME_META_DESCRIPTION_SHORT =
-  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "Founder of Montage + Creator of Caiden's Courage — Building better ways to create, distribute, and experience stories";
 
 export const IDENTITY_BYLINE = "Filmmaker • Author • Speaker • Creator • Founder";
 
 export const IDENTITY_SUPPORTING_COPY =
-  "T.D. Stills is a filmmaker, author, speaker, creator, and founder of Caiden's Courage and Montage.";
+  "Founder of Montage + Creator of Caiden's Courage — Building better ways to create, distribute, and experience stories";
 
 export const SOCIAL_SHARE_IMAGE = "/images/Heros/socialsharing_stilliano.jpg";
 
