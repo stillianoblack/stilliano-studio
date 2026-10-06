@@ -20,7 +20,7 @@ export type ExecutiveSummaryData = {
 
 export const executiveSummaryBySlug = {
   montagecms: {
-    role: "Creative Technologist & Head of Product Design",
+    role: "Head of Product, Design, & Content - AI Integration",
     team: "Cross-functional product team including UX, engineering, creators, product, and business stakeholders.",
     duration: "2+ Years",
     industry: "Streaming & Entertainment Technology",
