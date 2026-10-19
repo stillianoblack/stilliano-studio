@@ -40,7 +40,7 @@ export const homeMediaTechImage = {
 /** Caiden's Courage — one hero + supporting visuals */
 export const homeCaidenImages = {
   hero: {
-    src: "/images/Portfolio%20Cards/Caidenscourage/CaidensCourage_book.webp",
+    src: "/images/Heros/caidencourage_bookstance.webp",
     alt: "Caiden's Courage book",
   },
   support: [

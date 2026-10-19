@@ -17,7 +17,6 @@ import {
   buildPageMetadata,
   pageTitle,
 } from "@/data/site-seo";
-import { portraitHeroImages } from "@/data/hero-images";
 import styles from "./page.module.css";
 import homeStyles from "./home-editorial.module.css";
 
@@ -32,21 +31,8 @@ export default function Home() {
   return (
     <div className={`${styles.page} ${homeStyles.home}`}>
       <main>
-        {/* 01 HERO — full-bleed portrait */}
+        {/* 01 HERO — two columns: copy left, portrait right */}
         <section className={homeStyles.hero} aria-labelledby="home-hero-heading">
-          <picture className={homeStyles.heroMedia}>
-            <source
-              media="(max-width: 768px)"
-              srcSet={portraitHeroImages.home.mobile}
-            />
-            <img
-              src={portraitHeroImages.home.desktop}
-              alt=""
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
-          <div className={homeStyles.heroOverlay} aria-hidden />
           <div className={`${styles.inner} ${homeStyles.heroContent}`}>
             <div className={homeStyles.heroInner}>
               <h1 className={homeStyles.heroStatement} id="home-hero-heading">
@@ -62,6 +48,14 @@ export default function Home() {
                   Explore My Work
                 </a>
               </div>
+            </div>
+            <div className={homeStyles.heroPortrait}>
+              <img
+                src="/images/Heros/mephoto_headshot%201_portfolio.webp"
+                alt="T. D. Stills"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </div>
         </section>

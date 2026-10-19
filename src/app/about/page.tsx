@@ -76,7 +76,7 @@ export default function AboutPage() {
                 </div>
                 <div className={aboutStyles.heroMask}>
                   <img
-                    src="/images/headshots-profiles/TD_Headshot_copy.webp"
+                    src="/images/Heros/mephoto_headshot%201_portfolio.webp"
                     alt="T.D. Stills"
                     fetchPriority="high"
                     decoding="async"

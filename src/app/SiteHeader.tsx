@@ -14,27 +14,17 @@ const navLinks: Array<{ href: string; label: string; cta?: boolean }> = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [isNarrow, setIsNarrow] = useState(false);
   /* Light pages need dark idle nav (default idle styles assume a dark hero). */
   const isLightHeaderPage =
+    pathname === "/" ||
     pathname === "/not-work" ||
     pathname === "/product" ||
     pathname === "/content-strategy" ||
     pathname === "/books-and-products" ||
     pathname === "/about" ||
-    pathname.startsWith("/work/") ||
-    /* Mobile homepage uses a light stacked hero */
-    (pathname === "/" && isNarrow);
+    pathname.startsWith("/work/");
   const [navElevated, setNavElevated] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 768px)");
-    const sync = () => setIsNarrow(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => {
