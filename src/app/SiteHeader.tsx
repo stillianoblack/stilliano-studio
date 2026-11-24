@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./page.module.css";
 
@@ -25,6 +26,12 @@ export function SiteHeader() {
     pathname.startsWith("/work/");
   const [navElevated, setNavElevated] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuPath, setMenuPath] = useState(pathname);
+
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,10 +48,6 @@ export function SiteHeader() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -65,7 +68,7 @@ export function SiteHeader() {
       <div className={styles.siteHeaderShell}>
         <div className={styles.siteHeaderBar}>
           <div className={styles.headerRow}>
-            <a href="/" className={styles.logo} aria-label="T.D. Stills home">
+            <Link href="/" className={styles.logo} aria-label="T.D. Stills home">
               <img
                 src="/images/SVGS/TDLogo.svg"
                 alt=""
@@ -79,7 +82,7 @@ export function SiteHeader() {
               <span className={styles.logoWordmark}>
                 <span className={styles.logoPrimary}>T.D. STILLS</span>
               </span>
-            </a>
+            </Link>
 
             <nav className={styles.nav} aria-label="Primary">
               {navLinks.map((link) =>

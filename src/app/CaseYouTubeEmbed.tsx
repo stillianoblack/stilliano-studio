@@ -88,18 +88,15 @@ export function CaseYouTubeEmbed({
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const revealTimerRef = useRef<number | null>(null);
   const [muted, setMuted] = useState(true);
-  const [revealed, setRevealed] = useState(false);
+  const [revealedId, setRevealedId] = useState<string | null>(null);
+  const revealed = revealedId === videoId;
   const { ref: rootRef, inView } = useLazyInView({ eager: !lazy });
 
   const reveal = useCallback(() => {
-    setRevealed((current) => (current ? current : true));
-  }, []);
+    setRevealedId(videoId);
+  }, [videoId]);
 
   const embedSrc = inView ? buildEmbedSrc(videoId, true) : undefined;
-
-  useEffect(() => {
-    setRevealed(false);
-  }, [videoId]);
 
   useEffect(() => {
     return () => {

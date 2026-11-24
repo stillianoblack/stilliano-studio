@@ -9,6 +9,7 @@ import {
   homeMontageProof,
   homeSocialLinks,
   homeSpeakingTopics,
+  type HomeIdeaItem,
 } from "@/data/home-thought-leadership";
 import {
   HOME_META_DESCRIPTION,
@@ -28,6 +29,11 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function Home() {
+  const publishedIdeas = homeIdeaItems.filter(
+    (item): item is HomeIdeaItem & { href: string } => Boolean(item.href) && !item.placeholder,
+  );
+  const visibleSocialLinks = homeSocialLinks.filter((link) => link.href !== "#");
+
   return (
     <div className={`${styles.page} ${homeStyles.home}`}>
       <main>
@@ -219,43 +225,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 06 IDEAS */}
-        <section id="ideas" className={homeStyles.tlSection} aria-labelledby="ideas-heading">
-          <div className={styles.inner}>
-            <p className={homeStyles.sectionEyebrow}>Ideas</p>
-            <h2 id="ideas-heading" className={homeStyles.tlHeadingWide}>
-              I&apos;m sharing what I&apos;m learning.
-            </h2>
-            <p className={homeStyles.tlLead}>
-              I&apos;m building in public across media, AI, original IP, the creator
-              economy, and product leadership — sharing the ideas, experiments, and
-              lessons I&apos;m learning along the way.
-            </p>
-            <ul className={homeStyles.ideaCards}>
-              {homeIdeaItems.map((item) => (
-                <li key={item.id} className={homeStyles.ideaCard}>
-                  {item.href ? (
+        {publishedIdeas.length > 0 ? (
+          <section id="ideas" className={homeStyles.tlSection} aria-labelledby="ideas-heading">
+            <div className={styles.inner}>
+              <p className={homeStyles.sectionEyebrow}>Ideas</p>
+              <h2 id="ideas-heading" className={homeStyles.tlHeadingWide}>
+                I&apos;m sharing what I&apos;m learning.
+              </h2>
+              <p className={homeStyles.tlLead}>
+                I&apos;m building in public across media, AI, original IP, the creator
+                economy, and product leadership — sharing the ideas, experiments, and
+                lessons I&apos;m learning along the way.
+              </p>
+              <ul className={homeStyles.ideaCards}>
+                {publishedIdeas.map((item) => (
+                  <li key={item.id} className={homeStyles.ideaCard}>
                     <a href={item.href} className={homeStyles.ideaCardLink}>
                       <span className={homeStyles.ideaCategory}>{item.category}</span>
                       <p className={homeStyles.ideaTitle}>{item.title}</p>
                     </a>
-                  ) : (
-                    <>
-                      <span className={homeStyles.ideaCategory}>{item.category}</span>
-                      <p className={homeStyles.ideaTitle}>{item.title}</p>
-                      {item.placeholder ? (
-                        <span className={homeStyles.ideaPlaceholder}>Coming soon</span>
-                      ) : null}
-                    </>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <a href="#ideas" className={homeStyles.textCta}>
-              Explore Ideas →
-            </a>
-          </div>
-        </section>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : null}
 
         {/* 07 SPEAKING */}
         <section
@@ -352,7 +346,7 @@ export default function Home() {
               Get in Touch
             </a>
             <ul className={homeStyles.socialLinks}>
-              {homeSocialLinks.map((link) => (
+              {visibleSocialLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}

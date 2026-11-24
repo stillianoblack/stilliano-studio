@@ -67,7 +67,6 @@ export const SITEMAP_PATHS = [
   "/product",
   "/content-strategy",
   "/books-and-products",
-  "/how-i-lead",
   "/not-work",
   "/work/caidens-courage",
   "/work/montagecms",

@@ -111,12 +111,11 @@ export function TrustedByVideo({
     }
 
     if (isVisible && !userPaused) {
-      void video.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+      void video.play().catch(() => setPlaying(false));
       return;
     }
 
     video.pause();
-    setPlaying(false);
   }, [isVisible, shouldLoad, userPaused]);
 
   const togglePlay = () => {
