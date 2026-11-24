@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 /** Canonical personal site */
-export const SITE_URL = "https://tdstills.com";
+export const SITE_URL = "https://tarusstills.com";
 
 /** Site branding / short-form creative name */
 export const SITE_NAME = "T.D. Stills";

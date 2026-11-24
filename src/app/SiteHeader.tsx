@@ -5,12 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./page.module.css";
 
-const navLinks: Array<{ href: string; label: string; cta?: boolean }> = [
-  { href: "/", label: "Home" },
+const navLinks: Array<{ href: string; label: string }> = [
   { href: "/product", label: "Portfolio" },
-  { href: "/content-strategy", label: "Storyteller" },
-  { href: "/books-and-products", label: "Books & Products" },
-  { href: "/about", label: "About" },
 ];
 
 export function SiteHeader() {
@@ -25,13 +21,6 @@ export function SiteHeader() {
     pathname === "/about" ||
     pathname.startsWith("/work/");
   const [navElevated, setNavElevated] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [menuPath, setMenuPath] = useState(pathname);
-
-  if (menuPath !== pathname) {
-    setMenuPath(pathname);
-    setMenuOpen(false);
-  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -42,24 +31,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setMenuOpen(false);
-      }
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
-
-  const showElevated = isLightHeaderPage || navElevated || menuOpen;
+  const showElevated = isLightHeaderPage || navElevated;
 
   return (
     <header
@@ -85,69 +57,14 @@ export function SiteHeader() {
             </Link>
 
             <nav className={styles.nav} aria-label="Primary">
-              {navLinks.map((link) =>
-                link.cta ? (
-                  <a key={link.href} className={styles.navCta} href={link.href}>
-                    {link.label}
-                  </a>
-                ) : (
-                  <a key={link.href} href={link.href}>
-                    {link.label}
-                  </a>
-                ),
-              )}
-            </nav>
-
-            <button
-              type="button"
-              className={`${styles.menuButton} ${menuOpen ? styles.menuButtonOpen : ""}`}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-nav-panel"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMenuOpen((open) => !open)}
-            >
-              <span className={styles.menuButtonBars} aria-hidden>
-                <span />
-                <span />
-                <span />
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="mobile-nav-panel"
-        className={`${styles.mobileNavPanel} ${menuOpen ? styles.mobileNavPanelOpen : ""}`}
-        aria-hidden={!menuOpen}
-      >
-        <button
-          type="button"
-          className={styles.mobileNavBackdrop}
-          aria-label="Close menu"
-          tabIndex={menuOpen ? 0 : -1}
-          onClick={() => setMenuOpen(false)}
-        />
-        <nav className={styles.mobileNav} aria-label="Mobile">
-          <ul className={styles.mobileNavList}>
-            {navLinks.map((link, index) => (
-              <li
-                key={link.href}
-                className={styles.mobileNavItem}
-                style={{ transitionDelay: menuOpen ? `${index * 45}ms` : "0ms" }}
-              >
-                <a
-                  href={link.href}
-                  className={link.cta ? styles.mobileNavCta : styles.mobileNavLink}
-                  tabIndex={menuOpen ? 0 : -1}
-                  onClick={() => setMenuOpen(false)}
-                >
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href}>
                   {link.label}
                 </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+              ))}
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
   );
