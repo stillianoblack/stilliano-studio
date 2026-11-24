@@ -1047,7 +1047,11 @@
   }
 
   .nav {
-    display: flex;
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
   }
 }
 
